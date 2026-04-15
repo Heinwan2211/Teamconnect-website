@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Corporate Team Building Experiences South Africa | Team Connect</title>
-  <meta name="description" content="Discover Team Connect's flagship experiences — The Fugitive and Amazing Race. Corporate team building across South Africa, tailored to your team." />
+  <title>Corporate Team Building Experiences Cape Town | Team Connect</title>
+  <meta name="description" content="Nine world-class corporate team building experiences across Cape Town and the Western Cape. Outdoor, wellness, CSR, leadership, hybrid and more." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
@@ -44,7 +44,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 80px;
+      height: 130px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
@@ -55,6 +55,8 @@
 
     .nav-logo img {
       display: block;
+      height: 120px;
+      width: auto;
     }
 
     .nav-links {
@@ -97,6 +99,14 @@
     }
 
     @media (max-width: 768px) {
+      nav {
+        height: 100px;
+      }
+
+      .nav-logo img {
+        height: 80px;
+      }
+
       .nav-toggle {
         display: flex;
       }
@@ -104,7 +114,7 @@
       .nav-links {
         display: none;
         position: absolute;
-        top: 80px;
+        top: 100px;
         left: 0;
         right: 0;
         background: var(--green);
@@ -167,19 +177,20 @@
 
     .hero p {
       font-size: clamp(1rem, 2.2vw, 1.2rem);
-      max-width: 620px;
+      max-width: 680px;
       margin: 0 auto 0;
       opacity: 0.88;
       line-height: 1.65;
     }
 
+    /* ─── BUTTONS ─── */
     .btn {
       display: inline-block;
-      padding: 15px 36px;
+      padding: 13px 30px;
       border-radius: 4px;
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
-      font-size: 1rem;
+      font-size: 0.92rem;
       letter-spacing: 0.04em;
       cursor: pointer;
       transition: transform 0.18s, box-shadow 0.18s;
@@ -194,6 +205,17 @@
     .btn-gold {
       background: var(--gold);
       color: var(--green);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--green);
+      color: var(--green);
+    }
+
+    .btn-outline:hover {
+      background: var(--green);
+      color: var(--white);
     }
 
     .btn-outline-white {
@@ -238,121 +260,118 @@
       margin-bottom: 3rem;
     }
 
-    /* ─── EXPERIENCE FEATURE BLOCKS ─── */
-    .experience-block {
+    /* ─── EXPERIENCES GRID ─── */
+    #experiences {
+      background: var(--light-bg);
+    }
+
+    .experiences-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 3rem;
+    }
+
+    .experiences-header .section-sub {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+    }
+
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
       max-width: 1100px;
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
     }
 
-    .experience-block.reverse {
-      direction: rtl;
+    @media (max-width: 900px) {
+      .exp-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    .experience-block.reverse > * {
-      direction: ltr;
+    @media (max-width: 560px) {
+      .exp-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    .experience-content .section-sub {
-      margin-bottom: 1.8rem;
-    }
-
-    .experience-visual {
-      background: var(--light-bg);
+    .exp-card {
+      background: var(--white);
       border-radius: 8px;
-      border: 2px solid #e8e4d8;
-      min-height: 380px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 1rem;
-      color: #aaa;
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      position: relative;
       overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.22s, box-shadow 0.22s;
     }
 
-    .experience-visual::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+    .exp-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.13);
+    }
+
+    .exp-card-accent {
       height: 6px;
       background: linear-gradient(90deg, var(--green), var(--gold));
+      flex-shrink: 0;
     }
 
-    .experience-visual svg {
-      width: 64px;
-      height: 64px;
-      fill: #ccc;
-    }
-
-    .experience-number {
-      position: absolute;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      font-size: 5rem;
-      font-weight: 800;
-      color: rgba(26, 74, 46, 0.06);
-      line-height: 1;
-      pointer-events: none;
-    }
-
-    /* Outcome tags */
-    .outcomes {
+    .exp-card-body {
+      padding: 1.8rem;
       display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 2rem;
+      flex-direction: column;
+      flex: 1;
     }
 
-    .outcome-tag {
+    .exp-theme-tag {
       display: inline-block;
       background: var(--light-bg);
       border: 1.5px solid #d4cfbf;
       color: var(--green);
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      padding: 5px 14px;
+      padding: 4px 12px;
       border-radius: 20px;
+      margin-bottom: 1rem;
     }
 
-    /* Section backgrounds */
-    #fugitive {
-      background: var(--white);
+    .exp-card-body h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.7rem;
+      line-height: 1.25;
     }
 
-    #amazing-race {
-      background: var(--light-bg);
+    .exp-card-body p {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 1.4rem;
     }
 
-    /* ─── CUSTOMISATION ─── */
-    #customise {
+    /* ─── CUSTOM EXPERIENCES SECTION ─── */
+    #custom {
       background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
       text-align: center;
       color: var(--white);
     }
 
-    #customise .section-label {
+    #custom .section-label {
       color: var(--gold);
     }
 
-    #customise .section-heading {
+    #custom .section-heading {
       color: var(--white);
       margin-bottom: 0.7rem;
     }
 
-    #customise .section-sub {
+    #custom .section-sub {
       color: rgba(255,255,255,0.82);
       margin-left: auto;
       margin-right: auto;
@@ -371,29 +390,13 @@
     footer span {
       color: var(--gold);
     }
-
-    /* ─── RESPONSIVE ─── */
-    @media (max-width: 768px) {
-      .experience-block {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-      }
-
-      .experience-block.reverse {
-        direction: ltr;
-      }
-
-      .experience-visual {
-        min-height: 240px;
-      }
-    }
   </style>
 </head>
 <body>
 
   <!-- NAVIGATION -->
   <nav>
-    <a class="nav-logo" href="index.html" aria-label="Team Connect home"><img src="images/Team_connect_logo.png" alt="Team Connect — Bringing Teams Together" height="60"></a>
+    <a class="nav-logo" href="index.html" aria-label="Team Connect home"><img src="images/Team_connect_logo.png" alt="Team Connect — Bringing Teams Together" height="120"></a>
     <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
       <span></span><span></span><span></span>
     </button>
@@ -407,72 +410,134 @@
 
   <!-- HERO -->
   <section class="hero" aria-label="Experiences hero banner">
-    <span class="hero-tag">Tulbagh, Western Cape</span>
-    <h1>Our Team Building <span>Experiences</span></h1>
-    <p>Two flagship experiences. One mission — to bring your team closer together.</p>
+    <span class="hero-tag">Cape Town &amp; Western Cape</span>
+    <h1>Nine Ways to Bring Your <span>Team Together</span></h1>
+    <p>From high-energy outdoor pursuits to purpose-led CSR days and immersive wellness journeys &mdash; every Team Connect experience is designed around a specific outcome for your team.</p>
   </section>
 
-  <!-- THE FUGITIVE -->
-  <section id="fugitive" aria-labelledby="fugitive-heading">
-    <div class="experience-block">
-      <div class="experience-content">
-        <span class="section-label">Flagship Experience 01</span>
-        <h2 class="section-heading" id="fugitive-heading">The Fugitive</h2>
-        <p class="section-sub">The Fugitive is a high-energy outdoor pursuit experience unlike anything your team has done before. Divided into groups, teams must use strategy, communication and trust to outmanoeuvre their opponents across a dynamic playing field. Fast-paced, unpredictable and intensely engaging — The Fugitive reveals your team's true character under pressure.</p>
-        <div class="outcomes" aria-label="Key outcomes">
-          <span class="outcome-tag">Communication</span>
-          <span class="outcome-tag">Strategic Thinking</span>
-          <span class="outcome-tag">Trust</span>
-          <span class="outcome-tag">Leadership Under Pressure</span>
+  <!-- EXPERIENCES GRID -->
+  <section id="experiences" aria-labelledby="exp-heading">
+    <div class="experiences-header">
+      <span class="section-label">Our Experiences</span>
+      <h2 class="section-heading" id="exp-heading">Choose Your Experience</h2>
+      <p class="section-sub">Nine world-class formats. Each built around a specific outcome. All tailored to your team.</p>
+    </div>
+
+    <div class="exp-grid">
+
+      <!-- Card 1: The Fugitive -->
+      <article class="exp-card" aria-label="The Fugitive experience">
+        <div class="exp-card-accent"></div>
+        <div class="exp-card-body">
+          <span class="exp-theme-tag">Strategy &amp; Trust</span>
+          <h3>The Fugitive</h3>
+          <p>A high-intensity urban pursuit that tests communication, leadership and trust under real pressure.</p>
+          <a href="the-fugitive.html" class="btn btn-outline" aria-label="Learn more about The Fugitive">Learn More</a>
         </div>
-        <a href="mailto:Info@teamconnect.co.za" class="btn btn-gold" aria-label="Book The Fugitive team building experience">Book The Fugitive</a>
-      </div>
-      <div class="experience-visual" role="img" aria-label="The Fugitive experience image placeholder">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3c1.3 1.5 3.3 2.5 5.5 2.5v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1l-5.2 2.2v4.7h2v-3.4l1.8-.7-1.6 8.1-4.9-1-.4 2 7 1.4z"/>
-        </svg>
-        Image Coming Soon
-        <span class="experience-number" aria-hidden="true">01</span>
-      </div>
+      </article>
+
+      <!-- Card 2: Amazing Race -->
+      <article class="exp-card" aria-label="Amazing Race experience">
+        <div class="exp-card-accent"></div>
+        <div class="exp-card-body">
+          <span class="exp-theme-tag">Collaboration &amp; Problem-Solving</span>
+          <h3>Amazing Race</h3>
+          <p>A multi-stage adventure race across spectacular Cape Town settings &mdash; built for teams who want to win together.</p>
+          <a href="amazing-race.html" class="btn btn-outline" aria-label="Learn more about Amazing Race">Learn More</a>
+        </div>
+      </article>
+
+      <!-- Card 3: Escape Labs -->
+      <article class="exp-card" aria-label="Escape Labs experience">
+        <div class="exp-card-accent"></div>
+        <div class="exp-card-body">
+          <span class="exp-theme-tag">Problem-Solving &amp; Innovation</span>
+          <h3>Escape Labs</h3>
+          <p>A lab-style immersive escape experience with AI-generated curveballs and adaptive multi-layered challenges.</p>
+          <a href="escape-labs.html" class="btn btn-outline" aria-label="Learn more about Escape Labs">Learn More</a>
+        </div>
+      </article>
+
+      <!-- Card 4: Culture Throwdown -->
+      <article class="exp-card" aria-label="Culture Throwdown experience">
+        <div class="exp-card-accent"></div>
+        <div class="exp-card-body">
+          <span class="exp-theme-tag">Culture &amp; Identity</span>
+          <h3>Culture Throwdown</h3>
+          <p>A game-show-style experience that surfaces workplace culture through competitive play, live debates and MC energy.</p>
+          <a href="culture-throwdown.html" class="btn btn-outline" aria-label="Learn more about Culture Throwdown">Learn More</a>
+        </div>
+      </article>
+
+      <!-- Card 5: Creative Collision -->
+      <article class="exp-card" aria-label="Creative Collision experience">
+        <div class="exp-card-accent"></div>
+        <div class="exp-card-body">
+          <span class="exp-theme-tag">Innovation &amp; Rapid Prototyping</span>
+          <h3>Creative Collision</h3>
+          <p>A Shark Tank meets maker lab experience where teams ideate, build and pitch solutions to real-world briefs.</p>
+          <a href="creative-collision.html" class="btn btn-outline" aria-label="Learn more about Creative Collision">Learn More</a>
+        </div>
+      </article>
+
+      <!-- Card 6: Community Champions -->
+      <article class="exp-card" aria-label="Community Champions experience">
+        <div class="exp-card-accent"></div>
+        <div class="exp-card-body">
+          <span class="exp-theme-tag">CSR &amp; Social Impact</span>
+          <h3>Community Champions</h3>
+          <p>Purpose-led team building that leaves something tangible behind &mdash; the highest-trending format in 2026.</p>
+          <a href="community-champions.html" class="btn btn-outline" aria-label="Learn more about Community Champions">Learn More</a>
+        </div>
+      </article>
+
+      <!-- Card 7: Leadership Development -->
+      <article class="exp-card" aria-label="Leadership Development experience">
+        <div class="exp-card-accent"></div>
+        <div class="exp-card-body">
+          <span class="exp-theme-tag">Leadership Under Pressure</span>
+          <h3>Leadership Development</h3>
+          <p>An immersive scenario-based leadership lab testing decision-making, communication and ethics under pressure.</p>
+          <a href="leadership-development.html" class="btn btn-outline" aria-label="Learn more about Leadership Development">Learn More</a>
+        </div>
+      </article>
+
+      <!-- Card 8: Mental & Corporate Wellness -->
+      <article class="exp-card" aria-label="Mental and Corporate Wellness experience">
+        <div class="exp-card-accent"></div>
+        <div class="exp-card-body">
+          <span class="exp-theme-tag">Wellbeing &amp; Resilience</span>
+          <h3>Mental &amp; Corporate Wellness</h3>
+          <p>A structured wellness immersion using the Western Cape&rsquo;s natural landscape as your team&rsquo;s reset button.</p>
+          <a href="wellness.html" class="btn btn-outline" aria-label="Learn more about Mental and Corporate Wellness">Learn More</a>
+        </div>
+      </article>
+
+      <!-- Card 9: Hybrid Team Building -->
+      <article class="exp-card" aria-label="Hybrid Team Building experience">
+        <div class="exp-card-accent"></div>
+        <div class="exp-card-body">
+          <span class="exp-theme-tag">Connected Teams Everywhere</span>
+          <h3>Hybrid Team Building</h3>
+          <p>Built for distributed workforces &mdash; connecting in-person and remote participants in one seamless competitive experience.</p>
+          <a href="hybrid-team-building.html" class="btn btn-outline" aria-label="Learn more about Hybrid Team Building">Learn More</a>
+        </div>
+      </article>
+
     </div>
   </section>
 
-  <!-- AMAZING RACE -->
-  <section id="amazing-race" aria-labelledby="amazing-race-heading">
-    <div class="experience-block reverse">
-      <div class="experience-content">
-        <span class="section-label">Flagship Experience 02</span>
-        <h2 class="section-heading" id="amazing-race-heading">Amazing Race</h2>
-        <p class="section-sub">Inspired by the global phenomenon, our Amazing Race format sends teams on an action-packed multi-challenge adventure across a spectacular venue. Teams race through a series of physical, mental and creative challenges — navigating, problem-solving and collaborating every step of the way. The result? A fired-up, connected team with memories that last long after the finish line.</p>
-        <div class="outcomes" aria-label="Key outcomes">
-          <span class="outcome-tag">Collaboration</span>
-          <span class="outcome-tag">Problem-Solving</span>
-          <span class="outcome-tag">Team Morale</span>
-          <span class="outcome-tag">Fun</span>
-        </div>
-        <a href="mailto:Info@teamconnect.co.za" class="btn btn-gold" aria-label="Book Amazing Race team building experience">Book Amazing Race</a>
-      </div>
-      <div class="experience-visual" role="img" aria-label="Amazing Race experience image placeholder">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/>
-        </svg>
-        Image Coming Soon
-        <span class="experience-number" aria-hidden="true">02</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- CUSTOMISATION -->
-  <section id="customise" aria-labelledby="customise-heading">
+  <!-- CUSTOM EXPERIENCES -->
+  <section id="custom" aria-labelledby="custom-heading">
     <span class="section-label">Tailored For You</span>
-    <h2 class="section-heading" id="customise-heading">Every Experience is Tailored to Your Team</h2>
-    <p class="section-sub">We don't do off-the-shelf. Every Team Connect experience is customised to your group size, objectives, venue and budget. Whether you have 20 or 200 people, we design an experience that delivers.</p>
-    <a href="mailto:Info@teamconnect.co.za" class="btn btn-outline-white" aria-label="Talk to us about your next team building event">Talk to us about your next event</a>
+    <h2 class="section-heading" id="custom-heading">Every Experience is Tailored to Your Team</h2>
+    <p class="section-sub">We don&rsquo;t do off-the-shelf. Group size, objectives, venue, duration and budget &mdash; every Team Connect experience is customised around what your team actually needs.</p>
+    <a href="contact.html" class="btn btn-outline-white" aria-label="Talk to us about your next team building event">Talk to Us</a>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; <span>Team Connect</span> 2025 &mdash; Tulbagh, Western Cape, South Africa</p>
+    <p>&copy; <span>Team Connect</span> 2025 &mdash; Cape Town, Western Cape, South Africa</p>
   </footer>
 
   <script>
