@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corporate Team Building South Africa | Team Connect</title>
+  <meta name="description" content="Team Connect offers premier corporate team building experiences in Tulbagh, Western Cape. The Fugitive and Amazing Race formats for memorable team events." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #1a4a2e;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --light-bg: #f7f5f0;
+      --text: #222222;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--green);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+
+    .nav-logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--green);
+        flex-direction: column;
+        padding: 1.5rem 5%;
+        gap: 1.2rem;
+        border-top: 2px solid var(--gold);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      color: var(--white);
+      padding: 100px 5% 90px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 860px;
+      margin: 0 auto 1.2rem;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      max-width: 620px;
+      margin: 0 auto 2.4rem;
+      opacity: 0.88;
+      line-height: 1.65;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 36px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green);
+    }
+
+    .btn-green {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--green);
+      color: var(--green);
+    }
+
+    .btn-outline:hover {
+      background: var(--green);
+      color: var(--white);
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section {
+      padding: 80px 5%;
+    }
+
+    .section-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    /* ─── EXPERIENCES ─── */
+    #experiences {
+      background: var(--light-bg);
+    }
+
+    .experiences-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .experiences-header .section-sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.13);
+    }
+
+    .card-accent {
+      height: 6px;
+      background: linear-gradient(90deg, var(--green), var(--gold));
+    }
+
+    .card-body {
+      padding: 2rem;
+    }
+
+    .card-icon {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.8rem;
+    }
+
+    .card p {
+      font-size: 0.97rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 1.6rem;
+    }
+
+    /* ─── WHY SECTION ─── */
+    #why {
+      background: var(--white);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .why-card {
+      text-align: center;
+      padding: 2.5rem 2rem;
+      border-radius: 8px;
+      border: 2px solid #e8e4d8;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .why-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 18px rgba(201,168,76,0.15);
+    }
+
+    .why-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 70px;
+      height: 70px;
+      background: var(--green);
+      border-radius: 50%;
+      margin: 0 auto 1.4rem;
+    }
+
+    .why-icon svg {
+      width: 34px;
+      height: 34px;
+      fill: var(--gold);
+    }
+
+    .why-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.7rem;
+    }
+
+    .why-card p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    /* ─── CTA SECTION ─── */
+    #contact-cta {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      text-align: center;
+      color: var(--white);
+    }
+
+    #contact-cta .section-heading {
+      color: var(--white);
+      margin-bottom: 0.7rem;
+    }
+
+    #contact-cta .section-sub {
+      color: rgba(255,255,255,0.82);
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0f2b1a;
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 24px 5%;
+      font-size: 0.88rem;
+    }
+
+    footer span {
+      color: var(--gold);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="#" aria-label="Team Connect home">Team Connect</a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#">Home</a></li>
+      <li><a href="#experiences">Experiences</a></li>
+      <li><a href="#why">About</a></li>
+      <li><a href="#contact-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Hero banner">
+    <span class="hero-tag">Tulbagh, Western Cape</span>
+    <h1>South Africa's Most Exhilarating Corporate <span>Team Building</span> Experiences</h1>
+    <p>Based in Tulbagh, Western Cape — we bring teams together through unforgettable outdoor adventures</p>
+    <a href="#experiences" class="btn btn-gold">Explore Our Experiences</a>
+  </section>
+
+  <!-- EXPERIENCES -->
+  <section id="experiences" aria-labelledby="exp-heading">
+    <div class="experiences-header">
+      <span class="section-label">Our Flagship Formats</span>
+      <h2 class="section-heading" id="exp-heading">Experiences Your Team Will Never Forget</h2>
+      <p class="section-sub">Choose from two adrenaline-packed formats designed to challenge, inspire, and unite your team in the stunning landscapes of the Western Cape.</p>
+    </div>
+    <div class="cards">
+      <!-- The Fugitive Card -->
+      <div class="card" aria-label="The Fugitive experience">
+        <div class="card-accent"></div>
+        <div class="card-body">
+          <span class="card-icon" aria-hidden="true">🏃</span>
+          <h3>The Fugitive</h3>
+          <p>A high-octane chase experience where teams must work together under pressure, navigate challenges, and outwit the competition across stunning outdoor terrain. Perfect for building trust, communication, and strategic thinking.</p>
+          <a href="#contact-cta" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+      <!-- Amazing Race Card -->
+      <div class="card" aria-label="Amazing Race experience">
+        <div class="card-accent"></div>
+        <div class="card-body">
+          <span class="card-icon" aria-hidden="true">🗺️</span>
+          <h3>Amazing Race</h3>
+          <p>Inspired by the global hit, our Amazing Race format sends teams on an exhilarating journey through Tulbagh's breathtaking landscapes — solving clues, completing challenges, and racing to the finish line together.</p>
+          <a href="#contact-cta" class="btn btn-outline">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY TEAM CONNECT -->
+  <section id="why" aria-labelledby="why-heading">
+    <div style="text-align:center; max-width:700px; margin:0 auto 3rem;">
+      <span class="section-label">Why Choose Us</span>
+      <h2 class="section-heading" id="why-heading">The Team Connect Difference</h2>
+      <p class="section-sub" style="margin-left:auto;margin-right:auto;">We combine world-class facilitation, unbeatable locations, and proven outcomes to deliver team building that actually works.</p>
+    </div>
+    <div class="why-grid">
+      <!-- Expert Facilitation -->
+      <div class="why-card">
+        <div class="why-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.33 0 8 2.67 8 4v2H4v-2c0-1.33 2.67-4 8-4z"/>
+          </svg>
+        </div>
+        <h3>Expert Facilitation</h3>
+        <p>Our experienced facilitators guide every event with energy and professionalism, ensuring meaningful engagement and real outcomes for your team.</p>
+      </div>
+      <!-- Stunning Locations -->
+      <div class="why-card">
+        <div class="why-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/>
+          </svg>
+        </div>
+        <h3>Stunning Locations</h3>
+        <p>Set against the majestic mountains and valleys of Tulbagh, Western Cape — our venues provide a naturally inspiring backdrop for transformation.</p>
+      </div>
+      <!-- Proven Results -->
+      <div class="why-card">
+        <div class="why-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M19 3H5a2 2 0 0 0-2 2v14l4-4h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 12l-4-4 1.41-1.41L12 12.17l6.59-6.58L20 7l-8 8z"/>
+          </svg>
+        </div>
+        <h3>Proven Results</h3>
+        <p>Trusted by South Africa's leading corporates, our programmes consistently improve team cohesion, morale, and communication — measurably.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section id="contact-cta" aria-labelledby="cta-heading">
+    <span class="section-label" style="color:var(--gold);">Let's Connect</span>
+    <h2 class="section-heading" id="cta-heading">Ready to Build Your Team?</h2>
+    <p class="section-sub">Whether you're planning your next annual event or a spontaneous team day — we'd love to create something extraordinary with you.</p>
+    <a href="mailto:info@teamconnect.co.za" class="btn btn-gold">Get In Touch</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; <span>Team Connect</span> 2025 &mdash; Tulbagh, Western Cape, South Africa</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', function () {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close mobile nav when a link is clicked
+    links.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+</body>
+</html>
