@@ -39,20 +39,22 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: var(--green);
+      background: #ffffff;
       padding: 0 5%;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 64px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      height: 80px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
     }
 
     .nav-logo {
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--gold);
-      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      display: block;
     }
 
     .nav-links {
@@ -62,7 +64,7 @@
     }
 
     .nav-links a {
-      color: var(--white);
+      color: var(--green);
       font-weight: 600;
       font-size: 0.95rem;
       letter-spacing: 0.02em;
@@ -89,7 +91,7 @@
       display: block;
       width: 26px;
       height: 3px;
-      background: var(--white);
+      background: var(--green);
       border-radius: 2px;
       transition: all 0.3s;
     }
@@ -102,7 +104,7 @@
       .nav-links {
         display: none;
         position: absolute;
-        top: 64px;
+        top: 80px;
         left: 0;
         right: 0;
         background: var(--green);
@@ -391,7 +393,7 @@
 
   <!-- NAVIGATION -->
   <nav>
-    <a class="nav-logo" href="index.html" aria-label="Team Connect home">Team Connect</a>
+    <a class="nav-logo" href="index.html" aria-label="Team Connect home"><img src="images/Team_connect_logo.png" alt="Team Connect — Bringing Teams Together" height="60"></a>
     <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
       <span></span><span></span><span></span>
     </button>
