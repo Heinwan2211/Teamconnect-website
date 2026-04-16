@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Choose Team Connect | Corporate Team Building South Africa</title>
+  <meta name="description" content="Discover why South African companies choose Team Connect for corporate team building. Qualified facilitators, outcome-focused design, and experiences that last." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #1a4a2e;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --light-bg: #f7f5f0;
+      --text: #222222;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      padding: 0.625rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 170px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      display: block;
+      height: 150px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--green);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        height: 115px;
+      }
+
+      .nav-logo img {
+        height: 100px;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 115px;
+        left: 0;
+        right: 0;
+        background: var(--green);
+        flex-direction: column;
+        padding: 1.5rem 5%;
+        gap: 1.2rem;
+        border-top: 2px solid var(--gold);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        color: var(--white);
+      }
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      color: var(--white);
+      padding: 100px 5% 90px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 860px;
+      margin: 0 auto 1.4rem;
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      max-width: 680px;
+      margin: 0 auto;
+      opacity: 0.88;
+      line-height: 1.65;
+      color: var(--white);
+    }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-block;
+      padding: 15px 36px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green);
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section {
+      padding: 80px 5%;
+    }
+
+    .section-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    /* ─── DIFFERENTIATORS ─── */
+    #differentiators {
+      background: var(--white);
+    }
+
+    .diff-header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .diff-header .section-sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 900px) {
+      .diff-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 580px) {
+      .diff-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .diff-card {
+      background: var(--light-bg);
+      border-radius: 8px;
+      padding: 2.4rem 2rem;
+      border: 2px solid transparent;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+
+    .diff-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 6px 24px rgba(201,168,76,0.15);
+      transform: translateY(-3px);
+    }
+
+    .diff-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: var(--green);
+      border-radius: 50%;
+      margin-bottom: 1.4rem;
+    }
+
+    .diff-icon svg {
+      width: 30px;
+      height: 30px;
+      fill: var(--gold);
+    }
+
+    .diff-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.8rem;
+      line-height: 1.3;
+    }
+
+    .diff-card p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* ─── STATS STRIP ─── */
+    .stats-strip {
+      background: var(--green);
+      padding: 56px 5%;
+    }
+
+    .stats-strip-inner {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .stat-item {
+      text-align: center;
+      min-width: 160px;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+    }
+
+    /* ─── PROMISE SECTION ─── */
+    #promise {
+      background: var(--light-bg);
+      text-align: center;
+    }
+
+    #promise .section-heading {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1.4rem;
+    }
+
+    .promise-copy {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    #testimonials {
+      background: var(--white);
+    }
+
+    .testimonials-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .testimonials-header .section-sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .testimonial-card {
+      background: var(--light-bg);
+      border-radius: 8px;
+      padding: 2.4rem 2rem;
+      border-left: 4px solid var(--gold);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '\201C';
+      font-size: 4rem;
+      color: var(--gold);
+      opacity: 0.4;
+      position: absolute;
+      top: 0.8rem;
+      left: 1.4rem;
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+
+    .testimonial-card p {
+      font-size: 0.97rem;
+      color: #444;
+      line-height: 1.75;
+      font-style: italic;
+      margin-bottom: 1.4rem;
+      padding-top: 1.5rem;
+    }
+
+    .testimonial-attribution {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── CTA SECTION ─── */
+    #cta {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      text-align: center;
+      color: var(--white);
+    }
+
+    #cta .section-heading {
+      color: var(--white);
+      margin-bottom: 2rem;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 700px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0f2b1a;
+      color: rgba(255,255,255,0.7);
+      padding: 56px 5% 28px;
+      font-size: 0.88rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem 4rem;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .footer-logo img {
+      height: 90px;
+      width: auto;
+      display: block;
+    }
+
+    .footer-contact h4 {
+      color: var(--gold);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .footer-contact ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-contact a {
+      color: rgba(255,255,255,0.75);
+      transition: color 0.2s;
+    }
+
+    .footer-contact a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 1.4rem;
+      text-align: center;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.82rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-bottom span {
+      color: var(--gold);
+    }
+
+    @media (max-width: 600px) {
+      .footer-inner {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="Team Connect home"><img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" height="150"></a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="why-us.html" class="active">Why Us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Why Team Connect hero">
+    <h1>Why Team Connect?</h1>
+    <p>There are dozens of team building providers in South Africa. Here is why our clients keep coming back.</p>
+  </section>
+
+  <!-- KEY DIFFERENTIATORS -->
+  <section id="differentiators" aria-labelledby="diff-heading">
+    <div class="diff-header">
+      <span class="section-label">What Sets Us Apart</span>
+      <h2 class="section-heading" id="diff-heading">The Team Connect Difference</h2>
+      <p class="section-sub">Six reasons South African corporates choose us — and keep choosing us.</p>
+    </div>
+    <div class="diff-grid">
+
+      <!-- Differentiator 1 - Outcomes First -->
+      <div class="diff-card">
+        <div class="diff-icon" aria-hidden="true">
+          <!-- Target icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+          </svg>
+        </div>
+        <h3>We Start With Your Objectives</h3>
+        <p>Before we suggest a single activity, we ask: what does your team actually need right now? Every experience is designed around your specific goals — not a catalogue of off-the-shelf packages.</p>
+      </div>
+
+      <!-- Differentiator 2 - Professional Facilitation -->
+      <div class="diff-card">
+        <div class="diff-icon" aria-hidden="true">
+          <!-- People icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+          </svg>
+        </div>
+        <h3>Qualified Facilitators, Not Event Entertainers</h3>
+        <p>Our facilitators understand team psychology, group dynamics, and behaviour change. This is the difference between a fun day and a day that actually changes how your team works.</p>
+      </div>
+
+      <!-- Differentiator 3 - Customisation -->
+      <div class="diff-card">
+        <div class="diff-icon" aria-hidden="true">
+          <!-- Settings icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+          </svg>
+        </div>
+        <h3>Built for Your Team, Not Anyone Else's</h3>
+        <p>We tailor every experience to your team's size, culture, industry, and goals. We can incorporate your values, branding, and current business challenges into the design.</p>
+      </div>
+
+      <!-- Differentiator 4 - Scale -->
+      <div class="diff-card">
+        <div class="diff-icon" aria-hidden="true">
+          <!-- Chart/trending up icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/>
+          </svg>
+        </div>
+        <h3>10 to 500+ Participants</h3>
+        <p>From an intimate leadership offsite to a company-wide conference activation — our experiences are designed to scale without losing quality or impact.</p>
+      </div>
+
+      <!-- Differentiator 5 - Reach -->
+      <div class="diff-card">
+        <div class="diff-icon" aria-hidden="true">
+          <!-- Map pin icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/>
+          </svg>
+        </div>
+        <h3>We Come to You — Anywhere in South Africa</h3>
+        <p>Based in Cape Town and fully mobile nationally. We've facilitated experiences in Johannesburg, Durban, Pretoria, the Winelands, and everywhere in between.</p>
+      </div>
+
+      <!-- Differentiator 6 - Follow Through -->
+      <div class="diff-card">
+        <div class="diff-icon" aria-hidden="true">
+          <!-- Refresh/loop icon -->
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"/>
+          </svg>
+        </div>
+        <h3>We Don't Deliver and Disappear</h3>
+        <p>Every experience includes a debrief and follow-up resources. The event is a catalyst — we help your team sustain the gains long after the day is done.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip" aria-label="Team Connect statistics">
+    <div class="stats-strip-inner">
+      <div class="stat-item">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Corporate Teams Served</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">9</span>
+        <span class="stat-label">World-Class Experiences</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">10+</span>
+        <span class="stat-label">Years of Facilitation</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">20 to 500+</span>
+        <span class="stat-label">Participants Per Event</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OUR PROMISE -->
+  <section id="promise" aria-labelledby="promise-heading">
+    <span class="section-label">Our Commitment</span>
+    <h2 class="section-heading" id="promise-heading">Our Promise to You</h2>
+    <p class="promise-copy">Every Team Connect experience is facilitated by qualified professionals, designed around your objectives, and followed up with a debrief and resources. If you don't walk away feeling it was worth every rand — we want to know about it.</p>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" aria-labelledby="testimonials-heading">
+    <div class="testimonials-header">
+      <span class="section-label">Client Voices</span>
+      <h2 class="section-heading" id="testimonials-heading">What Our Clients Say</h2>
+      <p class="section-sub" style="margin-left:auto;margin-right:auto;">Don't just take our word for it.</p>
+    </div>
+    <!-- Replace placeholder testimonials with real client testimonials -->
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p>Lorem ipsum testimonial from HR Manager, [Company Name]</p>
+        <span class="testimonial-attribution">HR Manager, [Company Name]</span>
+      </div>
+      <div class="testimonial-card">
+        <p>Lorem ipsum testimonial from Event Coordinator, [Company Name]</p>
+        <span class="testimonial-attribution">Event Coordinator, [Company Name]</span>
+      </div>
+      <div class="testimonial-card">
+        <p>Lorem ipsum testimonial from CEO, [Company Name]</p>
+        <span class="testimonial-attribution">CEO, [Company Name]</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" aria-labelledby="cta-heading">
+    <h2 class="section-heading" id="cta-heading">Ready to experience the difference?</h2>
+    <a href="contact.html" class="btn btn-gold">Get In Touch</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <a href="index.html" aria-label="Team Connect home">
+          <img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" />
+        </a>
+      </div>
+      <div class="footer-contact">
+        <h4>Get In Touch</h4>
+        <ul>
+          <li><a href="tel:0824522283">082 452 2283</a></li>
+          <li><a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></li>
+          <li><a href="https://www.teamconnect.co.za" target="_blank" rel="noopener noreferrer">www.teamconnect.co.za</a></li>
+          <li>Cape Town, South Africa</li>
+          <li>@teamconnectsa</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 <span>Team Connect</span>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', function () {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    links.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+</body>
+</html>
