@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Incentive Events &amp; Fun Team Activities South Africa | Team Connect</title>
+  <meta name="description" content="Team Connect designs high-energy incentive events and pure fun team experiences for South African companies. Year-end functions, sales incentives, and celebrations done properly." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #1a4a2e;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --light-bg: #f7f5f0;
+      --text: #222222;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      padding: 0.625rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 170px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      display: block;
+      height: 150px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--green);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        height: 115px;
+      }
+      .nav-logo img {
+        height: 100px;
+      }
+      .nav-toggle {
+        display: flex;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 115px;
+        left: 0;
+        right: 0;
+        background: var(--green);
+        flex-direction: column;
+        padding: 1.5rem 5%;
+        gap: 1.2rem;
+        border-top: 2px solid var(--gold);
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .nav-links a {
+        color: var(--white);
+      }
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      color: var(--white);
+      padding: 100px 5% 90px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 860px;
+      margin: 0 auto 1.2rem;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      max-width: 640px;
+      margin: 0 auto;
+      opacity: 0.88;
+      line-height: 1.65;
+    }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-block;
+      padding: 15px 36px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      border: 2px solid var(--white);
+      color: var(--white);
+    }
+
+    .btn-outline-white:hover {
+      background: var(--white);
+      color: var(--green);
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section {
+      padding: 80px 5%;
+    }
+
+    .section-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    /* ─── OVERVIEW SECTION ─── */
+    #overview {
+      background: var(--white);
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .overview-text .section-sub {
+      margin-bottom: 0;
+      max-width: 100%;
+    }
+
+    .overview-image {
+      background: var(--light-bg);
+      border-radius: 8px;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 2px solid #e8e4d8;
+    }
+
+    .overview-image span {
+      font-size: 5rem;
+      opacity: 0.4;
+    }
+
+    @media (max-width: 768px) {
+      .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    /* ─── OUTCOMES SECTION ─── */
+    #outcomes {
+      background: var(--light-bg);
+    }
+
+    .outcomes-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .outcome-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      border-top: 4px solid var(--gold);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+
+    .outcome-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.12);
+    }
+
+    .outcome-icon {
+      font-size: 2.6rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .outcome-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.7rem;
+    }
+
+    .outcome-card p {
+      font-size: 0.93rem;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    /* ─── DETAILS STRIP ─── */
+    #details-strip {
+      background: var(--green);
+      padding: 50px 5%;
+    }
+
+    .details-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .detail-block {
+      color: var(--white);
+    }
+
+    .detail-block strong {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-block span {
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      .details-strip-inner {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    /* ─── DIFFERENTIATOR SECTION ─── */
+    #differentiator {
+      background: var(--white);
+      text-align: center;
+    }
+
+    .differentiator-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .differentiator-inner .section-heading {
+      margin-bottom: 1.2rem;
+    }
+
+    .differentiator-inner p {
+      font-size: 1.05rem;
+      color: #555;
+      line-height: 1.75;
+    }
+
+    /* ─── FORMATS SECTION ─── */
+    #formats {
+      background: var(--light-bg);
+    }
+
+    .formats-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .formats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .format-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      border-left: 5px solid var(--gold);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+
+    .format-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+    }
+
+    .format-icon {
+      font-size: 2.2rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .format-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.7rem;
+    }
+
+    .format-card p {
+      font-size: 0.93rem;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    /* ─── OCCASIONS STRIP ─── */
+    #occasions {
+      background: var(--green);
+      padding: 60px 5%;
+      text-align: center;
+    }
+
+    #occasions h2 {
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 2rem;
+    }
+
+    .occasions-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .occasion-pill {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(201,168,76,0.5);
+      color: var(--gold);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .occasion-pill:hover {
+      background: rgba(201,168,76,0.2);
+      border-color: var(--gold);
+    }
+
+    /* ─── CTA SECTION ─── */
+    #cta {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      text-align: center;
+      color: var(--white);
+    }
+
+    #cta .section-heading {
+      color: var(--white);
+      margin-bottom: 0.7rem;
+    }
+
+    #cta .section-sub {
+      color: rgba(255,255,255,0.82);
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #1a4a2e;
+      color: rgba(255,255,255,0.75);
+      padding: 56px 5% 0;
+      font-size: 0.88rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem 4rem;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .footer-col h4 {
+      color: #c9a84c;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-col a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #c9a84c;
+    }
+
+    .footer-logo-col img {
+      height: 80px;
+      width: auto;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-tagline {
+      color: rgba(255,255,255,0.65);
+      font-style: italic;
+      margin: 0;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-social a {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .footer-social a:hover {
+      color: #c9a84c;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding: 1.4rem 0;
+      text-align: center;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.82rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-bottom span {
+      color: #c9a84c;
+    }
+
+    @media (max-width: 600px) {
+      .footer-grid {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="Team Connect home"><img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" height="150"></a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="experiences.html" class="active">Experiences</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="why-us.html">Why Us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Incentive and Fun Events hero">
+    <span class="hero-tag">Pure Celebration</span>
+    <h1>Incentive &amp; Fun Events</h1>
+    <p>Pure Energy. Pure Celebration. <span style="color: var(--gold); font-weight: 700;">Your Team Has Earned It.</span></p>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section id="overview" aria-labelledby="overview-heading">
+    <div class="overview-grid">
+      <div class="overview-text">
+        <span class="section-label">The Experience</span>
+        <h2 class="section-heading" id="overview-heading">Sometimes the Point Is Just to Have an Extraordinary Time.</h2>
+        <p class="section-sub">Not every team event needs a learning objective. Sometimes your team has worked incredibly hard, delivered exceptional results, and earned the right to simply celebrate &mdash; loudly, together, and without an agenda. Team Connect&rsquo;s incentive and fun events are designed for exactly this moment. High-energy, spectacularly run, and built for maximum enjoyment. We bring the same professional facilitation and production quality to our fun events as we do to our development experiences &mdash; because your team deserves a celebration that actually feels like one. Whether it&rsquo;s a year-end blowout, a sales incentive reward, a product launch party with a competitive edge, or simply a team that needs to let off serious steam &mdash; we design experiences that people talk about for years.</p>
+      </div>
+      <div class="overview-image" role="img" aria-label="Incentive and fun events image placeholder">
+        <span>&#127881;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section id="outcomes" aria-labelledby="outcomes-heading">
+    <div class="outcomes-header">
+      <span class="section-label">Why It Works</span>
+      <h2 class="section-heading" id="outcomes-heading">What Great Celebration Delivers</h2>
+    </div>
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">&#127881;</span>
+        <h3>Team Morale</h3>
+        <p>Nothing builds team spirit like a shared experience of pure, uninhibited enjoyment</p>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">&#127942;</span>
+        <h3>Recognition</h3>
+        <p>Incentive events send a clear message &mdash; your effort was seen, your results matter, you are valued</p>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">&#9889;</span>
+        <h3>Energy Reset</h3>
+        <p>High-energy fun is a legitimate and powerful way to refuel a team that has been running hard</p>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">&#128151;</span>
+        <h3>Loyalty</h3>
+        <p>Teams that celebrate together stay together &mdash; shared joy is a retention tool that no benefits package can replicate</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILS STRIP -->
+  <section id="details-strip" aria-label="Event details">
+    <div class="details-strip-inner">
+      <div class="detail-block">
+        <strong>Group Size</strong>
+        <span>20 to 1000+</span>
+      </div>
+      <div class="detail-block">
+        <strong>Duration</strong>
+        <span>2 hours to full day</span>
+      </div>
+      <div class="detail-block">
+        <strong>Location</strong>
+        <span>Any venue &mdash; we travel anywhere in South Africa</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFFERENTIATOR -->
+  <section id="differentiator" aria-labelledby="diff-heading">
+    <div class="differentiator-inner">
+      <span class="section-label">The Difference</span>
+      <h2 class="section-heading" id="diff-heading">Professional Production. Genuine Fun. Zero Awkwardness.</h2>
+      <p>The difference between a Team Connect fun event and a company party is facilitation. Our events are professionally designed and run &mdash; with smooth logistics, high energy, and the kind of momentum that keeps everyone engaged from start to finish. No awkward silences. No one standing alone by the snacks. No activities that make people cringe. Just a brilliantly run experience that your team will genuinely love.</p>
+    </div>
+  </section>
+
+  <!-- FORMATS -->
+  <section id="formats" aria-labelledby="formats-heading">
+    <div class="formats-header">
+      <span class="section-label">What We Offer</span>
+      <h2 class="section-heading" id="formats-heading">Fun Event Formats</h2>
+    </div>
+    <div class="formats-grid">
+      <div class="format-card">
+        <span class="format-icon" aria-hidden="true">&#127942;</span>
+        <h3>Competitive Celebrations</h3>
+        <p>High-energy team competitions, tournaments, and challenges with prizes, trophies, and serious bragging rights</p>
+      </div>
+      <div class="format-card">
+        <span class="format-icon" aria-hidden="true">&#127881;</span>
+        <h3>Year-End Experiences</h3>
+        <p>Spectacular year-end events that combine celebration, recognition, and team energy into one unforgettable occasion</p>
+      </div>
+      <div class="format-card">
+        <span class="format-icon" aria-hidden="true">&#127775;</span>
+        <h3>Incentive Rewards</h3>
+        <p>Premium incentive experiences for high-performing teams and individuals &mdash; the reward that actually feels like one</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OCCASIONS STRIP -->
+  <section id="occasions" aria-labelledby="occasions-heading">
+    <h2 id="occasions-heading">Ideal Occasions</h2>
+    <div class="occasions-pills" aria-label="List of ideal occasions for incentive events">
+      <span class="occasion-pill">Year-End Function</span>
+      <span class="occasion-pill">Sales Incentive</span>
+      <span class="occasion-pill">Product Launch</span>
+      <span class="occasion-pill">Project Completion Celebration</span>
+      <span class="occasion-pill">Company Anniversary</span>
+      <span class="occasion-pill">New Team Welcome</span>
+      <span class="occasion-pill">Mid-Year Boost</span>
+      <span class="occasion-pill">Awards Ceremony</span>
+      <span class="occasion-pill">Quarterly Kickoff</span>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" aria-labelledby="cta-heading">
+    <span class="section-label">Let&rsquo;s Plan It</span>
+    <h2 class="section-heading" id="cta-heading">Your team has earned it. Let&rsquo;s make it extraordinary.</h2>
+    <p class="section-sub">Tell us about your occasion, your team size, and your vision &mdash; we&rsquo;ll handle the rest.</p>
+    <a href="contact.html" class="btn btn-outline-white" aria-label="Plan your incentive event with Team Connect">Plan Your Event</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col footer-logo-col">
+        <a href="index.html" aria-label="Team Connect home">
+          <img src="images/Team connect logo.jpg" alt="Team Connect logo" height="80" />
+        </a>
+        <p class="footer-tagline">Bringing Teams Together</p>
+      </div>
+      <div class="footer-col">
+        <h4>Experiences</h4>
+        <ul>
+          <li><a href="fugitive.html">The Fugitive</a></li>
+          <li><a href="amazing-race.html">Amazing Race</a></li>
+          <li><a href="escape-labs.html">Escape Labs</a></li>
+          <li><a href="experiences.html">All Experiences</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="why-us.html">Why Team Connect</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0824522283">082 452 2283</a></li>
+          <li><a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></li>
+          <li>Cape Town, South Africa</li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/theTeamConnect" target="_blank" rel="noopener noreferrer" aria-label="Team Connect on Facebook">&#128216; Facebook</a>
+          <a href="https://www.instagram.com/teamconnectsa" target="_blank" rel="noopener noreferrer" aria-label="Team Connect on Instagram">&#128247; Instagram</a>
+          <a href="https://www.tiktok.com/@teamconnectsa" target="_blank" rel="noopener noreferrer" aria-label="Team Connect on TikTok">&#127925; TikTok</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 <span>Team Connect</span>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', function () {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    links.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
