@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSR Team Building South Africa | Community Champions | Team Connect</title>
+  <meta name="description" content="Community Champions is a purpose-led CSR team building experience that leaves a tangible community impact. Available across South Africa for groups of 20 to 300." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #1a4a2e;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --light-bg: #f7f5f0;
+      --text: #222222;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      padding: 0.625rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 170px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      display: block;
+      height: 150px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--green);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        height: 115px;
+      }
+
+      .nav-logo img {
+        height: 100px;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 115px;
+        left: 0;
+        right: 0;
+        background: var(--green);
+        flex-direction: column;
+        padding: 1.5rem 5%;
+        gap: 1.2rem;
+        border-top: 2px solid var(--gold);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        color: var(--white);
+      }
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      color: var(--white);
+      padding: 100px 5% 110px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 860px;
+      margin: 0 auto 1.2rem;
+      color: var(--white);
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      max-width: 620px;
+      margin: 0 auto;
+      opacity: 0.88;
+      line-height: 1.65;
+    }
+
+    /* ─── SHARED SECTION ─── */
+    section {
+      padding: 80px 5%;
+    }
+
+    .section-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 36px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green);
+    }
+
+    /* ─── OVERVIEW ─── */
+    .overview {
+      background: var(--white);
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .overview-text .section-sub {
+      margin-bottom: 0;
+    }
+
+    .overview-image {
+      border-radius: 8px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #e8ece4 0%, #d4dccf 100%);
+      min-height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #e8e4d8;
+    }
+
+    .overview-image-placeholder {
+      text-align: center;
+      padding: 2rem;
+      color: var(--green);
+    }
+
+    .overview-image-placeholder span {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .overview-image-placeholder p {
+      font-weight: 600;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .overview-image {
+        min-height: 240px;
+      }
+    }
+
+    /* ─── KEY OUTCOMES ─── */
+    .outcomes {
+      background: var(--light-bg);
+    }
+
+    .outcomes-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .outcomes-header .section-sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .outcome-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2.2rem 1.8rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      border-top: 4px solid var(--gold);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+
+    .outcome-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.12);
+    }
+
+    .outcome-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      background: var(--green);
+      border-radius: 50%;
+      margin: 0 auto 1.2rem;
+    }
+
+    .outcome-icon svg {
+      width: 30px;
+      height: 30px;
+      fill: var(--gold);
+    }
+
+    .outcome-card h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.7rem;
+    }
+
+    .outcome-card p {
+      font-size: 0.92rem;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    /* ─── DETAILS STRIP ─── */
+    .details-strip {
+      background: var(--green);
+      padding: 50px 5%;
+    }
+
+    .details-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .detail-block {
+      color: var(--white);
+    }
+
+    .detail-block .detail-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-block .detail-value {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      .details-inner {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    /* ─── PROJECT OPTIONS ─── */
+    .projects {
+      background: var(--white);
+    }
+
+    .projects-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .projects-header .section-sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.13);
+    }
+
+    .project-card-accent {
+      height: 6px;
+      background: linear-gradient(90deg, var(--green), var(--gold));
+    }
+
+    .project-card-body {
+      padding: 2rem;
+    }
+
+    .project-card-icon {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .project-card h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.8rem;
+    }
+
+    .project-card p {
+      font-size: 0.97rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* ─── WHY CSR ─── */
+    .why-csr {
+      background: var(--light-bg);
+      text-align: center;
+    }
+
+    .why-csr-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .why-csr .section-heading {
+      margin-bottom: 1.5rem;
+    }
+
+    .why-csr p {
+      font-size: 1.08rem;
+      color: #555;
+      line-height: 1.75;
+    }
+
+    /* ─── CTA ─── */
+    .cta {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      text-align: center;
+      color: var(--white);
+    }
+
+    .cta .section-heading {
+      color: var(--white);
+      margin-bottom: 0.8rem;
+    }
+
+    .cta .section-sub {
+      color: rgba(255,255,255,0.82);
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0f2b1a;
+      color: rgba(255,255,255,0.55);
+      padding: 50px 5% 28px;
+      font-size: 0.88rem;
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      max-width: 900px;
+      margin: 0 auto 2rem;
+      align-items: start;
+    }
+
+    .footer-logo img {
+      height: 90px;
+      width: auto;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .footer-logo p {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-contact h4 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .footer-contact p {
+      line-height: 2;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .footer-contact a {
+      color: rgba(255,255,255,0.6);
+      transition: color 0.2s;
+    }
+
+    .footer-contact a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.5rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer-bottom span {
+      color: var(--gold);
+    }
+
+    @media (max-width: 600px) {
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="Team Connect home">
+      <img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" height="150">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Community Champions hero banner">
+    <span class="hero-tag">CSR &amp; Social Impact</span>
+    <h1><span>Community Champions</span></h1>
+    <p>CSR &amp; Social Impact &mdash; Leave Something Tangible Behind</p>
+  </section>
+
+  <!-- EXPERIENCE OVERVIEW -->
+  <section class="overview" aria-labelledby="overview-heading">
+    <div class="overview-grid">
+      <div class="overview-text">
+        <span class="section-label">The Experience</span>
+        <h2 class="section-heading" id="overview-heading">Team Building That Matters Beyond the Day.</h2>
+        <p class="section-sub">Purpose-led team building that leaves something tangible behind &mdash; the highest-trending category in corporate events for 2026. Teams compete to design and execute a micro community project within a set time: assembling food garden kits for a local school, building habitat structures for a fynbos restoration site, or packing care packages for a partner NGO. The competitive layer runs through an impact scoring system &mdash; creativity, execution, community relevance, and team storytelling. Closes with a handover ceremony and a short documentary-style recap reel. A natural fit for the Western Cape's rich conservation and community landscape &mdash; and deployable across South Africa.</p>
+      </div>
+      <div class="overview-image" aria-label="Community Champions experience in action">
+        <div class="overview-image-placeholder">
+          <span aria-hidden="true">🌱</span>
+          <p>Community Champions in Action</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY OUTCOMES -->
+  <section class="outcomes" aria-labelledby="outcomes-heading">
+    <div class="outcomes-header">
+      <span class="section-label">What Your Team Gains</span>
+      <h2 class="section-heading" id="outcomes-heading">Key Outcomes</h2>
+    </div>
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <div class="outcome-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/>
+          </svg>
+        </div>
+        <h3>Shared Purpose</h3>
+        <p>Teams united by a cause bigger than themselves perform at a different level</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 21.593c-5.63-5.539-11-10.297-11-14.402 0-3.791 3.068-5.191 5.281-5.191 1.312 0 4.151.501 5.719 4.457 1.59-3.968 4.464-4.447 5.726-4.447 2.54 0 5.274 1.621 5.274 5.181 0 4.069-5.136 8.625-11 14.402z"/>
+          </svg>
+        </div>
+        <h3>Community Impact</h3>
+        <p>Every session leaves a real, measurable contribution to a local community or cause</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M19 3H5a2 2 0 0 0-2 2v14l4-4h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 12l-4-4 1.41-1.41L12 12.17l6.59-6.58L20 7l-8 8z"/>
+          </svg>
+        </div>
+        <h3>Values Alignment</h3>
+        <p>CSR experiences bring company values off the wall and into action</p>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"/>
+          </svg>
+        </div>
+        <h3>Team Pride</h3>
+        <p>The handover ceremony creates a moment of collective achievement that lasts</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILS STRIP -->
+  <div class="details-strip" role="region" aria-label="Experience details">
+    <div class="details-inner">
+      <div class="detail-block">
+        <span class="detail-label">Group Size</span>
+        <span class="detail-value">20 to 300 participants</span>
+      </div>
+      <div class="detail-block">
+        <span class="detail-label">Duration</span>
+        <span class="detail-value">3 to 4 hours</span>
+      </div>
+      <div class="detail-block">
+        <span class="detail-label">Location</span>
+        <span class="detail-value">Cape Town and across South Africa</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT OPTIONS -->
+  <section class="projects" aria-labelledby="projects-heading">
+    <div class="projects-header">
+      <span class="section-label">Choose Your Impact</span>
+      <h2 class="section-heading" id="projects-heading">Project Options</h2>
+      <p class="section-sub">Every Community Champions event is anchored around a meaningful project. Choose the theme that resonates most with your team's values.</p>
+    </div>
+    <div class="project-cards">
+      <div class="project-card" aria-label="Food Security project option">
+        <div class="project-card-accent"></div>
+        <div class="project-card-body">
+          <span class="project-card-icon" aria-hidden="true">🌾</span>
+          <h3>Food Security</h3>
+          <p>Teams assemble food garden kits or care packages for partner schools and shelters</p>
+        </div>
+      </div>
+      <div class="project-card" aria-label="Conservation project option">
+        <div class="project-card-accent"></div>
+        <div class="project-card-body">
+          <span class="project-card-icon" aria-hidden="true">🌿</span>
+          <h3>Conservation</h3>
+          <p>Teams build habitat structures or restoration kits for fynbos and wildlife conservation sites</p>
+        </div>
+      </div>
+      <div class="project-card" aria-label="Community Care project option">
+        <div class="project-card-accent"></div>
+        <div class="project-card-body">
+          <span class="project-card-icon" aria-hidden="true">🤝</span>
+          <h3>Community Care</h3>
+          <p>Teams pack essential care packages for partner NGOs serving vulnerable communities</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY CSR -->
+  <section class="why-csr" aria-labelledby="why-csr-heading">
+    <div class="why-csr-inner">
+      <span class="section-label">The Bigger Picture</span>
+      <h2 class="section-heading" id="why-csr-heading">Why CSR Team Building is the #1 Trending Format for 2026</h2>
+      <p>Companies with ESG commitments need team building that aligns with their values &mdash; not contradicts them. Community Champions gives your team a shared purpose, a competitive framework, and a lasting legacy. It is the experience that your people will still be talking about six months later &mdash; because they built something real.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" aria-labelledby="cta-heading">
+    <span class="section-label" style="color: var(--gold);">Let's Make an Impact</span>
+    <h2 class="section-heading" id="cta-heading">Ready to make an impact together?</h2>
+    <p class="section-sub">Ideal for Mandela Day, Heritage Month, year-end functions, and ESG-aligned team events.</p>
+    <a href="contact.html" class="btn btn-gold">Book Community Champions</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="images/Team connect logo.jpg" alt="Team Connect logo" height="90">
+        <p>South Africa's premier CSR and corporate team building experiences.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>
+          <a href="tel:0824522283">082 452 2283</a><br>
+          <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a><br>
+          <a href="https://www.teamconnect.co.za">www.teamconnect.co.za</a><br>
+          @teamconnectsa<br>
+          Cape Town, South Africa
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 <span>Team Connect</span>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', function () {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    links.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+</body>
+</html>
