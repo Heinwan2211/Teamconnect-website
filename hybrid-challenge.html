@@ -527,66 +527,75 @@
 
     /* ─── FOOTER ─── */
     footer {
-      background: #0f2b1a;
-      color: rgba(255,255,255,0.65);
-      padding: 48px 5% 28px;
-      font-size: 0.9rem;
+      background: #1a4a2e;
+      color: rgba(255,255,255,0.75);
+      padding: 56px 5% 0;
+      font-size: 0.88rem;
     }
 
-    .footer-inner {
-      max-width: 960px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 2.5rem 4rem;
-      align-items: start;
-      margin-bottom: 2rem;
-    }
-
-    @media (max-width: 640px) {
-      .footer-inner {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-    }
-
-    .footer-logo img {
-      height: 80px;
-      width: auto;
-      display: block;
-    }
-
-    .footer-details {
+    .footer-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.5rem 2.5rem;
-      line-height: 1.9;
+      gap: 2.5rem 4rem;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto 2.5rem;
     }
 
-    .footer-details a {
-      color: rgba(255,255,255,0.65);
+    .footer-col h4 {
+      color: #c9a84c;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-col a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
       transition: color 0.2s;
     }
 
-    .footer-details a:hover {
-      color: var(--gold);
+    .footer-col a:hover {
+      color: #c9a84c;
     }
 
-    .footer-details span {
-      color: var(--gold);
-      font-weight: 700;
+    .footer-logo-col img {
+      height: 80px;
+      width: auto;
+      display: block;
+      margin-bottom: 0.75rem;
     }
 
-    .footer-copy {
+    .footer-tagline {
+      color: rgba(255,255,255,0.65);
+      font-style: italic;
+      margin: 0;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding: 1.4rem 0;
       text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 1.2rem;
+      color: rgba(255,255,255,0.45);
       font-size: 0.82rem;
-      color: rgba(255,255,255,0.4);
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    .footer-copy span {
-      color: var(--gold);
+    @media (max-width: 600px) {
+      .footer-grid {
+        flex-direction: column;
+        gap: 2rem;
+      }
     }
   </style>
 </head>
@@ -759,21 +768,35 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">
+    <div class="footer-grid">
+      <div class="footer-col footer-logo-col">
         <a href="index.html" aria-label="Team Connect home">
-          <img src="images/Team connect logo.jpg" alt="Team Connect logo" height="80">
+          <img src="images/Team connect logo.jpg" alt="Team Connect logo" height="80" />
         </a>
+        <p class="footer-tagline">Bringing Teams Together</p>
       </div>
-      <div class="footer-details">
-        <div><span>Phone:</span> <a href="tel:0824522283">082 452 2283</a></div>
-        <div><span>Email:</span> <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></div>
-        <div><span>Web:</span> <a href="https://www.teamconnect.co.za">www.teamconnect.co.za</a></div>
-        <div><span>Social:</span> @teamconnectsa</div>
-        <div><span>Location:</span> Cape Town, South Africa</div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="tel:0824522283">082 452 2283</a></li>
+          <li><a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></li>
+          <li><a href="https://www.teamconnect.co.za" target="_blank" rel="noopener noreferrer">www.teamconnect.co.za</a></li>
+          <li>Cape Town, South Africa</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <ul>
+          <li>@teamconnectsa</li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
       </div>
     </div>
-    <p class="footer-copy">&copy; <span>2025 Team Connect.</span> All rights reserved.</p>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Team Connect. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>

@@ -500,70 +500,73 @@
 
     /* ─── FOOTER ─── */
     footer {
-      background: #0f2b1a;
-      color: rgba(255,255,255,0.7);
-      padding: 48px 5% 28px;
+      background: #1a4a2e;
+      color: rgba(255,255,255,0.75);
+      padding: 56px 5% 0;
       font-size: 0.88rem;
     }
 
-    .footer-inner {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 3rem;
-      align-items: start;
-      max-width: 1000px;
-      margin: 0 auto 2rem;
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem 4rem;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto 2.5rem;
     }
 
-    .footer-logo img {
-      height: 90px;
-      width: auto;
-      opacity: 0.9;
+    .footer-col h4 {
+      color: #c9a84c;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 1rem;
     }
 
-    .footer-details {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 1rem;
-    }
-
-    .footer-detail-item {
+    .footer-col ul {
+      list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.2rem;
+      gap: 0.5rem;
     }
 
-    .footer-detail-item strong {
-      color: var(--gold);
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 0.1rem;
-    }
-
-    .footer-detail-item a {
-      color: rgba(255,255,255,0.7);
+    .footer-col a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
       transition: color 0.2s;
     }
 
-    .footer-detail-item a:hover {
-      color: var(--gold);
+    .footer-col a:hover {
+      color: #c9a84c;
     }
 
-    .footer-copyright {
+    .footer-logo-col img {
+      height: 80px;
+      width: auto;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-tagline {
+      color: rgba(255,255,255,0.65);
+      font-style: italic;
+      margin: 0;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding: 1.4rem 0;
       text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 1.5rem;
       color: rgba(255,255,255,0.45);
-    }
-
-    .footer-copyright span {
-      color: var(--gold);
+      font-size: 0.82rem;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     @media (max-width: 600px) {
-      .footer-inner {
-        grid-template-columns: 1fr;
+      .footer-grid {
+        flex-direction: column;
         gap: 2rem;
       }
     }
@@ -710,37 +713,34 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-inner">
-      <div class="footer-logo">
+    <div class="footer-grid">
+      <div class="footer-col footer-logo-col">
         <a href="index.html" aria-label="Team Connect home">
-          <img src="images/Team connect logo.jpg" alt="Team Connect logo" height="90">
+          <img src="images/Team connect logo.jpg" alt="Team Connect logo" height="80" />
         </a>
+        <p class="footer-tagline">Bringing Teams Together</p>
       </div>
-      <div class="footer-details">
-        <div class="footer-detail-item">
-          <strong>Phone</strong>
-          <a href="tel:0824522283">082 452 2283</a>
-        </div>
-        <div class="footer-detail-item">
-          <strong>Email</strong>
-          <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a>
-        </div>
-        <div class="footer-detail-item">
-          <strong>Website</strong>
-          <a href="https://www.teamconnect.co.za">www.teamconnect.co.za</a>
-        </div>
-        <div class="footer-detail-item">
-          <strong>Social</strong>
-          <span>@teamconnectsa</span>
-        </div>
-        <div class="footer-detail-item">
-          <strong>Location</strong>
-          <span>Cape Town, South Africa</span>
-        </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="tel:0824522283">082 452 2283</a></li>
+          <li><a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></li>
+          <li><a href="https://www.teamconnect.co.za" target="_blank" rel="noopener noreferrer">www.teamconnect.co.za</a></li>
+          <li>Cape Town, South Africa</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <ul>
+          <li>@teamconnectsa</li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-copyright">
-      <p>&copy; 2025 <span>Team Connect</span>. All rights reserved.</p>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Team Connect. All rights reserved.</p>
     </div>
   </footer>
 
