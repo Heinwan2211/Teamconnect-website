@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazing Race Team Building Cape Town | Team Connect</title>
+  <meta name="description" content="Team Connect's Amazing Race is a multi-stage corporate team building adventure in Cape Town. Collaboration and problem-solving for groups of 20 to 1000." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #1a4a2e;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --light-bg: #f7f5f0;
+      --text: #222222;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      padding: 0.625rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 170px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      display: block;
+      height: 150px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--green);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        height: 115px;
+      }
+
+      .nav-logo img {
+        height: 100px;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 115px;
+        left: 0;
+        right: 0;
+        background: var(--green);
+        flex-direction: column;
+        padding: 1.5rem 5%;
+        gap: 1.2rem;
+        border-top: 2px solid var(--gold);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      color: var(--white);
+      padding: 100px 5% 90px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 860px;
+      margin: 0 auto 1.2rem;
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      max-width: 620px;
+      margin: 0 auto;
+      opacity: 0.88;
+      line-height: 1.65;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 36px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--white);
+      color: var(--white);
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--green);
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section {
+      padding: 80px 5%;
+    }
+
+    .section-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    /* ─── OVERVIEW SECTION ─── */
+    #overview {
+      background: var(--white);
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .overview-text .section-sub {
+      margin-bottom: 0;
+    }
+
+    .overview-image {
+      background: var(--light-bg);
+      border-radius: 8px;
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed #d0cbbe;
+      overflow: hidden;
+    }
+
+    .overview-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .image-placeholder {
+      text-align: center;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    .image-placeholder span {
+      display: block;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    /* ─── KEY OUTCOMES ─── */
+    #outcomes {
+      background: var(--light-bg);
+    }
+
+    .outcomes-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .outcomes-header .section-sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 1024px) {
+      .outcomes-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 540px) {
+      .outcomes-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .outcome-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+
+    .outcome-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.12);
+    }
+
+    .outcome-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      background: var(--green);
+      border-radius: 50%;
+      margin: 0 auto 1.2rem;
+    }
+
+    .outcome-icon svg {
+      width: 30px;
+      height: 30px;
+      fill: var(--gold);
+    }
+
+    .outcome-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.6rem;
+    }
+
+    .outcome-card p {
+      font-size: 0.92rem;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    /* ─── DETAILS STRIP ─── */
+    #details {
+      background: var(--green);
+      padding: 60px 5%;
+    }
+
+    .details-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .details-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .detail-block {
+      padding: 1.5rem 1rem;
+      border-right: 1px solid rgba(201,168,76,0.3);
+    }
+
+    .detail-block:last-child {
+      border-right: none;
+    }
+
+    @media (max-width: 600px) {
+      .detail-block {
+        border-right: none;
+        border-bottom: 1px solid rgba(201,168,76,0.3);
+      }
+
+      .detail-block:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .detail-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-value {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.4;
+    }
+
+    /* ─── CTA SECTION ─── */
+    #cta {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      text-align: center;
+      color: var(--white);
+    }
+
+    #cta .section-heading {
+      color: var(--white);
+      margin-bottom: 2rem;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0f2b1a;
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 24px 5%;
+      font-size: 0.88rem;
+    }
+
+    footer span {
+      color: var(--gold);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="Team Connect home"><img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" height="150"></a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Amazing Race hero banner">
+    <span class="hero-tag">Cape Town &amp; Western Cape</span>
+    <h1>Amazing Race</h1>
+    <p>Collaboration, Problem-Solving &amp; Team Morale</p>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section id="overview" aria-labelledby="overview-heading">
+    <div class="overview-grid">
+      <div class="overview-text">
+        <span class="section-label">The Experience</span>
+        <h2 class="section-heading" id="overview-heading">Race. Think. Win. Together.</h2>
+        <p class="section-sub">Inspired by the global phenomenon, Team Connect's Amazing Race puts your team through a multi-stage, multi-challenge adventure across a spectacular Cape Town or Western Cape setting. Teams race between waypoints — cracking codes, completing physical challenges, navigating unfamiliar terrain, and making split-second decisions that affect everyone. The format is deliberately designed to equalise — the fastest runners don't always win. The teams that communicate, delegate, and think together do. High energy, high stakes, and genuinely unforgettable. Scales from 20 to 1000 participants across indoor, outdoor, and hybrid formats.</p>
+      </div>
+      <div class="overview-image">
+        <div class="image-placeholder" role="img" aria-label="Teams racing through Cape Town during Amazing Race team building">
+          <span aria-hidden="true">🗺️</span>
+          <p>Amazing Race in action</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY OUTCOMES -->
+  <section id="outcomes" aria-labelledby="outcomes-heading">
+    <div class="outcomes-header">
+      <span class="section-label">What Your Team Gains</span>
+      <h2 class="section-heading" id="outcomes-heading">Built to Deliver Real Results</h2>
+    </div>
+    <div class="outcomes-grid">
+
+      <!-- Collaboration -->
+      <div class="outcome-card">
+        <div class="outcome-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+          </svg>
+        </div>
+        <h3>Collaboration</h3>
+        <p>Teams that work together move faster — every checkpoint proves it.</p>
+      </div>
+
+      <!-- Problem-Solving -->
+      <div class="outcome-card">
+        <div class="outcome-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 0 1 7 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z"/>
+          </svg>
+        </div>
+        <h3>Problem-Solving</h3>
+        <p>Diverse challenges reward diverse thinking — no single skill dominates.</p>
+      </div>
+
+      <!-- Team Morale -->
+      <div class="outcome-card">
+        <div class="outcome-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </div>
+        <h3>Team Morale</h3>
+        <p>Shared adventure creates shared memory — the kind that lasts.</p>
+      </div>
+
+      <!-- Adaptability -->
+      <div class="outcome-card">
+        <div class="outcome-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z"/>
+          </svg>
+        </div>
+        <h3>Adaptability</h3>
+        <p>Conditions change, challenges evolve — the best teams adjust on the fly.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE DETAILS STRIP -->
+  <section id="details" aria-label="Amazing Race experience details">
+    <div class="details-strip">
+      <div class="detail-block">
+        <span class="detail-label">Group Size</span>
+        <span class="detail-value">20 to 1000 participants</span>
+      </div>
+      <div class="detail-block">
+        <span class="detail-label">Duration</span>
+        <span class="detail-value">2 to 4 hours</span>
+      </div>
+      <div class="detail-block">
+        <span class="detail-label">Location</span>
+        <span class="detail-value">Cape Town and Western Cape venues</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" aria-labelledby="cta-heading">
+    <h2 class="section-heading" id="cta-heading">Ready to race?</h2>
+    <a href="contact.html" class="btn btn-gold">Book Amazing Race</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; <span>Team Connect</span> 2025 &mdash; Cape Town, Western Cape, South Africa</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', function () {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    links.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+</body>
+</html>
