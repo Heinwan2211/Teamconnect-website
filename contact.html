@@ -368,17 +368,75 @@
       color: var(--gold);
     }
 
+    /* ─── PROMISE STRIP ─── */
+    .promise-strip {
+      background: var(--gold);
+      color: var(--green);
+      text-align: center;
+      padding: 40px 5%;
+    }
+
+    .promise-strip p {
+      max-width: 780px;
+      margin: 0 auto;
+      font-size: clamp(1rem, 2.2vw, 1.18rem);
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
     /* ─── FOOTER ─── */
     footer {
       background: #0f2b1a;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.65);
       text-align: center;
-      padding: 24px 5%;
-      font-size: 0.88rem;
+      padding: 48px 5% 28px;
+      font-size: 0.9rem;
     }
 
-    footer span {
+    .footer-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .footer-logo img {
+      height: 80px;
+      width: auto;
+      display: block;
+    }
+
+    .footer-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 1.6rem;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .footer-details a {
       color: var(--gold);
+      text-decoration: none;
+    }
+
+    .footer-details a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-details span {
+      color: rgba(255,255,255,0.65);
+    }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1rem;
+      width: 100%;
+      text-align: center;
     }
   </style>
 </head>
@@ -440,7 +498,13 @@
         <div class="form-row">
           <div class="form-group">
             <label for="participants">Number of Participants</label>
-            <input type="number" id="participants" name="Number of Participants" required min="1" placeholder="e.g. 40" />
+            <select id="participants" name="Number of Participants" required>
+              <option value="" disabled selected>Select group size</option>
+              <option value="10–30">10–30</option>
+              <option value="31–100">31–100</option>
+              <option value="101–200">101–200</option>
+              <option value="200+">200+</option>
+            </select>
           </div>
           <div class="form-group">
             <label for="experience">Preferred Experience</label>
@@ -448,7 +512,14 @@
               <option value="" disabled selected>Select an experience</option>
               <option value="The Fugitive">The Fugitive</option>
               <option value="Amazing Race">Amazing Race</option>
-              <option value="Not Sure Yet">Not Sure Yet</option>
+              <option value="Escape Labs (Rouge)">Escape Labs (Rouge)</option>
+              <option value="Culture Throwdown">Culture Throwdown</option>
+              <option value="Creative Collision">Creative Collision</option>
+              <option value="Community Champions">Community Champions</option>
+              <option value="Leadership Development">Leadership Development</option>
+              <option value="Mental & Corporate Wellness">Mental &amp; Corporate Wellness</option>
+              <option value="Hybrid Challenge Series">Hybrid Challenge Series</option>
+              <option value="Not Sure Yet">Not Sure Yet — Help Me Choose</option>
             </select>
           </div>
         </div>
@@ -500,9 +571,30 @@
     </div>
   </section>
 
+  <!-- PROMISE STRIP -->
+  <div class="promise-strip" role="complementary" aria-label="Our promise">
+    <p>"We don't do generic. Every enquiry gets a personalised response from a real person who has read what you sent. No auto-replies. No one-size-fits-all packages. Just a straight conversation about what your team actually needs."</p>
+  </div>
+
   <!-- FOOTER -->
   <footer>
-    <p>&copy; <span>Team Connect</span> 2025 &mdash; Cape Town, Western Cape, South Africa</p>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <a href="index.html" aria-label="Team Connect home">
+          <img src="images/Team connect logo.jpg" alt="Team Connect logo" height="80" />
+        </a>
+      </div>
+      <div class="footer-details">
+        <span>&#128222; <a href="tel:0824522283">082 452 2283</a></span>
+        <span>&#9993; <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></span>
+        <span>&#127760; <a href="https://www.teamconnect.co.za">www.teamconnect.co.za</a></span>
+        <span>&#128247; @teamconnectsa</span>
+        <span>&#128205; Cape Town, South Africa</span>
+      </div>
+      <div class="footer-copy">
+        &copy; 2025 Team Connect. All rights reserved.
+      </div>
+    </div>
   </footer>
 
   <script>
