@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hybrid Team Building South Africa | Team Connect</title>
+  <meta name="description" content="Team Connect's Hybrid Challenge Series connects in-person and remote teams in one shared experience. Corporate team building for distributed South African teams." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #1a4a2e;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --light-bg: #f7f5f0;
+      --text: #222222;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      padding: 0.625rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 170px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      display: block;
+      height: 150px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--green);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        height: 115px;
+      }
+
+      .nav-logo img {
+        height: 100px;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 115px;
+        left: 0;
+        right: 0;
+        background: var(--green);
+        flex-direction: column;
+        padding: 1.5rem 5%;
+        gap: 1.2rem;
+        border-top: 2px solid var(--gold);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        color: var(--white);
+      }
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      color: var(--white);
+      padding: 100px 5% 90px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 860px;
+      margin: 0 auto 1.2rem;
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      max-width: 680px;
+      margin: 0 auto;
+      opacity: 0.88;
+      line-height: 1.65;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 36px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green);
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section {
+      padding: 80px 5%;
+    }
+
+    .section-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 680px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    /* ─── OVERVIEW SECTION ─── */
+    #overview {
+      background: var(--white);
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .overview-text .section-sub {
+      margin-bottom: 0;
+    }
+
+    .overview-image {
+      background: var(--light-bg);
+      border-radius: 8px;
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed #d0cbbe;
+      overflow: hidden;
+    }
+
+    .image-placeholder {
+      text-align: center;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    .image-placeholder span {
+      display: block;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    /* ─── KEY OUTCOMES ─── */
+    #outcomes {
+      background: var(--light-bg);
+    }
+
+    .outcomes-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .outcomes-header .section-sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 1024px) {
+      .outcomes-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 540px) {
+      .outcomes-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .outcome-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+
+    .outcome-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.12);
+    }
+
+    .outcome-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      background: var(--green);
+      border-radius: 50%;
+      margin: 0 auto 1.2rem;
+    }
+
+    .outcome-icon svg {
+      width: 30px;
+      height: 30px;
+      fill: var(--gold);
+    }
+
+    .outcome-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.6rem;
+    }
+
+    .outcome-card p {
+      font-size: 0.92rem;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    /* ─── DETAILS STRIP ─── */
+    #details {
+      background: var(--green);
+      padding: 60px 5%;
+    }
+
+    .details-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .details-strip {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .detail-block {
+      padding: 1.5rem 1rem;
+      border-right: 1px solid rgba(201,168,76,0.3);
+    }
+
+    .detail-block:last-child {
+      border-right: none;
+    }
+
+    @media (max-width: 600px) {
+      .detail-block {
+        border-right: none;
+        border-bottom: 1px solid rgba(201,168,76,0.3);
+      }
+
+      .detail-block:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .detail-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-value {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.4;
+    }
+
+    /* ─── HOW IT WORKS ─── */
+    #how-it-works {
+      background: var(--white);
+    }
+
+    .how-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      counter-reset: steps;
+    }
+
+    @media (max-width: 1024px) {
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 540px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .step-card {
+      position: relative;
+      background: var(--light-bg);
+      border-radius: 8px;
+      padding: 2rem 1.5rem 1.8rem;
+      border-top: 4px solid var(--gold);
+    }
+
+    .step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: var(--green);
+      color: var(--gold);
+      font-size: 1.3rem;
+      font-weight: 800;
+      border-radius: 50%;
+      margin-bottom: 1.2rem;
+    }
+
+    .step-card h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .step-card p {
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    /* ─── WHO THIS IS FOR ─── */
+    #who {
+      background: var(--light-bg);
+      text-align: center;
+    }
+
+    .who-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .who-inner .section-sub {
+      margin: 0 auto;
+    }
+
+    /* ─── CTA SECTION ─── */
+    #cta {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      text-align: center;
+      color: var(--white);
+    }
+
+    #cta .section-heading {
+      color: var(--white);
+      margin-bottom: 0.7rem;
+    }
+
+    #cta .section-sub {
+      color: rgba(255,255,255,0.82);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0f2b1a;
+      color: rgba(255,255,255,0.65);
+      padding: 48px 5% 28px;
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2.5rem 4rem;
+      align-items: start;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 640px) {
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    .footer-logo img {
+      height: 80px;
+      width: auto;
+      display: block;
+    }
+
+    .footer-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 2.5rem;
+      line-height: 1.9;
+    }
+
+    .footer-details a {
+      color: rgba(255,255,255,0.65);
+      transition: color 0.2s;
+    }
+
+    .footer-details a:hover {
+      color: var(--gold);
+    }
+
+    .footer-details span {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .footer-copy {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.2rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .footer-copy span {
+      color: var(--gold);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="Team Connect home">
+      <img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" height="150">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Hybrid Challenge Series hero banner">
+    <span class="hero-tag">Virtual &amp; In-Person</span>
+    <h1>Hybrid Challenge Series</h1>
+    <p>Connected Teams Across Distance — One Leaderboard, One Team, Any Location</p>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section id="overview" aria-labelledby="overview-heading">
+    <div class="overview-grid">
+      <div class="overview-text">
+        <span class="section-label">The Experience</span>
+        <h2 class="section-heading" id="overview-heading">Your Whole Team. In the Room and On the Screen.</h2>
+        <p class="section-sub">A modular team challenge experience that runs simultaneously for in-person and remote participants, connected through a shared platform. Remote participants join via video and complete digital challenges — trivia, photo submissions, virtual puzzle-solving — while in-person teams complete physical activities. Scores combine on a shared leaderboard in real time. Designed for the reality of modern South African workforces — where hybrid and remote work is no longer the exception but the rule. Virtual team building is growing at 15.5% CAGR globally, and Team Connect's Hybrid Challenge Series is built specifically for distributed South African teams who need real connection across distance.</p>
+      </div>
+      <div class="overview-image">
+        <div class="image-placeholder" role="img" aria-label="In-person and remote participants competing together in the Hybrid Challenge Series">
+          <span aria-hidden="true">🌐</span>
+          <p>Hybrid Challenge Series in action</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY OUTCOMES -->
+  <section id="outcomes" aria-labelledby="outcomes-heading">
+    <div class="outcomes-header">
+      <span class="section-label">What Your Team Gains</span>
+      <h2 class="section-heading" id="outcomes-heading">Built to Deliver Real Results</h2>
+    </div>
+    <div class="outcomes-grid">
+
+      <!-- Inclusion -->
+      <div class="outcome-card">
+        <div class="outcome-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+          </svg>
+        </div>
+        <h3>Inclusion</h3>
+        <p>Every team member participates equally — whether in the office or dialling in from Durban.</p>
+      </div>
+
+      <!-- Connection -->
+      <div class="outcome-card">
+        <div class="outcome-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/>
+          </svg>
+        </div>
+        <h3>Connection</h3>
+        <p>Shared challenges and a live leaderboard create genuine excitement across distance.</p>
+      </div>
+
+      <!-- Collaboration -->
+      <div class="outcome-card">
+        <div class="outcome-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+          </svg>
+        </div>
+        <h3>Collaboration</h3>
+        <p>Remote and in-person participants must work together to win — distance is not an excuse.</p>
+      </div>
+
+      <!-- Morale -->
+      <div class="outcome-card">
+        <div class="outcome-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </div>
+        <h3>Morale</h3>
+        <p>Distributed teams that play together perform together — the data consistently shows this.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE DETAILS STRIP -->
+  <section id="details" aria-label="Hybrid Challenge Series experience details">
+    <div class="details-strip">
+      <div class="detail-block">
+        <span class="detail-label">Group Size</span>
+        <span class="detail-value">20 to 500 participants</span>
+      </div>
+      <div class="detail-block">
+        <span class="detail-label">Duration</span>
+        <span class="detail-value">2 to 3 hours</span>
+      </div>
+      <div class="detail-block">
+        <span class="detail-label">Location</span>
+        <span class="detail-value">In-person anywhere in South Africa — remote participants join from anywhere</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" aria-labelledby="how-heading">
+    <div class="how-header">
+      <span class="section-label">The Format</span>
+      <h2 class="section-heading" id="how-heading">How It Works</h2>
+    </div>
+    <div class="steps-grid">
+
+      <div class="step-card">
+        <div class="step-number" aria-hidden="true">1</div>
+        <h3>Setup</h3>
+        <p>In-person teams gather at their venue. Remote participants join via video link. One shared leaderboard connects everyone.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number" aria-hidden="true">2</div>
+        <h3>Challenges</h3>
+        <p>Teams tackle a mix of physical challenges on the ground and digital challenges on screen — all scored in real time.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number" aria-hidden="true">3</div>
+        <h3>Collaboration</h3>
+        <p>Certain challenges require in-person and remote participants to work together — deliberately breaking the distance barrier.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number" aria-hidden="true">4</div>
+        <h3>Finale</h3>
+        <p>A live virtual ceremony brings all participants together to celebrate, debrief, and announce the winners.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section id="who" aria-labelledby="who-heading">
+    <div class="who-inner">
+      <span class="section-label">Who It's For</span>
+      <h2 class="section-heading" id="who-heading">Built for the Way South African Teams Actually Work</h2>
+      <p class="section-sub">Cape Town head office. Johannesburg sales team. Durban operations. Remote developers working from home. This is the reality of modern South African business — and your team building should reflect it. Hybrid Challenge Series is the only format designed from the ground up to make every team member feel equally included, equally challenged, and equally celebrated.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" aria-labelledby="cta-heading">
+    <h2 class="section-heading" id="cta-heading">Ready to connect your whole team?</h2>
+    <p class="section-sub">In the office, at home, or across the country — we bring everyone together.</p>
+    <a href="contact.html" class="btn btn-gold">Book Hybrid Challenge Series</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <a href="index.html" aria-label="Team Connect home">
+          <img src="images/Team connect logo.jpg" alt="Team Connect logo" height="80">
+        </a>
+      </div>
+      <div class="footer-details">
+        <div><span>Phone:</span> <a href="tel:0824522283">082 452 2283</a></div>
+        <div><span>Email:</span> <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></div>
+        <div><span>Web:</span> <a href="https://www.teamconnect.co.za">www.teamconnect.co.za</a></div>
+        <div><span>Social:</span> @teamconnectsa</div>
+        <div><span>Location:</span> Cape Town, South Africa</div>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; <span>2025 Team Connect.</span> All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', function () {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    links.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+</body>
+</html>
