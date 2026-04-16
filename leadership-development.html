@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leadership Development Team Building South Africa | Team Connect</title>
+  <meta name="description" content="Team Connect's Leadership Development experience is an immersive scenario-based leadership lab for executive teams and management cohorts across South Africa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #1a4a2e;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --light-bg: #f7f5f0;
+      --text: #222222;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      padding: 0.625rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 170px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      display: block;
+      height: 150px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--green);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        height: 115px;
+      }
+
+      .nav-logo img {
+        height: 100px;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 115px;
+        left: 0;
+        right: 0;
+        background: var(--green);
+        flex-direction: column;
+        padding: 1.5rem 5%;
+        gap: 1.2rem;
+        border-top: 2px solid var(--gold);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        color: var(--white);
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--gold);
+      }
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      color: var(--white);
+      padding: 100px 5% 90px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      max-width: 860px;
+      margin: 0 auto 1.2rem;
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      max-width: 620px;
+      margin: 0 auto;
+      opacity: 0.88;
+      line-height: 1.65;
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section {
+      padding: 80px 5%;
+    }
+
+    .section-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* ─── OVERVIEW SECTION ─── */
+    #overview {
+      background: var(--white);
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .overview-text .section-heading {
+      margin-bottom: 1.2rem;
+    }
+
+    .overview-text .section-sub {
+      max-width: 560px;
+    }
+
+    .overview-image {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      border-radius: 12px;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .overview-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 20px,
+        rgba(201,168,76,0.08) 20px,
+        rgba(201,168,76,0.08) 40px
+      );
+    }
+
+    .overview-image-placeholder {
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      z-index: 1;
+    }
+
+    .overview-image-placeholder span {
+      display: block;
+      font-size: 3rem;
+      margin-bottom: 0.8rem;
+      opacity: 0.7;
+    }
+
+    @media (max-width: 768px) {
+      .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    /* ─── KEY OUTCOMES ─── */
+    #outcomes {
+      background: var(--light-bg);
+    }
+
+    .outcomes-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .outcome-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2.2rem 1.8rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      border-top: 4px solid var(--gold);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+
+    .outcome-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.12);
+    }
+
+    .outcome-icon {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .outcome-card h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.7rem;
+    }
+
+    .outcome-card p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    /* ─── DETAILS STRIP ─── */
+    #details {
+      background: var(--green);
+      padding: 60px 5%;
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .detail-block {
+      color: var(--white);
+    }
+
+    .detail-icon {
+      font-size: 2.4rem;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .detail-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .detail-value {
+      font-size: 1.05rem;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    /* ─── WHO THIS IS FOR ─── */
+    #who {
+      background: var(--white);
+    }
+
+    .who-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .who-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .who-card {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+
+    .who-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.13);
+    }
+
+    .who-card-accent {
+      height: 6px;
+      background: linear-gradient(90deg, var(--green), var(--gold));
+    }
+
+    .who-card-body {
+      padding: 2rem;
+    }
+
+    .who-card-icon {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .who-card h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.8rem;
+    }
+
+    .who-card p {
+      font-size: 0.97rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* ─── WHAT MAKES THIS DIFFERENT ─── */
+    #different {
+      background: var(--light-bg);
+      text-align: center;
+    }
+
+    .different-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .different-inner .section-heading {
+      margin-bottom: 1.4rem;
+    }
+
+    .different-inner .section-sub {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    /* ─── CTA SECTION ─── */
+    #cta {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      text-align: center;
+      color: var(--white);
+    }
+
+    #cta .section-heading {
+      color: var(--white);
+      margin-bottom: 0.7rem;
+    }
+
+    #cta .section-sub {
+      color: rgba(255,255,255,0.82);
+      max-width: 560px;
+      margin: 0 auto 2.5rem;
+    }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-block;
+      padding: 15px 36px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0f2b1a;
+      color: rgba(255,255,255,0.7);
+      padding: 48px 5%;
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .footer-logo img {
+      height: 90px;
+      width: auto;
+      display: block;
+    }
+
+    .footer-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 2.5rem;
+      align-items: flex-start;
+    }
+
+    .footer-details p {
+      width: 100%;
+      margin-bottom: 0.2rem;
+    }
+
+    .footer-contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.6rem 2rem;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+    }
+
+    .footer-contact-item a {
+      color: rgba(255,255,255,0.7);
+      transition: color 0.2s;
+    }
+
+    .footer-contact-item a:hover {
+      color: var(--gold);
+    }
+
+    .footer-icon {
+      color: var(--gold);
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    .footer-copyright {
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.45);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1rem;
+    }
+
+    .footer-copyright span {
+      color: var(--gold);
+    }
+
+    @media (max-width: 600px) {
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="Team Connect home">
+      <img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" height="150">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="experiences.html" class="active">Experiences</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Leadership Development hero banner">
+    <span class="hero-tag">Leadership Experience</span>
+    <h1>Leadership Development</h1>
+    <p>Leadership Under Pressure &mdash; For the Leaders Who Shape Everything</p>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section id="overview" aria-labelledby="overview-heading">
+    <div class="overview-grid">
+      <div class="overview-text">
+        <span class="section-label">Experience Overview</span>
+        <h2 class="section-heading" id="overview-heading">Real Pressure. Real Decisions. Real Leaders.</h2>
+        <p class="section-sub">An immersive scenario-based leadership lab where participants rotate through a series of high-stakes decision rooms &mdash; each testing a distinct leadership competency: communicating under ambiguity, ethical decision-making, crisis resource allocation, and leading through resistance. AI-generated adaptive scenarios keep the content fresh and prevent repeat-delegate fatigue. A facilitated debrief after each station keeps the experience grounded in real workplace application. Runs as a focused half-day format &mdash; perfectly aligned with the two-to-four hour micro-event sweet spot dominating 2026 corporate bookings. Ideal for executive teams, management cohorts, or emerging leader programmes.</p>
+      </div>
+      <div class="overview-image" aria-label="Leadership Development experience image placeholder">
+        <div class="overview-image-placeholder">
+          <span aria-hidden="true">🎯</span>
+          Experience Image
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY OUTCOMES -->
+  <section id="outcomes" aria-labelledby="outcomes-heading">
+    <div class="outcomes-header">
+      <span class="section-label">What Your Leaders Take Away</span>
+      <h2 class="section-heading" id="outcomes-heading">Key Outcomes</h2>
+    </div>
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">⚡</span>
+        <h3>Decision Making</h3>
+        <p>Leaders practice high-stakes decisions in a safe environment before making them for real.</p>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">🗣️</span>
+        <h3>Communication</h3>
+        <p>Scenarios test the ability to lead clearly under ambiguity and resistance.</p>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">⚖️</span>
+        <h3>Ethical Leadership</h3>
+        <p>Structured dilemmas surface values and build the muscle for principled decision-making.</p>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">🔍</span>
+        <h3>Self-Awareness</h3>
+        <p>Facilitated debriefs reveal blind spots and build the insight that drives growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE DETAILS STRIP -->
+  <section id="details" aria-label="Experience details">
+    <div class="details-grid">
+      <div class="detail-block">
+        <span class="detail-icon" aria-hidden="true">👥</span>
+        <span class="detail-label">Group Size</span>
+        <span class="detail-value">8 to 50 participants</span>
+      </div>
+      <div class="detail-block">
+        <span class="detail-icon" aria-hidden="true">⏱️</span>
+        <span class="detail-label">Duration</span>
+        <span class="detail-value">Half-day &mdash; 3 to 4 hours</span>
+      </div>
+      <div class="detail-block">
+        <span class="detail-icon" aria-hidden="true">📍</span>
+        <span class="detail-label">Location</span>
+        <span class="detail-value">Any venue &mdash; we travel anywhere in South Africa</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section id="who" aria-labelledby="who-heading">
+    <div class="who-header">
+      <span class="section-label">Built For</span>
+      <h2 class="section-heading" id="who-heading">Who This Is For</h2>
+    </div>
+    <div class="who-cards">
+      <div class="who-card" aria-label="Executive Teams">
+        <div class="who-card-accent"></div>
+        <div class="who-card-body">
+          <span class="who-card-icon" aria-hidden="true">🏢</span>
+          <h3>Executive Teams</h3>
+          <p>C-suite and senior leadership teams navigating complex strategic decisions.</p>
+        </div>
+      </div>
+      <div class="who-card" aria-label="Management Cohorts">
+        <div class="who-card-accent"></div>
+        <div class="who-card-body">
+          <span class="who-card-icon" aria-hidden="true">📈</span>
+          <h3>Management Cohorts</h3>
+          <p>Middle management groups building the capability to lead at the next level.</p>
+        </div>
+      </div>
+      <div class="who-card" aria-label="Emerging Leaders">
+        <div class="who-card-accent"></div>
+        <div class="who-card-body">
+          <span class="who-card-icon" aria-hidden="true">🌱</span>
+          <h3>Emerging Leaders</h3>
+          <p>High-potential talent programmes preparing the next generation of leaders.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT MAKES THIS DIFFERENT -->
+  <section id="different" aria-labelledby="different-heading">
+    <div class="different-inner">
+      <span class="section-label">Our Approach</span>
+      <h2 class="section-heading" id="different-heading">Leadership Development That Goes Beyond the Workshop</h2>
+      <p class="section-sub">Most leadership training happens in a classroom. Ours happens under pressure. Our scenario-based approach means participants don't just learn about leadership &mdash; they practise it. The result is leaders who are more self-aware, more decisive, and more equipped to handle the real challenges your organisation faces.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" aria-labelledby="cta-heading">
+    <span class="section-label" style="color:var(--gold);">Get Started</span>
+    <h2 class="section-heading" id="cta-heading">Ready to develop your leaders?</h2>
+    <p class="section-sub">Book a free consultation to discuss your leadership development objectives.</p>
+    <a href="contact.html" class="btn btn-gold">Book Leadership Development</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <a href="index.html" aria-label="Team Connect home">
+          <img src="images/Team connect logo.jpg" alt="Team Connect logo" height="90">
+        </a>
+      </div>
+      <div class="footer-details">
+        <div class="footer-contact-grid">
+          <div class="footer-contact-item">
+            <span class="footer-icon" aria-hidden="true">📞</span>
+            <a href="tel:0824522283">082 452 2283</a>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-icon" aria-hidden="true">✉️</span>
+            <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-icon" aria-hidden="true">🌐</span>
+            <a href="https://www.teamconnect.co.za" target="_blank" rel="noopener noreferrer">www.teamconnect.co.za</a>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-icon" aria-hidden="true">📱</span>
+            <span>@teamconnectsa</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-icon" aria-hidden="true">📍</span>
+            <span>Cape Town, South Africa</span>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          &copy; <span>2025 Team Connect</span>. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', function () {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    links.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+</body>
+</html>
