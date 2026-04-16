@@ -221,6 +221,44 @@
       color: var(--white);
     }
 
+    /* ─── TRUST SIGNALS ─── */
+    .trust-strip {
+      background: var(--green);
+      padding: 48px 5%;
+    }
+
+    .trust-strip-inner {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .trust-stat {
+      text-align: center;
+      min-width: 160px;
+    }
+
+    .trust-stat .stat-number {
+      display: block;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1.1;
+    }
+
+    .trust-stat .stat-label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #ffffff;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 0.4rem;
+    }
+
     /* ─── SECTION SHARED ─── */
     section {
       padding: 80px 5%;
@@ -318,6 +356,84 @@
       margin-bottom: 1.6rem;
     }
 
+    /* ─── WHY FAILS SECTION ─── */
+    #why-fails {
+      background: #f2f2f2;
+    }
+
+    .why-fails-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 3rem;
+    }
+
+    .why-fails-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .fail-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2.2rem 2rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    }
+
+    .fail-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: #e53e3e;
+      border-radius: 50%;
+      margin-bottom: 1.2rem;
+    }
+
+    .fail-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: #ffffff;
+    }
+
+    .fail-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 1rem;
+    }
+
+    .fail-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+
+    .fail-label.problem {
+      color: #e53e3e;
+    }
+
+    .fail-label.solution {
+      color: var(--green);
+    }
+
+    .fail-card p {
+      font-size: 0.94rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .fail-card p:last-child {
+      margin-bottom: 0;
+    }
+
     /* ─── WHY SECTION ─── */
     #why {
       background: var(--white);
@@ -396,14 +512,70 @@
     /* ─── FOOTER ─── */
     footer {
       background: #0f2b1a;
-      color: rgba(255,255,255,0.55);
-      text-align: center;
-      padding: 24px 5%;
+      color: rgba(255,255,255,0.7);
+      padding: 56px 5% 28px;
       font-size: 0.88rem;
     }
 
-    footer span {
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem 4rem;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .footer-logo img {
+      height: 90px;
+      width: auto;
+      display: block;
+    }
+
+    .footer-contact h4 {
       color: var(--gold);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .footer-contact ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-contact a {
+      color: rgba(255,255,255,0.75);
+      transition: color 0.2s;
+    }
+
+    .footer-contact a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 1.4rem;
+      text-align: center;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.82rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-bottom span {
+      color: var(--gold);
+    }
+
+    @media (max-width: 600px) {
+      .footer-inner {
+        flex-direction: column;
+        gap: 2rem;
+      }
     }
   </style>
 </head>
@@ -427,10 +599,32 @@
   <!-- HERO -->
   <section class="hero" aria-label="Hero banner">
     <span class="hero-tag">Cape Town, Western Cape</span>
-    <h1>South Africa's Most Exhilarating Corporate <span>Team Building</span> Experiences</h1>
-    <p>Based in Cape Town — delivering unforgettable corporate team building experiences across South Africa, with a focus on the Western Cape.</p>
+    <h1>Build a Team That Communicates Better, Trusts Each Other More, and <span>Performs Under Pressure.</span></h1>
+    <p>Team Connect delivers world-class corporate team building experiences across South Africa. Nine experiences. Any group size. Any venue. Outcomes that last.</p>
     <a href="#experiences" class="btn btn-gold">Explore Our Experiences</a>
   </section>
+
+  <!-- TRUST SIGNALS STRIP -->
+  <div class="trust-strip" aria-label="Trust signals">
+    <div class="trust-strip-inner">
+      <div class="trust-stat">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Corporate Teams Served</span>
+      </div>
+      <div class="trust-stat">
+        <span class="stat-number">9</span>
+        <span class="stat-label">World-Class Experiences</span>
+      </div>
+      <div class="trust-stat">
+        <span class="stat-number">10+</span>
+        <span class="stat-label">Years of Facilitation</span>
+      </div>
+      <div class="trust-stat">
+        <span class="stat-number">20 to 500+</span>
+        <span class="stat-label">Participants Per Event</span>
+      </div>
+    </div>
+  </div>
 
   <!-- EXPERIENCES -->
   <section id="experiences" aria-labelledby="exp-heading">
@@ -459,6 +653,56 @@
           <p>Inspired by the global hit, our Amazing Race format sends teams on an exhilarating journey through Tulbagh's breathtaking landscapes — solving clues, completing challenges, and racing to the finish line together.</p>
           <a href="#contact-cta" class="btn btn-outline">Learn More</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY TEAM BUILDING SOMETIMES FAILS -->
+  <section id="why-fails" aria-labelledby="why-fails-heading">
+    <div class="why-fails-header">
+      <span class="section-label">Our Philosophy</span>
+      <h2 class="section-heading" id="why-fails-heading">Why Team Building Sometimes Fails &mdash; And How We Do It Differently</h2>
+      <p class="section-sub" style="margin-left:auto;margin-right:auto;">Most team building fails for three reasons. We've designed our entire approach around solving them.</p>
+    </div>
+    <div class="why-fails-grid">
+      <!-- Column 1 -->
+      <div class="fail-card">
+        <div class="fail-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </div>
+        <h3>Activity-First Thinking</h3>
+        <span class="fail-label problem">The Problem</span>
+        <p>Most providers lead with activities &mdash; escape rooms, cooking classes, obstacle courses. The activity becomes the point, not the outcome.</p>
+        <span class="fail-label solution">How We're Different</span>
+        <p>We start with your objectives. The activity comes second. Every Team Connect experience is designed around what your team actually needs.</p>
+      </div>
+      <!-- Column 2 -->
+      <div class="fail-card">
+        <div class="fail-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </div>
+        <h3>Entertainment, Not Facilitation</h3>
+        <span class="fail-label problem">The Problem</span>
+        <p>Event entertainment and professional facilitation are not the same thing. Most providers deliver the former and call it the latter.</p>
+        <span class="fail-label solution">How We're Different</span>
+        <p>Every Team Connect experience is led by qualified facilitators who understand team psychology, group dynamics, and behaviour change &mdash; not just event management.</p>
+      </div>
+      <!-- Column 3 -->
+      <div class="fail-card">
+        <div class="fail-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+        </div>
+        <h3>No Follow-Through</h3>
+        <span class="fail-label problem">The Problem</span>
+        <p>The best day in the world is forgotten within two weeks if there is no reinforcement. Most providers deliver and disappear.</p>
+        <span class="fail-label solution">How We're Different</span>
+        <p>We debrief every experience and offer follow-up resources to help your team sustain the gains. The event is a catalyst &mdash; we help you build on it.</p>
       </div>
     </div>
   </section>
@@ -514,7 +758,26 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; <span>Team Connect</span> 2025 &mdash; Cape Town, Western Cape, South Africa</p>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <a href="index.html" aria-label="Team Connect home">
+          <img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" />
+        </a>
+      </div>
+      <div class="footer-contact">
+        <h4>Get In Touch</h4>
+        <ul>
+          <li><a href="tel:0824522283">082 452 2283</a></li>
+          <li><a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></li>
+          <li><a href="https://www.teamconnect.co.za" target="_blank" rel="noopener noreferrer">www.teamconnect.co.za</a></li>
+          <li>Cape Town, South Africa</li>
+          <li>@teamconnectsa</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 <span>Team Connect</span>. All rights reserved.</p>
+    </div>
   </footer>
 
   <script>
