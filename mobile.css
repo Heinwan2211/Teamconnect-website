@@ -1,0 +1,367 @@
+/* ═══════════════════════════════════════════════════════════════
+   Team Connect — Shared Mobile Responsiveness Stylesheet
+   Applies to all pages. Link AFTER inline <style> blocks.
+   Breakpoints: 768px (tablet), 480px (mobile)
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── PREVENT HORIZONTAL SCROLL SITE-WIDE ─── */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+* {
+  min-width: 0;
+}
+
+/* ─── MINIMUM BODY FONT SIZE ─── */
+body {
+  font-size: 14px;
+}
+
+/* ═══════════════════════════════════════════════
+   TABLET BREAKPOINT (≤ 768px)
+   ═══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ─── NAVIGATION ─── */
+  nav {
+    height: 130px !important;
+    padding: 0 5% !important;
+  }
+
+  .nav-logo img {
+    height: 120px !important;
+  }
+
+  .nav-toggle {
+    display: flex !important;
+  }
+
+  .nav-toggle span {
+    background: #c9a84c !important;
+  }
+
+  .nav-links {
+    display: none !important;
+    position: absolute !important;
+    top: 130px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    background: #1a4a2e !important;
+    flex-direction: column !important;
+    padding: 1.5rem 5% !important;
+    gap: 1.2rem !important;
+    border-top: 2px solid #c9a84c !important;
+    z-index: 99 !important;
+  }
+
+  .nav-links.open {
+    display: flex !important;
+  }
+
+  .nav-links a {
+    color: #ffffff !important;
+    font-size: 1rem !important;
+    padding: 0.5rem 0 !important;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: #c9a84c !important;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 60px 5% 70px !important;
+    text-align: center !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.6rem, 6vw, 2.4rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  .hero p {
+    font-size: clamp(0.97rem, 3vw, 1.1rem) !important;
+  }
+
+  /* ─── STATS STRIP ─── */
+  .trust-strip-inner {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.5rem !important;
+    justify-items: center !important;
+  }
+
+  /* ─── SECTION PADDING ─── */
+  section {
+    padding: 60px 5% !important;
+  }
+
+  /* ─── GRID LAYOUTS → 1 COLUMN ─── */
+  .cards,
+  .why-fails-grid,
+  .why-grid,
+  .values-grid,
+  .experiences-grid,
+  .exp-detail-grid,
+  .outcomes-grid,
+  .highlights-grid,
+  .why-choose-grid,
+  .format-grid,
+  .steps-grid,
+  .proof-grid,
+  .booking-grid,
+  .process-grid,
+  .what-grid,
+  .detail-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ─── 2-COLUMN GRIDS → 1 COLUMN ─── */
+  .story-grid,
+  .form-row,
+  .two-col-grid,
+  .split-grid,
+  .content-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* ─── BUTTONS ─── */
+  .btn,
+  .btn-gold,
+  .btn-green,
+  .btn-outline,
+  .btn-submit {
+    width: 100% !important;
+    display: block !important;
+    text-align: center !important;
+    min-height: 48px !important;
+    font-size: 1rem !important;
+    padding: 14px 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer-inner,
+  .footer-grid {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 2rem !important;
+  }
+
+  .footer-col,
+  .footer-logo-col {
+    text-align: center !important;
+  }
+
+  .footer-col ul {
+    align-items: center !important;
+  }
+
+  .footer-logo img,
+  .footer-logo-col img {
+    margin: 0 auto !important;
+  }
+
+  /* ─── FAQ ACCORDION ─── */
+  .accordion-btn {
+    min-height: 48px !important;
+    font-size: 0.94rem !important;
+    padding: 14px 16px !important;
+  }
+
+  .accordion-body-inner {
+    font-size: 0.95rem !important;
+    line-height: 1.75 !important;
+    padding: 0 16px 18px !important;
+  }
+
+  /* ─── CONTACT SECTION CTA ─── */
+  #contact-cta .section-sub {
+    max-width: 100% !important;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════
+   MOBILE BREAKPOINT (≤ 480px)
+   ═══════════════════════════════════════════════ */
+@media (max-width: 480px) {
+
+  /* ─── NAVIGATION ─── */
+  nav {
+    height: 90px !important;
+    padding: 0 4% !important;
+  }
+
+  .nav-logo img {
+    height: 80px !important;
+  }
+
+  .nav-links {
+    top: 90px !important;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    padding: 48px 4% 60px !important;
+    text-align: center !important;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem !important;
+    max-font-size: 28px !important;
+    line-height: 1.25 !important;
+    word-break: break-word !important;
+  }
+
+  .hero p {
+    font-size: 1rem !important;
+  }
+
+  /* ─── SECTION PADDING ─── */
+  section {
+    padding: 48px 4% !important;
+  }
+
+  /* ─── STATS STRIP ─── */
+  .trust-strip {
+    padding: 36px 4% !important;
+  }
+
+  .trust-strip-inner {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.5rem 1rem !important;
+  }
+
+  .trust-stat {
+    min-width: unset !important;
+  }
+
+  .trust-stat .stat-number {
+    font-size: 2rem !important;
+  }
+
+  .trust-stat .stat-label {
+    font-size: 0.75rem !important;
+  }
+
+  /* ─── CARDS ─── */
+  .card,
+  .fail-card,
+  .why-card,
+  .value-card,
+  .exp-card,
+  .highlight-card,
+  .proof-card,
+  .process-card {
+    width: 100% !important;
+  }
+
+  .card-body {
+    padding: 1.4rem !important;
+  }
+
+  /* ─── SECTION HEADINGS ─── */
+  .section-heading {
+    font-size: 1.5rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .section-sub {
+    font-size: 0.97rem !important;
+    max-width: 100% !important;
+  }
+
+  /* ─── BUTTONS ─── */
+  .btn,
+  .btn-gold,
+  .btn-green,
+  .btn-outline,
+  .btn-submit {
+    width: 100% !important;
+    min-height: 48px !important;
+    font-size: 1rem !important;
+    padding: 14px 16px !important;
+  }
+
+  /* ─── FORMS ─── */
+  .contact-form,
+  form {
+    gap: 1.2rem !important;
+  }
+
+  .form-group {
+    gap: 0.5rem !important;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100% !important;
+    font-size: 1rem !important;
+    padding: 13px 12px !important;
+  }
+
+  .form-group label {
+    font-size: 0.9rem !important;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 40px 4% 20px !important;
+  }
+
+  .footer-inner,
+  .footer-grid {
+    text-align: center !important;
+    align-items: center !important;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem !important;
+    padding-top: 1.2rem !important;
+  }
+
+  /* ─── FAQ ACCORDION ─── */
+  .accordion-btn {
+    min-height: 52px !important;
+    font-size: 0.9rem !important;
+    padding: 14px 14px !important;
+  }
+
+  .faq-category-title {
+    font-size: 0.88rem !important;
+    padding: 12px 14px !important;
+  }
+
+  /* ─── EXPERIENCE DETAIL PAGES ─── */
+  .spec-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .detail-highlight-box {
+    padding: 1.4rem !important;
+  }
+
+  /* ─── CTA SECTION CONTACT DETAILS ─── */
+  .cta-contact-details {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.8rem !important;
+  }
+
+  /* ─── PROMISE STRIP ─── */
+  .promise-strip {
+    padding: 30px 4% !important;
+  }
+
+  .promise-strip p {
+    font-size: 0.95rem !important;
+  }
+}

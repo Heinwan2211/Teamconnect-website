@@ -590,6 +590,7 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="mobile.css">
 </head>
 <body>
 
@@ -798,6 +799,13 @@
         links.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
       });
+    });
+    // Close mobile nav when clicking outside
+    document.addEventListener('click', function (e) {
+      if (links.classList.contains('open') && !links.contains(e.target) && !toggle.contains(e.target)) {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
     });
   </script>
 
