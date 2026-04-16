@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | Team Connect Corporate Team Building South Africa</title>
+  <meta name="description" content="Answers to the most common questions about corporate team building in South Africa. Group sizes, pricing, locations, outcomes and more — Team Connect." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #1a4a2e;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --light-bg: #f7f5f0;
+      --text: #222222;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      padding: 0.625rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 170px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      display: block;
+      height: 150px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--green);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        height: 115px;
+      }
+
+      .nav-logo img {
+        height: 100px;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 115px;
+        left: 0;
+        right: 0;
+        background: var(--green);
+        flex-direction: column;
+        padding: 1.5rem 5%;
+        gap: 1.2rem;
+        border-top: 2px solid var(--gold);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        color: var(--white);
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--gold);
+      }
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      color: var(--white);
+      padding: 100px 5% 90px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 860px;
+      margin: 0 auto 1.2rem;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      max-width: 620px;
+      margin: 0 auto;
+      opacity: 0.88;
+      line-height: 1.65;
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section {
+      padding: 80px 5%;
+    }
+
+    .section-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    /* ─── FAQ SECTION ─── */
+    #faq {
+      background: var(--light-bg);
+    }
+
+    .faq-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .faq-header .section-sub {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0;
+    }
+
+    /* Category */
+    .faq-category {
+      margin-bottom: 2.5rem;
+    }
+
+    .faq-category-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--white);
+      background: var(--green);
+      padding: 14px 20px;
+      border-radius: 6px 6px 0 0;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .faq-category-title .cat-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      background: var(--gold);
+      color: var(--green);
+      border-radius: 50%;
+      font-size: 0.8rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* Accordion item */
+    .accordion-item {
+      border-left: 3px solid transparent;
+      border-right: 1px solid #e0dbd0;
+      border-bottom: 1px solid #e0dbd0;
+      background: var(--white);
+      transition: border-left-color 0.25s;
+    }
+
+    .accordion-item:last-child {
+      border-radius: 0 0 6px 6px;
+    }
+
+    .accordion-item.open {
+      border-left-color: var(--gold);
+    }
+
+    .accordion-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 18px 20px;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.97rem;
+      font-weight: 700;
+      color: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      transition: color 0.2s;
+    }
+
+    .accordion-btn:hover {
+      color: var(--gold);
+    }
+
+    .accordion-btn .chevron {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s ease;
+      fill: currentColor;
+    }
+
+    .accordion-item.open .accordion-btn .chevron {
+      transform: rotate(180deg);
+    }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.25s ease;
+    }
+
+    .accordion-body-inner {
+      padding: 0 20px 20px;
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.75;
+    }
+
+    .accordion-item.open .accordion-body {
+      max-height: 600px;
+    }
+
+    /* ─── CTA SECTION ─── */
+    #contact-cta {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      text-align: center;
+      color: var(--white);
+    }
+
+    #contact-cta .section-label {
+      color: var(--gold);
+    }
+
+    #contact-cta .section-heading {
+      color: var(--white);
+      margin-bottom: 0.7rem;
+    }
+
+    #contact-cta .section-sub {
+      color: rgba(255,255,255,0.82);
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 36px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green);
+    }
+
+    .cta-contact-details {
+      margin-top: 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .cta-contact-details a {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .cta-contact-details a:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0f2b1a;
+      color: rgba(255,255,255,0.55);
+      padding: 40px 5% 24px;
+      font-size: 0.88rem;
+    }
+
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem 3rem;
+      align-items: start;
+      margin-bottom: 2rem;
+    }
+
+    .footer-logo img {
+      height: 90px;
+      width: auto;
+      opacity: 0.9;
+    }
+
+    .footer-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 2rem;
+    }
+
+    .footer-details p {
+      width: 100%;
+    }
+
+    .footer-details a {
+      color: var(--gold);
+    }
+
+    .footer-details a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.2rem;
+    }
+
+    .footer-bottom span {
+      color: var(--gold);
+    }
+
+    @media (max-width: 600px) {
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="Team Connect home">
+      <img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" height="150">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="faq.html" class="active">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="FAQ page hero">
+    <span class="hero-tag">Frequently Asked Questions</span>
+    <h1>Got Questions? We've Got Straight Answers.</h1>
+    <p>Everything you need to know before booking your team building experience.</p>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section id="faq" aria-labelledby="faq-heading">
+    <div class="faq-wrapper">
+      <div class="faq-header">
+        <span class="section-label">Your Questions Answered</span>
+        <h2 class="section-heading" id="faq-heading">Everything You Need To Know</h2>
+        <p class="section-sub">Click any question to expand the answer. Can't find what you're looking for? Contact us directly.</p>
+      </div>
+
+      <!-- CATEGORY 1: Getting Started -->
+      <div class="faq-category" aria-label="Category: Getting Started">
+        <div class="faq-category-title">
+          <span class="cat-num" aria-hidden="true">1</span>
+          Getting Started
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-1-1">
+            What is team building, and why does it matter?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-1-1" role="region">
+            <div class="accordion-body-inner">
+              Team building is a structured process of helping groups work better together — improving communication, trust, collaboration, and morale. Done well, it's not just fun — it's a measurable performance investment. Done poorly, it's a wasted afternoon. We focus on outcomes, not just activities.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-1-2">
+            What kind of companies do you work with?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-1-2" role="region">
+            <div class="accordion-body-inner">
+              We work with corporate teams of all sizes across industries — from startups to JSE-listed companies. Our clients include HR teams, C-suite leaders, department heads, and event coordinators looking to create meaningful experiences for their people.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-1-3">
+            How do I know what experience is right for my team?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-1-3" role="region">
+            <div class="accordion-body-inner">
+              Start with a free consultation. Tell us about your team, what's going on, and what you want to walk away with. We'll recommend the right format, duration, and activities based on your specific context — not a one-size-fits-all catalogue.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATEGORY 2: Booking & Logistics -->
+      <div class="faq-category" aria-label="Category: Booking and Logistics">
+        <div class="faq-category-title">
+          <span class="cat-num" aria-hidden="true">2</span>
+          Booking &amp; Logistics
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-2-1">
+            How far in advance should I book?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-2-1" role="region">
+            <div class="accordion-body-inner">
+              For smaller groups under 30, two to three weeks is usually sufficient. For 30–100 people, allow four to six weeks. For large events of 100+, especially around popular dates, book two to three months in advance.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-2-2">
+            What group sizes do you cater for?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-2-2" role="region">
+            <div class="accordion-body-inner">
+              We cater for groups from 10 to 500+. Our experiences are designed to scale without losing quality — smaller groups get more depth, larger groups get more energy and movement.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-2-3">
+            Do you come to us, or do we come to you?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-2-3" role="region">
+            <div class="accordion-body-inner">
+              Both. We can facilitate at your office, at a venue of your choice, or at one of our recommended partner venues. We're fully mobile and operate nationally.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-2-4">
+            Which cities do you operate in?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-2-4" role="region">
+            <div class="accordion-body-inner">
+              We operate across South Africa with primary presence in Cape Town, Johannesburg, Pretoria, and Durban. For other locations, we travel — just ask.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-2-5">
+            How long does a session typically last?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-2-5" role="region">
+            <div class="accordion-body-inner">
+              Our formats range from two-hour energisers to full-day programmes. The most popular format is a half-day experience of three to four hours, which delivers real impact without consuming the entire workday.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-2-6">
+            Can we combine team building with a conference or function?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-2-6" role="region">
+            <div class="accordion-body-inner">
+              Yes — and this is one of the most popular formats. We integrate seamlessly into conferences, year-end functions, leadership summits, and strategy days as a standalone segment or facilitated through the entire event.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATEGORY 3: Pricing & Value -->
+      <div class="faq-category" aria-label="Category: Pricing and Value">
+        <div class="faq-category-title">
+          <span class="cat-num" aria-hidden="true">3</span>
+          Pricing &amp; Value
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-3-1">
+            How much does team building cost?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-3-1" role="region">
+            <div class="accordion-body-inner">
+              Pricing is based on group size, duration, activity type, and location. We offer transparent, itemised quotes with no hidden costs. Contact us for a free, no-obligation quote tailored to your team.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-3-2">
+            What is included in the price?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-3-2" role="region">
+            <div class="accordion-body-inner">
+              Standard quotes include facilitation by qualified professionals, all activity materials, pre-event planning support, on-the-day coordination, and a post-event debrief. Venue, catering, and transport are quoted separately where applicable.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-3-3">
+            Can we get team building within a limited budget?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-3-3" role="region">
+            <div class="accordion-body-inner">
+              Yes. We offer flexible formats and can work within a range of budgets. Tell us what you're working with and we'll find the best fit. We'd rather build something excellent at your price point than over-sell you on something that doesn't deliver.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-3-4">
+            How do I build the internal business case for team building?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-3-4" role="region">
+            <div class="accordion-body-inner">
+              We can help. Contact us and ask for our ROI summary and case studies — they're designed to help HR and L&amp;D teams get budget approved internally.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATEGORY 4: Experience Design -->
+      <div class="faq-category" aria-label="Category: Experience Design">
+        <div class="faq-category-title">
+          <span class="cat-num" aria-hidden="true">4</span>
+          Experience Design
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-4-1">
+            Can the experience be customised for our team?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-4-1" role="region">
+            <div class="accordion-body-inner">
+              Absolutely. We tailor every experience to your team's goals, culture, size, and context. We can incorporate company values, current business challenges, branding, and even your team's sense of humour.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-4-2">
+            Do activities cater for mixed abilities, ages, and fitness levels?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-4-2" role="region">
+            <div class="accordion-body-inner">
+              Yes. All our experiences are designed to be inclusive. We offer physical and non-physical options and can adapt for accessibility requirements. No one gets left behind.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-4-3">
+            Do you offer virtual or hybrid team building?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-4-3" role="region">
+            <div class="accordion-body-inner">
+              Yes. Our virtual and hybrid experiences are purpose-built for distributed teams — not repurposed in-person events. Remote teams often have the greatest need for connection, and we design for that.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-4-4">
+            What if some team members are reluctant to participate?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-4-4" role="region">
+            <div class="accordion-body-inner">
+              We get it — not everyone walks in excited. Our facilitators are trained to create low-pressure environments where participation feels natural. In our experience, the most sceptical participants often become the most engaged by the end.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATEGORY 5: Outcomes & Impact -->
+      <div class="faq-category" aria-label="Category: Outcomes and Impact">
+        <div class="faq-category-title">
+          <span class="cat-num" aria-hidden="true">5</span>
+          Outcomes &amp; Impact
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-5-1">
+            How will we know if it worked?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-5-1" role="region">
+            <div class="accordion-body-inner">
+              Before the event we agree on your objectives. After the event we debrief with you and can provide qualitative insights on team dynamics. For clients who want to measure deeper, we offer pre/post engagement benchmarking.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-5-2">
+            What outcomes can we realistically expect?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-5-2" role="region">
+            <div class="accordion-body-inner">
+              Clients typically report improved communication, stronger trust, higher energy and morale, and better cross-team relationships. Longer-term outcomes include improved retention and productivity.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-5-3">
+            We have tried team building before and it did not deliver results. What makes you different?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-5-3" role="region">
+            <div class="accordion-body-inner">
+              Most team building fails because it is activity-focused, not outcome-focused. We start with what your team actually needs, design accordingly, and facilitate with professionals who understand team psychology — not just entertainment. We would love to show you the difference.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-btn" aria-expanded="false" aria-controls="faq-5-4">
+            What happens after the event to sustain the gains?
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="accordion-body" id="faq-5-4" role="region">
+            <div class="accordion-body-inner">
+              We offer follow-up resources, team insights, and optional reinforcement sessions. The experience is a catalyst — we help you build on it.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section id="contact-cta" aria-labelledby="cta-heading">
+    <span class="section-label">Let's Talk</span>
+    <h2 class="section-heading" id="cta-heading">Still have questions?</h2>
+    <p class="section-sub">Talk to us — we'll give you straight answers and a free consultation.</p>
+    <a href="contact.html" class="btn btn-gold">Get In Touch</a>
+    <div class="cta-contact-details">
+      <span>&#128222; <a href="tel:0824522283">082 452 2283</a></span>
+      <span>&#9993; <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="images/Team connect logo.jpg" alt="Team Connect logo" />
+      </div>
+      <div class="footer-details">
+        <p>&#128222; <a href="tel:0824522283">082 452 2283</a></p>
+        <p>&#9993; <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></p>
+        <p>&#127760; <a href="https://www.teamconnect.co.za" target="_blank" rel="noopener noreferrer">www.teamconnect.co.za</a></p>
+        <p>&#128247; @teamconnectsa</p>
+        <p>&#128205; Cape Town, South Africa</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 <span>Team Connect</span>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', function () {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    links.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Accordion
+    document.querySelectorAll('.accordion-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        const item = btn.closest('.accordion-item');
+        const isOpen = item.classList.contains('open');
+
+        // Close all open items
+        document.querySelectorAll('.accordion-item.open').forEach(function (openItem) {
+          openItem.classList.remove('open');
+          openItem.querySelector('.accordion-btn').setAttribute('aria-expanded', 'false');
+        });
+
+        // Toggle clicked item
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
