@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bespoke Team Building Experiences South Africa | Team Connect</title>
+  <meta name="description" content="Team Connect designs fully bespoke corporate team building experiences built around your theme, your team, and your specific objectives. Available anywhere in South Africa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #1a4a2e;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --light-bg: #f7f5f0;
+      --text: #222222;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      padding: 0.625rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 170px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      display: block;
+      height: 150px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--green);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        height: 115px;
+      }
+      .nav-logo img {
+        height: 100px;
+      }
+      .nav-toggle {
+        display: flex;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 115px;
+        left: 0;
+        right: 0;
+        background: var(--green);
+        flex-direction: column;
+        padding: 1.5rem 5%;
+        gap: 1.2rem;
+        border-top: 2px solid var(--gold);
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .nav-links a {
+        color: var(--white);
+      }
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      color: var(--white);
+      padding: 100px 5% 90px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 860px;
+      margin: 0 auto 1.2rem;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      max-width: 640px;
+      margin: 0 auto;
+      opacity: 0.88;
+      line-height: 1.65;
+    }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-block;
+      padding: 15px 36px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      border: 2px solid var(--white);
+      color: var(--white);
+    }
+
+    .btn-outline-white:hover {
+      background: var(--white);
+      color: var(--green);
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section {
+      padding: 80px 5%;
+    }
+
+    .section-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    /* ─── OVERVIEW SECTION ─── */
+    #overview {
+      background: var(--white);
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .overview-text .section-sub {
+      margin-bottom: 0;
+      max-width: 100%;
+    }
+
+    .overview-image {
+      background: var(--light-bg);
+      border-radius: 8px;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 2px solid #e8e4d8;
+    }
+
+    .overview-image span {
+      font-size: 5rem;
+      opacity: 0.4;
+    }
+
+    @media (max-width: 768px) {
+      .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    /* ─── OUTCOMES SECTION ─── */
+    #outcomes {
+      background: var(--light-bg);
+    }
+
+    .outcomes-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .outcome-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      border-top: 4px solid var(--gold);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+
+    .outcome-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.12);
+    }
+
+    .outcome-icon {
+      font-size: 2.6rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .outcome-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.7rem;
+    }
+
+    .outcome-card p {
+      font-size: 0.93rem;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    /* ─── DETAILS STRIP ─── */
+    #details-strip {
+      background: var(--green);
+      padding: 50px 5%;
+    }
+
+    .details-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .detail-block {
+      color: var(--white);
+    }
+
+    .detail-block strong {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-block span {
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      .details-strip-inner {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    /* ─── HOW IT WORKS SECTION ─── */
+    #how-it-works {
+      background: var(--white);
+    }
+
+    .how-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .step-card {
+      background: var(--light-bg);
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      position: relative;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: var(--gold);
+      color: var(--green);
+      font-weight: 800;
+      font-size: 1.1rem;
+      border-radius: 50%;
+      margin-bottom: 1.2rem;
+    }
+
+    .step-card h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.7rem;
+    }
+
+    .step-card p {
+      font-size: 0.93rem;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    /* ─── THEME SECTION ─── */
+    #themes {
+      background: var(--light-bg);
+    }
+
+    .themes-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .themes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .theme-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      border-left: 5px solid var(--gold);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+
+    .theme-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+    }
+
+    .theme-icon {
+      font-size: 2.2rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .theme-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.7rem;
+    }
+
+    .theme-card p {
+      font-size: 0.93rem;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    /* ─── CTA SECTION ─── */
+    #cta {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      text-align: center;
+      color: var(--white);
+    }
+
+    #cta .section-heading {
+      color: var(--white);
+      margin-bottom: 0.7rem;
+    }
+
+    #cta .section-sub {
+      color: rgba(255,255,255,0.82);
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #1a4a2e;
+      color: rgba(255,255,255,0.75);
+      padding: 56px 5% 0;
+      font-size: 0.88rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem 4rem;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .footer-col h4 {
+      color: #c9a84c;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-col a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #c9a84c;
+    }
+
+    .footer-logo-col img {
+      height: 80px;
+      width: auto;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-tagline {
+      color: rgba(255,255,255,0.65);
+      font-style: italic;
+      margin: 0;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-social a {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .footer-social a:hover {
+      color: #c9a84c;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding: 1.4rem 0;
+      text-align: center;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.82rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-bottom span {
+      color: #c9a84c;
+    }
+
+    @media (max-width: 600px) {
+      .footer-grid {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="Team Connect home"><img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" height="150"></a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="experiences.html" class="active">Experiences</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="why-us.html">Why Us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Bespoke Experience hero">
+    <span class="hero-tag">Tailored For You</span>
+    <h1>Bespoke Experience</h1>
+    <p>Your Theme. Your Team. Your Experience. <span style="color: var(--gold); font-weight: 700;">Built From Scratch &mdash; Just For You.</span></p>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section id="overview" aria-labelledby="overview-heading">
+    <div class="overview-grid">
+      <div class="overview-text">
+        <span class="section-label">The Experience</span>
+        <h2 class="section-heading" id="overview-heading">No Catalogue. No Compromise.</h2>
+        <p class="section-sub">Every team is different. Every company culture is different. Every business moment &mdash; a product launch, a strategic pivot, a merger, a milestone &mdash; is different. Off-the-shelf team building cannot honour that difference. That is why Team Connect offers fully bespoke experiences: designed from the ground up around your company&rsquo;s theme, your team&rsquo;s specific dynamics, and your precise development objectives. We start with a deep discovery conversation &mdash; listening to what is really going on in your team and what you want to walk away with. From there, we design a completely original experience: the format, the narrative, the challenges, the facilitation approach, and the debrief. Nothing is borrowed from a catalogue. Everything is built for you. The result is an experience your team will recognise as theirs &mdash; because it is.</p>
+      </div>
+      <div class="overview-image" role="img" aria-label="Bespoke experience image placeholder">
+        <span>&#127775;</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOMES -->
+  <section id="outcomes" aria-labelledby="outcomes-heading">
+    <div class="outcomes-header">
+      <span class="section-label">Why It Works</span>
+      <h2 class="section-heading" id="outcomes-heading">What You Walk Away With</h2>
+    </div>
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">&#127919;</span>
+        <h3>Relevance</h3>
+        <p>When the experience reflects your team&rsquo;s real context, engagement is immediate and deep</p>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">&#127775;</span>
+        <h3>Theme Integration</h3>
+        <p>Your company theme, values, or brand narrative woven through every element of the design</p>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">&#128200;</span>
+        <h3>Targeted Development</h3>
+        <p>Specific team behaviours and capabilities addressed through precisely designed challenges</p>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">&#128161;</span>
+        <h3>Memorability</h3>
+        <p>Bespoke experiences create stronger memories because they feel personal &mdash; not generic</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILS STRIP -->
+  <section id="details-strip" aria-label="Experience details">
+    <div class="details-strip-inner">
+      <div class="detail-block">
+        <strong>Group Size</strong>
+        <span>Any size &mdash; from 10 to 1000+</span>
+      </div>
+      <div class="detail-block">
+        <strong>Duration</strong>
+        <span>2 hours to full day &mdash; we design to your schedule</span>
+      </div>
+      <div class="detail-block">
+        <strong>Location</strong>
+        <span>Any venue &mdash; we travel anywhere in South Africa</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" aria-labelledby="how-heading">
+    <div class="how-header">
+      <span class="section-label">The Process</span>
+      <h2 class="section-heading" id="how-heading">How We Build Your Experience</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-number" aria-hidden="true">1</span>
+        <h3>Discovery</h3>
+        <p>A deep conversation about your team, your objectives, your theme, and your context. We listen before we design.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number" aria-hidden="true">2</span>
+        <h3>Design</h3>
+        <p>We build a completely original experience around your brief &mdash; format, narrative, challenges, and facilitation approach.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number" aria-hidden="true">3</span>
+        <h3>Delivery</h3>
+        <p>Our facilitators bring the experience to life with the energy, skill, and adaptability your team deserves.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-number" aria-hidden="true">4</span>
+        <h3>Debrief</h3>
+        <p>A structured reflection session connects the experience to your team&rsquo;s real workplace &mdash; turning a great day into lasting change.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THEMES SECTION -->
+  <section id="themes" aria-labelledby="themes-heading">
+    <div class="themes-header">
+      <span class="section-label">Endless Possibilities</span>
+      <h2 class="section-heading" id="themes-heading">What We Can Theme Around</h2>
+    </div>
+    <div class="themes-grid">
+      <div class="theme-card">
+        <span class="theme-icon" aria-hidden="true">&#127881;</span>
+        <h3>Company Milestones</h3>
+        <p>Anniversaries, product launches, strategy reveals, rebrands &mdash; we build experiences that celebrate and activate your moment.</p>
+      </div>
+      <div class="theme-card">
+        <span class="theme-icon" aria-hidden="true">&#127919;</span>
+        <h3>Company Values</h3>
+        <p>Bring your values off the wall and into lived experience &mdash; through challenges designed around what your company actually stands for.</p>
+      </div>
+      <div class="theme-card">
+        <span class="theme-icon" aria-hidden="true">&#128200;</span>
+        <h3>Business Themes</h3>
+        <p>Innovation, resilience, customer obsession, transformation &mdash; any strategic theme can become the spine of a powerful team experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" aria-labelledby="cta-heading">
+    <span class="section-label">Get Started</span>
+    <h2 class="section-heading" id="cta-heading">Your team deserves something built for them.</h2>
+    <p class="section-sub">Tell us about your team, your theme, and your objectives &mdash; and we&rsquo;ll design something extraordinary.</p>
+    <a href="contact.html" class="btn btn-outline-white" aria-label="Start the conversation about your bespoke experience">Start the Conversation</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col footer-logo-col">
+        <a href="index.html" aria-label="Team Connect home">
+          <img src="images/Team connect logo.jpg" alt="Team Connect logo" height="80" />
+        </a>
+        <p class="footer-tagline">Bringing Teams Together</p>
+      </div>
+      <div class="footer-col">
+        <h4>Experiences</h4>
+        <ul>
+          <li><a href="fugitive.html">The Fugitive</a></li>
+          <li><a href="amazing-race.html">Amazing Race</a></li>
+          <li><a href="escape-labs.html">Escape Labs</a></li>
+          <li><a href="experiences.html">All Experiences</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="why-us.html">Why Team Connect</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:0824522283">082 452 2283</a></li>
+          <li><a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></li>
+          <li>Cape Town, South Africa</li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/theTeamConnect" target="_blank" rel="noopener noreferrer" aria-label="Team Connect on Facebook">&#128216; Facebook</a>
+          <a href="https://www.instagram.com/teamconnectsa" target="_blank" rel="noopener noreferrer" aria-label="Team Connect on Instagram">&#128247; Instagram</a>
+          <a href="https://www.tiktok.com/@teamconnectsa" target="_blank" rel="noopener noreferrer" aria-label="Team Connect on TikTok">&#127925; TikTok</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 <span>Team Connect</span>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', function () {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    links.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
