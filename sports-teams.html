@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sports Team Dynamics — Team Cohesion for Sports Teams | Team Connect</title>
+  <meta name="description" content="Team Connect develops the team dynamics, trust, and cohesion that separate good sports teams from great ones — from school sports to professional teams across South Africa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #1a4a2e;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --light-bg: #f7f5f0;
+      --text: #222222;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      padding: 0.625rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 170px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      display: block;
+      height: 150px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--green);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        height: 115px;
+      }
+
+      .nav-logo img {
+        height: 100px;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 115px;
+        left: 0;
+        right: 0;
+        background: var(--green);
+        flex-direction: column;
+        padding: 1.5rem 5%;
+        gap: 1.2rem;
+        border-top: 2px solid var(--gold);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        color: var(--white);
+      }
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      color: var(--white);
+      padding: 100px 5% 90px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 860px;
+      margin: 0 auto 1.2rem;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      max-width: 620px;
+      margin: 0 auto 2.4rem;
+      opacity: 0.88;
+      line-height: 1.65;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 36px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      border: 2px solid var(--white);
+      color: var(--white);
+    }
+
+    .btn-outline-white:hover {
+      background: var(--white);
+      color: var(--green);
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section {
+      padding: 80px 5%;
+    }
+
+    .section-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    /* ─── OVERVIEW SECTION ─── */
+    #overview {
+      background: var(--white);
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .overview-text .section-sub {
+      margin-bottom: 0;
+      max-width: 100%;
+    }
+
+    .overview-image {
+      background: var(--light-bg);
+      border-radius: 8px;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 2px solid #e8e4d8;
+    }
+
+    .overview-image span {
+      font-size: 5rem;
+      opacity: 0.4;
+    }
+
+    @media (max-width: 768px) {
+      .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    /* ─── OUTCOMES SECTION ─── */
+    #outcomes {
+      background: var(--light-bg);
+    }
+
+    .outcomes-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .outcomes-header .section-sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .outcome-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      border-top: 4px solid var(--gold);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+
+    .outcome-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.12);
+    }
+
+    .outcome-icon {
+      font-size: 2.6rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .outcome-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.7rem;
+    }
+
+    .outcome-card p {
+      font-size: 0.93rem;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    /* ─── DETAILS STRIP ─── */
+    #details-strip {
+      background: var(--green);
+      padding: 50px 5%;
+    }
+
+    .details-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .detail-block {
+      color: var(--white);
+    }
+
+    .detail-block strong {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-block span {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+      .details-strip-inner {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .details-strip-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ─── PROGRAMMES SECTION ─── */
+    #programmes {
+      background: var(--white);
+    }
+
+    .programmes-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .programmes-header .section-sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .programmes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .programme-card {
+      background: var(--light-bg);
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      border-left: 5px solid var(--gold);
+      transition: box-shadow 0.22s, transform 0.22s;
+    }
+
+    .programme-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+    }
+
+    .programme-icon {
+      font-size: 2.4rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .programme-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.7rem;
+    }
+
+    .programme-card p {
+      font-size: 0.93rem;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    /* ─── WHO WE WORK WITH ─── */
+    #who {
+      background: var(--light-bg);
+      text-align: center;
+    }
+
+    .who-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .who-block {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    }
+
+    .who-block span {
+      font-size: 2.2rem;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+
+    .who-block h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    /* ─── CTA SECTION ─── */
+    #cta {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      text-align: center;
+      color: var(--white);
+    }
+
+    #cta .section-heading {
+      color: var(--white);
+      margin-bottom: 0.7rem;
+    }
+
+    #cta .section-sub {
+      color: rgba(255,255,255,0.82);
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #1a4a2e;
+      color: rgba(255,255,255,0.75);
+      padding: 56px 5% 0;
+      font-size: 0.88rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem 4rem;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .footer-col h4 {
+      color: #c9a84c;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-col a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #c9a84c;
+    }
+
+    .footer-logo-col img {
+      height: 80px;
+      width: auto;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-tagline {
+      color: rgba(255,255,255,0.65);
+      font-style: italic;
+      margin: 0;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding: 1.4rem 0;
+      text-align: center;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.82rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      .footer-grid {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="Team Connect home">
+      <img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" height="150">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="why-us.html">Why Us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Sports Team Dynamics hero banner">
+    <span class="hero-tag">Team Cohesion for Sports Teams</span>
+    <h1>Sports Team <span>Dynamics</span></h1>
+    <p>From school sports to professional teams &mdash; we develop the team dynamics, trust, and cohesion that separate good teams from great ones.</p>
+    <a href="#cta" class="btn btn-gold">Build Your Team</a>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section id="overview" aria-labelledby="overview-heading">
+    <div class="overview-grid">
+      <div class="overview-text">
+        <span class="section-label">The Programme</span>
+        <h2 class="section-heading" id="overview-heading">Talent Wins Games. Teamwork Wins Championships.</h2>
+        <p class="section-sub">Every coach knows it: you can have the most talented players on the field and still lose to a team that knows how to play together. The dynamics that make a team truly great &mdash; trust, communication, cohesion under pressure, shared accountability &mdash; are not accidental. They are built deliberately, through structured experiences that challenge, expose, and unite. Team Connect's Sports Team Dynamics programme is purpose-built for this. Drawing on the same facilitated-experience methodology that powers our corporate work, we design immersive sessions that accelerate team bonding, surface leadership in the group, and build the unspoken trust that defines high-performance sports teams. Whether you are preparing for a season, recovering from a difficult run, or building a brand-new squad from the ground up, we create the moments that become your team's foundation.</p>
+      </div>
+      <div class="overview-image" aria-label="Sports team building cohesion and trust through a team dynamics programme">
+        <span aria-hidden="true">🏆</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY OUTCOMES -->
+  <section id="outcomes" aria-labelledby="outcomes-heading">
+    <div class="outcomes-header">
+      <span class="section-label">What Your Team Gains</span>
+      <h2 class="section-heading" id="outcomes-heading">Beyond the Training Ground.</h2>
+      <p class="section-sub">The qualities that separate championship teams are built off the field as much as on it. Our programme develops the human foundations of high performance.</p>
+    </div>
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">🤝</span>
+        <h3>Deep Trust</h3>
+        <p>Players who trust each other take risks, communicate honestly, and perform without hesitation at critical moments</p>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">📣</span>
+        <h3>On-Field Communication</h3>
+        <p>Structured pressure experiences build the communication instincts that translate directly to match-day performance</p>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">🧱</span>
+        <h3>Cohesion Under Pressure</h3>
+        <p>Teams that have been tested together off the field stay cohesive when it matters most during competition</p>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">👑</span>
+        <h3>Distributed Leadership</h3>
+        <p>Great teams have leaders throughout the group, not just in the captaincy &mdash; our programme surfaces and develops these leaders</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILS STRIP -->
+  <div id="details-strip" role="region" aria-label="Sports Team Dynamics programme details">
+    <div class="details-strip-inner">
+      <div class="detail-block">
+        <strong>Duration</strong>
+        <span>Half-day to full two-day programme</span>
+      </div>
+      <div class="detail-block">
+        <strong>Team Size</strong>
+        <span>10 to 120 players and support staff</span>
+      </div>
+      <div class="detail-block">
+        <strong>Location</strong>
+        <span>Western Cape or nationally — we travel to you</span>
+      </div>
+      <div class="detail-block">
+        <strong>Timing</strong>
+        <span>Pre-season, mid-season, or squad development camps</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRAMME MODULES -->
+  <section id="programmes" aria-labelledby="programmes-heading">
+    <div class="programmes-header">
+      <span class="section-label">Programme Modules</span>
+      <h2 class="section-heading" id="programmes-heading">Built Around Your Team. Built Around Your Season.</h2>
+      <p class="section-sub">Every programme is designed around your team's specific situation, season stage, and development objectives.</p>
+    </div>
+    <div class="programmes-grid">
+
+      <div class="programme-card">
+        <span class="programme-icon" aria-hidden="true">🔥</span>
+        <h3>Trust Under Fire</h3>
+        <p>High-pressure challenge scenarios that require genuine reliance on teammates &mdash; exposing and building the trust dynamics that define how your team performs when the stakes are high.</p>
+      </div>
+
+      <div class="programme-card">
+        <span class="programme-icon" aria-hidden="true">🗣️</span>
+        <h3>Communication Breakdowns</h3>
+        <p>A structured series of activities specifically designed to identify and fix the communication gaps that cost teams matches &mdash; creating shared language and on-field instincts.</p>
+      </div>
+
+      <div class="programme-card">
+        <span class="programme-icon" aria-hidden="true">🧭</span>
+        <h3>Leadership Emergence</h3>
+        <p>Activities that shift your team out of the normal hierarchy and surface the leaders who exist throughout your squad &mdash; developing the distributed leadership that great teams depend on.</p>
+      </div>
+
+      <div class="programme-card">
+        <span class="programme-icon" aria-hidden="true">🎯</span>
+        <h3>Shared Identity</h3>
+        <p>A facilitated session that helps your team define what they stand for, how they want to play, and the values and commitments they will hold each other to throughout the season.</p>
+      </div>
+
+      <div class="programme-card">
+        <span class="programme-icon" aria-hidden="true">💪</span>
+        <h3>Resilience Reset</h3>
+        <p>Designed for teams coming out of a difficult run of results or internal conflict &mdash; a structured reset that acknowledges the difficulty and rebuilds the collective belief to move forward.</p>
+      </div>
+
+      <div class="programme-card">
+        <span class="programme-icon" aria-hidden="true">🏅</span>
+        <h3>New Squad Integration</h3>
+        <p>Purpose-built for newly assembled squads or teams with significant new arrivals &mdash; accelerating the bonding process that normally takes an entire season to develop naturally.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHO WE WORK WITH -->
+  <section id="who" aria-labelledby="who-heading">
+    <div class="who-inner">
+      <span class="section-label">Who We Work With</span>
+      <h2 class="section-heading" id="who-heading">From School Sport to Professional Teams</h2>
+      <p class="section-sub" style="margin-left:auto;margin-right:auto;">Great teams at every level share the same human dynamics. We work across the full spectrum of sport.</p>
+      <div class="who-grid">
+        <div class="who-block">
+          <span aria-hidden="true">🏫</span>
+          <h3>School &amp; University Teams</h3>
+        </div>
+        <div class="who-block">
+          <span aria-hidden="true">🏟️</span>
+          <h3>Club &amp; Amateur Teams</h3>
+        </div>
+        <div class="who-block">
+          <span aria-hidden="true">🏆</span>
+          <h3>Semi-Professional Teams</h3>
+        </div>
+        <div class="who-block">
+          <span aria-hidden="true">⭐</span>
+          <h3>Professional Franchises</h3>
+        </div>
+        <div class="who-block">
+          <span aria-hidden="true">🌍</span>
+          <h3>National Squads</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" aria-labelledby="cta-heading">
+    <span class="section-label" style="color:var(--gold);">Take the Next Step</span>
+    <h2 class="section-heading" id="cta-heading">Ready to build something great together?</h2>
+    <p class="section-sub">Talk to us about a Sports Team Dynamics programme designed around your squad, your sport, and your season.</p>
+    <a href="contact.html" class="btn btn-gold">Build Your Team</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col footer-logo-col">
+        <a href="index.html" aria-label="Team Connect home">
+          <img src="images/Team connect logo.jpg" alt="Team Connect logo" height="80" />
+        </a>
+        <p class="footer-tagline">Bringing Teams Together</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="tel:0824522283">082 452 2283</a></li>
+          <li><a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></li>
+          <li><a href="https://www.teamconnect.co.za" target="_blank" rel="noopener noreferrer">www.teamconnect.co.za</a></li>
+          <li>Cape Town, South Africa</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="https://www.facebook.com/theTeamConnect" target="_blank" rel="noopener noreferrer">&#128216; Facebook</a></li>
+          <li><a href="https://www.instagram.com/teamconnectsa" target="_blank" rel="noopener noreferrer">&#128247; Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@teamconnectsa" target="_blank" rel="noopener noreferrer">&#127925; TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Team Connect. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', function () {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    links.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      if (links.classList.contains('open') && !links.contains(e.target) && !toggle.contains(e.target)) {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+
+</body>
+</html>

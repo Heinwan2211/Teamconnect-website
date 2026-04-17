@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conference Solutions — Purposeful Conference Activities | Team Connect</title>
+  <meta name="description" content="Team Connect's Conference Solutions are purposefully developed activities that re-energise, reconnect and refocus your delegates — not silly icebreakers, but structured experiences that make every conference better." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #1a4a2e;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --light-bg: #f7f5f0;
+      --text: #222222;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      padding: 0.625rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 170px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      display: block;
+      height: 150px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--green);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        height: 115px;
+      }
+
+      .nav-logo img {
+        height: 100px;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 115px;
+        left: 0;
+        right: 0;
+        background: var(--green);
+        flex-direction: column;
+        padding: 1.5rem 5%;
+        gap: 1.2rem;
+        border-top: 2px solid var(--gold);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        color: var(--white);
+      }
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      color: var(--white);
+      padding: 100px 5% 90px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      max-width: 860px;
+      margin: 0 auto 1.2rem;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      max-width: 660px;
+      margin: 0 auto 2.4rem;
+      opacity: 0.88;
+      line-height: 1.65;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 36px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green);
+    }
+
+    .btn-outline-white {
+      background: transparent;
+      border: 2px solid var(--white);
+      color: var(--white);
+    }
+
+    .btn-outline-white:hover {
+      background: var(--white);
+      color: var(--green);
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section {
+      padding: 80px 5%;
+    }
+
+    .section-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-sub {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+
+    /* ─── OVERVIEW SECTION ─── */
+    #overview {
+      background: var(--white);
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .overview-text .section-sub {
+      margin-bottom: 0;
+      max-width: 100%;
+    }
+
+    .overview-image {
+      background: var(--light-bg);
+      border-radius: 8px;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 2px solid #e8e4d8;
+    }
+
+    .overview-image span {
+      font-size: 5rem;
+      opacity: 0.4;
+    }
+
+    @media (max-width: 768px) {
+      .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    /* ─── OUTCOMES SECTION ─── */
+    #outcomes {
+      background: var(--light-bg);
+    }
+
+    .outcomes-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .outcomes-header .section-sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .outcome-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      border-top: 4px solid var(--gold);
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+
+    .outcome-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 32px rgba(0,0,0,0.12);
+    }
+
+    .outcome-icon {
+      font-size: 2.6rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .outcome-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.7rem;
+    }
+
+    .outcome-card p {
+      font-size: 0.93rem;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    /* ─── DETAILS STRIP ─── */
+    #details-strip {
+      background: var(--green);
+      padding: 50px 5%;
+    }
+
+    .details-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .detail-block {
+      color: var(--white);
+    }
+
+    .detail-block strong {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-block span {
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+      .details-strip-inner {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .details-strip-inner {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ─── MENU SECTION ─── */
+    #menu {
+      background: var(--white);
+    }
+
+    .menu-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    .menu-header .section-sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .menu-card {
+      background: var(--light-bg);
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      border-left: 5px solid var(--gold);
+      transition: box-shadow 0.22s, transform 0.22s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+    }
+
+    .menu-card-icon {
+      font-size: 2.4rem;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .menu-card h3 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.7rem;
+    }
+
+    .menu-card p {
+      font-size: 0.93rem;
+      color: #555;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+
+    .menu-card-meta {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── CTA SECTION ─── */
+    #cta {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      text-align: center;
+      color: var(--white);
+    }
+
+    #cta .section-heading {
+      color: var(--white);
+      margin-bottom: 0.7rem;
+    }
+
+    #cta .section-sub {
+      color: rgba(255,255,255,0.82);
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #1a4a2e;
+      color: rgba(255,255,255,0.75);
+      padding: 56px 5% 0;
+      font-size: 0.88rem;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem 4rem;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .footer-col h4 {
+      color: #c9a84c;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-col a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #c9a84c;
+    }
+
+    .footer-logo-col img {
+      height: 80px;
+      width: auto;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-tagline {
+      color: rgba(255,255,255,0.65);
+      font-style: italic;
+      margin: 0;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding: 1.4rem 0;
+      text-align: center;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.82rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      .footer-grid {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="Team Connect home">
+      <img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" height="150">
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="why-us.html">Why Us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Conference Solutions hero banner">
+    <span class="hero-tag">Energise, Connect &amp; Add Value to Every Conference</span>
+    <h1><span>Conference</span> Solutions</h1>
+    <p>Not Silly Games. Purposefully Developed Activities That Make Every Conference Better.</p>
+    <a href="#cta" class="btn btn-gold">Book Conference Activity</a>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section id="overview" aria-labelledby="overview-heading">
+    <div class="overview-grid">
+      <div class="overview-text">
+        <span class="section-label">The Experience</span>
+        <h2 class="section-heading" id="overview-heading">The Conference That People Actually Remember.</h2>
+        <p class="section-sub">Every conference has moments where energy drops, connection fades, and delegates disengage. The transition after lunch. The gap between sessions. The morning of day two when everyone arrives slightly less enthusiastic than day one. Team Connect's Conference Solutions are designed specifically for these moments &mdash; purposefully developed activities that re-energise, reconnect, and refocus your delegates without disrupting your programme. These are not silly icebreakers or forced fun. They are structured, facilitated experiences with a clear purpose: to make your conference more productive, more connected, and more memorable. Deployable in and around any conference facility, they work as standalone add-ons to any event hosted anywhere in South Africa.</p>
+      </div>
+      <div class="overview-image" aria-label="Delegates energised and engaged during a conference activity">
+        <span aria-hidden="true">🎤</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY OUTCOMES -->
+  <section id="outcomes" aria-labelledby="outcomes-heading">
+    <div class="outcomes-header">
+      <span class="section-label">What Your Conference Gains</span>
+      <h2 class="section-heading" id="outcomes-heading">Real Value. Not Just Entertainment.</h2>
+      <p class="section-sub">Every Conference Solution is designed around a specific outcome — not just to fill time, but to add genuine value to your delegates and your event.</p>
+    </div>
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">⚡</span>
+        <h3>Re-energised Delegates</h3>
+        <p>Structured activities at key energy dip moments restore focus and engagement for the sessions that follow</p>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">🤝</span>
+        <h3>Genuine Connection</h3>
+        <p>Purposeful interaction between delegates creates the networking value that conferences promise but rarely deliver</p>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">🏛️</span>
+        <h3>Culture Reinforcement</h3>
+        <p>Conference moments are powerful opportunities to embed company values and culture &mdash; we design for this deliberately</p>
+      </div>
+      <div class="outcome-card">
+        <span class="outcome-icon" aria-hidden="true">✨</span>
+        <h3>Memorable Events</h3>
+        <p>Delegates remember how a conference made them feel &mdash; our activities create the moments worth remembering</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAILS STRIP -->
+  <div id="details-strip" role="region" aria-label="Conference Solutions experience details">
+    <div class="details-strip-inner">
+      <div class="detail-block">
+        <strong>Duration</strong>
+        <span>15 minutes to 90 minutes per activity</span>
+      </div>
+      <div class="detail-block">
+        <strong>Group Size</strong>
+        <span>Any size — from 20 to 1000+ delegates</span>
+      </div>
+      <div class="detail-block">
+        <strong>Location</strong>
+        <span>Any conference venue — we come to you</span>
+      </div>
+      <div class="detail-block">
+        <strong>Format</strong>
+        <span>In-room, outdoor, or hybrid — we adapt to your space</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONFERENCE ACTIVITY MENU -->
+  <section id="menu" aria-labelledby="menu-heading">
+    <div class="menu-header">
+      <span class="section-label">Our Activity Menu</span>
+      <h2 class="section-heading" id="menu-heading">Our Conference Activity Menu</h2>
+      <p class="section-sub">Mix and match activities to suit your programme, your delegates, and your conference objectives.</p>
+    </div>
+    <div class="menu-grid">
+
+      <div class="menu-card">
+        <span class="menu-card-icon" aria-hidden="true">🌅</span>
+        <h3>Morning Ignition</h3>
+        <p>A high-energy 20-minute opener that gets delegates out of their heads and into the room. Sets the tone for a productive day before the first session begins.</p>
+        <span class="menu-card-meta">Duration: 20 minutes &nbsp;|&nbsp; Works for: All group sizes</span>
+      </div>
+
+      <div class="menu-card">
+        <span class="menu-card-icon" aria-hidden="true">☀️</span>
+        <h3>Post-Lunch Re-energiser</h3>
+        <p>The energy dip after lunch is real &mdash; and predictable. Our post-lunch re-energiser is specifically designed for this moment: physical enough to wake people up, purposeful enough to add value.</p>
+        <span class="menu-card-meta">Duration: 15 to 30 minutes &nbsp;|&nbsp; Works for: All group sizes</span>
+      </div>
+
+      <div class="menu-card">
+        <span class="menu-card-icon" aria-hidden="true">🔗</span>
+        <h3>Cross-Table Connector</h3>
+        <p>A structured networking activity that breaks delegates out of their existing circles and creates genuine new connections across departments, divisions, or companies.</p>
+        <span class="menu-card-meta">Duration: 30 minutes &nbsp;|&nbsp; Works for: 30 to 500 delegates</span>
+      </div>
+
+      <div class="menu-card">
+        <span class="menu-card-icon" aria-hidden="true">🏛️</span>
+        <h3>Values in Action</h3>
+        <p>A short, sharp activity that brings company values off the wall and into the room &mdash; creating a shared moment of values alignment that reinforces the conference's strategic narrative.</p>
+        <span class="menu-card-meta">Duration: 30 to 45 minutes &nbsp;|&nbsp; Works for: All group sizes</span>
+      </div>
+
+      <div class="menu-card">
+        <span class="menu-card-icon" aria-hidden="true">💡</span>
+        <h3>Creative Spark</h3>
+        <p>A rapid ideation challenge that gets delegates thinking creatively around a real business question &mdash; generating genuine insights while re-energising the group.</p>
+        <span class="menu-card-meta">Duration: 45 to 60 minutes &nbsp;|&nbsp; Works for: 20 to 200 delegates</span>
+      </div>
+
+      <div class="menu-card">
+        <span class="menu-card-icon" aria-hidden="true">🎯</span>
+        <h3>Conference Closer</h3>
+        <p>A powerful closing activity that consolidates the conference's key messages, creates shared commitments, and sends delegates home energised, aligned, and ready to act.</p>
+        <span class="menu-card-meta">Duration: 30 to 45 minutes &nbsp;|&nbsp; Works for: All group sizes</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" aria-labelledby="cta-heading">
+    <span class="section-label" style="color:var(--gold);">Add Value to Your Next Event</span>
+    <h2 class="section-heading" id="cta-heading">Ready to make your conference unforgettable?</h2>
+    <p class="section-sub">Talk to us about adding a purposeful Conference Solution to your next event. We work with your programme — not against it.</p>
+    <a href="contact.html" class="btn btn-gold">Book Conference Activity</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col footer-logo-col">
+        <a href="index.html" aria-label="Team Connect home">
+          <img src="images/Team connect logo.jpg" alt="Team Connect logo" height="80" />
+        </a>
+        <p class="footer-tagline">Bringing Teams Together</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <ul>
+          <li><a href="tel:0824522283">082 452 2283</a></li>
+          <li><a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></li>
+          <li><a href="https://www.teamconnect.co.za" target="_blank" rel="noopener noreferrer">www.teamconnect.co.za</a></li>
+          <li>Cape Town, South Africa</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="https://www.facebook.com/theTeamConnect" target="_blank" rel="noopener noreferrer">&#128216; Facebook</a></li>
+          <li><a href="https://www.instagram.com/teamconnectsa" target="_blank" rel="noopener noreferrer">&#128247; Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@teamconnectsa" target="_blank" rel="noopener noreferrer">&#127925; TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Team Connect. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', function () {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    links.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      if (links.classList.contains('open') && !links.contains(e.target) && !toggle.contains(e.target)) {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+
+</body>
+</html>
