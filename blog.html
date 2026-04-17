@@ -530,6 +530,12 @@
       display: block;
     }
 
+    .footer-logo {
+    mix-blend-mode: multiply;
+    filter: brightness(0.9);
+    max-height: 100px;
+}
+
     .footer-contact h4 {
       color: var(--gold);
       font-size: 0.78rem;
@@ -743,8 +749,10 @@
     <div class="footer-inner">
       <div class="footer-logo">
         <a href="index.html" aria-label="Team Connect home">
-          <img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" />
+          <img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" class="footer-logo" />
         </a>
+      
+        <p style="color: white; font-family: 'Montserrat', sans-serif; font-size: 12px; letter-spacing: 2px; margin-top: 5px;">BRINGING TEAMS TOGETHER</p>
       </div>
       <div class="footer-contact">
         <h4>Get In Touch</h4>

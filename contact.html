@@ -408,6 +408,12 @@
       display: block;
     }
 
+    .footer-logo {
+    mix-blend-mode: multiply;
+    filter: brightness(0.9);
+    max-height: 100px;
+}
+
     .footer-details {
       display: flex;
       flex-wrap: wrap;
@@ -584,8 +590,10 @@
     <div class="footer-inner">
       <div class="footer-logo">
         <a href="index.html" aria-label="Team Connect home">
-          <img src="images/Team connect logo.jpg" alt="Team Connect logo" height="80" />
+          <img src="images/Team connect logo.jpg" alt="Team Connect logo" height="80" class="footer-logo" />
         </a>
+      
+        <p style="color: white; font-family: 'Montserrat', sans-serif; font-size: 12px; letter-spacing: 2px; margin-top: 5px;">BRINGING TEAMS TOGETHER</p>
       </div>
       <div class="footer-details">
         <span>&#128222; <a href="tel:0824522283">082 452 2283</a></span>
