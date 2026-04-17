@@ -450,79 +450,61 @@
 
     /* ─── FOOTER ─── */
     footer {
-      background: #1a4a2e;
-      color: rgba(255,255,255,0.75);
-      padding: 56px 5% 0;
-      font-size: 0.88rem;
+      background: #0f2b1a;
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+      padding: 48px 5% 28px;
+      font-size: 0.9rem;
     }
 
-    .footer-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2.5rem 4rem;
-      justify-content: space-between;
-      max-width: 1100px;
-      margin: 0 auto 2.5rem;
-    }
-
-    .footer-col h4 {
-      color: #c9a84c;
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .footer-col ul {
-      list-style: none;
+    .footer-inner {
+      max-width: 680px;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      align-items: center;
+      gap: 1.2rem;
     }
 
-    .footer-col a {
-      color: rgba(255,255,255,0.75);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .footer-col a:hover {
-      color: #c9a84c;
-    }
-
-    .footer-logo-col img {
+    .footer-logo img {
       height: 80px;
       width: auto;
       display: block;
-      margin-bottom: 0.75rem;
     }
 
     .footer-logo {
     max-height: 100px;
 }
 
-    .footer-tagline {
+    .footer-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 1.6rem;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .footer-details a {
+      color: #c9a84c;
+      text-decoration: none;
+    }
+
+    .footer-details a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-details span {
       color: rgba(255,255,255,0.65);
-      font-style: italic;
-      margin: 0;
     }
 
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.12);
-      padding: 1.4rem 0;
-      text-align: center;
-      color: rgba(255,255,255,0.45);
+    .footer-copy {
       font-size: 0.82rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    @media (max-width: 600px) {
-      .footer-grid {
-        flex-direction: column;
-        gap: 2rem;
-      }
+      color: rgba(255,255,255,0.4);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1rem;
+      width: 100%;
+      text-align: center;
     }
   </style>
   <link rel="stylesheet" href="mobile.css">
@@ -648,7 +630,7 @@
   </section>
 
   <!-- FOOTER -->
-    <footer>
+  <footer>
     <div class="footer-inner"><img src="images/Team_connect_logo_white.png" alt="Team Connect — Bringing Teams Together" class="footer-logo" style="height: 100px; width: auto; display: block; margin-bottom: 10px;">
         <div class="footer-details">
         <span>&#128222; <a href="tel:0824522283">082 452 2283</a></span>

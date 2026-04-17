@@ -510,22 +510,23 @@
     /* ─── FOOTER ─── */
     footer {
       background: #0f2b1a;
-      color: rgba(255,255,255,0.7);
-      padding: 56px 5% 28px;
-      font-size: 0.88rem;
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+      padding: 48px 5% 28px;
+      font-size: 0.9rem;
     }
 
     .footer-inner {
+      max-width: 680px;
+      margin: 0 auto;
       display: flex;
-      flex-wrap: wrap;
-      gap: 2.5rem 4rem;
-      justify-content: space-between;
-      max-width: 1100px;
-      margin: 0 auto 2.5rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
     }
 
     .footer-logo img {
-      height: 90px;
+      height: 80px;
       width: auto;
       display: block;
     }
@@ -534,68 +535,35 @@
     max-height: 100px;
 }
 
-    .footer-contact h4 {
-      color: var(--gold);
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    .footer-contact ul {
-      list-style: none;
+    .footer-details {
       display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .footer-contact a {
-      color: rgba(255,255,255,0.75);
-      transition: color 0.2s;
-    }
-
-    .footer-contact a:hover {
-      color: var(--gold);
-    }
-
-    .footer-social {
-      display: flex;
-      gap: 1rem;
-      margin-top: 0.75rem;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 1.6rem;
+      font-size: 0.9rem;
+      line-height: 1.7;
     }
 
-    .footer-social a {
-      color: rgba(255,255,255,0.75);
-      font-size: 0.85rem;
-      font-weight: 600;
-      transition: color 0.2s;
+    .footer-details a {
+      color: #c9a84c;
+      text-decoration: none;
     }
 
-    .footer-social a:hover {
-      color: var(--gold);
+    .footer-details a:hover {
+      text-decoration: underline;
     }
 
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.12);
-      padding-top: 1.4rem;
-      text-align: center;
-      color: rgba(255,255,255,0.45);
+    .footer-details span {
+      color: rgba(255,255,255,0.65);
+    }
+
+    .footer-copy {
       font-size: 0.82rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .footer-bottom span {
-      color: var(--gold);
-    }
-
-    @media (max-width: 600px) {
-      .footer-inner {
-        flex-direction: column;
-        gap: 2rem;
-      }
+      color: rgba(255,255,255,0.4);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1rem;
+      width: 100%;
+      text-align: center;
     }
   </style>
   <link rel="stylesheet" href="mobile.css">
@@ -743,7 +711,7 @@
   </section>
 
   <!-- FOOTER -->
-    <footer>
+  <footer>
     <div class="footer-inner"><img src="images/Team_connect_logo_white.png" alt="Team Connect — Bringing Teams Together" class="footer-logo" style="height: 100px; width: auto; display: block; margin-bottom: 10px;">
         <div class="footer-details">
         <span>&#128222; <a href="tel:0824522283">082 452 2283</a></span>
