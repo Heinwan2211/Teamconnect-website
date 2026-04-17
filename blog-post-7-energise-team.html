@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5 Ways to Energise Your Team | Coming Soon | Team Connect Insights</title>
+  <meta name="description" content="Low energy in your team is not a personality problem — it is a design problem. Coming soon: five practical, evidence-based ways to re-energise a team that has lost its spark." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #1a4a2e;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --light-bg: #f7f5f0;
+      --text: #222222;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      padding: 0.625rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 170px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      display: block;
+      height: 150px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--green);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        height: 115px;
+      }
+      .nav-logo img {
+        height: 100px;
+      }
+      .nav-toggle {
+        display: flex;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 115px;
+        left: 0;
+        right: 0;
+        background: var(--green);
+        flex-direction: column;
+        padding: 1.5rem 5%;
+        gap: 1.2rem;
+        border-top: 2px solid var(--gold);
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .nav-links a {
+        color: #fff;
+      }
+    }
+
+    /* ─── ARTICLE HEADER ─── */
+    .article-header {
+      padding: 60px 5% 40px;
+      max-width: 740px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .category-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+
+    .article-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+      color: #888;
+      font-weight: 600;
+    }
+
+    /* ─── COMING SOON SECTION ─── */
+    .coming-soon-section {
+      text-align: center;
+      padding: 48px 5% 40px;
+      background: var(--light-bg);
+    }
+
+    .coming-soon-section .coming-soon-label {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 800;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .coming-soon-section p {
+      font-size: 1rem;
+      color: #555;
+      max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ─── FEATURED IMAGE PLACEHOLDER ─── */
+    .featured-image-placeholder {
+      width: 100%;
+      height: 400px;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: clamp(1rem, 2.5vw, 1.5rem);
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-align: center;
+      padding: 2rem 10%;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      .featured-image-placeholder {
+        height: 260px;
+      }
+    }
+
+    /* ─── TEASER SECTION ─── */
+    .teaser-section {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 56px 5%;
+      text-align: center;
+    }
+
+    .teaser-section h2 {
+      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 1.5rem;
+    }
+
+    .teaser-text {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--green);
+      line-height: 1.75;
+    }
+
+    /* ─── NOTIFY ME SECTION ─── */
+    .notify-section {
+      padding: 48px 5%;
+      background: var(--light-bg);
+      display: flex;
+      justify-content: center;
+    }
+
+    .notify-card {
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+      padding: 2.5rem 2.5rem;
+      max-width: 520px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .notify-card h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 0.75rem;
+    }
+
+    .notify-card p {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 1.6rem;
+      line-height: 1.6;
+    }
+
+    .notify-form {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .notify-form input[type="email"] {
+      flex: 1;
+      min-width: 200px;
+      padding: 14px 16px;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .notify-form input[type="email"]:focus {
+      border-color: var(--gold);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green);
+    }
+
+    /* ─── RELATED POSTS ─── */
+    .related-posts {
+      padding: 70px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .related-posts h2 {
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 2rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+    }
+
+    @media (max-width: 900px) {
+      .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .related-card {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      border: 2px solid transparent;
+      transition: border-color 0.2s, transform 0.2s;
+      background: var(--white);
+    }
+
+    .related-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+
+    .related-image-placeholder {
+      background: #d8d8d8;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .related-card-body {
+      padding: 1.2rem 1.4rem 1.4rem;
+    }
+
+    .related-card-body .category-tag {
+      margin-bottom: 0.6rem;
+    }
+
+    .related-card-body h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+    }
+
+    .related-card-body a.read-more {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+
+    .related-card-body a.read-more:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── CTA STRIP ─── */
+    .cta-strip {
+      background: var(--green);
+      padding: 70px 5%;
+      text-align: center;
+    }
+
+    .cta-strip h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+
+    .cta-strip p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 540px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0f2b1a;
+      color: rgba(255,255,255,0.7);
+      padding: 56px 5% 28px;
+      font-size: 0.88rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem 4rem;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .footer-logo img {
+      height: 90px;
+      width: auto;
+      display: block;
+    }
+
+    .footer-contact h4 {
+      color: var(--gold);
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .footer-contact ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-contact a {
+      color: rgba(255,255,255,0.75);
+      transition: color 0.2s;
+    }
+
+    .footer-contact a:hover {
+      color: var(--gold);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-social a {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .footer-social a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 1.4rem;
+      text-align: center;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.82rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-bottom span {
+      color: var(--gold);
+    }
+
+    @media (max-width: 600px) {
+      .footer-inner {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="index.html" aria-label="Team Connect home"><img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" height="150"></a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="why-us.html">Why Us</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ARTICLE HEADER -->
+  <header class="article-header" aria-label="Article header">
+    <span class="category-tag">Team Fix</span>
+    <h1>5 Ways to Energise Your Team When Motivation Is Low</h1>
+    <div class="article-meta">
+      <span>&#9998; Team Connect Insights</span>
+    </div>
+  </header>
+
+  <!-- COMING SOON SECTION -->
+  <section class="coming-soon-section" aria-label="Coming soon notice">
+    <span class="coming-soon-label">Coming Soon</span>
+    <p>This post is currently being written by our team. Check back soon &mdash; or subscribe below to be notified when it goes live.</p>
+  </section>
+
+  <!-- FEATURED IMAGE PLACEHOLDER -->
+  <div class="featured-image-placeholder" role="img" aria-label="5 Ways to Energise Your Team When Motivation Is Low — featured article image placeholder">
+    5 Ways to Energise Your Team When Motivation Is Low
+  </div>
+
+  <!-- TEASER SECTION -->
+  <section class="teaser-section" aria-label="Post teaser">
+    <h2>A Sneak Peek</h2>
+    <p class="teaser-text">"Low energy in your team is not a personality problem &mdash; it is a design problem. In our next post we unpack five practical, evidence-based ways to re-energise a team that has lost its spark. No motivational posters required."</p>
+  </section>
+
+  <!-- NOTIFY ME SECTION -->
+  <section class="notify-section" aria-label="Email notification signup">
+    <div class="notify-card">
+      <h2>Be the First to Read It</h2>
+      <p>Drop your email below and we'll notify you the moment this post goes live.</p>
+      <form class="notify-form" onsubmit="handleNotify(event)" aria-label="Email notification form">
+        <input type="email" placeholder="Your email address" aria-label="Email address" required />
+        <button type="submit" class="btn btn-gold">Notify Me</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- RELATED POSTS -->
+  <section class="related-posts" aria-labelledby="related-heading">
+    <h2 id="related-heading">While you wait &mdash; you might enjoy these</h2>
+    <div class="related-grid">
+
+      <article class="related-card" aria-label="Related post: Why Most South African Teams Underperform">
+        <div class="related-image-placeholder" role="img" aria-label="The Science of Teams image placeholder">Image Coming Soon</div>
+        <div class="related-card-body">
+          <span class="category-tag">The Science of Teams</span>
+          <h3>Why Most South African Teams Underperform &mdash; And the One Thing That Fixes It</h3>
+          <a href="blog-post-1-psychological-safety.html" class="read-more">Read More &rarr;</a>
+        </div>
+      </article>
+
+      <article class="related-card" aria-label="Related post: The Coaching Leader">
+        <div class="related-image-placeholder" role="img" aria-label="Leader Spotlight image placeholder">Image Coming Soon</div>
+        <div class="related-card-body">
+          <span class="category-tag">Leader Spotlight</span>
+          <h3>The Coaching Leader: Why South Africa's Best Managers Are Asking Better Questions</h3>
+          <a href="blog-post-3-coaching-leader.html" class="read-more">Read More &rarr;</a>
+        </div>
+      </article>
+
+      <article class="related-card" aria-label="Related post: Your Team Is Burning Out">
+        <div class="related-image-placeholder" role="img" aria-label="Team Fix image placeholder">Image Coming Soon</div>
+        <div class="related-card-body">
+          <span class="category-tag">Team Fix</span>
+          <h3>Your Team Is Burning Out. Here's How to Actually Help Them.</h3>
+          <a href="blog-post-4-burnout.html" class="read-more">Read More &rarr;</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip" aria-label="Call to action">
+    <h2>Ready to energise your team right now?</h2>
+    <p>You don't have to wait for the post. Talk to us today about what your team needs.</p>
+    <a href="contact.html" class="btn btn-gold">Get In Touch</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <a href="index.html" aria-label="Team Connect home">
+          <img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" />
+        </a>
+      </div>
+      <div class="footer-contact">
+        <h4>Get In Touch</h4>
+        <ul>
+          <li><a href="tel:0824522283">082 452 2283</a></li>
+          <li><a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></li>
+          <li><a href="https://www.teamconnect.co.za" target="_blank" rel="noopener noreferrer">www.teamconnect.co.za</a></li>
+          <li>Cape Town, South Africa</li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/theTeamConnect" target="_blank" rel="noopener noreferrer" aria-label="Team Connect on Facebook">&#128216; Facebook</a>
+          <a href="https://www.instagram.com/teamconnectsa" target="_blank" rel="noopener noreferrer" aria-label="Team Connect on Instagram">&#128247; Instagram</a>
+          <a href="https://www.tiktok.com/@teamconnectsa" target="_blank" rel="noopener noreferrer" aria-label="Team Connect on TikTok">&#127925; TikTok</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 <span>Team Connect</span>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', function () {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    links.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    function handleNotify(e) {
+      e.preventDefault();
+      const input = e.target.querySelector('input[type="email"]');
+      const btn = e.target.querySelector('button');
+      btn.textContent = 'Thanks! We\'ll notify you.';
+      btn.disabled = true;
+      input.disabled = true;
+    }
+  </script>
+</body>
+</html>
