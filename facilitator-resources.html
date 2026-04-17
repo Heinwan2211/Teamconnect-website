@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Facilitator Resources — Team Connect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #1a4a2e;
+      --green-dark: #0f2b1a;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --light-bg: #f7f5f0;
+      --text: #222222;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ─── PASSWORD OVERLAY ─── */
+    #password-overlay {
+      position: fixed;
+      inset: 0;
+      background: var(--green-dark);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .password-box {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2.5rem 2rem;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+    }
+
+    .password-box img {
+      height: 80px;
+      width: auto;
+      display: block;
+      margin: 0 auto 1.5rem;
+    }
+
+    .password-box h2 {
+      color: var(--green);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .password-box p {
+      color: #555;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .password-box input[type="password"] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .password-box input[type="password"]:focus {
+      border-color: var(--green);
+    }
+
+    .password-box button {
+      width: 100%;
+      padding: 0.85rem;
+      background: var(--green);
+      color: var(--white);
+      border: none;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+      transition: background 0.2s;
+    }
+
+    .password-box button:hover {
+      background: #25623d;
+    }
+
+    #password-error {
+      color: #c0392b;
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+      min-height: 1.2em;
+    }
+
+    /* ─── PAGE CONTENT (hidden until authenticated) ─── */
+    #page-content {
+      display: none;
+    }
+
+    /* ─── PAGE HEADER ─── */
+    .page-header {
+      background: var(--green);
+      color: var(--white);
+      text-align: center;
+      padding: 3rem 5% 2.5rem;
+    }
+
+    .page-header img {
+      height: 80px;
+      width: auto;
+      display: block;
+      margin: 0 auto 1.5rem;
+    }
+
+    .page-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.6rem;
+    }
+
+    .page-header .subheading {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ─── INTRO STRIP ─── */
+    .intro-strip {
+      background: var(--gold);
+      color: var(--green);
+      text-align: center;
+      padding: 2rem 5%;
+    }
+
+    .intro-strip p {
+      max-width: 820px;
+      margin: 0 auto;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    /* ─── RESOURCES GRID ─── */
+    .resources-section {
+      background: var(--light-bg);
+      padding: 3.5rem 5%;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .resource-card {
+      background: var(--white);
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .resource-card h3 {
+      color: var(--green);
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .resource-card .card-desc {
+      color: #555;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+
+    .resource-card .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 0.25rem;
+    }
+
+    .resource-card .btn-dl {
+      display: block;
+      background: var(--green);
+      color: var(--white);
+      text-align: center;
+      padding: 0.55rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      transition: background 0.2s;
+    }
+
+    .resource-card .btn-dl:hover {
+      background: #25623d;
+    }
+
+    /* ─── CONTACT STRIP ─── */
+    .contact-strip {
+      background: var(--green);
+      color: var(--white);
+      text-align: center;
+      padding: 2rem 5%;
+    }
+
+    .contact-strip p {
+      font-size: 0.95rem;
+      font-weight: 600;
+      line-height: 1.8;
+    }
+
+    .contact-strip a {
+      color: var(--gold);
+    }
+
+    .contact-strip a:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+      padding: 48px 5% 28px;
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .footer-logo {
+      height: 100px;
+      width: auto;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .footer-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 1.6rem;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .footer-details a {
+      color: #c9a84c;
+      text-decoration: none;
+    }
+
+    .footer-details a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-details span {
+      color: rgba(255,255,255,0.65);
+    }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1rem;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 600px) {
+      .resources-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PASSWORD OVERLAY -->
+  <div id="password-overlay" role="dialog" aria-modal="true" aria-labelledby="pw-heading">
+    <div class="password-box">
+      <img src="images/Team connect logo.jpg" alt="Team Connect logo" />
+      <h2 id="pw-heading">Facilitator Resources</h2>
+      <p>This page is restricted to Team Connect facilitators.<br>Please enter your access password to continue.</p>
+      <input type="password" id="pw-input" placeholder="Enter password" autocomplete="current-password" aria-label="Access password" />
+      <button id="pw-submit" type="button">Access Resources</button>
+      <div id="password-error" role="alert" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <!-- PAGE CONTENT -->
+  <div id="page-content">
+
+    <!-- HEADER -->
+    <header class="page-header">
+      <img src="images/Team_connect_logo_white.png" alt="Team Connect logo" />
+      <h1>Facilitator Resources</h1>
+      <p class="subheading">Internal Use Only — Team Connect Facilitation Team</p>
+    </header>
+
+    <!-- INTRO STRIP -->
+    <div class="intro-strip">
+      <p>Welcome to the Team Connect Facilitator Hub. This page contains preparation guides, hosting scripts, debrief frameworks, preparation checklists, and client information packages for all 13 Team Connect experiences. These documents are confidential and for facilitator use only.</p>
+    </div>
+
+    <!-- RESOURCES GRID -->
+    <section class="resources-section" aria-label="Facilitator resource downloads">
+      <div class="resources-grid">
+
+        <!-- 1. Escape Labs (Rouge) -->
+        <div class="resource-card">
+          <h3>Escape Labs (Rouge)</h3>
+          <p class="card-desc">High-intensity lab-style escape experience combining physical puzzles, logic problems, and AI-generated curveballs.</p>
+          <div class="btn-group">
+            <a href="#" class="btn-dl">Facilitator Guide</a>
+            <a href="#" class="btn-dl">Preparation Checklist</a>
+            <a href="#" class="btn-dl">Client Info Package</a>
+          </div>
+        </div>
+
+        <!-- 2. Culture Throwdown -->
+        <div class="resource-card">
+          <h3>Culture Throwdown</h3>
+          <p class="card-desc">Game-show-style experience unpacking workplace culture through competitive play — trivia, values dilemmas, and live debates.</p>
+          <div class="btn-group">
+            <a href="#" class="btn-dl">Facilitator Guide</a>
+            <a href="#" class="btn-dl">Preparation Checklist</a>
+            <a href="#" class="btn-dl">Client Info Package</a>
+          </div>
+        </div>
+
+        <!-- 3. Creative Collision -->
+        <div class="resource-card">
+          <h3>Creative Collision</h3>
+          <p class="card-desc">A creative challenge that sparks innovation, cross-functional collaboration, and out-of-the-box thinking across teams.</p>
+          <div class="btn-group">
+            <a href="#" class="btn-dl">Facilitator Guide</a>
+            <a href="#" class="btn-dl">Preparation Checklist</a>
+            <a href="#" class="btn-dl">Client Info Package</a>
+          </div>
+        </div>
+
+        <!-- 4. Community Champions -->
+        <div class="resource-card">
+          <h3>Community Champions</h3>
+          <p class="card-desc">Purpose-driven CSR experience where teams contribute meaningfully to their communities while building internal cohesion.</p>
+          <div class="btn-group">
+            <a href="#" class="btn-dl">Facilitator Guide</a>
+            <a href="#" class="btn-dl">Preparation Checklist</a>
+            <a href="#" class="btn-dl">Client Info Package</a>
+          </div>
+        </div>
+
+        <!-- 5. Leadership Development -->
+        <div class="resource-card">
+          <h3>Leadership Development</h3>
+          <p class="card-desc">Structured programme helping emerging and existing leaders develop self-awareness, communication, and decision-making skills.</p>
+          <div class="btn-group">
+            <a href="#" class="btn-dl">Facilitator Guide</a>
+            <a href="#" class="btn-dl">Preparation Checklist</a>
+            <a href="#" class="btn-dl">Client Info Package</a>
+          </div>
+        </div>
+
+        <!-- 6. Mental & Corporate Wellness -->
+        <div class="resource-card">
+          <h3>Mental &amp; Corporate Wellness</h3>
+          <p class="card-desc">Evidence-based wellness experience addressing burnout, stress, and psychological safety in the modern workplace.</p>
+          <div class="btn-group">
+            <a href="#" class="btn-dl">Facilitator Guide</a>
+            <a href="#" class="btn-dl">Preparation Checklist</a>
+            <a href="#" class="btn-dl">Client Info Package</a>
+          </div>
+        </div>
+
+        <!-- 7. Hybrid Challenge Series -->
+        <div class="resource-card">
+          <h3>Hybrid Challenge Series</h3>
+          <p class="card-desc">Designed for distributed teams — seamlessly connects in-office and remote participants in shared, competitive challenges.</p>
+          <div class="btn-group">
+            <a href="#" class="btn-dl">Facilitator Guide</a>
+            <a href="#" class="btn-dl">Preparation Checklist</a>
+            <a href="#" class="btn-dl">Client Info Package</a>
+          </div>
+        </div>
+
+        <!-- 8. Bespoke Experience -->
+        <div class="resource-card">
+          <h3>Bespoke Experience</h3>
+          <p class="card-desc">Fully customised team building solution designed around the client's specific objectives, culture, and event requirements.</p>
+          <div class="btn-group">
+            <a href="#" class="btn-dl">Facilitator Guide</a>
+            <a href="#" class="btn-dl">Preparation Checklist</a>
+            <a href="#" class="btn-dl">Client Info Package</a>
+          </div>
+        </div>
+
+        <!-- 9. Incentive & Fun Events -->
+        <div class="resource-card">
+          <h3>Incentive &amp; Fun Events</h3>
+          <p class="card-desc">High-energy reward and recognition experiences celebrating achievement and boosting morale across the organisation.</p>
+          <div class="btn-group">
+            <a href="#" class="btn-dl">Facilitator Guide</a>
+            <a href="#" class="btn-dl">Preparation Checklist</a>
+            <a href="#" class="btn-dl">Client Info Package</a>
+          </div>
+        </div>
+
+        <!-- 10. Conference Solutions -->
+        <div class="resource-card">
+          <h3>Conference Solutions</h3>
+          <p class="card-desc">Team building add-ons and facilitated sessions that elevate conferences from passive attendance to active participation.</p>
+          <div class="btn-group">
+            <a href="#" class="btn-dl">Facilitator Guide</a>
+            <a href="#" class="btn-dl">Preparation Checklist</a>
+            <a href="#" class="btn-dl">Client Info Package</a>
+          </div>
+        </div>
+
+        <!-- 11. Sports Team Dynamics -->
+        <div class="resource-card">
+          <h3>Sports Team Dynamics</h3>
+          <p class="card-desc">Draws on sports psychology principles to strengthen trust, accountability, and performance culture within corporate teams.</p>
+          <div class="btn-group">
+            <a href="#" class="btn-dl">Facilitator Guide</a>
+            <a href="#" class="btn-dl">Preparation Checklist</a>
+            <a href="#" class="btn-dl">Client Info Package</a>
+          </div>
+        </div>
+
+        <!-- 12. The Fugitive -->
+        <div class="resource-card">
+          <h3>The Fugitive</h3>
+          <p class="card-desc">Immersive outdoor pursuit experience blending strategy, communication, and high-stakes decision making under time pressure.</p>
+          <div class="btn-group">
+            <a href="#" class="btn-dl">Facilitator Guide</a>
+            <a href="#" class="btn-dl">Preparation Checklist</a>
+            <a href="#" class="btn-dl">Client Info Package</a>
+          </div>
+        </div>
+
+        <!-- 13. Amazing Race -->
+        <div class="resource-card">
+          <h3>Amazing Race</h3>
+          <p class="card-desc">Cape Town-inspired race format challenging teams through city or venue-based checkpoints requiring collaboration and problem-solving.</p>
+          <div class="btn-group">
+            <a href="#" class="btn-dl">Facilitator Guide</a>
+            <a href="#" class="btn-dl">Preparation Checklist</a>
+            <a href="#" class="btn-dl">Client Info Package</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT STRIP -->
+    <div class="contact-strip">
+      <p>For questions about these resources contact: <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a> &nbsp;|&nbsp; <a href="tel:0824522283">082 452 2283</a></p>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-inner">
+        <img src="images/Team_connect_logo_white.png" alt="Team Connect — Bringing Teams Together" class="footer-logo" />
+        <div class="footer-details">
+          <span>&#128222; <a href="tel:0824522283">082 452 2283</a></span>
+          <span>&#9993; <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></span>
+          <span>&#127760; <a href="https://www.teamconnect.co.za">www.teamconnect.co.za</a></span>
+          <span><a href="https://www.facebook.com/theTeamConnect" target="_blank" rel="noopener noreferrer">&#128216; Facebook</a></span>
+          <span><a href="https://www.instagram.com/teamconnectsa" target="_blank" rel="noopener noreferrer">&#128247; Instagram</a></span>
+          <span><a href="https://www.tiktok.com/@teamconnectsa" target="_blank" rel="noopener noreferrer">&#127925; TikTok</a></span>
+          <span>&#128205; Cape Town, South Africa</span>
+        </div>
+        <div class="footer-copy">
+          &copy; 2025 Team Connect. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- end #page-content -->
+
+  <script>
+    (function () {
+      var CORRECT_PASSWORD = 'TCfacilitator2026';
+      var SESSION_KEY = 'tc_facilitator_auth';
+
+      var overlay = document.getElementById('password-overlay');
+      var content = document.getElementById('page-content');
+      var input = document.getElementById('pw-input');
+      var submitBtn = document.getElementById('pw-submit');
+      var errorEl = document.getElementById('password-error');
+
+      function unlock() {
+        overlay.style.display = 'none';
+        content.style.display = 'block';
+      }
+
+      if (sessionStorage.getItem(SESSION_KEY) === '1') {
+        unlock();
+        return;
+      }
+
+      function attempt() {
+        if (input.value === CORRECT_PASSWORD) {
+          sessionStorage.setItem(SESSION_KEY, '1');
+          errorEl.textContent = '';
+          unlock();
+        } else {
+          errorEl.textContent = 'Incorrect password. Please contact Team Connect management.';
+          input.value = '';
+          input.focus();
+        }
+      }
+
+      submitBtn.addEventListener('click', attempt);
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') attempt();
+      });
+    })();
+  </script>
+
+</body>
+</html>
