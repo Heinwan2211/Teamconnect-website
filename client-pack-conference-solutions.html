@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Conference Solutions — Client Information Pack | Team Connect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Montserrat', sans-serif; color: #1a1a1a; background: #f9f9f9; }
+  .doc-header { background: #1a4a2e; color: white; padding: 32px 5%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .doc-header img { height: 60px; width: auto; }
+  .doc-header-text h1 { font-size: 1.4rem; color: #c9a84c; margin-bottom: 4px; }
+  .doc-header-text p { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+  .doc-actions { background: #c9a84c; padding: 16px 5%; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .btn-print { background: #1a4a2e; color: white; border: none; padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.85rem; cursor: pointer; border-radius: 4px; }
+  .btn-back { background: transparent; color: #1a4a2e; border: 2px solid #1a4a2e; padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.85rem; cursor: pointer; border-radius: 4px; text-decoration: none; display: inline-block; }
+  .doc-content { max-width: 860px; margin: 40px auto; padding: 0 5% 60px; }
+  .welcome-strip { background: #1a4a2e; color: white; border-radius: 8px; padding: 32px; margin-bottom: 40px; text-align: center; }
+  .welcome-strip img { height: 70px; width: auto; margin-bottom: 16px; display: block; margin-left: auto; margin-right: auto; }
+  .welcome-strip h1 { font-size: 1.8rem; color: #c9a84c; margin-bottom: 8px; }
+  .welcome-strip p { color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.7; }
+  .at-a-glance { background: white; border: 2px solid #c9a84c; border-radius: 8px; padding: 24px; margin-bottom: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .glance-item { display: flex; flex-direction: column; gap: 4px; }
+  .glance-label { font-size: 0.75rem; color: #c9a84c; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .glance-value { font-size: 0.95rem; color: #1a4a2e; font-weight: 600; }
+  .section-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 28px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .section-card h2 { font-size: 1.1rem; color: #1a4a2e; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #c9a84c; }
+  .section-card p { line-height: 1.8; margin-bottom: 12px; font-size: 0.92rem; color: #333; }
+  .section-card ul { margin: 12px 0 0 20px; line-height: 1.8; font-size: 0.92rem; }
+  .section-card li { margin-bottom: 8px; }
+  .outcomes-list { list-style: none; margin: 0; padding: 0; }
+  .outcomes-list li { padding: 10px 0 10px 32px; border-bottom: 1px solid #f0f0f0; position: relative; font-size: 0.92rem; line-height: 1.6; }
+  .outcomes-list li:before { content: "✓"; position: absolute; left: 0; color: #c9a84c; font-weight: 700; font-size: 1rem; }
+  .outcomes-list li:last-child { border-bottom: none; }
+  .practical-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+  .practical-item h3 { font-size: 0.85rem; color: #c9a84c; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .practical-item p, .practical-item ul { font-size: 0.88rem; line-height: 1.7; color: #444; }
+  .practical-item ul { margin-left: 16px; }
+  .faq-item { padding: 16px 0; border-bottom: 1px solid #f0f0f0; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-question { font-weight: 700; color: #1a4a2e; font-size: 0.92rem; margin-bottom: 8px; }
+  .faq-answer { font-size: 0.9rem; line-height: 1.7; color: #444; }
+  .contact-strip { background: #1a4a2e; color: white; border-radius: 8px; padding: 28px; margin-top: 32px; text-align: center; }
+  .contact-strip h2 { color: #c9a84c; font-size: 1.1rem; margin-bottom: 16px; }
+  .contact-strip a { color: #c9a84c; text-decoration: none; }
+  .contact-strip p { color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.8; }
+  .doc-footer { background: #1a4a2e; color: rgba(255,255,255,0.6); text-align: center; padding: 20px; font-size: 0.8rem; margin-top: 40px; }
+  @media print { .doc-actions { display: none; } .section-card { break-inside: avoid; } body { background: white; } }
+  @media (max-width: 768px) { .at-a-glance { grid-template-columns: 1fr; } .practical-grid { grid-template-columns: 1fr; } .welcome-strip h1 { font-size: 1.4rem; } }
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  <img src="images/Team_connect_logo_white.png" alt="Team Connect">
+  <div class="doc-header-text">
+    <h1>Conference Solutions — Client Information Pack</h1>
+    <p>Prepared by Team Connect | Confidential</p>
+  </div>
+</div>
+
+<div class="doc-actions">
+  <a href="facilitator-resources.html" class="btn-back">← Back to Resources</a>
+  <button class="btn-print" onclick="window.print()">🖨 Print / Save as PDF</button>
+</div>
+
+<div class="doc-content">
+
+  <div class="welcome-strip">
+    <img src="images/Team_connect_logo_white.png" alt="Team Connect">
+    <h1>Conference Solutions</h1>
+    <p>Your Team Connect Experience Guide</p>
+  </div>
+
+  <div class="at-a-glance">
+    <div class="glance-item"><span class="glance-label">Experience</span><span class="glance-value">Conference Solutions</span></div>
+    <div class="glance-item"><span class="glance-label">Date</span><span class="glance-value">To be confirmed</span></div>
+    <div class="glance-item"><span class="glance-label">Time</span><span class="glance-value">To be confirmed</span></div>
+    <div class="glance-item"><span class="glance-label">Venue</span><span class="glance-value">To be confirmed</span></div>
+    <div class="glance-item"><span class="glance-label">Participants</span><span class="glance-value">To be confirmed</span></div>
+    <div class="glance-item"><span class="glance-label">Duration</span><span class="glance-value">15 to 90 minutes per activation</span></div>
+    <div class="glance-item"><span class="glance-label">Facilitator</span><span class="glance-value">Team Connect Facilitation Team</span></div>
+  </div>
+
+  <div class="section-card">
+    <h2>A Message from Team Connect</h2>
+    <p>A great conference has great speakers — but the moments between the presentations, and the energy in the room when speakers are done, are what determine whether delegates leave feeling genuinely transformed or simply well-informed. Team Connect's Conference Solutions are designed to do one thing: keep your audience fully present, actively engaged, and meaningfully connected across the arc of your event. We are proud to be trusted with those moments, and we'll make every one count.</p>
+  </div>
+
+  <div class="section-card">
+    <h2>What to Expect on the Day</h2>
+    <p>Conference Solutions are a suite of six activation formats, each designed to serve a different moment in your conference programme. You may choose a single format for a specific slot, or a combination of formats deployed across a full conference day or multi-day event.</p>
+    <p><strong>Morning Ignition</strong> (15–30 minutes | Conference opening or post-registration) wakes up the room, creates immediate connection between delegates, and sets the tone for a day that is active and participatory — before the first speaker takes the stage.</p>
+    <p><strong>Post-Lunch Reset</strong> (20–30 minutes | After lunch or any energy dip) combats the post-lunch energy dip with movement, laughter, and a burst of connection that gets delegates alert, present, and ready for the afternoon programme.</p>
+    <p><strong>Table-to-Table Networking</strong> (30–45 minutes | Mid-morning or mid-afternoon) is a structured networking experience that gives delegates a reason and a format to connect beyond their immediate table — breaking silos and creating cross-delegate relationships that outlast the conference.</p>
+    <p><strong>Values Integration</strong> (45–60 minutes | Mid-conference or after a keynote on culture or strategy) uses a structured experience to move your conference's core theme or values from concept to lived reality — embedding the day's key message through active participation rather than passive listening.</p>
+    <p><strong>Creative Stimulus</strong> (30–45 minutes | Any point where thinking needs a reset) breaks conventional thinking patterns and opens the room to new ideas through a facilitated creative challenge — particularly effective immediately before a strategy or innovation session.</p>
+    <p><strong>Closing Synthesis</strong> (45–90 minutes | End of conference or final session) is a facilitated closing experience that invites delegates to consolidate, commit, and connect — turning a day of learning and inspiration into a clear set of individual and collective next steps.</p>
+    <p>Your Team Connect facilitator will read the room continuously and deliver each format with precision timing and professional energy, ensuring every activation feels seamlessly integrated rather than bolted on.</p>
+  </div>
+
+  <div class="section-card">
+    <h2>What Your Team Will Walk Away With</h2>
+    <ul class="outcomes-list">
+      <li>A conference that is remembered for being genuinely engaging — not just for its speakers</li>
+      <li>Stronger connections between delegates who may not have spoken before the event</li>
+      <li>A clear sense of commitment and direction coming out of the closing session</li>
+      <li>The feeling that the day was designed with them in mind — not just for them, but with them</li>
+      <li>Energy, motivation, and a tangible sense of shared momentum going into what's next</li>
+    </ul>
+  </div>
+
+  <div class="section-card">
+    <h2>Practical Information</h2>
+    <div class="practical-grid">
+      <div class="practical-item">
+        <h3>What to Wear</h3>
+        <p>Smart business or smart casual, consistent with the dress code of your conference. No special clothing is required for any of our Conference Solution formats.</p>
+      </div>
+      <div class="practical-item">
+        <h3>What to Bring</h3>
+        <p>No specific items required. Delegates simply need to be present and willing to participate. Stationery and any materials needed for specific formats will be provided by Team Connect.</p>
+      </div>
+      <div class="practical-item">
+        <h3>What We Provide</h3>
+        <ul>
+          <li>Facilitation team for all selected formats</li>
+          <li>All materials specific to each activation format</li>
+          <li>PA system and AV coordination (or integration with your existing conference AV)</li>
+          <li>Coordination with your conference programme to ensure seamless integration</li>
+          <li>Pre-conference briefing on timing, flow, and facilitator positioning</li>
+        </ul>
+      </div>
+      <div class="practical-item">
+        <h3>Dietary &amp; Accessibility</h3>
+        <p>For seated conference formats, full accessibility is standard. For any activation formats involving movement, please inform us of participants with mobility or other accessibility needs at least one week before the event by emailing <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a>.</p>
+      </div>
+      <div class="practical-item">
+        <h3>Parking &amp; Arrival</h3>
+        <p>Please direct your Team Connect facilitation team to the venue at least 90 minutes before the conference begins, allowing adequate time for setup and coordination with your AV and events team.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-question">Can we pick and choose which formats to use?</div>
+      <div class="faq-answer">Yes. You can select any combination of the six Conference Solution formats. Your Team Connect contact will help you identify which formats suit your programme structure, delegate profile, and conference objectives.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How do you ensure the activations feel integrated rather than separate?</div>
+      <div class="faq-answer">We work closely with your conference organiser in advance to understand the programme flow, the keynote themes, and the desired conference arc. Every activation is briefed and prepared with that context in mind, so it feels like a deliberate part of the programme rather than an interruption.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Can the activations reference our conference theme or specific content?</div>
+      <div class="faq-answer">Absolutely. The more context you share about your conference theme, speakers, and key messages, the more our facilitators can align the activations to reinforce and amplify what's happening in the room. Share your speaker briefs, programme, and theme documents with your Team Connect contact as early as possible.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What if our conference programme is running late?</div>
+      <div class="faq-answer">Our facilitators are trained to adapt timing in real time. Each format has a core experience that can be compressed or extended by 5–10 minutes without compromising quality. We'll always brief your conference organiser on flexible timing options in advance.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Do you provide your own AV, or do you work with our existing setup?</div>
+      <div class="faq-answer">Both options are available. We can provide our own AV infrastructure for standalone activations, or integrate with your existing conference AV setup. We'll discuss the best approach with your conference organiser during the pre-event briefing.</div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2>Getting the Most from Your Experience</h2>
+    <p><strong>Share your programme early.</strong> The sooner we see your full conference programme, the better we can position each activation for maximum impact. Even a draft schedule helps us plan effectively.</p>
+    <p><strong>Brief your conference organiser on our role.</strong> Ensure your events team knows that Team Connect facilitators will need venue access, AV coordination, and programme timing cooperation. We'll provide a technical rider for this purpose.</p>
+    <p><strong>Trust the energy reads.</strong> Our facilitators are skilled at reading conference energy in real time. Give them the authority to adjust the pace, intensity, or timing of an activation if the room needs it — that responsiveness is what makes Conference Solutions genuinely effective.</p>
+    <p><strong>Close with intention.</strong> If you're using the Closing Synthesis format, invest in the final 10 minutes. That last beat — where delegates articulate their individual commitments and connect them to the collective — is what turns a good conference into a transformative one. Protect that time.</p>
+  </div>
+
+  <div class="section-card">
+    <h2>After the Experience</h2>
+    <p>Following your conference, Team Connect will offer:</p>
+    <ul>
+      <li>Post-event debrief with your conference organiser on the effectiveness of each activation</li>
+      <li>Summary insights document on delegate engagement and key themes that emerged</li>
+      <li>Recommendations for follow-on activations at future conferences or team events</li>
+      <li>Information on how to build Conference Solutions into an annual events programme</li>
+    </ul>
+  </div>
+
+  <div class="contact-strip">
+    <h2>Your Team Connect Contact</h2>
+    <p>Team Connect Client Services<br>
+    Email: <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a><br>
+    Phone: 082 452 2283<br>
+    Website: <a href="https://www.teamconnect.co.za">www.teamconnect.co.za</a><br>
+    Social: @teamconnectsa</p>
+  </div>
+
+</div>
+
+<div class="doc-footer">
+  Team Connect | Info@teamconnect.co.za | 082 452 2283 | www.teamconnect.co.za
+</div>
+
+</body>
+</html>

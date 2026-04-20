@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Incentive &amp; Fun Events — Client Information Pack | Team Connect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Montserrat', sans-serif; color: #1a1a1a; background: #f9f9f9; }
+  .doc-header { background: #1a4a2e; color: white; padding: 32px 5%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .doc-header img { height: 60px; width: auto; }
+  .doc-header-text h1 { font-size: 1.4rem; color: #c9a84c; margin-bottom: 4px; }
+  .doc-header-text p { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+  .doc-actions { background: #c9a84c; padding: 16px 5%; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .btn-print { background: #1a4a2e; color: white; border: none; padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.85rem; cursor: pointer; border-radius: 4px; }
+  .btn-back { background: transparent; color: #1a4a2e; border: 2px solid #1a4a2e; padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.85rem; cursor: pointer; border-radius: 4px; text-decoration: none; display: inline-block; }
+  .doc-content { max-width: 860px; margin: 40px auto; padding: 0 5% 60px; }
+  .welcome-strip { background: #1a4a2e; color: white; border-radius: 8px; padding: 32px; margin-bottom: 40px; text-align: center; }
+  .welcome-strip img { height: 70px; width: auto; margin-bottom: 16px; display: block; margin-left: auto; margin-right: auto; }
+  .welcome-strip h1 { font-size: 1.8rem; color: #c9a84c; margin-bottom: 8px; }
+  .welcome-strip p { color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.7; }
+  .at-a-glance { background: white; border: 2px solid #c9a84c; border-radius: 8px; padding: 24px; margin-bottom: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .glance-item { display: flex; flex-direction: column; gap: 4px; }
+  .glance-label { font-size: 0.75rem; color: #c9a84c; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .glance-value { font-size: 0.95rem; color: #1a4a2e; font-weight: 600; }
+  .section-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 28px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .section-card h2 { font-size: 1.1rem; color: #1a4a2e; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #c9a84c; }
+  .section-card p { line-height: 1.8; margin-bottom: 12px; font-size: 0.92rem; color: #333; }
+  .section-card ul { margin: 12px 0 0 20px; line-height: 1.8; font-size: 0.92rem; }
+  .section-card li { margin-bottom: 8px; }
+  .outcomes-list { list-style: none; margin: 0; padding: 0; }
+  .outcomes-list li { padding: 10px 0 10px 32px; border-bottom: 1px solid #f0f0f0; position: relative; font-size: 0.92rem; line-height: 1.6; }
+  .outcomes-list li:before { content: "✓"; position: absolute; left: 0; color: #c9a84c; font-weight: 700; font-size: 1rem; }
+  .outcomes-list li:last-child { border-bottom: none; }
+  .practical-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+  .practical-item h3 { font-size: 0.85rem; color: #c9a84c; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .practical-item p, .practical-item ul { font-size: 0.88rem; line-height: 1.7; color: #444; }
+  .practical-item ul { margin-left: 16px; }
+  .faq-item { padding: 16px 0; border-bottom: 1px solid #f0f0f0; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-question { font-weight: 700; color: #1a4a2e; font-size: 0.92rem; margin-bottom: 8px; }
+  .faq-answer { font-size: 0.9rem; line-height: 1.7; color: #444; }
+  .contact-strip { background: #1a4a2e; color: white; border-radius: 8px; padding: 28px; margin-top: 32px; text-align: center; }
+  .contact-strip h2 { color: #c9a84c; font-size: 1.1rem; margin-bottom: 16px; }
+  .contact-strip a { color: #c9a84c; text-decoration: none; }
+  .contact-strip p { color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.8; }
+  .doc-footer { background: #1a4a2e; color: rgba(255,255,255,0.6); text-align: center; padding: 20px; font-size: 0.8rem; margin-top: 40px; }
+  @media print { .doc-actions { display: none; } .section-card { break-inside: avoid; } body { background: white; } }
+  @media (max-width: 768px) { .at-a-glance { grid-template-columns: 1fr; } .practical-grid { grid-template-columns: 1fr; } .welcome-strip h1 { font-size: 1.4rem; } }
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  <img src="images/Team_connect_logo_white.png" alt="Team Connect">
+  <div class="doc-header-text">
+    <h1>Incentive &amp; Fun Events — Client Information Pack</h1>
+    <p>Prepared by Team Connect | Confidential</p>
+  </div>
+</div>
+
+<div class="doc-actions">
+  <a href="facilitator-resources.html" class="btn-back">← Back to Resources</a>
+  <button class="btn-print" onclick="window.print()">🖨 Print / Save as PDF</button>
+</div>
+
+<div class="doc-content">
+
+  <div class="welcome-strip">
+    <img src="images/Team_connect_logo_white.png" alt="Team Connect">
+    <h1>Incentive &amp; Fun Events</h1>
+    <p>Your Team Connect Experience Guide</p>
+  </div>
+
+  <div class="at-a-glance">
+    <div class="glance-item"><span class="glance-label">Experience</span><span class="glance-value">Incentive &amp; Fun Events</span></div>
+    <div class="glance-item"><span class="glance-label">Date</span><span class="glance-value">To be confirmed</span></div>
+    <div class="glance-item"><span class="glance-label">Time</span><span class="glance-value">To be confirmed</span></div>
+    <div class="glance-item"><span class="glance-label">Venue</span><span class="glance-value">To be confirmed</span></div>
+    <div class="glance-item"><span class="glance-label">Participants</span><span class="glance-value">To be confirmed</span></div>
+    <div class="glance-item"><span class="glance-label">Duration</span><span class="glance-value">2 hours to full-day or evening event</span></div>
+    <div class="glance-item"><span class="glance-label">Facilitator</span><span class="glance-value">Team Connect Facilitation Team</span></div>
+  </div>
+
+  <div class="section-card">
+    <h2>A Message from Team Connect</h2>
+    <p>Your team has worked hard — and they deserve a day that feels like it. Incentive &amp; Fun Events are our celebration experiences: high-energy, high-production, and designed to leave your people feeling genuinely recognised and proud to be part of your organisation. We bring the atmosphere, the MC energy, the competition, and the moments. You bring your people. Together, we'll create a day worth remembering. We can't wait to celebrate with you.</p>
+  </div>
+
+  <div class="section-card">
+    <h2>What to Expect on the Day</h2>
+    <p>Your Incentive &amp; Fun Event will be tailored to your format, your group size, and your celebration goals — so the specifics of the day will be confirmed during your planning conversations with your Team Connect contact. What you can expect in every format is this: a high-energy environment, professional production, and a facilitation team that knows how to read a room and keep it alive.</p>
+    <p>Depending on your chosen format, the day might look like a competitive tournament with real prizes and a knockout leaderboard, a year-end function with entertainment, recognition moments, and a celebration dinner, or an incentive reward experience for your top performers — something genuinely premium that signals you take achievement seriously. All formats are MC-hosted, professionally managed, and built around making your people feel celebrated.</p>
+    <p>You and your team will arrive to a venue that's already buzzing — music, atmosphere, and a Team Connect team that's been preparing for hours to make sure every detail is right. The experience is designed to feel effortless for you: we handle the logistics, the energy management, the timing, and the surprises. You get to be fully present with your team.</p>
+    <p>There will be moments of genuine fun, moments of friendly competition, and moments of recognition that are designed to land with real emotional weight. By the time your team leaves, they should feel celebrated, connected, and proud.</p>
+  </div>
+
+  <div class="section-card">
+    <h2>What Your Team Will Walk Away With</h2>
+    <ul class="outcomes-list">
+      <li>The felt experience of being genuinely recognised and valued — which creates loyalty that survives long after the day</li>
+      <li>Shared memories and inside references that strengthen team identity for months to come</li>
+      <li>Renewed motivation and positive association with the organisation and its culture</li>
+      <li>Connection across levels and departments — because celebration is one of the most natural unifiers in any organisation</li>
+      <li>The energy of a well-executed day that signals your organisation invests in its people</li>
+    </ul>
+  </div>
+
+  <div class="section-card">
+    <h2>Practical Information</h2>
+    <div class="practical-grid">
+      <div class="practical-item">
+        <h3>What to Wear</h3>
+        <p>Dress code will be confirmed based on your chosen format and venue. Your Team Connect contact will provide specific guidance in advance — whether that's smart casual, cocktail, themed, or something else entirely.</p>
+      </div>
+      <div class="practical-item">
+        <h3>What to Bring</h3>
+        <ul>
+          <li>Your celebration energy</li>
+          <li>Any event-specific items confirmed by your Team Connect contact</li>
+          <li>Openness to surprises — we keep a few of those in reserve for the best moments</li>
+        </ul>
+      </div>
+      <div class="practical-item">
+        <h3>What We Provide</h3>
+        <ul>
+          <li>MC and facilitation team throughout the event</li>
+          <li>Full event production management (logistics, timing, staging, awards)</li>
+          <li>Sound system, lighting, and AV appropriate to your format and venue</li>
+          <li>Competition and scoring infrastructure (if applicable)</li>
+          <li>Awards and prizes as agreed</li>
+          <li>Coordination of recognition moments or spotlight ceremonies</li>
+        </ul>
+      </div>
+      <div class="practical-item">
+        <h3>Dietary &amp; Accessibility</h3>
+        <p>Please inform us of any dietary requirements or accessibility needs as early as possible — ideally during your initial planning conversation. Email <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a>. For larger events, we'll collect dietary information from all participants in advance via a registration process.</p>
+      </div>
+      <div class="practical-item">
+        <h3>Parking &amp; Arrival</h3>
+        <p>Specific arrival instructions and parking guidance will be sent separately as part of your pre-event communications. Please share these instructions with all participants — your Team Connect contact will provide ready-to-send participant communications for this purpose.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-question">How large a group can you accommodate?</div>
+      <div class="faq-answer">Incentive &amp; Fun Events scale from 20 to over 1,000 participants. Larger events require a full production team and additional lead time — please contact us as early as possible if your group exceeds 300 people.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Can we include individual recognition and awards?</div>
+      <div class="faq-answer">Absolutely. Recognition moments — spotlight awards, top performer acknowledgements, milestone celebrations — can be built into any Incentive &amp; Fun Event format. Share your recognition criteria and recipients with your Team Connect contact during planning.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Can this experience be themed?</div>
+      <div class="faq-answer">Yes. Themed events are one of our favourite formats to design. Whether it's a specific decade, a movie theme, a sports theme, or your company's own culture and identity, we can build the experience around a theme that resonates with your team.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How much planning time do you need?</div>
+      <div class="faq-answer">Standard Incentive &amp; Fun Events require a minimum of four to six weeks of planning time. Large-scale or highly customised events require eight to twelve weeks. Contact us as early as possible to secure your preferred date and allow sufficient planning time.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Can you help with venue selection?</div>
+      <div class="faq-answer">Yes. We work with a network of venues across South Africa and can recommend options that suit your group size, format, budget, and location. We can also bring our production to your preferred venue if you have one in mind.</div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2>Getting the Most from Your Experience</h2>
+    <p><strong>Invest in pre-event communication.</strong> Build anticipation by communicating the event to your team in advance. The more excited people arrive, the more energy there is to work with on the day. Your Team Connect contact can provide communication templates.</p>
+    <p><strong>Get leadership visible and present.</strong> When senior leaders are genuinely present and participating — not watching from the edges — it signals to the entire team that this day matters. That presence amplifies the feeling of recognition.</p>
+    <p><strong>Personalise the recognition moments.</strong> Generic awards feel generic. When recognition is specific — naming the exact contribution, the specific project, the particular quality that made a difference — it lands with genuine weight. Brief your speakers accordingly.</p>
+    <p><strong>End on a high.</strong> The close of the event is the last thing your team will carry home. Make sure it's intentional — a final moment of energy, connection, or recognition that sends everyone out on the right note. Your Team Connect facilitator will help you design this closing beat.</p>
+  </div>
+
+  <div class="section-card">
+    <h2>After the Experience</h2>
+    <p>Following your Incentive &amp; Fun Event, Team Connect will offer:</p>
+    <ul>
+      <li>Event summary and highlights documentation</li>
+      <li>Post-event photos (if arranged in advance — please ask your Team Connect contact)</li>
+      <li>Suggestions for sustaining the celebration energy and recognition culture</li>
+      <li>Information on how to book annual or follow-on events</li>
+    </ul>
+  </div>
+
+  <div class="contact-strip">
+    <h2>Your Team Connect Contact</h2>
+    <p>Team Connect Client Services<br>
+    Email: <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a><br>
+    Phone: 082 452 2283<br>
+    Website: <a href="https://www.teamconnect.co.za">www.teamconnect.co.za</a><br>
+    Social: @teamconnectsa</p>
+  </div>
+
+</div>
+
+<div class="doc-footer">
+  Team Connect | Info@teamconnect.co.za | 082 452 2283 | www.teamconnect.co.za
+</div>
+
+</body>
+</html>
