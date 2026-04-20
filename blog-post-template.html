@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog Post Title | Team Connect Insights</title>
   <meta name="description" content="Read this Team Connect Insights article — practical team development advice from South Africa's leading corporate team building company." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -27,6 +29,11 @@
       font-family: 'Montserrat', sans-serif;
       color: var(--text);
       background: var(--white);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
     }
 
     a {
