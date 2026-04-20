@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>The Fugitive — Client Information Pack | Team Connect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Montserrat', sans-serif; color: #1a1a1a; background: #f9f9f9; }
+  .doc-header { background: #1a4a2e; color: white; padding: 32px 5%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .doc-header img { height: 60px; width: auto; }
+  .doc-header-text h1 { font-size: 1.4rem; color: #c9a84c; margin-bottom: 4px; }
+  .doc-header-text p { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+  .doc-actions { background: #c9a84c; padding: 16px 5%; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .btn-print { background: #1a4a2e; color: white; border: none; padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.85rem; cursor: pointer; border-radius: 4px; }
+  .btn-back { background: transparent; color: #1a4a2e; border: 2px solid #1a4a2e; padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.85rem; cursor: pointer; border-radius: 4px; text-decoration: none; display: inline-block; }
+  .doc-content { max-width: 860px; margin: 40px auto; padding: 0 5% 60px; }
+  .welcome-strip { background: #1a4a2e; color: white; border-radius: 8px; padding: 32px; margin-bottom: 40px; text-align: center; }
+  .welcome-strip img { height: 70px; width: auto; margin-bottom: 16px; display: block; margin-left: auto; margin-right: auto; }
+  .welcome-strip h1 { font-size: 1.8rem; color: #c9a84c; margin-bottom: 8px; }
+  .welcome-strip p { color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.7; }
+  .at-a-glance { background: white; border: 2px solid #c9a84c; border-radius: 8px; padding: 24px; margin-bottom: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .glance-item { display: flex; flex-direction: column; gap: 4px; }
+  .glance-label { font-size: 0.75rem; color: #c9a84c; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .glance-value { font-size: 0.95rem; color: #1a4a2e; font-weight: 600; }
+  .section-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 28px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .section-card h2 { font-size: 1.1rem; color: #1a4a2e; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #c9a84c; }
+  .section-card p { line-height: 1.8; margin-bottom: 12px; font-size: 0.92rem; color: #333; }
+  .section-card ul { margin: 12px 0 0 20px; line-height: 1.8; font-size: 0.92rem; }
+  .section-card li { margin-bottom: 8px; }
+  .outcomes-list { list-style: none; margin: 0; padding: 0; }
+  .outcomes-list li { padding: 10px 0 10px 32px; border-bottom: 1px solid #f0f0f0; position: relative; font-size: 0.92rem; line-height: 1.6; }
+  .outcomes-list li:before { content: "✓"; position: absolute; left: 0; color: #c9a84c; font-weight: 700; font-size: 1rem; }
+  .outcomes-list li:last-child { border-bottom: none; }
+  .practical-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+  .practical-item h3 { font-size: 0.85rem; color: #c9a84c; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .practical-item p, .practical-item ul { font-size: 0.88rem; line-height: 1.7; color: #444; }
+  .practical-item ul { margin-left: 16px; }
+  .faq-item { padding: 16px 0; border-bottom: 1px solid #f0f0f0; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-question { font-weight: 700; color: #1a4a2e; font-size: 0.92rem; margin-bottom: 8px; }
+  .faq-answer { font-size: 0.9rem; line-height: 1.7; color: #444; }
+  .contact-strip { background: #1a4a2e; color: white; border-radius: 8px; padding: 28px; margin-top: 32px; text-align: center; }
+  .contact-strip h2 { color: #c9a84c; font-size: 1.1rem; margin-bottom: 16px; }
+  .contact-strip a { color: #c9a84c; text-decoration: none; }
+  .contact-strip p { color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.8; }
+  .doc-footer { background: #1a4a2e; color: rgba(255,255,255,0.6); text-align: center; padding: 20px; font-size: 0.8rem; margin-top: 40px; }
+  @media print { .doc-actions { display: none; } .section-card { break-inside: avoid; } body { background: white; } }
+  @media (max-width: 768px) { .at-a-glance { grid-template-columns: 1fr; } .practical-grid { grid-template-columns: 1fr; } .welcome-strip h1 { font-size: 1.4rem; } }
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  <img src="images/Team_connect_logo_white.png" alt="Team Connect">
+  <div class="doc-header-text">
+    <h1>The Fugitive — Client Information Pack</h1>
+    <p>Prepared by Team Connect | Confidential</p>
+  </div>
+</div>
+
+<div class="doc-actions">
+  <a href="facilitator-resources.html" class="btn-back">← Back to Resources</a>
+  <button class="btn-print" onclick="window.print()">🖨 Print / Save as PDF</button>
+</div>
+
+<div class="doc-content">
+
+  <div class="welcome-strip">
+    <img src="images/Team_connect_logo_white.png" alt="Team Connect">
+    <h1>The Fugitive</h1>
+    <p>Your Team Connect Experience Guide</p>
+  </div>
+
+  <div class="at-a-glance">
+    <div class="glance-item"><span class="glance-label">Experience</span><span class="glance-value">The Fugitive</span></div>
+    <div class="glance-item"><span class="glance-label">Date</span><span class="glance-value">To be confirmed</span></div>
+    <div class="glance-item"><span class="glance-label">Time</span><span class="glance-value">To be confirmed</span></div>
+    <div class="glance-item"><span class="glance-label">Venue</span><span class="glance-value">Cape Town urban and outdoor environment — To be confirmed</span></div>
+    <div class="glance-item"><span class="glance-label">Participants</span><span class="glance-value">To be confirmed</span></div>
+    <div class="glance-item"><span class="glance-label">Duration</span><span class="glance-value">2–4 hours</span></div>
+    <div class="glance-item"><span class="glance-label">Facilitator</span><span class="glance-value">Team Connect Facilitation Team</span></div>
+  </div>
+
+  <div class="section-card">
+    <h2>A Message from Team Connect</h2>
+    <p>There is nothing quite like The Fugitive. It is the most adrenaline-charged, edge-of-your-seat experience we run — and the teams who have done it never forget it. If you've brought your team here, you've made a bold choice, and we're here for it. We will make sure every detail is prepared, every clue is placed, and every safety protocol is in place so that your team can go all in. Thank you for trusting us with this one. Now let's run.</p>
+  </div>
+
+  <div class="section-card">
+    <h2>What to Expect on the Day</h2>
+    <p>You and your team will arrive for a briefing like no other. The Fugitive is a high-intensity urban pursuit experience set across Cape Town's outdoor and urban environments — and from the moment your Team Connect facilitator reveals the rules, the energy in the room will change completely.</p>
+    <p>Teams are divided into two roles: fugitives and hunters. Fugitives receive a head start and a sequence of encrypted clues leading to a network of safety points across the zone. Their mission: navigate, survive, and reach safety before time runs out. Hunters receive their own clue sequences — designed to intercept, not follow — and must coordinate their strategy to capture fugitives before they complete their route. Neither group knows exactly where the other is. That uncertainty is entirely intentional.</p>
+    <p>The experience runs across 90 to 150 minutes of active pursuit, depending on your group size and zone complexity. Throughout, your Team Connect facilitation team is positioned across the zone — managing safety, calling key moments, and ensuring the experience stays exhilarating without ever becoming dangerous.</p>
+    <p>As the time window shrinks, the pressure builds. Decision-making becomes harder. Communication becomes more critical. Leadership reveals itself. By the time everyone returns for the debrief, your team will have navigated real pressure, made real decisions, and experienced something genuinely memorable together.</p>
+    <p>The debrief brings both roles together and connects what happened in the pursuit zone to how your team leads, communicates, and performs under pressure in real working life. It is a powerful conversation.</p>
+  </div>
+
+  <div class="section-card">
+    <h2>What Your Team Will Walk Away With</h2>
+    <ul class="outcomes-list">
+      <li>Sharpened decision-making under time pressure and genuine uncertainty — the kind that directly translates to high-stakes work moments</li>
+      <li>Stronger strategic thinking and adaptive planning, forged in real-time conditions</li>
+      <li>Deeper trust built through the shared experience of navigating pressure together</li>
+      <li>Clear insight into how your team communicates, leads, and coordinates when the stakes are real</li>
+      <li>One of the most distinctive, lasting team memories any experience can generate</li>
+    </ul>
+  </div>
+
+  <div class="section-card">
+    <h2>Practical Information</h2>
+    <div class="practical-grid">
+      <div class="practical-item">
+        <h3>What to Wear</h3>
+        <p>Comfortable activewear or sport casual is essential. You will be moving on foot through urban and outdoor terrain. Closed-toe, supportive shoes are mandatory — no sandals, heels, or dress shoes. Dress for the weather on the day; bring a light layer in cooler months.</p>
+      </div>
+      <div class="practical-item">
+        <h3>What to Bring</h3>
+        <ul>
+          <li>Comfortable shoes appropriate for outdoor walking and light running</li>
+          <li>A fully charged mobile phone (required for the experience)</li>
+          <li>Water bottle — hydration on the move is important</li>
+          <li>Sunscreen and a hat if the experience runs in summer sunshine</li>
+        </ul>
+      </div>
+      <div class="practical-item">
+        <h3>What We Provide</h3>
+        <ul>
+          <li>Full zone mapping and clue placement by the Team Connect facilitation team</li>
+          <li>Safety briefing and safety team positioned throughout the zone</li>
+          <li>Encrypted clue sequences for all teams</li>
+          <li>Team Connect facilitator and zone coordinators throughout</li>
+          <li>Emergency communication protocol and dedicated emergency contact</li>
+          <li>Debrief facilitation on return</li>
+        </ul>
+      </div>
+      <div class="practical-item">
+        <h3>Dietary &amp; Accessibility</h3>
+        <p>The Fugitive is a physically active outdoor experience involving sustained walking and periods of light running across urban terrain. Please discuss any physical limitations or accessibility requirements with your Team Connect contact before booking. Email <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a>.</p>
+      </div>
+      <div class="practical-item">
+        <h3>Parking &amp; Arrival</h3>
+        <p>You will receive full briefing location details, parking information, and transport guidance once your zone is confirmed. Please plan to arrive at least 15 minutes before the scheduled start time. Do not arrive at the pursuit zone independently — all participants must be briefed together before the experience begins.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-question">Is this experience safe?</div>
+      <div class="faq-answer">Safety is our highest priority in The Fugitive. The zone is meticulously mapped before every event — all road crossings, restricted areas, and risk zones are identified and managed. Your facilitation team includes dedicated safety coordinators positioned throughout the zone. A full safety briefing is conducted before the experience begins, and an emergency protocol is in place throughout. We do not run The Fugitive without thorough preparation.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Do participants need to be physically fit?</div>
+      <div class="faq-answer">The Fugitive involves sustained walking and periods of light running over 90–150 minutes. Participants should be comfortable with moderate physical activity. Extreme fitness is not required — the experience is won through strategy and communication, not speed alone. Please flag any health concerns with your Team Connect contact before booking.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How are the fugitive and hunter roles assigned?</div>
+      <div class="faq-answer">Role assignment is managed during the briefing and can be structured in multiple ways — randomly, by department, by seniority, or according to a design chosen by the client. Your Team Connect contact will discuss the best assignment approach for your specific group.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What if it rains on the day?</div>
+      <div class="faq-answer">The Fugitive is designed for outdoor conditions, and light rain can be managed with appropriate clothing. In the event of severe weather, your Team Connect contact will advise on rescheduling or contingency options as early as possible ahead of the event.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Is this only available in Cape Town?</div>
+      <div class="faq-answer">The Fugitive is primarily designed for Cape Town's urban environment, which provides ideal terrain and infrastructure for the experience. For other locations, contact your Team Connect contact to discuss feasibility and zone adaptation.</div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2>Getting the Most from Your Experience</h2>
+    <p><strong>Arrive ready to commit.</strong> This is not a passive experience. The teams who get the most from The Fugitive are the ones who go in with full intent — strategic, communicative, and willing to make calls under pressure. Brief your team to treat this as a real challenge.</p>
+    <p><strong>Emphasise communication, not athleticism.</strong> The fastest teams are rarely the fittest. The winning teams communicate constantly, divide responsibilities clearly, and adapt their strategy in real time. Let your team know this upfront — it changes how they approach the experience.</p>
+    <p><strong>Take the debrief seriously.</strong> The pursuit is memorable; the debrief is meaningful. The conversation after the experience — where the decisions made in the zone are connected to real leadership and team dynamics — is where the day becomes genuinely useful. Make sure your team is present and engaged for it.</p>
+    <p><strong>Dress for the day.</strong> Nothing limits the experience like inappropriate footwear or the wrong clothing for the weather. Communicate the dress code clearly and ensure every participant arrives prepared.</p>
+  </div>
+
+  <div class="section-card">
+    <h2>After the Experience</h2>
+    <p>Following The Fugitive, Team Connect will offer:</p>
+    <ul>
+      <li>Full-group debrief facilitated on return to the briefing point</li>
+      <li>Summary insights document on key leadership and team dynamics observed during the pursuit</li>
+      <li>Follow-up resource suggestions for building on the experience back at work</li>
+      <li>Information on how to book The Fugitive as an annual high-intensity team challenge</li>
+    </ul>
+  </div>
+
+  <div class="contact-strip">
+    <h2>Your Team Connect Contact</h2>
+    <p>Team Connect Client Services<br>
+    Email: <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a><br>
+    Phone: 082 452 2283<br>
+    Website: <a href="https://www.teamconnect.co.za">www.teamconnect.co.za</a><br>
+    Social: @teamconnectsa</p>
+  </div>
+
+  <div class="section-card">
+    <h2>About Team Connect</h2>
+    <p>Team Connect is Cape Town's premier team building specialists, delivering world-class experiences to organisations across South Africa. With 13 expertly designed programmes and a team of qualified facilitators who understand the science of human connection, we go beyond entertainment to create measurable impact. Our outcomes-driven approach means every experience is purpose-built to deliver real results — stronger teams, better communication, and a culture worth showing up for.</p>
+  </div>
+
+</div>
+
+<div class="doc-footer">
+  Team Connect | Info@teamconnect.co.za | 082 452 2283 | www.teamconnect.co.za
+</div>
+
+</body>
+</html>

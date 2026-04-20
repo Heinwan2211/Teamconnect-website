@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Amazing Race — Client Information Pack | Team Connect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Montserrat', sans-serif; color: #1a1a1a; background: #f9f9f9; }
+  .doc-header { background: #1a4a2e; color: white; padding: 32px 5%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  .doc-header img { height: 60px; width: auto; }
+  .doc-header-text h1 { font-size: 1.4rem; color: #c9a84c; margin-bottom: 4px; }
+  .doc-header-text p { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+  .doc-actions { background: #c9a84c; padding: 16px 5%; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .btn-print { background: #1a4a2e; color: white; border: none; padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.85rem; cursor: pointer; border-radius: 4px; }
+  .btn-back { background: transparent; color: #1a4a2e; border: 2px solid #1a4a2e; padding: 10px 20px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.85rem; cursor: pointer; border-radius: 4px; text-decoration: none; display: inline-block; }
+  .doc-content { max-width: 860px; margin: 40px auto; padding: 0 5% 60px; }
+  .welcome-strip { background: #1a4a2e; color: white; border-radius: 8px; padding: 32px; margin-bottom: 40px; text-align: center; }
+  .welcome-strip img { height: 70px; width: auto; margin-bottom: 16px; display: block; margin-left: auto; margin-right: auto; }
+  .welcome-strip h1 { font-size: 1.8rem; color: #c9a84c; margin-bottom: 8px; }
+  .welcome-strip p { color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.7; }
+  .at-a-glance { background: white; border: 2px solid #c9a84c; border-radius: 8px; padding: 24px; margin-bottom: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .glance-item { display: flex; flex-direction: column; gap: 4px; }
+  .glance-label { font-size: 0.75rem; color: #c9a84c; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .glance-value { font-size: 0.95rem; color: #1a4a2e; font-weight: 600; }
+  .section-card { background: white; border: 1px solid #e0e0e0; border-radius: 8px; padding: 28px; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .section-card h2 { font-size: 1.1rem; color: #1a4a2e; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #c9a84c; }
+  .section-card p { line-height: 1.8; margin-bottom: 12px; font-size: 0.92rem; color: #333; }
+  .section-card ul { margin: 12px 0 0 20px; line-height: 1.8; font-size: 0.92rem; }
+  .section-card li { margin-bottom: 8px; }
+  .outcomes-list { list-style: none; margin: 0; padding: 0; }
+  .outcomes-list li { padding: 10px 0 10px 32px; border-bottom: 1px solid #f0f0f0; position: relative; font-size: 0.92rem; line-height: 1.6; }
+  .outcomes-list li:before { content: "✓"; position: absolute; left: 0; color: #c9a84c; font-weight: 700; font-size: 1rem; }
+  .outcomes-list li:last-child { border-bottom: none; }
+  .practical-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+  .practical-item h3 { font-size: 0.85rem; color: #c9a84c; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .practical-item p, .practical-item ul { font-size: 0.88rem; line-height: 1.7; color: #444; }
+  .practical-item ul { margin-left: 16px; }
+  .faq-item { padding: 16px 0; border-bottom: 1px solid #f0f0f0; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-question { font-weight: 700; color: #1a4a2e; font-size: 0.92rem; margin-bottom: 8px; }
+  .faq-answer { font-size: 0.9rem; line-height: 1.7; color: #444; }
+  .contact-strip { background: #1a4a2e; color: white; border-radius: 8px; padding: 28px; margin-top: 32px; text-align: center; }
+  .contact-strip h2 { color: #c9a84c; font-size: 1.1rem; margin-bottom: 16px; }
+  .contact-strip a { color: #c9a84c; text-decoration: none; }
+  .contact-strip p { color: rgba(255,255,255,0.8); font-size: 0.9rem; line-height: 1.8; }
+  .doc-footer { background: #1a4a2e; color: rgba(255,255,255,0.6); text-align: center; padding: 20px; font-size: 0.8rem; margin-top: 40px; }
+  @media print { .doc-actions { display: none; } .section-card { break-inside: avoid; } body { background: white; } }
+  @media (max-width: 768px) { .at-a-glance { grid-template-columns: 1fr; } .practical-grid { grid-template-columns: 1fr; } .welcome-strip h1 { font-size: 1.4rem; } }
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  <img src="images/Team_connect_logo_white.png" alt="Team Connect">
+  <div class="doc-header-text">
+    <h1>Amazing Race — Client Information Pack</h1>
+    <p>Prepared by Team Connect | Confidential</p>
+  </div>
+</div>
+
+<div class="doc-actions">
+  <a href="facilitator-resources.html" class="btn-back">← Back to Resources</a>
+  <button class="btn-print" onclick="window.print()">🖨 Print / Save as PDF</button>
+</div>
+
+<div class="doc-content">
+
+  <div class="welcome-strip">
+    <img src="images/Team_connect_logo_white.png" alt="Team Connect">
+    <h1>Amazing Race</h1>
+    <p>Your Team Connect Experience Guide</p>
+  </div>
+
+  <div class="at-a-glance">
+    <div class="glance-item"><span class="glance-label">Experience</span><span class="glance-value">Amazing Race</span></div>
+    <div class="glance-item"><span class="glance-label">Date</span><span class="glance-value">To be confirmed</span></div>
+    <div class="glance-item"><span class="glance-label">Time</span><span class="glance-value">To be confirmed</span></div>
+    <div class="glance-item"><span class="glance-label">Venue</span><span class="glance-value">Outdoor and multi-location — To be confirmed</span></div>
+    <div class="glance-item"><span class="glance-label">Participants</span><span class="glance-value">To be confirmed</span></div>
+    <div class="glance-item"><span class="glance-label">Duration</span><span class="glance-value">2–4 hours</span></div>
+    <div class="glance-item"><span class="glance-label">Facilitator</span><span class="glance-value">Team Connect Facilitation Team</span></div>
+  </div>
+
+  <div class="section-card">
+    <h2>A Message from Team Connect</h2>
+    <p>The Amazing Race is Team Connect's most ambitious large-group experience — and one of our most rewarding to deliver. When you bring your team to the starting line, you're setting them up for something they'll genuinely never forget: a real race, real pressure, real teamwork, and real results on the leaderboard. We've put enormous preparation into every checkpoint on the course to make sure the day delivers exactly what it promises. Thank you for choosing Team Connect. Now let's race.</p>
+  </div>
+
+  <div class="section-card">
+    <h2>What to Expect on the Day</h2>
+    <p>You and your team will gather at the starting point for a pre-race briefing that sets out the rules, the course structure, and the team composition. The energy is already high by the time your Team Connect race director takes the stage — this is a competitive event, and your team will feel it from the opening brief.</p>
+    <p>Teams of four to eight participants race between a series of checkpoints across the outdoor course. The race is not a simple run — every checkpoint presents a different challenge. Navigation checkpoints require your team to use map references, compass directions, or landmark clues to find the next location without a pre-marked route. Challenge checkpoints demand a specific physical or cognitive task before you receive your next clue. Code checkpoints present a cipher or puzzle that must be solved to unlock the next leg of the race. Speed checkpoints reward the first team to arrive with a time advantage.</p>
+    <p>Strategy matters as much as pace. Teams that communicate well, divide responsibilities effectively, and make quick, smart decisions will consistently outperform faster but less coordinated groups. This is a race that rewards teamwork — genuinely.</p>
+    <p>After the active race phase, all teams return to a central point for the debrief and awards ceremony. The leaderboard reveals the final results, but the debrief is where the real conversation happens — connecting what your team did on the course to how they work together every day.</p>
+  </div>
+
+  <div class="section-card">
+    <h2>What Your Team Will Walk Away With</h2>
+    <ul class="outcomes-list">
+      <li>A powerful shared memory — the kind that becomes part of your team's story for years</li>
+      <li>Sharper communication habits forged under genuine time pressure and physical challenge</li>
+      <li>Greater trust between team members built through the experience of depending on each other when it counted</li>
+      <li>Proven evidence of what your team can do when it operates with real purpose and shared stakes</li>
+      <li>The kind of competitive energy and team pride that doesn't disappear when the race ends</li>
+    </ul>
+  </div>
+
+  <div class="section-card">
+    <h2>Practical Information</h2>
+    <div class="practical-grid">
+      <div class="practical-item">
+        <h3>What to Wear</h3>
+        <p>Comfortable activewear or sport casual is essential. Closed-toe, supportive shoes are mandatory — trail shoes or trainers are ideal. Dress for the weather; bring a light layer in cooler months and sun protection in summer. The race will continue in light rain — dress accordingly.</p>
+      </div>
+      <div class="practical-item">
+        <h3>What to Bring</h3>
+        <ul>
+          <li>Comfortable, appropriate footwear — this is the most important item on this list</li>
+          <li>A fully charged mobile phone (required for the experience)</li>
+          <li>Water bottle — participants will be active and outdoors for extended periods</li>
+          <li>Sunscreen and a hat for sunny days</li>
+          <li>A competitive spirit and a team-first attitude</li>
+        </ul>
+      </div>
+      <div class="practical-item">
+        <h3>What We Provide</h3>
+        <ul>
+          <li>Full course design and checkpoint setup by the Team Connect race team</li>
+          <li>Navigation clues, challenge materials, and code puzzles for all checkpoints</li>
+          <li>Race director and checkpoint staff throughout the course</li>
+          <li>Real-time scoring and live leaderboard</li>
+          <li>Safety monitoring across all checkpoints and zones</li>
+          <li>Debrief facilitation and awards ceremony at the finish point</li>
+        </ul>
+      </div>
+      <div class="practical-item">
+        <h3>Dietary &amp; Accessibility</h3>
+        <p>The Amazing Race is a physically active outdoor experience requiring sustained movement over 90–150 minutes across varied terrain. Please discuss any physical limitations or accessibility concerns with your Team Connect contact before confirming your booking. Email <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a>.</p>
+      </div>
+      <div class="practical-item">
+        <h3>Parking &amp; Arrival</h3>
+        <p>Full starting point details, including parking information and arrival instructions, will be sent separately once your course and venue are confirmed. Please plan to arrive at least 20 minutes before the scheduled start time to allow for registration, team assignment, and kit distribution.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <div class="faq-question">How physically demanding is the Amazing Race?</div>
+      <div class="faq-answer">The experience involves sustained outdoor walking and light running over 90–150 minutes, depending on your group size and course design. Participants should be comfortable with moderate physical activity. The race is won through strategy and teamwork, not pure fitness — but a baseline of physical ability is required. Please flag any health concerns with your Team Connect contact before booking.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">How are teams assigned?</div>
+      <div class="faq-answer">Teams are assigned by your Team Connect race director and can be structured to reflect cross-functional groupings, mixed experience levels, or any composition you choose. We'll discuss the optimal team composition strategy for your group during the planning process.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What happens if a team gets lost?</div>
+      <div class="faq-answer">Each team has a dedicated mobile contact number for the Team Connect race team. Checkpoint staff are also positioned at intervals across the course. No team will be left without support — your race director will always know where teams are and can assist if needed.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Can the race course be set in a specific location?</div>
+      <div class="faq-answer">The course design is adapted to your chosen location. We work with a range of outdoor environments across South Africa and will design the course to make the best use of the terrain, landmarks, and infrastructure available at your preferred location. Contact your Team Connect representative to discuss location options.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">What happens at the checkpoint challenges — do all team members need to complete them?</div>
+      <div class="faq-answer">Checkpoint challenges are designed for teams, not individuals. The specific rules for each challenge will be briefed before the race begins. In most cases, the team works together to complete the challenge, and no single team member carries an unfair burden.</div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2>Getting the Most from Your Experience</h2>
+    <p><strong>Communicate the course format clearly beforehand.</strong> Let participants know they'll be walking and running outdoors for up to 2–4 hours. The right footwear and clothing make a significant difference to how much people enjoy the experience — don't let an unprepared participant have a harder day than necessary.</p>
+    <p><strong>Brief your team on strategy, not just pace.</strong> Teams that go out hard and exhaust themselves early rarely win. The teams that win communicate constantly, delegate checkpoint tasks clearly, and make good navigation decisions quickly. Share this before the race begins.</p>
+    <p><strong>Use the debrief to extract real insight.</strong> The race reveals a lot about how your team actually operates under pressure. The debrief is where those observations become useful. Encourage your team to be honest about what they noticed — about themselves and each other.</p>
+    <p><strong>Celebrate the effort, not just the result.</strong> The leaderboard matters, but so does the way your team raced. Acknowledge the moments of excellent teamwork, creative problem-solving, and leadership that happened across the course — regardless of finishing position.</p>
+  </div>
+
+  <div class="section-card">
+    <h2>After the Experience</h2>
+    <p>Following the Amazing Race, Team Connect will offer:</p>
+    <ul>
+      <li>Full-group debrief and awards ceremony at the finish point</li>
+      <li>Summary insights document capturing key team dynamics and moments from the race</li>
+      <li>Follow-up resources for sustaining the competitive energy and team cohesion</li>
+      <li>Information on how to book the Amazing Race as an annual flagship team event</li>
+    </ul>
+  </div>
+
+  <div class="contact-strip">
+    <h2>Your Team Connect Contact</h2>
+    <p>Team Connect Client Services<br>
+    Email: <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a><br>
+    Phone: 082 452 2283<br>
+    Website: <a href="https://www.teamconnect.co.za">www.teamconnect.co.za</a><br>
+    Social: @teamconnectsa</p>
+  </div>
+
+  <div class="section-card">
+    <h2>About Team Connect</h2>
+    <p>Team Connect is Cape Town's premier team building specialists, delivering world-class experiences to organisations across South Africa. With 13 expertly designed programmes and a team of qualified facilitators who understand the science of human connection, we go beyond entertainment to create measurable impact. Our outcomes-driven approach means every experience is purpose-built to deliver real results — stronger teams, better communication, and a culture worth showing up for.</p>
+  </div>
+
+</div>
+
+<div class="doc-footer">
+  Team Connect | Info@teamconnect.co.za | 082 452 2283 | www.teamconnect.co.za
+</div>
+
+</body>
+</html>
