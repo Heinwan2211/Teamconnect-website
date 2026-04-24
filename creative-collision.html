@@ -155,6 +155,20 @@
       overflow: hidden;
     }
 
+        .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+      z-index: 0;
+    }
+    .hero > *:not(.hero-bg) {
+      position: relative;
+      z-index: 1;
+    }
+
     .hero::after {
       content: '';
       position: absolute;
@@ -573,6 +587,7 @@
 
   <!-- HERO -->
   <section class="hero" aria-label="Creative Collision hero banner">
+    <img src="images/experiences/exp-creative-collision-hero.webp" alt="Creative Collision team building — corporate teams pitching innovative ideas in a Shark Tank-style challenge" class="hero-bg" width="1600" height="900" loading="eager" fetchpriority="high">
     <span class="hero-tag">Innovation &amp; Rapid Prototyping</span>
     <h1>Creative Collision</h1>
     <p>Innovation &amp; Rapid Prototyping — Shark Tank Meets Maker Lab</p>

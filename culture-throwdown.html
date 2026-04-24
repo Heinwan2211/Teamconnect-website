@@ -155,6 +155,20 @@
       overflow: hidden;
     }
 
+        .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+      z-index: 0;
+    }
+    .hero > *:not(.hero-bg) {
+      position: relative;
+      z-index: 1;
+    }
+
     .hero::after {
       content: '';
       position: absolute;
@@ -570,6 +584,7 @@
 
   <!-- HERO -->
   <section class="hero" aria-label="Culture Throwdown hero banner">
+    <img src="images/experiences/exp-culture-throwdown-hero.webp" alt="Culture Throwdown corporate team building — game-show host leading energetic workplace culture activities" class="hero-bg" width="1600" height="900" loading="eager" fetchpriority="high">
     <span class="hero-tag">Culture &amp; Identity</span>
     <h1>Culture Throwdown</h1>
     <p>Culture &amp; Identity &mdash; Loud, Funny &amp; Surprisingly Reflective</p>

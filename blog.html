@@ -259,17 +259,12 @@
       border-color: var(--gold);
     }
 
-    .featured-image-placeholder {
-      background: #d0d0d0;
+    .featured-card > img {
+      width: 100%;
+      height: 100%;
       min-height: 380px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #888;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      object-fit: cover;
+      display: block;
     }
 
     .featured-body {
@@ -404,17 +399,11 @@
       transform: translateY(-4px);
     }
 
-    .post-image-placeholder {
-      background: #d8d8d8;
+    .post-card > img {
+      width: 100%;
       height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #888;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      object-fit: cover;
+      display: block;
     }
 
     .post-card-body {
@@ -608,9 +597,7 @@
     <span class="section-label">Featured Post</span>
     <h2 class="section-heading" id="featured-heading">Latest from the Blog</h2>
     <article class="featured-card" aria-label="Featured blog post: Why Most South African Teams Underperform">
-      <div class="featured-image-placeholder" role="img" aria-label="The Science of Teams — featured post image placeholder" style="background: #1a4a2e; color: #c9a84c; font-weight: 800; letter-spacing: 0.1em;">
-        The Science of Teams
-      </div>
+      <img src="images/blog/blog-01-psychological-safety.webp" alt="Why Most South African Teams Underperform — featured blog post on psychological safety" width="1200" height="675" loading="eager" fetchpriority="high">
       <div class="featured-body">
         <span class="category-tag">The Science of Teams</span>
         <h2>Why Most South African Teams Underperform &mdash; And the One Thing That Fixes It</h2>
@@ -642,7 +629,7 @@
     <div class="blog-grid">
 
       <article class="post-card" aria-label="Blog post placeholder 1">
-        <div class="post-image-placeholder" role="img" aria-label="Blog post image placeholder">Image Placeholder</div>
+        <img src="images/blog/blog-07-energise-team.webp" alt="5 Ways to Energise Your Team Before a Big Project — corporate team building strategies" width="600" height="340" loading="lazy">
         <div class="post-card-body">
           <span class="category-tag">Team Building</span>
           <h3>5 Ways to Energise Your Team Before a Big Project</h3>
@@ -655,7 +642,7 @@
       </article>
 
       <article class="post-card" aria-label="Blog post placeholder 2">
-        <div class="post-image-placeholder" role="img" aria-label="Blog post image placeholder">Image Placeholder</div>
+        <img src="images/blog/blog-08-leaders-invest.webp" alt="Why Great Leaders Invest in Team Building Year-Round — South African corporate team culture" width="600" height="340" loading="lazy">
         <div class="post-card-body">
           <span class="category-tag">Leadership</span>
           <h3>Why Great Leaders Invest in Team Building Year-Round</h3>
@@ -668,7 +655,7 @@
       </article>
 
       <article class="post-card" aria-label="Blog post: The Coaching Leader">
-        <div class="post-image-placeholder" role="img" aria-label="Leader Spotlight — The Coaching Leader image placeholder" style="background: #1a4a2e; color: #c9a84c; font-weight: 700; letter-spacing: 0.06em; font-size: 0.8rem;">Leader Spotlight</div>
+        <img src="images/blog/blog-03-coaching-leader.webp" alt="The Coaching Leader — South African managers asking better questions for team performance" width="600" height="340" loading="lazy">
         <div class="post-card-body">
           <span class="category-tag">Leader Spotlight</span>
           <h3>The Coaching Leader: Why South Africa's Best Managers Are Asking Better Questions</h3>
@@ -681,7 +668,7 @@
       </article>
 
       <article class="post-card" aria-label="Blog post: What Actually Happens When a Fractured Team Spends a Day With Us">
-        <div class="post-image-placeholder" role="img" aria-label="Team Connect Stories — What Actually Happens image placeholder" style="background: #1a4a2e; color: #c9a84c; font-weight: 700; letter-spacing: 0.06em; font-size: 0.8rem;">Team Connect Stories</div>
+        <img src="images/blog/blog-05-team-stories.webp" alt="What Actually Happens When a Fractured Team Spends a Day With Team Connect — a real team story" width="600" height="340" loading="lazy">
         <div class="post-card-body">
           <span class="category-tag">Team Connect Stories</span>
           <h3>What Actually Happens When a Fractured Team Spends a Day With Us</h3>
@@ -694,7 +681,7 @@
       </article>
 
       <article class="post-card" aria-label="Blog post: Team Building in 2026: What's New, What's Working, and What to Leave Behind">
-        <div class="post-image-placeholder" role="img" aria-label="Trends and Tools — Team Building 2026 image placeholder" style="background: #1a4a2e; color: #c9a84c; font-weight: 700; letter-spacing: 0.06em; font-size: 0.8rem;">Trends &amp; Tools</div>
+        <img src="images/blog/blog-06-trends-2026.webp" alt="Team Building in 2026 — what\'s new, what\'s working and what to leave behind in South Africa" width="600" height="340" loading="lazy">
         <div class="post-card-body">
           <span class="category-tag">Trends &amp; Tools</span>
           <h3>Team Building in 2026: What&rsquo;s New, What&rsquo;s Working, and What to Leave Behind</h3>

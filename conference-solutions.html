@@ -144,6 +144,20 @@
       overflow: hidden;
     }
 
+        .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+      z-index: 0;
+    }
+    .hero > *:not(.hero-bg) {
+      position: relative;
+      z-index: 1;
+    }
+
     .hero::after {
       content: '';
       position: absolute;
@@ -568,6 +582,7 @@
 
   <!-- HERO -->
   <section class="hero" aria-label="Conference Solutions hero banner">
+    <img src="images/experiences/exp-conference-hero.webp" alt="Conference Solutions — Team Connect facilitators leading structured activities at a corporate conference" class="hero-bg" width="1600" height="900" loading="eager" fetchpriority="high">
     <span class="hero-tag">Energise, Connect &amp; Add Value to Every Conference</span>
     <h1><span>Conference</span> Solutions</h1>
     <p>Not Silly Games. Purposefully Developed Activities That Make Every Conference Better.</p>

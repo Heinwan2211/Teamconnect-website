@@ -274,26 +274,15 @@
     }
 
     .story-image {
-      background: var(--light-bg);
       border-radius: 8px;
-      border: 2px solid #e8e4d8;
-      min-height: 320px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 1rem;
-      color: #aaa;
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
+      overflow: hidden;
     }
 
-    .story-image svg {
-      width: 56px;
-      height: 56px;
-      fill: #ccc;
+    .story-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     @media (max-width: 768px) {
@@ -436,6 +425,33 @@
       line-height: 1.65;
     }
 
+    /* ─── TEAM SECTION ─── */
+    #our-team {
+      padding: 80px 5%;
+    }
+    .team-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .team-image {
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .team-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+    @media (max-width: 768px) {
+      .team-section { grid-template-columns: 1fr; }
+      .team-image img { height: 260px; }
+    }
+
     /* ─── CTA SECTION ─── */
     #contact-cta {
       background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
@@ -550,11 +566,8 @@
         <h2 class="section-heading" id="story-heading">Our Story</h2>
         <p class="section-sub">Team Connect was founded with a single belief — that the best teams are built through shared experiences, not boardroom exercises. Based in Cape Town, we design and facilitate corporate team building experiences across South Africa, with a strong focus on the Western Cape. Every experience we create is high-energy, purposeful and uniquely South African.</p>
       </div>
-      <div class="story-image" role="img" aria-label="Team Connect story image placeholder">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-        </svg>
-        Image Coming Soon
+      <div class="story-image">
+        <img src="images/about/about-story-facilitator-moment.webp" alt="Team Connect facilitator sharing a meaningful moment with a corporate team during an outdoor activity" width="800" height="600" loading="lazy">
       </div>
     </div>
   </section>
@@ -624,6 +637,20 @@
         </div>
         <h3>Results Driven</h3>
         <p>Every experience is designed with measurable team outcomes in mind.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR FACILITATORS -->
+  <section id="our-team" aria-labelledby="team-heading">
+    <div class="team-section">
+      <div class="team-text">
+        <span class="section-label">The People Behind The Experience</span>
+        <h2 class="section-heading" id="team-heading">Our Facilitators</h2>
+        <p class="section-sub">Every Team Connect experience is led by qualified, energetic facilitators who understand team psychology, group dynamics and behaviour change. We don't send event managers — we send professionals who care about your team's outcomes.</p>
+      </div>
+      <div class="team-image">
+        <img src="images/about/about-team-facilitators.webp" alt="Team Connect facilitators ready to deliver a corporate team building experience in the Western Cape" width="800" height="560" loading="lazy">
       </div>
     </div>
   </section>

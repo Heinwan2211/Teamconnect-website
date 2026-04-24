@@ -149,6 +149,20 @@
       overflow: hidden;
     }
 
+        .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+      z-index: 0;
+    }
+    .hero > *:not(.hero-bg) {
+      position: relative;
+      z-index: 1;
+    }
+
     .hero::after {
       content: '';
       position: absolute;
@@ -616,6 +630,7 @@
 
   <!-- HERO -->
   <section class="hero" aria-label="Hybrid Challenge Series hero banner">
+    <img src="images/experiences/exp-hybrid-challenge-hero.webp" alt="Hybrid team building challenge — remote and in-person corporate teams competing together" class="hero-bg" width="1600" height="900" loading="eager" fetchpriority="high">
     <span class="hero-tag">Virtual &amp; In-Person</span>
     <h1>Hybrid Challenge Series</h1>
     <p>Connected Teams Across Distance — One Leaderboard, One Team, Any Location</p>

@@ -155,6 +155,20 @@
       overflow: hidden;
     }
 
+        .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+      z-index: 0;
+    }
+    .hero > *:not(.hero-bg) {
+      position: relative;
+      z-index: 1;
+    }
+
     .hero::after {
       content: '';
       position: absolute;
@@ -595,6 +609,7 @@
 
   <!-- HERO -->
   <section class="hero" aria-label="Leadership Development hero banner">
+    <img src="images/experiences/exp-leadership-hero.webp" alt="Leadership Development team building — managers navigating high-pressure decision-making scenarios" class="hero-bg" width="1600" height="900" loading="eager" fetchpriority="high">
     <span class="hero-tag">Leadership Experience</span>
     <h1>Leadership Development</h1>
     <p>Leadership Under Pressure &mdash; For the Leaders Who Shape Everything</p>

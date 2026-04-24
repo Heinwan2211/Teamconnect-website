@@ -187,22 +187,15 @@
       margin-bottom: 0;
     }
 
-    .featured-image-placeholder {
+    .featured-image img {
       width: 100%;
       height: 400px;
-      background: var(--green);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      font-size: 1.1rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      object-fit: cover;
+      display: block;
     }
 
     @media (max-width: 600px) {
-      .featured-image-placeholder {
+      .featured-image img {
         height: 220px;
       }
     }
@@ -551,9 +544,7 @@
 
   <!-- FEATURED IMAGE -->
   <div class="featured-image" aria-label="Featured post image">
-    <div class="featured-image-placeholder" role="img" aria-label="Team Connect Stories — featured article image placeholder">
-      Team Connect Stories
-    </div>
+    <img src="images/blog/blog-05-team-stories.webp" alt="What Actually Happens When a Fractured Team Spends a Day With Team Connect — a team story" width="1200" height="675" loading="lazy">
   </div>
 
   <!-- ARTICLE BODY -->

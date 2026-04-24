@@ -200,25 +200,16 @@
     }
 
     /* ─── FEATURED IMAGE PLACEHOLDER ─── */
-    .featured-image-placeholder {
+    .featured-image img {
       width: 100%;
       height: 400px;
-      background: var(--green);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      font-size: clamp(1rem, 2.5vw, 1.5rem);
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      text-align: center;
-      padding: 2rem 10%;
-      line-height: 1.4;
+      object-fit: cover;
+      display: block;
     }
 
     @media (max-width: 600px) {
-      .featured-image-placeholder {
-        height: 260px;
+      .featured-image img {
+        height: 220px;
       }
     }
 
@@ -526,9 +517,7 @@
   </section>
 
   <!-- FEATURED IMAGE PLACEHOLDER -->
-  <div class="featured-image-placeholder" role="img" aria-label="5 Ways to Energise Your Team When Motivation Is Low — featured article image placeholder">
-    5 Ways to Energise Your Team When Motivation Is Low
-  </div>
+  <img src="images/blog/blog-07-energise-team.webp" alt="5 Ways to Energise Your Team Before a Big Project — practical corporate team building strategies" width="1200" height="675" loading="lazy">
 
   <!-- TEASER SECTION -->
   <section class="teaser-section" aria-label="Post teaser">

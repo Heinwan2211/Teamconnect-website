@@ -144,6 +144,20 @@
       overflow: hidden;
     }
 
+        .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+      z-index: 0;
+    }
+    .hero > *:not(.hero-bg) {
+      position: relative;
+      z-index: 1;
+    }
+
     .hero::after {
       content: '';
       position: absolute;
@@ -584,6 +598,7 @@
 
   <!-- HERO -->
   <section class="hero" aria-label="Hero banner">
+    <img src="images/experiences/exp-wellness-hero.webp" alt="Corporate wellness team building in the Western Cape — team reset experience in nature" class="hero-bg" width="1600" height="900" loading="eager" fetchpriority="high">
     <span class="hero-tag">Wellbeing &amp; Resilience</span>
     <h1>Mental &amp; Corporate <span>Wellness</span></h1>
     <p>Wellbeing &amp; Resilience — Because a Well Team is Your Greatest Asset</p>

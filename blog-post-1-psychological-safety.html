@@ -187,22 +187,15 @@
       margin-bottom: 0;
     }
 
-    .featured-image-placeholder {
+    .featured-image img {
       width: 100%;
       height: 400px;
-      background: var(--green);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      font-size: 1.1rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      object-fit: cover;
+      display: block;
     }
 
     @media (max-width: 600px) {
-      .featured-image-placeholder {
+      .featured-image img {
         height: 220px;
       }
     }
@@ -551,9 +544,7 @@
 
   <!-- FEATURED IMAGE -->
   <div class="featured-image" aria-label="Featured post image">
-    <div class="featured-image-placeholder" role="img" aria-label="The Science of Teams — featured article image placeholder">
-      The Science of Teams
-    </div>
+    <img src="images/blog/blog-01-psychological-safety.webp" alt="Why Most South African Teams Underperform — featured article on psychological safety in the workplace" width="1200" height="675" loading="eager" fetchpriority="high">
   </div>
 
   <!-- ARTICLE BODY -->

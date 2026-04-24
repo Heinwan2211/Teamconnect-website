@@ -145,6 +145,20 @@
       overflow: hidden;
     }
 
+        .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+      z-index: 0;
+    }
+    .hero > *:not(.hero-bg) {
+      position: relative;
+      z-index: 1;
+    }
+
     .hero::after {
       content: '';
       position: absolute;
@@ -538,6 +552,7 @@
 
   <!-- HERO -->
   <section class="hero" aria-label="Amazing Race hero banner">
+    <img src="images/experiences/exp-amazing-race-hero.webp" alt="Amazing Race team building — corporate teams competing in an adventure race across Cape Town" class="hero-bg" width="1600" height="900" loading="eager" fetchpriority="high">
     <span class="hero-tag">Cape Town &amp; Western Cape</span>
     <h1>Amazing Race</h1>
     <p>Collaboration, Problem-Solving &amp; Team Morale</p>
