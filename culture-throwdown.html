@@ -253,6 +253,14 @@
       margin: 0 auto;
     }
 
+    .overview-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+    }
+
     .overview-text .section-heading {
       margin-bottom: 1.2rem;
     }
@@ -262,7 +270,7 @@
     }
 
     .overview-image {
-      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      background: #e8e8e8;
       border-radius: 12px;
       aspect-ratio: 4/3;
       display: flex;
@@ -270,36 +278,6 @@
       justify-content: center;
       position: relative;
       overflow: hidden;
-    }
-
-    .overview-image::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 20px,
-        rgba(201,168,76,0.08) 20px,
-        rgba(201,168,76,0.08) 40px
-      );
-    }
-
-    .overview-image-placeholder {
-      text-align: center;
-      color: rgba(255,255,255,0.6);
-      font-size: 0.88rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      z-index: 1;
-    }
-
-    .overview-image-placeholder span {
-      display: block;
-      font-size: 3rem;
-      margin-bottom: 0.8rem;
-      opacity: 0.7;
     }
 
     @media (max-width: 768px) {
@@ -598,11 +576,8 @@
         <h2 class="section-heading" id="overview-heading">Your Culture. Your Identity. Your Throwdown.</h2>
         <p class="section-sub">A high-energy, game-show-style experience that unpacks workplace culture through competitive play. Teams go head-to-head across fast-paced rounds — culture trivia, values-based dilemmas, read-the-room scenarios, and live debates on workplace norms — all driven by a slick live scoreboard and MC energy. The twist: each round is designed to surface unspoken cultural assumptions, spark genuine conversation, and celebrate what makes a team's identity unique. Loud, funny, and surprisingly reflective. Runs beautifully at any Western Cape conferencing venue or lodge setting — and travels anywhere in South Africa.</p>
       </div>
-      <div class="overview-image" aria-label="Culture Throwdown experience image placeholder">
-        <div class="overview-image-placeholder">
-          <span aria-hidden="true">🎤</span>
-          Experience Image
-        </div>
+      <div class="overview-image">
+        <img src="/images/experiences/exp-culture-throwdown-overview.webp" alt="Energetic Team Connect group cheering during a Culture Throwdown game show experience" loading="lazy" width="1024" height="1024">
       </div>
     </div>
   </section>

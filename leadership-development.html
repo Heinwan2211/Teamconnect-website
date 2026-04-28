@@ -253,6 +253,14 @@
       margin: 0 auto;
     }
 
+    .overview-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+    }
+
     .overview-text .section-heading {
       margin-bottom: 1.2rem;
     }
@@ -262,7 +270,7 @@
     }
 
     .overview-image {
-      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      background: #e8e8e8;
       border-radius: 12px;
       aspect-ratio: 4/3;
       display: flex;
@@ -270,36 +278,6 @@
       justify-content: center;
       position: relative;
       overflow: hidden;
-    }
-
-    .overview-image::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 20px,
-        rgba(201,168,76,0.08) 20px,
-        rgba(201,168,76,0.08) 40px
-      );
-    }
-
-    .overview-image-placeholder {
-      text-align: center;
-      color: rgba(255,255,255,0.6);
-      font-size: 0.88rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      z-index: 1;
-    }
-
-    .overview-image-placeholder span {
-      display: block;
-      font-size: 3rem;
-      margin-bottom: 0.8rem;
-      opacity: 0.7;
     }
 
     @media (max-width: 768px) {
@@ -623,11 +601,8 @@
         <h2 class="section-heading" id="overview-heading">Real Pressure. Real Decisions. Real Leaders.</h2>
         <p class="section-sub">An immersive scenario-based leadership lab where participants rotate through a series of high-stakes decision rooms &mdash; each testing a distinct leadership competency: communicating under ambiguity, ethical decision-making, crisis resource allocation, and leading through resistance. AI-generated adaptive scenarios keep the content fresh and prevent repeat-delegate fatigue. A facilitated debrief after each station keeps the experience grounded in real workplace application. Runs as a focused half-day format &mdash; perfectly aligned with the two-to-four hour micro-event sweet spot dominating 2026 corporate bookings. Ideal for executive teams, management cohorts, or emerging leader programmes.</p>
       </div>
-      <div class="overview-image" aria-label="Leadership Development experience image placeholder">
-        <div class="overview-image-placeholder">
-          <span aria-hidden="true">🎯</span>
-          Experience Image
-        </div>
+      <div class="overview-image">
+        <img src="/images/experiences/exp-leadership-overview.webp" alt="Team Connect leaders in focused discussion around a boardroom table" loading="lazy" width="1024" height="1024">
       </div>
     </div>
   </section>
