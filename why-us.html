@@ -402,12 +402,21 @@
       margin-right: auto;
     }
 
-    .testimonials-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1100px;
+    /* Carousel wrapper */
+    .testimonials-carousel-wrap {
+      position: relative;
+      max-width: 1140px;
       margin: 0 auto;
+    }
+
+    .testimonials-carousel {
+      overflow: hidden;
+    }
+
+    .testimonials-track {
+      display: flex;
+      transition: transform 0.35s ease;
+      align-items: stretch;
     }
 
     .testimonial-card {
@@ -417,6 +426,25 @@
       border-left: 4px solid var(--gold);
       box-shadow: 0 4px 16px rgba(0,0,0,0.06);
       position: relative;
+      flex: 0 0 calc(33.333% - 1.4rem);
+      margin-right: 2rem;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 1023px) {
+      .testimonial-card {
+        flex: 0 0 calc(50% - 1rem);
+        margin-right: 2rem;
+      }
+    }
+
+    @media (max-width: 639px) {
+      .testimonial-card {
+        flex: 0 0 100%;
+        margin-right: 2rem;
+      }
     }
 
     .testimonial-card::before {
@@ -438,6 +466,7 @@
       font-style: italic;
       margin-bottom: 1.4rem;
       padding-top: 1.5rem;
+      flex: 1;
     }
 
     .testimonial-attribution {
@@ -445,6 +474,70 @@
       font-weight: 700;
       color: var(--green);
       letter-spacing: 0.04em;
+    }
+
+    .testimonial-attribution .t-company {
+      display: block;
+      font-weight: 400;
+      color: #666;
+      margin-top: 0.2rem;
+    }
+
+    /* Carousel arrows */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--green);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 42px;
+      height: 42px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      transition: background 0.2s;
+    }
+
+    .carousel-btn:hover, .carousel-btn:focus {
+      background: var(--gold);
+      outline: 2px solid var(--green);
+    }
+
+    .carousel-btn.prev { left: -22px; }
+    .carousel-btn.next { right: -22px; }
+
+    @media (max-width: 639px) {
+      .carousel-btn.prev { left: 0; }
+      .carousel-btn.next { right: 0; }
+    }
+
+    /* Dots */
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      padding: 0;
+    }
+
+    .carousel-dot.active, .carousel-dot:hover {
+      background: var(--gold);
     }
 
     /* ─── CTA SECTION ─── */
@@ -669,20 +762,58 @@
       <h2 class="section-heading" id="testimonials-heading">What Our Clients Say</h2>
       <p class="section-sub" style="margin-left:auto;margin-right:auto;">Don't just take our word for it.</p>
     </div>
-    <!-- Replace placeholder testimonials with real client testimonials -->
-    <div class="testimonials-grid">
-      <div class="testimonial-card">
-        <p>Lorem ipsum testimonial from HR Manager, [Company Name]</p>
-        <span class="testimonial-attribution">HR Manager, [Company Name]</span>
+
+    <div class="testimonials-carousel-wrap" role="region" aria-label="Client testimonials">
+      <button class="carousel-btn prev" aria-label="Previous testimonials">&#8249;</button>
+      <button class="carousel-btn next" aria-label="Next testimonials">&#8250;</button>
+
+      <div class="testimonials-carousel">
+        <div class="testimonials-track" id="testimonialsTrack">
+
+          <div class="testimonial-card">
+            <p>Absolutely no improvements necessary. We enjoyed every minute.</p>
+            <span class="testimonial-attribution">
+              Retief Rademeyer
+              <span class="t-company">Rademeyer Wesson GR (SA)</span>
+            </span>
+          </div>
+
+          <div class="testimonial-card">
+            <p>Feedback after each activity was delivered very professionally and helped every team member realise how small things in a group can make such a big difference.</p>
+            <span class="testimonial-attribution">
+              André van den Berg
+              <span class="t-company">Ceres Fruit Growers</span>
+            </span>
+          </div>
+
+          <div class="testimonial-card">
+            <p>A huge thank you for an exceptionally well-run and organised event. It makes our jobs so much easier when working with a team as professional as yours.</p>
+            <span class="testimonial-attribution">
+              René Munro
+              <span class="t-company">Co-ordination Crew Events</span>
+            </span>
+          </div>
+
+          <div class="testimonial-card">
+            <p>Thank you very much for all the preparation that went into the teambuilding — it was thoroughly enjoyed by all.</p>
+            <span class="testimonial-attribution">
+              Julia Pope
+              <span class="t-company">Ernst &amp; Young, Cape Town</span>
+            </span>
+          </div>
+
+          <div class="testimonial-card">
+            <p>An amazing teambuilding experience. We recently completed a survey and received overwhelmingly positive feedback — only 4 and 5 responses from our team members. Thank you for the inspiration you've instilled in our team.</p>
+            <span class="testimonial-attribution">
+              Bonita Newkirk
+              <span class="t-company">Vodacom</span>
+            </span>
+          </div>
+
+        </div>
       </div>
-      <div class="testimonial-card">
-        <p>Lorem ipsum testimonial from Event Coordinator, [Company Name]</p>
-        <span class="testimonial-attribution">Event Coordinator, [Company Name]</span>
-      </div>
-      <div class="testimonial-card">
-        <p>Lorem ipsum testimonial from CEO, [Company Name]</p>
-        <span class="testimonial-attribution">CEO, [Company Name]</span>
-      </div>
+
+      <div class="carousel-dots" id="carouselDots" aria-label="Testimonial navigation"></div>
     </div>
   </section>
 
@@ -732,6 +863,116 @@
         toggle.setAttribute('aria-expanded', 'false');
       }
     });
+  </script>
+
+  <script>
+    (function () {
+      var track = document.getElementById('testimonialsTrack');
+      var dotsContainer = document.getElementById('carouselDots');
+      var prevBtn = document.querySelector('.carousel-btn.prev');
+      var nextBtn = document.querySelector('.carousel-btn.next');
+      var cards = track.querySelectorAll('.testimonial-card');
+      var total = cards.length;
+      var current = 0;
+      var autoTimer = null;
+      var perView = 3;
+
+      function getPerView() {
+        if (window.innerWidth < 640) return 1;
+        if (window.innerWidth < 1024) return 2;
+        return 3;
+      }
+
+      function pageCount() {
+        return Math.ceil(total / perView);
+      }
+
+      function clamp(n) {
+        var pages = pageCount();
+        return ((n % pages) + pages) % pages;
+      }
+
+      function cardWidth() {
+        if (!cards[0]) return 0;
+        return cards[0].getBoundingClientRect().width + 32; /* 2rem gap */
+      }
+
+      function goTo(page) {
+        current = clamp(page);
+        var offset = current * perView * cardWidth();
+        track.style.transform = 'translateX(-' + offset + 'px)';
+        updateDots();
+      }
+
+      function buildDots() {
+        dotsContainer.innerHTML = '';
+        var pages = pageCount();
+        for (var i = 0; i < pages; i++) {
+          var btn = document.createElement('button');
+          btn.className = 'carousel-dot' + (i === current ? ' active' : '');
+          btn.setAttribute('aria-label', 'Go to testimonial set ' + (i + 1));
+          btn.dataset.page = i;
+          btn.addEventListener('click', function () {
+            goTo(parseInt(this.dataset.page, 10));
+            resetTimer();
+          });
+          dotsContainer.appendChild(btn);
+        }
+      }
+
+      function updateDots() {
+        var dots = dotsContainer.querySelectorAll('.carousel-dot');
+        dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
+      }
+
+      function startTimer() {
+        autoTimer = setInterval(function () { goTo(current + 1); }, 6000);
+      }
+
+      function resetTimer() {
+        clearInterval(autoTimer);
+        startTimer();
+      }
+
+      function init() {
+        perView = getPerView();
+        buildDots();
+        goTo(0);
+        startTimer();
+      }
+
+      prevBtn.addEventListener('click', function () { goTo(current - 1); resetTimer(); });
+      nextBtn.addEventListener('click', function () { goTo(current + 1); resetTimer(); });
+
+      var wrap = document.querySelector('.testimonials-carousel-wrap');
+      wrap.addEventListener('mouseenter', function () { clearInterval(autoTimer); });
+      wrap.addEventListener('mouseleave', startTimer);
+      wrap.addEventListener('focusin', function () { clearInterval(autoTimer); });
+      wrap.addEventListener('focusout', startTimer);
+
+      var touchStartX = 0;
+      wrap.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        clearInterval(autoTimer);
+      }, { passive: true });
+      wrap.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+        startTimer();
+      }, { passive: true });
+
+      window.addEventListener('resize', function () {
+        var newPV = getPerView();
+        if (newPV !== perView) {
+          perView = newPV;
+          current = 0;
+          buildDots();
+          goTo(0);
+        }
+      });
+
+      init();
+    })();
   </script>
 
 </body>
