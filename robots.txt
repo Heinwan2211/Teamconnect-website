@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Internal facilitator resources — not for indexing
+Disallow: /facilitator-resources.html
+Disallow: /checklist-
+Disallow: /client-pack-
+Disallow: /facilitator-guide-
+Disallow: /blog-post-template.html
+
+Sitemap: https://www.teamconnect.co.za/sitemap.xml
