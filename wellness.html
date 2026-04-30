@@ -2,10 +2,13 @@
 <html lang="en-ZA">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mental & Corporate Wellness | Team Connect Cape Town</title>
   <meta name="description" content="Team Connect's corporate wellness experiences support mental health, resilience and wellbeing in South African workplaces. Group wellness events in Cape Town." />
+  
+  <link rel="preload" as="image" href="images/experiences/exp-wellness-hero.webp" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
@@ -574,7 +577,8 @@
       text-align: center;
     }
   </style>
-  <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="mobile.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="mobile.css"></noscript>
   <!-- SEO: canonical, geo, OG, Twitter -->
   <link rel="canonical" href="https://www.teamconnect.co.za/wellness.html" />
   <meta name="robots" content="index, follow" />
@@ -619,7 +623,7 @@
   <!-- NAVIGATION -->
   <nav>
     <a class="nav-logo" href="index.html" aria-label="Team Connect home">
-      <img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" height="150">
+      <img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" width="127" height="150">
     </a>
     <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
       <span></span><span></span><span></span>
@@ -758,7 +762,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-inner"><img src="images/Team_connect_logo_white.png" alt="Team Connect — Bringing Teams Together" class="footer-logo" style="height: 100px; width: auto; display: block; margin-bottom: 10px;" loading="lazy">
+    <div class="footer-inner"><img src="images/Team_connect_logo_white.png" alt="Team Connect — Bringing Teams Together" class="footer-logo" width="85" height="100" style="height: 100px; width: auto; display: block; margin-bottom: 10px;" loading="lazy">
         <div class="footer-details">
         <span>&#128222; <a href="tel:0824522283">082 452 2283</a></span>
         <span>&#9993; <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></span>

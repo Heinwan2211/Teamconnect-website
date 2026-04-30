@@ -2,6 +2,7 @@
 <html lang="en-ZA">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Team Building Insights & Blog | Team Connect</title>
@@ -563,8 +564,21 @@
       width: 100%;
       text-align: center;
     }
+  
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
   </style>
-  <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="mobile.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="mobile.css"></noscript>
   <!-- SEO: canonical, geo, OG, Twitter -->
   <link rel="canonical" href="https://www.teamconnect.co.za/blog.html" />
   <meta name="robots" content="index, follow" />
@@ -589,7 +603,7 @@
 
   <!-- NAVIGATION -->
   <nav>
-    <a class="nav-logo" href="index.html" aria-label="Team Connect home"><img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" height="150"></a>
+    <a class="nav-logo" href="index.html" aria-label="Team Connect home"><img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" width="127" height="150"></a>
     <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
       <span></span><span></span><span></span>
     </button>
@@ -621,7 +635,7 @@
         <span class="category-tag">The Science of Teams</span>
         <h2>Why Most South African Teams Underperform &mdash; And the One Thing That Fixes It</h2>
         <p>Google studied 180 teams to find what makes some exceptional. The answer wasn't talent, experience, or leadership style. Here's what they found &mdash; and what it means for your team.</p>
-        <a href="blog-post-1-psychological-safety.html" class="btn btn-gold">Read More</a>
+        <a href="blog-post-1-psychological-safety.html" class="btn btn-gold">Read More<span class="sr-only"> — Why South African Teams Underperform</span></a>
       </div>
     </article>
   </section>
@@ -656,7 +670,7 @@
         </div>
         <div class="post-card-footer">
           <span class="post-date">Coming Soon</span>
-          <a href="blog-post-7-energise-team.html" class="btn btn-outline-green">Read More</a>
+          <a href="blog-post-7-energise-team.html" class="btn btn-outline-green">Read More<span class="sr-only"> — 5 Ways to Energise Your Team</span></a>
         </div>
       </article>
 
@@ -669,7 +683,7 @@
         </div>
         <div class="post-card-footer">
           <span class="post-date">Coming Soon</span>
-          <a href="blog-post-8-leaders-invest-teambuilding.html" class="btn btn-outline-green">Read More</a>
+          <a href="blog-post-8-leaders-invest-teambuilding.html" class="btn btn-outline-green">Read More<span class="sr-only"> — Why Great Leaders Invest in Team Building</span></a>
         </div>
       </article>
 
@@ -682,7 +696,7 @@
         </div>
         <div class="post-card-footer">
           <span class="post-date">April 2026</span>
-          <a href="blog-post-3-coaching-leader.html" class="btn btn-outline-green">Read More</a>
+          <a href="blog-post-3-coaching-leader.html" class="btn btn-outline-green">Read More<span class="sr-only"> — The Coaching Leader</span></a>
         </div>
       </article>
 
@@ -695,7 +709,7 @@
         </div>
         <div class="post-card-footer">
           <span class="post-date">April 2026</span>
-          <a href="blog-post-5-team-connect-stories.html" class="btn btn-outline-green">Read More</a>
+          <a href="blog-post-5-team-connect-stories.html" class="btn btn-outline-green">Read More<span class="sr-only"> — Team Connect Stories</span></a>
         </div>
       </article>
 
@@ -708,7 +722,7 @@
         </div>
         <div class="post-card-footer">
           <span class="post-date">April 2026</span>
-          <a href="blog-post-6-trends-2026.html" class="btn btn-outline-green">Read More</a>
+          <a href="blog-post-6-trends-2026.html" class="btn btn-outline-green">Read More<span class="sr-only"> — Team Building Trends 2026</span></a>
         </div>
       </article>
 
@@ -727,7 +741,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-inner"><img src="images/Team_connect_logo_white.png" alt="Team Connect — Bringing Teams Together" class="footer-logo" style="height: 100px; width: auto; display: block; margin-bottom: 10px;" loading="lazy">
+    <div class="footer-inner"><img src="images/Team_connect_logo_white.png" alt="Team Connect — Bringing Teams Together" class="footer-logo" width="85" height="100" style="height: 100px; width: auto; display: block; margin-bottom: 10px;" loading="lazy">
         <div class="footer-details">
         <span>&#128222; <a href="tel:0824522283">082 452 2283</a></span>
         <span>&#9993; <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></span>

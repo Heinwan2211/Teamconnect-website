@@ -1,0 +1,11 @@
+node_modules/
+*.js
+*.md
+*.py
+*.json
+*.jsonc
+.git/
+.wrangler/
+lighthouse-*.js
+compress-images.js
+fix-lighthouse.js

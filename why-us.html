@@ -2,10 +2,13 @@
 <html lang="en-ZA">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Why Choose Team Connect | Corporate Team Building SA</title>
   <meta name="description" content="Discover why South African companies choose Team Connect for team building. Qualified facilitators, outcome-focused design, and experiences that deliver lasting results." />
+  
+  <link rel="preload" as="image" href="images/why/why-hero-facilitator-team.webp" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
@@ -226,7 +229,7 @@
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--green);
       margin-bottom: 0.6rem;
     }
 
@@ -526,17 +529,30 @@
     }
 
     .carousel-dot {
-      width: 10px;
-      height: 10px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      background: #ccc;
+      background: transparent;
       border: none;
       cursor: pointer;
       transition: background 0.2s;
       padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .carousel-dot::after {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #ccc;
+      transition: background 0.2s;
     }
 
-    .carousel-dot.active, .carousel-dot:hover {
+    .carousel-dot.active::after, .carousel-dot:hover::after {
       background: var(--gold);
     }
 
@@ -614,7 +630,8 @@
       text-align: center;
     }
   </style>
-  <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="mobile.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="mobile.css"></noscript>
   <!-- SEO: canonical, geo, OG, Twitter -->
   <link rel="canonical" href="https://www.teamconnect.co.za/why-us.html" />
   <meta name="robots" content="index, follow" />
@@ -639,7 +656,7 @@
 
   <!-- NAVIGATION -->
   <nav>
-    <a class="nav-logo" href="index.html" aria-label="Team Connect home"><img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" height="150"></a>
+    <a class="nav-logo" href="index.html" aria-label="Team Connect home"><img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" width="127" height="150"></a>
     <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
       <span></span><span></span><span></span>
     </button>
@@ -844,7 +861,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-inner"><img src="images/Team_connect_logo_white.png" alt="Team Connect — Bringing Teams Together" class="footer-logo" style="height: 100px; width: auto; display: block; margin-bottom: 10px;" loading="lazy">
+    <div class="footer-inner"><img src="images/Team_connect_logo_white.png" alt="Team Connect — Bringing Teams Together" class="footer-logo" width="85" height="100" style="height: 100px; width: auto; display: block; margin-bottom: 10px;" loading="lazy">
         <div class="footer-details">
         <span>&#128222; <a href="tel:0824522283">082 452 2283</a></span>
         <span>&#9993; <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></span>
