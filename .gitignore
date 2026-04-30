@@ -4,3 +4,11 @@
 !.dev.vars.example
 .env*
 !.env.example
+
+# development dependencies
+node_modules/
+
+# audit/dev scripts
+lighthouse-audit.js
+compress-images.js
+fix-lighthouse.js
