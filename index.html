@@ -10,7 +10,7 @@
   <link rel="dns-prefetch" href="//fonts.googleapis.com" />
   <link rel="dns-prefetch" href="//fonts.gstatic.com" />
   <link rel="preload" href="images/Team connect logo.jpg" as="image" />
-  <link rel="preload" as="image" href="images/home/home-hero-outdoor-team.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="images/home/home-hero-outdoor-team.webp" imagesrcset="images/home/home-hero-outdoor-team-800.webp 800w, images/home/home-hero-outdoor-team.webp 1600w" imagesizes="100vw" fetchpriority="high" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
@@ -145,9 +145,11 @@
       background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
       color: var(--white);
       padding: 100px 5% 90px;
+      min-height: 480px;
       text-align: center;
       position: relative;
       overflow: hidden;
+      contain: layout size;
     }
     .hero-bg {
       position: absolute;
@@ -657,18 +659,18 @@
 
   <!-- NAVIGATION -->
   <nav>
-    <a class="nav-logo" href="index.html" aria-label="Team Connect home"><img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" width="127" height="150"></a>
+    <a class="nav-logo" href="/" aria-label="Team Connect home"><img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" width="127" height="150"></a>
     <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
       <li><a href="#">Home</a></li>
-      <li><a href="experiences.html">Experiences</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="why-us.html">Why Us</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="/experiences">Experiences</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/why-us">Why Us</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -678,7 +680,7 @@
     <span class="hero-tag">Cape Town, Western Cape</span>
     <h1>Build a Team That Communicates Better, Trusts Each Other More, and <span>Performs Under Pressure.</span></h1>
     <p>Team Connect delivers world-class corporate team building experiences across South Africa. Thirteen experiences. Any group size. Any venue. Outcomes that last.</p>
-    <a href="experiences.html" class="btn btn-gold">Explore Our Experiences</a>
+    <a href="/experiences" class="btn btn-gold">Explore Our Experiences</a>
   </section>
 
   <!-- TRUST SIGNALS STRIP -->
@@ -719,7 +721,7 @@
           <span class="card-icon" aria-hidden="true">🧪</span>
           <h3>Escape Labs (Rouge)</h3>
           <p>A high-intensity lab-style escape experience combining physical puzzles, logic problems, and AI-generated curveballs. Table-top, scalable, and travels to you.</p>
-          <a href="escape-labs.html" class="btn btn-outline" aria-label="Learn more about Escape Labs">Learn More<span class="sr-only"> — Escape Labs</span></a>
+          <a href="/escape-labs" class="btn btn-outline" aria-label="Learn more about Escape Labs">Learn More<span class="sr-only"> — Escape Labs</span></a>
         </div>
       </div>
       <!-- Culture Throwdown Card -->
@@ -730,7 +732,7 @@
           <span class="card-icon" aria-hidden="true">🎤</span>
           <h3>Culture Throwdown</h3>
           <p>A game-show-style experience that unpacks workplace culture through competitive play — trivia, values dilemmas, and live debates. Loud, funny, and surprisingly reflective.</p>
-          <a href="culture-throwdown.html" class="btn btn-outline" aria-label="Learn more about Culture Throwdown">Learn More<span class="sr-only"> — Culture Throwdown</span></a>
+          <a href="/culture-throwdown" class="btn btn-outline" aria-label="Learn more about Culture Throwdown">Learn More<span class="sr-only"> — Culture Throwdown</span></a>
         </div>
       </div>
     </div>
@@ -820,7 +822,7 @@
     <span class="section-label" style="color:var(--gold);">Let's Connect</span>
     <h2 class="section-heading" id="cta-heading">Ready to Build Your Team?</h2>
     <p class="section-sub">Whether you're planning your next annual event or a spontaneous team day — we'd love to create something extraordinary with you.</p>
-    <a href="contact.html" class="btn btn-gold">Get In Touch</a>
+    <a href="/contact" class="btn btn-gold">Get In Touch</a>
   </section>
 
   <!-- FOOTER -->
