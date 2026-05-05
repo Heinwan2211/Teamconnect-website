@@ -548,38 +548,38 @@
       color: #c9a84c;
       margin-bottom: 32px;
     }
-    .client-logos-track {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 32px;
-      flex-wrap: nowrap;
+    .logo-rotation-container {
+      position: relative;
+      width: 100%;
+      height: 80px;
+      overflow: hidden;
     }
-    .client-logo-item {
-      flex: 0 0 120px;
-      height: 60px;
+    .logo-set {
+      position: absolute;
+      inset: 0;
       display: flex;
+      justify-content: space-evenly;
       align-items: center;
-      justify-content: center;
-      transition: opacity 0.3s ease;
+      opacity: 0;
+      transition: opacity 300ms ease-in-out;
     }
-    .client-logo-item img {
+    .logo-set.active { opacity: 1; }
+    .logo-set img {
       max-width: 120px;
       max-height: 60px;
       width: auto;
       height: auto;
       object-fit: contain;
     }
-    .client-logo-item.hidden { opacity: 0; pointer-events: none; }
-    .client-logo-item.visible { opacity: 1; }
     @media (max-width: 1023px) {
-      .client-logo-item { flex: 0 0 100px; height: 50px; }
-      .client-logo-item img { max-width: 100px; max-height: 50px; }
+      .logo-rotation-container { height: 64px; }
+      .logo-set img { max-width: 100px; max-height: 50px; }
+      .logo-set .logo-hide-tablet { display: none; }
     }
     @media (max-width: 639px) {
-      .client-logos-track { gap: 20px; }
-      .client-logo-item { flex: 0 0 80px; height: 44px; }
-      .client-logo-item img { max-width: 80px; max-height: 44px; }
+      .logo-rotation-container { height: 54px; }
+      .logo-set img { max-width: 80px; max-height: 44px; }
+      .logo-set .logo-hide-mobile { display: none; }
     }
 
     /* ─── FOOTER CLIENTS ─── */
@@ -786,17 +786,21 @@
   <!-- CLIENT LOGO ROTATION -->
   <section class="client-logos-section" role="region" aria-label="Past client logos">
     <span class="client-logos-label">We've delivered for</span>
-    <div class="client-logos-track" id="clientLogosTrack" aria-live="polite">
-      <div class="client-logo-item visible"><img src="/images/clients/vodacom.webp" alt="Vodacom" width="120" height="60" loading="lazy"></div>
-      <div class="client-logo-item visible"><img src="/images/clients/mtn.webp" alt="MTN" width="120" height="60" loading="lazy"></div>
-      <div class="client-logo-item visible"><img src="/images/clients/standard-bank.webp" alt="Standard Bank" width="120" height="60" loading="lazy"></div>
-      <div class="client-logo-item visible"><img src="/images/clients/nedbank.webp" alt="Nedbank" width="120" height="60" loading="lazy"></div>
-      <div class="client-logo-item visible"><img src="/images/clients/discovery.webp" alt="Discovery" width="120" height="60" loading="lazy"></div>
-      <div class="client-logo-item hidden"><img src="/images/clients/sanlam.webp" alt="Sanlam" width="120" height="60" loading="lazy"></div>
-      <div class="client-logo-item hidden"><img src="/images/clients/ernst-young.webp" alt="Ernst &amp; Young" width="120" height="60" loading="lazy"></div>
-      <div class="client-logo-item hidden"><img src="/images/clients/capitec-300-1.webp" alt="Capitec" width="120" height="60" loading="lazy"></div>
-      <div class="client-logo-item hidden"><img src="/images/clients/coca-cola.webp" alt="Coca-Cola" width="120" height="60" loading="lazy"></div>
-      <div class="client-logo-item hidden"><img src="/images/clients/toyota-sa.webp" alt="Toyota SA" width="120" height="60" loading="lazy"></div>
+    <div class="logo-rotation-container" id="logoRotationContainer" aria-live="polite">
+      <div class="logo-set logo-set-1 active">
+        <img src="/images/clients/vodacom.webp" alt="Vodacom" width="120" height="60" loading="lazy">
+        <img src="/images/clients/mtn.webp" alt="MTN" width="120" height="60" loading="lazy">
+        <img src="/images/clients/standard-bank.webp" alt="Standard Bank" width="120" height="60" loading="lazy">
+        <img src="/images/clients/nedbank.webp" alt="Nedbank" width="120" height="60" loading="lazy" class="logo-hide-mobile">
+        <img src="/images/clients/discovery.webp" alt="Discovery" width="120" height="60" loading="lazy" class="logo-hide-tablet logo-hide-mobile">
+      </div>
+      <div class="logo-set logo-set-2">
+        <img src="/images/clients/sanlam.webp" alt="Sanlam" width="120" height="60" loading="lazy">
+        <img src="/images/clients/ernst-young.webp" alt="Ernst &amp; Young" width="120" height="60" loading="lazy">
+        <img src="/images/clients/capitec-300-1.webp" alt="Capitec" width="120" height="60" loading="lazy">
+        <img src="/images/clients/coca-cola.webp" alt="Coca-Cola" width="120" height="60" loading="lazy" class="logo-hide-mobile">
+        <img src="/images/clients/toyota-sa.webp" alt="Toyota SA" width="120" height="60" loading="lazy" class="logo-hide-tablet logo-hide-mobile">
+      </div>
     </div>
   </section>
 
@@ -975,51 +979,29 @@
 
   <script>
     (function() {
-      var track = document.getElementById('clientLogosTrack');
-      if (!track) return;
-      var items = Array.from(track.querySelectorAll('.client-logo-item'));
-      var total = items.length;
-      var currentSet = 0;
+      var container = document.getElementById('logoRotationContainer');
+      if (!container) return;
+      var set1 = container.querySelector('.logo-set-1');
+      var set2 = container.querySelector('.logo-set-2');
+      var isFirst = true;
       var paused = false;
-      var interval;
 
-      function getVisible() {
-        var w = window.innerWidth;
-        if (w >= 1024) return 5;
-        if (w >= 640) return 4;
-        return 3;
-      }
-
-      function showSet(setIndex) {
-        var vis = getVisible();
-        var start = (setIndex * vis) % total;
-        items.forEach(function(item, i) {
-          var inSet = false;
-          for (var j = 0; j < vis; j++) {
-            if ((start + j) % total === i) { inSet = true; break; }
-          }
-          item.classList.toggle('visible', inSet);
-          item.classList.toggle('hidden', !inSet);
-        });
-      }
-
-      function advance() {
+      setInterval(function() {
         if (paused) return;
-        var vis = getVisible();
-        var sets = Math.ceil(total / vis);
-        currentSet = (currentSet + 1) % sets;
-        items.forEach(function(i) { i.classList.add('hidden'); i.classList.remove('visible'); });
-        setTimeout(function() { showSet(currentSet); }, 300);
-      }
+        if (isFirst) {
+          set1.classList.remove('active');
+          set2.classList.add('active');
+        } else {
+          set2.classList.remove('active');
+          set1.classList.add('active');
+        }
+        isFirst = !isFirst;
+      }, 4000);
 
-      showSet(0);
-      interval = setInterval(advance, 5000);
-
-      track.addEventListener('mouseenter', function() { paused = true; });
-      track.addEventListener('mouseleave', function() { paused = false; });
-      track.addEventListener('touchstart', function() { paused = true; }, {passive:true});
-      track.addEventListener('touchend', function() { setTimeout(function(){ paused = false; }, 3000); }, {passive:true});
-      window.addEventListener('resize', function() { showSet(currentSet); });
+      container.addEventListener('mouseenter', function() { paused = true; });
+      container.addEventListener('mouseleave', function() { paused = false; });
+      container.addEventListener('touchstart', function() { paused = true; }, {passive:true});
+      container.addEventListener('touchend', function() { setTimeout(function(){ paused = false; }, 3000); }, {passive:true});
     })();
   </script>
 
