@@ -571,6 +571,72 @@
       max-width: 700px;
     }
 
+    /* ─── CLIENT WALL ─── */
+    .client-wall-section {
+      background: #fff;
+      padding: 80px 5%;
+      text-align: center;
+    }
+    .client-wall-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 24px;
+      max-width: 1100px;
+      margin: 40px auto 0;
+      align-items: center;
+    }
+    .client-wall-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+      transition: transform 0.2s ease;
+    }
+    .client-wall-item:hover { transform: scale(1.05); }
+    .client-wall-item img {
+      max-width: 130px;
+      max-height: 70px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+    @media (max-width: 1023px) {
+      .client-wall-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 639px) {
+      .client-wall-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .client-wall-item { height: 60px; }
+      .client-wall-item img { max-width: 90px; max-height: 50px; }
+    }
+
+    /* ─── FOOTER CLIENTS ─── */
+    .footer-clients { margin-bottom: 24px; }
+    .footer-clients-label {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      margin-bottom: 12px;
+    }
+    .footer-clients-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-clients-logos img {
+      max-width: 70px;
+      max-height: 32px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      opacity: 0.85;
+      filter: brightness(0) invert(1);
+    }
+
     /* ─── FOOTER ─── */
     footer {
       background: #0f2b1a;
@@ -853,6 +919,105 @@
     </div>
   </section>
 
+  <!-- CLIENT WALL -->
+  <section class="client-wall-section" aria-labelledby="client-wall-heading">
+    <span class="section-label" style="color:#c9a84c;">Past Clients Include</span>
+    <h2 class="section-heading" id="client-wall-heading">Trusted by Leading South African Organisations</h2>
+    <div class="client-wall-grid">
+      <div class="client-wall-item"><img src="/images/clients/a-batchelor.webp" alt="A Batchelor" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/absa-2.webp" alt="Absa" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/accountability.webp" alt="Accountability" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/african-extracts.webp" alt="African Extracts" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/allan-gray-orbis.webp" alt="Allan Gray Orbis" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/allan-gray.webp" alt="Allan Gray" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/alphawave.webp" alt="Alphawave" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/amazing-pies.webp" alt="Amazing Pies" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/argon.webp" alt="Argon" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/bbd-software-development.webp" alt="BBD Software Development" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/bdo.webp" alt="BDO" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/bergrivier-municipality.webp" alt="Bergrivier Municipality" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/bertha-foundation.webp" alt="Bertha Foundation" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/big-ciabatta-worx.webp" alt="Big Ciabatta Worx" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/bo-radyn.webp" alt="Bo Radyn" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/boland-cavaliers.webp" alt="Boland Cavaliers" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/cape-tonw-city-council.webp" alt="Cape Town City Council" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/capeflora-sa.webp" alt="Capeflora SA" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/capitec-300-1.webp" alt="Capitec" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/cellucity.webp" alt="Cellucity" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/coast-and-country.webp" alt="Coast and Country" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/coca-cola.webp" alt="Coca-Cola" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/columba.webp" alt="Columba" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/cput.webp" alt="CPUT" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/crazy-store.webp" alt="Crazy Store" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/curro.webp" alt="Curro" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/daveng.webp" alt="Daveng" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/dep-of-sport.webp" alt="Dept of Sport" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/dep-social-services.webp" alt="Dept Social Services" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/dept-of-health.webp" alt="Dept of Health" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/dept-of-transport.webp" alt="Dept of Transport" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/dimagi.webp" alt="Dimagi" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/discovery.webp" alt="Discovery" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/distell.webp" alt="Distell" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/ernst-young.webp" alt="Ernst &amp; Young" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/famous-brands.webp" alt="Famous Brands" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/firefly.webp" alt="Firefly" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/grassroots.webp" alt="Grassroots" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/greenmined-environmental.webp" alt="Greenmined Environmental" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/hertex.webp" alt="Hertex" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/hugenote-high.webp" alt="Hugenote High" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/impulse.webp" alt="Impulse" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/intaba.webp" alt="Intaba" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/international-leadership-academy.webp" alt="International Leadership Academy" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/investec-asset-management.webp" alt="Investec Asset Management" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/kilowatt.webp" alt="Kilowatt" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/korbicom.webp" alt="Korbicom" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/koue-bokkeveld-opleiding-sentrum.webp" alt="Koue Bokkeveld Opleiding Sentrum" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/lancewood.webp" alt="Lancewood" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/life-and-brand.webp" alt="Life and Brand" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/life-healthcare.webp" alt="Life Healthcare" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/medi-clinic.webp" alt="Medi-Clinic" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/mtn.webp" alt="MTN" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/multichoice.webp" alt="MultiChoice" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/mukuru.webp" alt="Mukuru" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/nedbank.webp" alt="Nedbank" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/netcare.webp" alt="Netcare" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/new-era-branding.webp" alt="New Era Branding" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/pioneer-foods.webp" alt="Pioneer Foods" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/pkf.webp" alt="PKF" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/puma.webp" alt="Puma" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/red-cross.webp" alt="Red Cross" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/riscura.webp" alt="RisCura" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/sab.webp" alt="SAB" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/salga.webp" alt="SALGA" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/sanlam.webp" alt="Sanlam" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/santam.webp" alt="Santam" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/ser.webp" alt="SER" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/slipstream-data.webp" alt="Slipstream Data" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/smollan.webp" alt="Smollan" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/specifying-tech.webp" alt="Specifying Tech" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/spirit-foundation.webp" alt="Spirit Foundation" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/standard-bank.webp" alt="Standard Bank" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/stellenbosch-muni.webp" alt="Stellenbosch Municipality" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/stellenbosch-university.webp" alt="Stellenbosch University" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/stormers.webp" alt="Stormers" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/students-for-a-better-future.webp" alt="Students for a Better Future" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/sunrise-energy.webp" alt="Sunrise Energy" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/sustainable-energy-africa.webp" alt="Sustainable Energy Africa" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/tdp-accountants.webp" alt="TDP Accountants" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/tiger-brands.webp" alt="Tiger Brands" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/toyota-sa.webp" alt="Toyota SA" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/turners-shipping.webp" alt="Turners Shipping" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/uct.webp" alt="UCT" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/unifi.webp" alt="Unifi" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/uwc.webp" alt="UWC" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/villas-and-hotels.webp" alt="Villas and Hotels" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/vodacom.webp" alt="Vodacom" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/volkswagen-sa.webp" alt="Volkswagen SA" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/wootware.webp" alt="Wootware" width="130" height="70" loading="lazy"></div>
+      <div class="client-wall-item"><img src="/images/clients/zutari.webp" alt="Zutari" width="130" height="70" loading="lazy"></div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section id="cta" aria-labelledby="cta-heading">
     <h2 class="section-heading" id="cta-heading">Ready to experience the difference?</h2>
@@ -870,6 +1035,16 @@
         <span><a href="https://www.instagram.com/teamconnectsa" target="_blank" rel="noopener noreferrer">&#128247; Instagram</a></span>
         <span><a href="https://www.tiktok.com/@teamconnectsa" target="_blank" rel="noopener noreferrer">&#127925; TikTok</a></span>
         <span>&#128205; Cape Town, South Africa</span>
+      </div>
+      <div class="footer-clients">
+        <span class="footer-clients-label">Trusted by</span>
+        <div class="footer-clients-logos">
+          <img src="/images/clients/vodacom.webp" alt="Vodacom" width="70" height="32" loading="lazy">
+          <img src="/images/clients/mtn.webp" alt="MTN" width="70" height="32" loading="lazy">
+          <img src="/images/clients/standard-bank.webp" alt="Standard Bank" width="70" height="32" loading="lazy">
+          <img src="/images/clients/nedbank.webp" alt="Nedbank" width="70" height="32" loading="lazy">
+          <img src="/images/clients/ernst-young.webp" alt="Ernst &amp; Young" width="70" height="32" loading="lazy">
+        </div>
       </div>
       <div class="footer-copy">
         &copy; 2026 Team Connect. All rights reserved.

@@ -454,6 +454,35 @@
       color: var(--green);
     }
 
+
+    /* ─── FOOTER CLIENTS ─── */
+    .footer-clients { margin-bottom: 24px; }
+    .footer-clients-label {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #c9a84c;
+      margin-bottom: 12px;
+    }
+    .footer-clients-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-clients-logos img {
+      max-width: 70px;
+      max-height: 32px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      opacity: 0.85;
+      filter: brightness(0) invert(1);
+    }
+
     /* ─── FOOTER ─── */
     footer {
       background: #0f2b1a;
@@ -697,6 +726,16 @@
         <span><a href="https://www.instagram.com/teamconnectsa" target="_blank" rel="noopener noreferrer">&#128247; Instagram</a></span>
         <span><a href="https://www.tiktok.com/@teamconnectsa" target="_blank" rel="noopener noreferrer">&#127925; TikTok</a></span>
         <span>&#128205; Cape Town, South Africa</span>
+      </div>
+      <div class="footer-clients">
+        <span class="footer-clients-label">Trusted by</span>
+        <div class="footer-clients-logos">
+          <img src="/images/clients/vodacom.webp" alt="Vodacom" width="70" height="32" loading="lazy">
+          <img src="/images/clients/mtn.webp" alt="MTN" width="70" height="32" loading="lazy">
+          <img src="/images/clients/standard-bank.webp" alt="Standard Bank" width="70" height="32" loading="lazy">
+          <img src="/images/clients/nedbank.webp" alt="Nedbank" width="70" height="32" loading="lazy">
+          <img src="/images/clients/ernst-young.webp" alt="Ernst &amp; Young" width="70" height="32" loading="lazy">
+        </div>
       </div>
       <div class="footer-copy">
         &copy; 2026 Team Connect. All rights reserved.
