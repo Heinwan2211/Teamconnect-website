@@ -366,15 +366,3 @@ body {
   }
 }
 
-/* TEMP DIAGNOSTIC — remove after footer logo bug resolved */
-.footer-clients-logos img {
-  outline: 2px solid red !important;
-  outline-offset: 2px !important;
-  background: yellow !important;
-  min-width: 40px !important;
-  min-height: 40px !important;
-}
-.footer-clients-logos img:not([src]),
-.footer-clients-logos img[src=""] {
-  outline-color: magenta !important;
-}
