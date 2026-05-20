@@ -562,34 +562,57 @@
       <h2 class="section-heading" id="contact-heading">Plan Your Next Team Event</h2>
       <p class="section-sub">Fill in the form below and one of our team building specialists will get back to you within one business day.</p>
 
-      <form class="contact-form" action="mailto:Info@teamconnect.co.za" method="POST" enctype="text/plain" aria-label="Contact enquiry form">
+      <div id="thank-you-message" style="display:none; background:#1a4a2e; color:#fff; padding:24px; border-radius:8px; margin-bottom:24px; text-align:center;">
+        <h3 style="color:#c9a84c; margin:0 0 8px;">Thank you for your enquiry!</h3>
+        <p style="margin:0;">We've received your message and will be in touch within one business day.</p>
+      </div>
+
+      <script>
+      (function() {
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('submitted') === 'true') {
+          var msg = document.getElementById('thank-you-message');
+          if (msg) {
+            msg.style.display = 'block';
+            msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+      })();
+      </script>
+
+      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" aria-label="Contact enquiry form">
+        <input type="hidden" name="access_key" value="266b152a-431e-4a3c-be63-1c694e2363ef">
+        <input type="hidden" name="subject" value="New enquiry from Contact page">
+        <input type="hidden" name="from_name" value="Team Connect Website">
+        <input type="hidden" name="redirect" value="https://www.teamconnect.co.za/contact?submitted=true">
+        <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
 
         <div class="form-row">
           <div class="form-group">
             <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" name="Full Name" required placeholder="Jane Smith" autocomplete="name" />
+            <input type="text" id="fullName" name="name" required placeholder="Jane Smith" autocomplete="name" />
           </div>
           <div class="form-group">
             <label for="companyName">Company Name</label>
-            <input type="text" id="companyName" name="Company Name" required placeholder="Acme Corp" autocomplete="organization" />
+            <input type="text" id="companyName" name="company" required placeholder="Acme Corp" autocomplete="organization" />
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="Email Address" required placeholder="jane@acmecorp.co.za" autocomplete="email" />
+            <input type="email" id="email" name="email" required placeholder="jane@acmecorp.co.za" autocomplete="email" />
           </div>
           <div class="form-group">
             <label for="phone">Phone Number <span class="optional">(optional)</span></label>
-            <input type="tel" id="phone" name="Phone Number" placeholder="+27 82 000 0000" autocomplete="tel" />
+            <input type="tel" id="phone" name="phone" placeholder="+27 82 000 0000" autocomplete="tel" />
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group">
             <label for="participants">Number of Participants</label>
-            <select id="participants" name="Number of Participants" required>
+            <select id="participants" name="participants" required>
               <option value="" disabled selected>Select group size</option>
               <option value="10–30">10–30</option>
               <option value="31–100">31–100</option>
@@ -599,7 +622,7 @@
           </div>
           <div class="form-group">
             <label for="experience">Preferred Experience</label>
-            <select id="experience" name="Preferred Experience" required>
+            <select id="experience" name="experience" required>
               <option value="" disabled selected>Select an experience</option>
               <option value="The Fugitive">The Fugitive</option>
               <option value="Amazing Race">Amazing Race</option>
@@ -617,7 +640,7 @@
 
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" name="Message" required placeholder="Tell us about your team, your goals, and any dates you have in mind..."></textarea>
+          <textarea id="message" name="message" required placeholder="Tell us about your team, your goals, and any dates you have in mind..."></textarea>
         </div>
 
         <button type="submit" class="btn-submit">Send Enquiry</button>
