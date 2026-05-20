@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-ZA">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BSD853KBS2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BSD853KBS2');
+</script>
   <meta charset="UTF-8" />
   <link rel="icon" href="/favicon.png" type="image/png" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -575,6 +583,14 @@
           if (msg) {
             msg.style.display = 'block';
             msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          // Fire GA4 conversion event
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', {
+              'event_category': 'engagement',
+              'event_label': 'Contact form submission',
+              'value': 1
+            });
           }
         }
       })();
