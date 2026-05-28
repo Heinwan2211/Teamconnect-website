@@ -544,6 +544,127 @@
       width: 100%;
       text-align: center;
     }
+  
+    /* ─── ARTICLE BODY ─── */
+    .article-body {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 56px 5%;
+    }
+
+    .article-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 1.6rem;
+    }
+
+    .article-body h2 {
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      font-weight: 800;
+      color: var(--green);
+      margin: 2.5rem 0 1rem;
+      line-height: 1.25;
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      border-left: 4px solid var(--gold);
+      margin: 2.5rem 0;
+      padding: 1.2rem 2rem;
+      background: var(--light-bg);
+    }
+
+    .pull-quote p {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--green);
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    /* Practical tip callout */
+    .tip-box {
+      background: #fdf6e3;
+      border: 2px solid var(--gold);
+      border-radius: 6px;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0;
+    }
+
+    .tip-box .tip-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .tip-box p {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 0;
+    }
+
+    /* Team Connect insight box */
+    .insight-box {
+      background: var(--green);
+      border-radius: 6px;
+      padding: 1.6rem 1.8rem;
+      margin: 2rem 0;
+    }
+
+    .insight-box .insight-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .insight-box p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    /* ─── AUTHOR BIO ─── */
+    .author-bio {
+      background: var(--light-bg);
+      padding: 48px 5%;
+    }
+
+    .author-bio-inner {
+      max-width: 740px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .author-bio img {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    .author-bio-text p {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    .author-bio-text strong {
+      color: var(--green);
+    }
+
   </style>
   <link rel="stylesheet" href="mobile.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="mobile.css"></noscript>
@@ -618,30 +739,71 @@
     </div>
   </header>
 
-  <!-- COMING SOON SECTION -->
-  <section class="coming-soon-section" aria-label="Coming soon notice">
-    <span class="coming-soon-label">Coming Soon</span>
-    <p>This post is currently being written by our team. Check back soon &mdash; or subscribe below to be notified when it goes live.</p>
-  </section>
+  <!-- FEATURED IMAGE -->
+  <div class="featured-image" aria-label="Featured post image">
+    <img src="images/blog/blog-08-leaders-invest.webp" alt="Why Great Leaders Invest in Team Building Year-Round — building lasting team culture in South Africa" width="1200" height="675" loading="lazy">
+  </div>
 
-  <!-- FEATURED IMAGE PLACEHOLDER -->
-  <img src="images/blog/blog-08-leaders-invest.webp" alt="Why Great Leaders Invest in Team Building Year-Round — building lasting team culture in South Africa" width="1200" height="675" loading="lazy">
+  <!-- ARTICLE BODY -->
+  <article class="article-body" aria-label="Article content">
 
-  <!-- TEASER SECTION -->
-  <section class="teaser-section" aria-label="Post teaser">
-    <h2>A Sneak Peek</h2>
-    <p class="teaser-text">"The leaders who invest most consistently in their teams are not the ones with the biggest budgets. They are the ones who understand something fundamental about performance. In our next post we explore what separates leaders who build great teams from those who just manage them."</p>
-  </section>
+    <p>Ask most South African companies when they last did team building, and you'll hear a familiar answer: the year-end function, the once-a-year strategy bosberaad, or that one offsite three Decembers ago that everyone still talks about. Team building, in this picture, is an event. Something you schedule, survive, and tick off until next year.</p>
 
-  <!-- NOTIFY ME SECTION -->
-  <section class="notify-section" aria-label="Email notification signup">
-    <div class="notify-card">
-      <h2>Be the First to Read It</h2>
-      <p>Drop your email below and we'll notify you the moment this post goes live.</p>
-      <form class="notify-form" onsubmit="handleNotify(event)" aria-label="Email notification form">
-        <input type="email" placeholder="Your email address" aria-label="Email address" required />
-        <button type="submit" class="btn btn-gold">Notify Me</button>
-      </form>
+    <p>The leaders who get the most out of their teams see it completely differently. For them, team building is not a date on the calendar &mdash; it is a habit, a posture, a continuous investment they make in the people they depend on. And the gap between those two mindsets explains a great deal about why some teams quietly pull away from the pack while others spend every January rebuilding what they lost over the holidays.</p>
+
+    <h2>The Leaders Who Invest Most Are Rarely the Ones With the Biggest Budgets</h2>
+
+    <p>It is tempting to assume that the companies with the strongest team culture are simply the ones who can afford it &mdash; the corporates flying their divisions to the Winelands for the weekend. In our experience working with teams across South Africa, that assumption is almost always wrong. The leaders who invest most consistently in their teams are not the ones with the biggest budgets. They are the ones who understand something fundamental about performance: that a team is not a fixed asset you buy once, but a living thing you tend continuously.</p>
+
+    <p>A manager with a modest budget and a clear understanding of this will run rings around a manager with deep pockets and a once-a-year mindset. Investment, it turns out, is far less about money than about attention, consistency, and intent.</p>
+
+    <div class="pull-quote" aria-label="Pull quote">
+      <p>"The leaders who invest most consistently in their teams are not the ones with the biggest budgets. They are the ones who understand something fundamental about performance."</p>
+    </div>
+
+    <h2>Why Year-Round Beats Once-a-Year: The Logic of Compounding</h2>
+
+    <p>Anyone who has watched a savings account grow understands compounding. Small, consistent contributions, left to build on themselves, eventually outperform a single large deposit. Team culture works in exactly the same way. A team that connects, communicates, and rebuilds trust in small ways throughout the year develops a kind of compound interest &mdash; each interaction adding to a reserve of goodwill, psychological safety, and shared understanding that the team can draw on when pressure hits.</p>
+
+    <p>The once-a-year approach has the opposite problem. Whatever energy and connection a single big event creates begins to leak away almost immediately. By the time the next event rolls around, the team is often back where it started &mdash; or worse, because unaddressed friction has had a full year to harden. The annual offsite ends up being a reset button rather than a growth engine. Real, durable team strength is built in the gaps between the big moments, not in the big moments themselves.</p>
+
+    <h2>What Separates Leaders Who Build Teams From Those Who Just Manage Them</h2>
+
+    <p>There is a meaningful difference between managing a team and building one. A manager organises work: allocating tasks, tracking deadlines, reporting upward. All of it necessary. But management, on its own, treats a team as a collection of individuals who happen to share a reporting line. A builder sees something more &mdash; the relationships, the trust, the unwritten rules of how people treat one another under stress. Builders understand that those things are not soft extras. They are the actual machinery of performance.</p>
+
+    <p>The leader who only manages will optimise the spreadsheet and wonder why output still lags. The leader who builds knows that two people who trust each other will solve a problem faster than two people who don't &mdash; regardless of how elegantly the work was assigned. South Africa's best leaders have figured out that you cannot manage your way to a great team. You have to build one, deliberately, over time.</p>
+
+    <div class="tip-box" aria-label="Practical tip">
+      <span class="tip-label">&#128161; Practical Tip This Month</span>
+      <p>Don't wait for the year-end function. This month, build one small, deliberate connection moment into your team's rhythm &mdash; a fortnightly check-in that isn't about tasks, a short shared activity at the start of a meeting, a genuine conversation about how people are actually doing. Consistency matters more than scale.</p>
+    </div>
+
+    <h2>What Continuous Investment Actually Looks Like</h2>
+
+    <p>Investing year-round does not mean booking twelve expensive events. It means weaving connection into the ordinary rhythm of work. It looks like a leader who notices when two team members are quietly at odds and creates a low-stakes opportunity for them to work together before the tension festers. It looks like regular moments where the team steps out of delivery mode and reconnects as people. It looks like treating a new joiner's integration as a process, not a single welcome lunch.</p>
+
+    <p>It also means choosing the bigger experiences with intent rather than habit &mdash; running a proper team building experience because the team is entering a demanding quarter, or because a restructure has scrambled the dynamics, or because trust has taken a knock and needs rebuilding. The event still matters. But it lands far better when it sits inside a year-round commitment rather than standing in for one.</p>
+
+    <h2>The Quiet Return on Investment</h2>
+
+    <p>Leaders who invest consistently rarely have to talk about it. You can see it in their teams. The conversations are more honest. Problems surface earlier, while they're still cheap to fix. People cover for one another without being asked. Good staff stay. New people settle quickly. None of it shows up as a single dramatic number, which is exactly why the once-a-year leader keeps missing it &mdash; the return on continuous investment is diffuse, compounding, and almost invisible until you compare two teams side by side.</p>
+
+    <p>That, in the end, is what a leader's approach to team building says about them. It reveals whether they see their people as a resource to be managed or a capability to be grown. And over a year, over a quarter, even over a single tough week, that difference shows.</p>
+
+    <div class="insight-box" aria-label="Team Connect insight">
+      <span class="insight-label">&#127966; At Team Connect</span>
+      <p>We help South African leaders move from once-a-year events to year-round team building &mdash; from individual experiences that fix a specific need to ongoing programmes that compound over time. Whether you're rebuilding trust, integrating a changed team, or simply committing to do this properly, we'll help you design an approach that fits your team and your budget. Let's talk about what investing in your team could look like this year.</p>
+    </div>
+
+  </article>
+
+  <!-- AUTHOR BIO -->
+  <section class="author-bio" aria-label="Author information">
+    <div class="author-bio-inner">
+      <img src="images/Team connect logo.jpg" alt="Team Connect logo" height="50" />
+      <div class="author-bio-text">
+        <p><strong>Written by Team Connect Insights</strong> &mdash; practical team development advice from South Africa's leading corporate team building company. Based in Cape Town. Serving teams nationwide.</p>
+      </div>
     </div>
   </section>
 
@@ -731,14 +893,6 @@
       });
     });
 
-    function handleNotify(e) {
-      e.preventDefault();
-      const input = e.target.querySelector('input[type="email"]');
-      const btn = e.target.querySelector('button');
-      btn.textContent = 'Thanks! We\'ll notify you.';
-      btn.disabled = true;
-      input.disabled = true;
-    }
   </script>
 </body>
 </html>
