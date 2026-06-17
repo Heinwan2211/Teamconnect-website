@@ -717,6 +717,32 @@
     </div>
   </div>
 
+  <!-- NEWSLETTER SUBSCRIBE THANK-YOU -->
+  <div id="subscribe-thank-you" style="display:none; background:#1a4a2e; color:#fff; padding:20px; border-radius:8px; margin:24px 0; text-align:center;">
+    <h3 style="color:#c9a84c; margin:0 0 8px;">You're subscribed!</h3>
+    <p style="margin:0;">Thanks for joining our newsletter. We'll be in touch with insights, updates, and behind-the-scenes stories from Team Connect.</p>
+  </div>
+
+  <script>
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('subscribed') === 'true') {
+      var msg = document.getElementById('subscribe-thank-you');
+      if (msg) {
+        msg.style.display = 'block';
+        msg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      if (typeof gtag === 'function') {
+        gtag('event', 'newsletter_signup', {
+          'event_category': 'engagement',
+          'event_label': 'Newsletter subscription from blog',
+          'value': 1
+        });
+      }
+    }
+  })();
+  </script>
+
   <!-- BLOG GRID -->
   <section class="blog-grid-section" aria-labelledby="grid-heading">
     <span class="section-label">All Posts</span>
@@ -797,7 +823,13 @@
   <section class="newsletter-strip" aria-labelledby="newsletter-heading">
     <h2 id="newsletter-heading">Get Team Development Insights in Your Inbox</h2>
     <p>Practical advice, trend reports, and Team Connect news — delivered monthly. No spam, ever.</p>
-    <form class="newsletter-form" action="#" method="POST" aria-label="Newsletter signup form">
+    <form class="newsletter-form" action="https://api.web3forms.com/submit" method="POST" aria-label="Newsletter signup form">
+      <input type="hidden" name="access_key" value="266b152a-431e-4a3c-be63-1c694e2363ef">
+      <input type="hidden" name="subject" value="Newsletter signup from blog index page">
+      <input type="hidden" name="from_name" value="Team Connect Newsletter">
+      <input type="hidden" name="form_type" value="newsletter_subscription">
+      <input type="hidden" name="redirect" value="https://www.teamconnect.co.za/blog?subscribed=true">
+      <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
       <input type="email" name="email" placeholder="Your email address" aria-label="Email address" required />
       <button type="submit">Subscribe</button>
     </form>
