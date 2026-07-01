@@ -408,11 +408,13 @@
       transform: translateY(-4px);
     }
 
-    .post-card > img {
+    .post-card > img,
+    .post-card-media {
       width: 100%;
       height: 200px;
       object-fit: cover;
       display: block;
+      overflow: hidden;
     }
 
     .post-card-body {
@@ -640,6 +642,97 @@
       white-space: nowrap;
       border: 0;
     }
+
+    /* COMING LATER THIS YEAR */
+    .upcoming-section {
+      background: rgba(201, 168, 76, 0.05);
+      padding: 60px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-radius: 8px;
+    }
+
+    .upcoming-intro {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.65;
+      max-width: 620px;
+      margin: 0.5rem 0 2rem;
+    }
+
+    .upcoming-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    @media (max-width: 900px) {
+      .upcoming-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 580px) {
+      .upcoming-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .upcoming-card {
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid rgba(26, 74, 46, 0.25);
+      background: var(--white);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .upcoming-card:hover {
+      border-color: var(--green);
+      transform: translateY(-2px);
+    }
+
+    .upcoming-card-media {
+      width: 100%;
+      height: 120px;
+      overflow: hidden;
+      display: block;
+    }
+
+    .upcoming-card-body {
+      padding: 0.9rem 1rem 1rem;
+    }
+
+    .upcoming-card-body .category-tag {
+      margin-bottom: 0.5rem;
+    }
+
+    .upcoming-card-body h3 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--green);
+      line-height: 1.35;
+      margin-bottom: 0.5rem;
+    }
+
+    .upcoming-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .upcoming-card-body .post-date {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--gold);
+    }
+
+    .upcoming-card-body .post-month {
+      font-size: 0.72rem;
+      color: #999;
+      font-weight: 600;
+    }
   </style>
   <link rel="stylesheet" href="mobile.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="mobile.css"></noscript>
@@ -751,60 +844,17 @@
     <!-- Replace placeholder cards with real blog posts as they are published -->
     <div class="blog-grid">
 
-      <article class="post-card" aria-label="Blog post coming soon: The 2026 Team Building Trends That Actually Matter">
-        <img src="images/blog/blog-07-energise-team.webp" alt="2026 corporate team building trends — an honest read from the field" width="600" height="340" loading="lazy">
-        <div class="post-card-body">
-          <span class="category-tag">Team Building</span>
-          <h3>The 2026 Team Building Trends That Actually Matter</h3>
-          <p>Every team building provider is publishing a &ldquo;trends of 2026&rdquo; list. Here&rsquo;s an honest read from ten years in the field &mdash; which trends deliver real outcomes, and which ones are just noise.</p>
-        </div>
-        <div class="post-card-footer">
-          <span class="post-date">Coming Soon</span>
-          <a href="#" class="btn btn-outline-green" aria-disabled="true">Read More<span class="sr-only"> — The 2026 Team Building Trends That Actually Matter</span></a>
-        </div>
-      </article>
-
-      <article class="post-card" aria-label="Blog post coming soon: Beyond the Braai">
-        <img src="images/blog/blog-07-energise-team.webp" alt="A South African corporate braai celebrating the end of the year" width="600" height="340" loading="lazy">
-        <div class="post-card-body">
-          <span class="category-tag">Culture</span>
-          <h3>Beyond the Braai &mdash; Why One Year-End Function Isn&rsquo;t Enough</h3>
-          <p>The South African year-end function is a tradition. It&rsquo;s also not enough. Here&rsquo;s why single-event thinking leaves your team starting each new year already depleted &mdash; and what a rhythm of connection actually looks like.</p>
-        </div>
-        <div class="post-card-footer">
-          <span class="post-date">Coming Soon</span>
-          <a href="#" class="btn btn-outline-green" aria-disabled="true">Read More<span class="sr-only"> — Beyond the Braai</span></a>
-        </div>
-      </article>
-
-      <article class="post-card" aria-label="Blog post coming soon: The Hybrid Team Problem">
-        <img src="images/blog/blog-07-energise-team.webp" alt="A hybrid corporate team collaborating in a modern office setting" width="600" height="340" loading="lazy">
-        <div class="post-card-body">
-          <span class="category-tag">Hybrid Work</span>
-          <h3>The Hybrid Team Problem &mdash; Why &ldquo;Sometimes in the Office&rdquo; Isn&rsquo;t Working</h3>
-          <p>Hybrid work is the dominant model in 2026, but only 33% of hybrid staff say their in-office days meet their expectations. Team building has a specific role to play in making hybrid work actually work.</p>
-        </div>
-        <div class="post-card-footer">
-          <span class="post-date">Coming Soon</span>
-          <a href="#" class="btn btn-outline-green" aria-disabled="true">Read More<span class="sr-only"> — The Hybrid Team Problem</span></a>
-        </div>
-      </article>
-
-      <article class="post-card" aria-label="Blog post coming soon: A Manager's Guide to Preventing Team Burnout">
-        <img src="images/blog/blog-07-energise-team.webp" alt="A corporate manager reviewing team wellbeing signals at their desk" width="600" height="340" loading="lazy">
-        <div class="post-card-body">
-          <span class="category-tag">Leadership</span>
-          <h3>A Manager&rsquo;s Guide to Preventing Team Burnout</h3>
-          <p>Burnout is a lagging indicator &mdash; by the time you see it, it&rsquo;s been compounding for 12-18 months. This is the tactical playbook every manager needs: early warning signs, week-by-week interventions, and a diagnostic framework.</p>
-        </div>
-        <div class="post-card-footer">
-          <span class="post-date">Coming Soon</span>
-          <a href="#" class="btn btn-outline-green" aria-disabled="true">Read More<span class="sr-only"> — A Manager's Guide to Preventing Team Burnout</span></a>
-        </div>
-      </article>
-
       <article class="post-card" aria-label="Blog post coming soon: The 2025 Hangover">
-        <img src="images/blog/blog-07-energise-team.webp" alt="A South African corporate team member showing signs of accumulated fatigue" width="600" height="340" loading="lazy">
+        <div class="post-card-media">
+          <svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Coming Soon — The 2025 Hangover, publishing August 2026" style="width:100%;height:100%;display:block;border-radius:inherit;">
+            <rect width="600" height="340" fill="#1a4a2e"/>
+            <g transform="translate(300, 150)" text-anchor="middle">
+              <text font-family="Georgia, serif" font-size="34" fill="#c9a84c" font-weight="700" letter-spacing="1">COMING SOON</text>
+              <text y="52" font-family="Georgia, serif" font-size="20" fill="#ffffff" font-weight="400">August 2026</text>
+              <text y="90" font-family="Georgia, serif" font-size="18" fill="#c9a84c" font-style="italic">The Connected Team</text>
+            </g>
+          </svg>
+        </div>
         <div class="post-card-body">
           <span class="category-tag">Wellness</span>
           <h3>The 2025 Hangover &mdash; Why Your Team Came Back Already Tired</h3>
@@ -878,6 +928,97 @@
         <div class="post-card-footer">
           <span class="post-date">January 2026</span>
           <a href="/blog-post-1-psychological-safety" class="btn btn-outline-green">Read More<span class="sr-only"> — Why South African Teams Underperform</span></a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- COMING LATER THIS YEAR -->
+  <section class="upcoming-posts upcoming-section" aria-labelledby="upcoming-heading">
+    <span class="section-label">Upcoming</span>
+    <h2 class="section-heading" id="upcoming-heading">Coming Later This Year</h2>
+    <p class="upcoming-intro">A quick look at what&rsquo;s on the way in &ldquo;The Connected Team&rdquo; series through the rest of 2026.</p>
+
+    <div class="upcoming-grid">
+
+      <article class="upcoming-card" aria-label="Coming soon: A Manager's Guide to Preventing Team Burnout">
+        <div class="upcoming-card-media">
+          <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Coming Soon — A Manager's Guide to Preventing Team Burnout, publishing September 2026" style="width:100%;height:100%;display:block;border-radius:inherit;">
+            <rect width="400" height="220" fill="#1a4a2e"/>
+            <g transform="translate(200, 95)" text-anchor="middle">
+              <text font-family="Georgia, serif" font-size="24" fill="#c9a84c" font-weight="700" letter-spacing="1">COMING SOON</text>
+              <text y="36" font-family="Georgia, serif" font-size="15" fill="#ffffff" font-weight="400">September 2026</text>
+            </g>
+          </svg>
+        </div>
+        <div class="upcoming-card-body">
+          <span class="category-tag">Leadership</span>
+          <h3>A Manager&rsquo;s Guide to Preventing Team Burnout</h3>
+          <div class="upcoming-card-meta">
+            <span class="post-date">Coming Soon</span>
+            <span class="post-month">September 2026</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="upcoming-card" aria-label="Coming soon: The Hybrid Team Problem">
+        <div class="upcoming-card-media">
+          <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Coming Soon — The Hybrid Team Problem, publishing October 2026" style="width:100%;height:100%;display:block;border-radius:inherit;">
+            <rect width="400" height="220" fill="#1a4a2e"/>
+            <g transform="translate(200, 95)" text-anchor="middle">
+              <text font-family="Georgia, serif" font-size="24" fill="#c9a84c" font-weight="700" letter-spacing="1">COMING SOON</text>
+              <text y="36" font-family="Georgia, serif" font-size="15" fill="#ffffff" font-weight="400">October 2026</text>
+            </g>
+          </svg>
+        </div>
+        <div class="upcoming-card-body">
+          <span class="category-tag">Hybrid Work</span>
+          <h3>The Hybrid Team Problem &mdash; Why &ldquo;Sometimes in the Office&rdquo; Isn&rsquo;t Working</h3>
+          <div class="upcoming-card-meta">
+            <span class="post-date">Coming Soon</span>
+            <span class="post-month">October 2026</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="upcoming-card" aria-label="Coming soon: Beyond the Braai">
+        <div class="upcoming-card-media">
+          <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Coming Soon — Beyond the Braai, publishing November 2026" style="width:100%;height:100%;display:block;border-radius:inherit;">
+            <rect width="400" height="220" fill="#1a4a2e"/>
+            <g transform="translate(200, 95)" text-anchor="middle">
+              <text font-family="Georgia, serif" font-size="24" fill="#c9a84c" font-weight="700" letter-spacing="1">COMING SOON</text>
+              <text y="36" font-family="Georgia, serif" font-size="15" fill="#ffffff" font-weight="400">November 2026</text>
+            </g>
+          </svg>
+        </div>
+        <div class="upcoming-card-body">
+          <span class="category-tag">Culture</span>
+          <h3>Beyond the Braai &mdash; Why One Year-End Function Isn&rsquo;t Enough</h3>
+          <div class="upcoming-card-meta">
+            <span class="post-date">Coming Soon</span>
+            <span class="post-month">November 2026</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="upcoming-card" aria-label="Coming soon: The 2026 Team Building Trends That Actually Matter">
+        <div class="upcoming-card-media">
+          <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Coming Soon — The 2026 Team Building Trends That Actually Matter, publishing December 2026" style="width:100%;height:100%;display:block;border-radius:inherit;">
+            <rect width="400" height="220" fill="#1a4a2e"/>
+            <g transform="translate(200, 95)" text-anchor="middle">
+              <text font-family="Georgia, serif" font-size="24" fill="#c9a84c" font-weight="700" letter-spacing="1">COMING SOON</text>
+              <text y="36" font-family="Georgia, serif" font-size="15" fill="#ffffff" font-weight="400">December 2026</text>
+            </g>
+          </svg>
+        </div>
+        <div class="upcoming-card-body">
+          <span class="category-tag">Team Building</span>
+          <h3>The 2026 Team Building Trends That Actually Matter</h3>
+          <div class="upcoming-card-meta">
+            <span class="post-date">Coming Soon</span>
+            <span class="post-month">December 2026</span>
+          </div>
         </div>
       </article>
 
