@@ -1,11 +1,46 @@
+# robots.txt for teamconnect.co.za
+# Team Connect welcomes AI search crawlers to index and cite our content
+
 User-agent: *
 Allow: /
-
-# Internal facilitator resources — not for indexing
 Disallow: /facilitator-resources.html
 Disallow: /checklist-
 Disallow: /client-pack-
 Disallow: /facilitator-guide-
 Disallow: /blog-post-template.html
+
+# AI search and training crawlers — explicitly welcomed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
 
 Sitemap: https://www.teamconnect.co.za/sitemap.xml
