@@ -14,7 +14,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>5 Ways to Energise Your Team Before a Big Project | Team Connect</title>
-  <meta name="description" content="Practical strategies to energise and align your corporate team before a major project. Proven team building techniques from Team Connect's Cape Town facilitators." />
+  <meta name="description" content="A big project ahead? Here are five research-backed ways to energise your team before launch — from clarity rituals to short, purposeful team building sessions that actually stick." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
@@ -551,6 +551,106 @@
       width: 100%;
       text-align: center;
     }
+
+    /* ─── ARTICLE BODY ─── */
+    .article-body {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 56px 5%;
+    }
+
+    .article-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 1.6rem;
+    }
+
+    .article-body .blog-lede {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--green);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .article-body h2 {
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      font-weight: 800;
+      color: var(--green);
+      margin: 2.5rem 0 1rem;
+      line-height: 1.25;
+    }
+
+    .article-body a {
+      color: var(--gold);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      border-left: 4px solid var(--gold);
+      margin: 2.5rem 0;
+      padding: 1.2rem 2rem;
+      background: var(--light-bg);
+    }
+
+    .pull-quote p {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--green);
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    /* Team Connect insight box */
+    .insight-box {
+      background: var(--green);
+      border-radius: 6px;
+      padding: 1.6rem 1.8rem;
+      margin: 2rem 0;
+    }
+
+    .insight-box .insight-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .insight-box p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    /* ─── POST CTA ─── */
+    .post-cta {
+      background: var(--green);
+      padding: 70px 5%;
+      text-align: center;
+    }
+
+    .post-cta h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+
+    .post-cta p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 540px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
   </style>
   <link rel="stylesheet" href="mobile.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="mobile.css"></noscript>
@@ -560,8 +660,8 @@
   <meta name="geo.region" content="ZA-WC" />
   <meta name="geo.placename" content="Cape Town" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="5 Ways to Energise Your Team Before a Big Project | Team Connect" />
-  <meta property="og:description" content="Practical strategies to energise and align your corporate team before a major project. Proven team building techniques from Team Connect's Cape Town facilitators." />
+  <meta property="og:title" content="5 Ways to Energise Your Team Before a Big Project" />
+  <meta property="og:description" content="Five practical, research-backed ways to energise your team before a major initiative — with methods you can start this week." />
   <meta property="og:url" content="https://www.teamconnect.co.za/blog-post-7-energise-team" />
   <meta property="og:site_name" content="Team Connect" />
   <meta property="og:locale" content="en_ZA" />
@@ -570,15 +670,15 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Team Connect — Corporate Team Building South Africa" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="5 Ways to Energise Your Team Before a Big Project | Team Connect" />
-  <meta name="twitter:description" content="Practical strategies to energise and align your corporate team before a major project. Proven team building techniques from Team Connect's Cape Town facilitators." />
+  <meta name="twitter:title" content="5 Ways to Energise Your Team Before a Big Project" />
+  <meta name="twitter:description" content="Five research-backed ways to energise your team before a major initiative." />
   <meta name="twitter:image" content="https://www.teamconnect.co.za/images/blog/blog-07-energise-team.webp" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "5 Ways to Energise Your Team Before a Big Project",
-    "description": "Practical strategies to energise and align your corporate team before a major project. Proven team building techniques from Team Connect's Cape Town facilitators.",
+    "description": "A big project ahead? Here are five research-backed ways to energise your team before launch — from clarity rituals to short, purposeful team building sessions that actually stick.",
     "image": "https://www.teamconnect.co.za/images/blog/blog-07-energise-team.webp",
     "author": {
       "@type": "Organization",
@@ -618,69 +718,121 @@
 
   <!-- ARTICLE HEADER -->
   <header class="article-header" aria-label="Article header">
-    <span class="category-tag">Team Fix</span>
-    <h1>5 Ways to Energise Your Team When Motivation Is Low</h1>
+    <span class="category-tag">The Connected Team</span>
+    <h1>5 Ways to Energise Your Team Before a Big Project</h1>
     <div class="article-meta">
       <span>&#9998; Team Connect Insights</span>
+      <span>&#128197; July 2026</span>
+      <span>&#9201; 6 min read</span>
     </div>
   </header>
 
-  <!-- COMING SOON SECTION -->
-  <section class="coming-soon-section" aria-label="Coming soon notice">
-    <span class="coming-soon-label">Coming Soon</span>
-    <p>This post is currently being written by our team. Check back soon &mdash; or subscribe below to be notified when it goes live.</p>
-  </section>
+  <!-- FEATURED IMAGE -->
+  <div class="featured-image" aria-label="Featured post image">
+    <img src="images/blog/blog-07-energise-team.webp" alt="A Cape Town corporate team gathered around a whiteboard, planning the launch of a major project" width="1200" height="675" loading="lazy">
+  </div>
 
-  <!-- FEATURED IMAGE PLACEHOLDER -->
-  <img src="images/blog/blog-07-energise-team.webp" alt="5 Ways to Energise Your Team Before a Big Project — practical corporate team building strategies" width="1200" height="675" loading="lazy">
+  <!-- ARTICLE BODY -->
+  <article class="article-body" aria-label="Article content">
 
-  <!-- TEASER SECTION -->
-  <section class="teaser-section" aria-label="Post teaser">
-    <h2>A Sneak Peek</h2>
-    <p class="teaser-text">"Low energy in your team is not a personality problem &mdash; it is a design problem. In our next post we unpack five practical, evidence-based ways to re-energise a team that has lost its spark. No motivational posters required."</p>
-  </section>
+    <p class="blog-lede">A major project is coming. The stakes feel higher than the last one. Your team is competent, capable, and quietly running out of gas. Here's how to change that in the two weeks before launch &mdash; without a two-day offsite, without a budget you don't have, and without the pep talk everyone secretly hates.</p>
 
-  <!-- NOTIFY ME SECTION -->
-  <section class="notify-section" aria-label="Email notification signup">
-    <div class="notify-card">
-      <h2>Be the First to Read It</h2>
-      <p>Drop your email below and we'll notify you the moment this post goes live.</p>
-      <form class="notify-form" onsubmit="handleNotify(event)" aria-label="Email notification form">
-        <input type="email" placeholder="Your email address" aria-label="Email address" required />
-        <button type="submit" class="btn btn-gold">Notify Me</button>
-      </form>
+    <p>Most managers, when a big project hits the calendar, do one of two things. They call an all-hands, walk everyone through the Gantt chart, and end with a variation on <em>"let's do this."</em> Or they say nothing at all &mdash; heads down, we've got work to do, no time for morale.</p>
+
+    <p>Both approaches leak energy at exactly the moment you need it most.</p>
+
+    <p>Because energy, in a team context, isn't caffeine. It's the felt sense that <strong>this matters, I know my part, and the people around me have my back</strong>. When those three things are in place, teams sprint. When even one is missing, they grind. Big projects don't fail because of skill gaps. They fail because energy runs out somewhere around week three, and nobody notices until the slip becomes obvious.</p>
+
+    <p>Here are five things you can do in the two weeks before launch to build a reservoir of energy your team will actually draw on when the pressure comes.</p>
+
+    <h2>1. Name the "why" before the "what"</h2>
+
+    <p>The kick-off deck almost always starts with <em>scope</em>, <em>timeline</em>, and <em>deliverables</em>. Those are important. They also energise nobody.</p>
+
+    <p>Before you walk your team through any of that, spend fifteen minutes on a different question: <strong>why does this project matter, and to whom?</strong> Not the strategic-plan version. The human version. Whose day gets better? What breaks if we don't ship? Who's counting on us that we haven't named?</p>
+
+    <p>Research from Wharton's Adam Grant shows that even brief exposure to the beneficiary of the work &mdash; a customer story, a testimonial, a letter &mdash; can produce measurable increases in effort and persistence weeks later. You don't need a big production. You need a single, specific, human reason the work matters, and you need to say it out loud before you say anything else.</p>
+
+    <h2>2. Make roles unambiguous &mdash; even if it feels obvious</h2>
+
+    <p>In our experience running team building across dozens of South African corporates, the single most common energy leak is not disagreement. It's <strong>role ambiguity</strong>. Two people quietly think they own the same piece. One person quietly thinks they own something nobody has actually given them. Someone else is doing work that nobody knows about &mdash; and won't know about until it's late.</p>
+
+    <p>Before you start, write down every meaningful role for the project. Not job titles &mdash; decisions. Who signs off on scope changes? Who talks to the client? Who breaks ties when engineering and design disagree? Circulate the list. Ask people to challenge it.</p>
+
+    <p>You'll get one of two responses: <em>"yes, that's right,"</em> which builds confidence, or <em>"actually, I thought I was doing that,"</em> which surfaces a landmine before it detonates. Both outcomes are energy in the bank.</p>
+
+    <h2>3. Run one short, purposeful team building session &mdash; not a full-day offsite</h2>
+
+    <p>Here is the counter-intuitive truth about team building before a big project: <strong>short is better than long, and specific is better than general</strong>.</p>
+
+    <p>A two-hour session focused on one thing &mdash; communication under pressure, problem-solving in ambiguity, decision-making with incomplete information &mdash; will outperform a full-day general offsite almost every time. It signals to your team that this project is different without pulling them away from actual work. It builds a shared reference point they can call back to when things get hard. And it gives you, as the manager, a live look at how your team functions before the stakes are real.</p>
+
+    <p>Our <a href="/creative-collision">Creative Collision</a> and <a href="/leadership-development">Leadership Development</a> formats are designed exactly for this pre-launch window. Two to three hours, one clear outcome, and a debrief that leaves the team with a shared language for the weeks ahead.</p>
+
+    <h2>4. Schedule the celebration before the launch</h2>
+
+    <p>This one sounds strange, and it works.</p>
+
+    <p>Before the project starts, put a date on the calendar &mdash; three days after the delivery milestone &mdash; and tell the team you're marking the finish, whatever the outcome. Not a huge production. A team lunch. A Friday afternoon off. A dinner at a spot people actually want to go to.</p>
+
+    <p>Two things happen when you do this. First, your team stops treating the finish line as an abstraction. It becomes a real event on a real day. Second, and more importantly, you signal that you value their effort &mdash; not just the result. That signal, given before the work starts rather than after, changes how people show up on the hard days. It says <em>you're not disposable, and this isn't just another project</em>. Small gesture, big compound effect.</p>
+
+    <h2>5. Ask one honest question, then listen</h2>
+
+    <p>In the week before launch, sit down with each person on your team individually. Ten minutes. Not a status update, not a planning conversation. One question:</p>
+
+    <div class="pull-quote" aria-label="Pull quote">
+      <p>"What would make you feel confident going into this project &mdash; and what's currently in the way of that?"</p>
     </div>
-  </section>
+
+    <p>Then be quiet. Don't defend. Don't solve. Don't schedule a follow-up. Just listen and take notes.</p>
+
+    <p>Most of what you hear will be small &mdash; a tool they need, a decision that hasn't been made, a person they haven't been able to reach. Some of it will surprise you. Fix what you can fix. Acknowledge what you can't. Come back to each person within a week and tell them what you heard and what you're doing about it.</p>
+
+    <p>That single conversation, done well, does more for team energy than any offsite, any pep talk, and any all-hands. Because it says: <strong>I see you, I take you seriously, and I'm on your side</strong>. Teams that feel that way don't run out of energy &mdash; they generate it.</p>
+
+    <h2>Before the sprint, fill the tank</h2>
+
+    <p>A big project is a marathon disguised as a sprint. You will need every unit of energy your team can produce, and then some. The two weeks before launch are your best &mdash; and cheapest &mdash; chance to top up the tank.</p>
+
+    <p>None of the five ideas above require a big budget. None of them require a consultant. All of them require a leader willing to spend a few hours on the things that don't feel urgent but always turn out to be the ones that mattered.</p>
+
+    <div class="insight-box" aria-label="Team Connect insight">
+      <span class="insight-label">&#127966; At Team Connect</span>
+      <p>If you want a hand designing the short, focused team building session mentioned in point three &mdash; the one that acts as a launch ritual for the project &mdash; <a href="/contact">get in touch with us</a>. We've designed dozens of these across South African corporates, and we can put something together for your team in the next two weeks. Whatever you do, don't skip step one. Everything else builds on it.</p>
+    </div>
+
+  </article>
 
   <!-- RELATED POSTS -->
   <section class="related-posts" aria-labelledby="related-heading">
-    <h2 id="related-heading">While you wait &mdash; you might enjoy these</h2>
+    <h2 id="related-heading">More from The Connected Team</h2>
     <div class="related-grid">
 
-      <article class="related-card" aria-label="Related post: Why Most South African Teams Underperform">
-        <img class="related-card-img" src="images/blog/blog-01-psychological-safety.webp" alt="Why Most South African Teams Underperform" width="380" height="180" loading="lazy">
-        <div class="related-card-body">
-          <span class="category-tag">The Science of Teams</span>
-          <h3>Why Most South African Teams Underperform &mdash; And the One Thing That Fixes It</h3>
-          <a href="/blog-post-1-psychological-safety" class="read-more">Read More &rarr;</a>
-        </div>
-      </article>
-
-      <article class="related-card" aria-label="Related post: The Coaching Leader">
-        <img class="related-card-img" src="images/blog/blog-03-coaching-leader.webp" alt="The Coaching Leader" width="380" height="180" loading="lazy">
+      <article class="related-card" aria-label="Related post: Why Great Leaders Invest in Team Building">
+        <img class="related-card-img" src="images/blog/blog-08-leaders-invest.webp" alt="Leaders investing in year-round team building" width="380" height="180" loading="lazy">
         <div class="related-card-body">
           <span class="category-tag">Leader Spotlight</span>
-          <h3>The Coaching Leader: Why South Africa's Best Managers Are Asking Better Questions</h3>
-          <a href="/blog-post-3-coaching-leader" class="read-more">Read More &rarr;</a>
+          <h3>Why Great Leaders Invest in Team Building Year-Round</h3>
+          <a href="/blog-post-8-leaders-invest-teambuilding" class="read-more">Read More &rarr;</a>
         </div>
       </article>
 
-      <article class="related-card" aria-label="Related post: Your Team Is Burning Out">
-        <img class="related-card-img" src="images/blog/blog-04-burnout-recovery.webp" alt="Your Team Is Burning Out" width="380" height="180" loading="lazy">
+      <article class="related-card" aria-label="Related post: Spotting the Signs of Team Burnout">
+        <img class="related-card-img" src="images/blog/blog-04-burnout-recovery.webp" alt="Team member showing signs of burnout at their desk" width="380" height="180" loading="lazy">
         <div class="related-card-body">
           <span class="category-tag">Team Fix</span>
-          <h3>Your Team Is Burning Out. Here's How to Actually Help Them.</h3>
+          <h3>Spotting the Signs of Team Burnout Before It's Too Late</h3>
           <a href="/blog-post-4-burnout" class="read-more">Read More &rarr;</a>
+        </div>
+      </article>
+
+      <article class="related-card" aria-label="Related post: Psychological Safety">
+        <img class="related-card-img" src="images/blog/blog-01-psychological-safety.webp" alt="Team having an honest discussion in a safe environment" width="380" height="180" loading="lazy">
+        <div class="related-card-body">
+          <span class="category-tag">The Science of Teams</span>
+          <h3>Psychological Safety: The Foundation of High-Performing Teams</h3>
+          <a href="/blog-post-1-psychological-safety" class="read-more">Read More &rarr;</a>
         </div>
       </article>
 
@@ -688,10 +840,10 @@
   </section>
 
   <!-- CTA STRIP -->
-  <section class="cta-strip" aria-label="Call to action">
-    <h2>Ready to energise your team right now?</h2>
-    <p>You don't have to wait for the post. Talk to us today about what your team needs.</p>
-    <a href="/contact" class="btn btn-gold">Get In Touch</a>
+  <section class="post-cta" aria-label="Call to action">
+    <h2>Ready to give your team the launch ritual they deserve?</h2>
+    <p>Whether it's a two-hour Creative Collision session or a bespoke pre-launch workshop, we can design a short, focused team building experience for your next big project.</p>
+    <a href="/contact" class="btn btn-gold">Get in Touch</a>
   </section>
 
   <!-- FOOTER -->
