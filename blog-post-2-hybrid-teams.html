@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BSD853KBS2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BSD853KBS2');
+</script>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hybrid Team Building South Africa | The Hybrid Team Trap | Team Connect</title>
+  <meta name="description" content="Why South African companies are getting hybrid work wrong — and what high-performing distributed teams do differently. Practical insights from Team Connect." />
+
+  <link rel="preload" as="image" href="/images/blog/blog-02-hybrid-teams.webp" fetchpriority="high" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #1a4a2e;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --light-bg: #f7f5f0;
+      --text: #222222;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      padding: 0.625rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 170px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      display: block;
+      height: 150px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--green);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        height: 115px;
+      }
+      .nav-logo img {
+        height: 100px;
+      }
+      .nav-toggle {
+        display: flex;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 115px;
+        left: 0;
+        right: 0;
+        background: var(--green);
+        flex-direction: column;
+        padding: 1.5rem 5%;
+        gap: 1.2rem;
+        border-top: 2px solid var(--gold);
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .nav-links a {
+        color: #fff;
+      }
+    }
+
+    /* ─── ARTICLE HEADER ─── */
+    .article-header {
+      padding: 60px 5% 40px;
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .category-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+
+    .article-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+      color: #888;
+      font-weight: 600;
+    }
+
+    .article-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* ─── FEATURED IMAGE ─── */
+    .featured-image {
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+
+    .featured-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .featured-image img {
+        height: 220px;
+      }
+    }
+
+    /* ─── ARTICLE BODY ─── */
+    .article-body {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 56px 5%;
+    }
+
+    .article-body p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 1.6rem;
+    }
+
+    .article-body h2 {
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      font-weight: 800;
+      color: var(--green);
+      margin: 2.5rem 0 1rem;
+      line-height: 1.25;
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      border-left: 4px solid var(--gold);
+      margin: 2.5rem 0;
+      padding: 1.2rem 2rem;
+      background: var(--light-bg);
+    }
+
+    .pull-quote p {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--green);
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    /* Practical tip callout */
+    .tip-box {
+      background: #fdf6e3;
+      border: 2px solid var(--gold);
+      border-radius: 6px;
+      padding: 1.4rem 1.8rem;
+      margin: 2rem 0;
+    }
+
+    .tip-box .tip-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .tip-box p {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 0;
+    }
+
+    /* Team Connect insight box */
+    .insight-box {
+      background: var(--green);
+      border-radius: 6px;
+      padding: 1.6rem 1.8rem;
+      margin: 2rem 0;
+    }
+
+    .insight-box .insight-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    .insight-box p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    /* ─── AUTHOR BIO ─── */
+    .author-bio {
+      background: var(--light-bg);
+      padding: 48px 5%;
+    }
+
+    .author-bio-inner {
+      max-width: 740px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .author-bio img {
+      height: 50px;
+      width: auto;
+      display: block;
+    }
+
+    .author-bio-text p {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.65;
+    }
+
+    .author-bio-text strong {
+      color: var(--green);
+    }
+
+    /* ─── RELATED POSTS ─── */
+    .related-posts {
+      padding: 70px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .related-posts h2 {
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: var(--green);
+      margin-bottom: 2rem;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+    }
+
+    @media (max-width: 900px) {
+      .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .related-card {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      border: 2px solid transparent;
+      transition: border-color 0.2s, transform 0.2s;
+      background: var(--white);
+    }
+
+    .related-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+
+    .related-card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .related-card-body {
+      padding: 1.2rem 1.4rem 1.4rem;
+    }
+
+    .related-card-body .category-tag {
+      margin-bottom: 0.6rem;
+    }
+
+    .related-card-body h3 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+    }
+
+    .related-card-body a.read-more {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+    }
+
+    .related-card-body a.read-more:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── CTA STRIP ─── */
+    .cta-strip {
+      background: var(--green);
+      padding: 70px 5%;
+      text-align: center;
+    }
+
+    .cta-strip h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+
+    .cta-strip p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 540px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 36px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green);
+    }
+
+    /* ─── FOOTER CLIENTS ─── */
+    .footer-clients {
+      margin: 24px auto;
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+      padding: 0 16px;
+    }
+    .footer-clients-label {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold, #c9a84c);
+      margin-bottom: 12px;
+    }
+    .footer-clients-logos {
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      gap: 12px;
+      flex-wrap: nowrap !important;
+      width: 100%;
+    }
+    .footer-clients-logos img {
+      flex: 0 1 auto !important;
+      flex-shrink: 0 !important;
+      width: auto !important;
+      height: 32px !important;
+      max-width: 80px !important;
+      max-height: 32px !important;
+      min-width: 40px !important;
+      object-fit: contain !important;
+      display: inline-block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      position: static !important;
+      transform: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    @media (max-width: 480px) {
+      .footer-clients-logos {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 16px;
+      }
+      .footer-clients-logos img {
+        max-width: 60px !important;
+        height: 28px !important;
+      }
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0f2b1a;
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+      padding: 48px 5% 28px;
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .footer-logo img {
+      height: 80px;
+      width: auto;
+      display: block;
+    }
+
+    .footer-logo {
+      max-height: 100px;
+    }
+
+    .footer-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 1.6rem;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .footer-details a {
+      color: #c9a84c;
+      text-decoration: none;
+    }
+
+    .footer-details a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-details span {
+      color: rgba(255,255,255,0.65);
+    }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1rem;
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+  <link rel="stylesheet" href="mobile.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="mobile.css"></noscript>
+  <!-- SEO: canonical, geo, OG, Twitter -->
+  <link rel="canonical" href="https://www.teamconnect.co.za/blog-post-2-hybrid-teams" />
+  <meta name="robots" content="index, follow" />
+  <meta name="geo.region" content="ZA-WC" />
+  <meta name="geo.placename" content="Cape Town" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Hybrid Team Building South Africa | The Hybrid Team Trap | Team Connect" />
+  <meta property="og:description" content="Why South African companies are getting hybrid work wrong — and what high-performing distributed teams do differently. Practical insights from Team Connect." />
+  <meta property="og:url" content="https://www.teamconnect.co.za/blog-post-2-hybrid-teams" />
+  <meta property="og:site_name" content="Team Connect" />
+  <meta property="og:locale" content="en_ZA" />
+  <meta property="og:image" content="https://www.teamconnect.co.za/images/blog/blog-02-hybrid-teams.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Team Connect — Hybrid Team Building South Africa" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hybrid Team Building South Africa | The Hybrid Team Trap | Team Connect" />
+  <meta name="twitter:description" content="Why South African companies are getting hybrid work wrong — and what high-performing distributed teams do differently. Practical insights from Team Connect." />
+  <meta name="twitter:image" content="https://www.teamconnect.co.za/images/blog/blog-02-hybrid-teams.webp" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Hybrid Team Trap: Why South African Companies Are Getting Flexible Work Wrong",
+    "description": "Why South African companies are getting hybrid work wrong — and what high-performing distributed teams do differently. Practical insights from Team Connect.",
+    "image": "https://www.teamconnect.co.za/images/blog/blog-02-hybrid-teams.webp",
+    "author": {
+      "@type": "Organization",
+      "name": "Team Connect"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Team Connect",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.teamconnect.co.za/images/Team_connect_logo_white.png"
+      }
+    },
+    "datePublished": "2026-04-01",
+    "dateModified": "2026-04-30"
+  }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.teamconnect.co.za/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.teamconnect.co.za/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "The Hybrid Team Trap: Why South African Companies Are Getting Flexible Work Wrong",
+      "item": "https://www.teamconnect.co.za/blog-post-2-hybrid-teams"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="/" aria-label="Team Connect home"><img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" width="127" height="150"></a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/experiences">Experiences</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/why-us">Why Us</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/blog" class="active">Blog</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ARTICLE HEADER -->
+  <header class="article-header" aria-label="Article header">
+    <span class="category-tag">SA Workplace Realities</span>
+    <h1>The Hybrid Team Trap: Why South African Companies Are Getting Flexible Work Wrong</h1>
+    <div class="article-meta">
+      <span>&#9998; Team Connect Insights</span>
+      <span>&#128197; April 2026</span>
+      <span>&#128336; 6 min read</span>
+    </div>
+  </header>
+
+  <!-- FEATURED IMAGE -->
+  <div class="featured-image" aria-label="Featured post image">
+    <img src="images/blog/blog-02-hybrid-teams.webp" alt="The Hybrid Team Trap — hybrid and distributed team building challenges in South Africa" width="1200" height="675" loading="eager" fetchpriority="high">
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <article class="article-body" aria-label="Article content">
+
+    <p>Flexible work was supposed to be the answer. Give people autonomy, trust them to deliver, and watch engagement soar. And for many South African companies, it has delivered real benefits &mdash; reduced commute stress, better work-life balance, and access to talent beyond a single city's borders. But three years into the hybrid experiment, a troubling pattern is emerging. Teams are more fragmented than ever. Culture is thinning. The casual connections that used to happen in kitchens and corridors have evaporated &mdash; and no one has replaced them with anything.</p>
+
+    <p>Research shows that 90% of South African employees cannot access reliable home connectivity. Yet companies are building hybrid strategies as if everyone has fibre and a dedicated home office. The result is an inclusion crisis hiding inside a flexibility policy.</p>
+
+    <h2>The Reality of Hybrid Work in South Africa</h2>
+
+    <p>South Africa's hybrid landscape is not the same as London or San Francisco. We operate across vast geographic distances, inconsistent infrastructure, and some of the most complex diversity dynamics in the world. When a Cape Town head office goes hybrid, it doesn't just create a logistics challenge &mdash; it creates a cultural one. Remote employees in Johannesburg or Durban don't just miss the meetings. They miss the relationship-building that happens before and after the meetings. They miss the shared jokes, the overheard conversations, the accumulated micro-moments that add up to a sense of belonging. No Slack channel replaces that.</p>
+
+    <div class="pull-quote" aria-label="Pull quote">
+      <p>"Hybrid work didn't break team culture. It revealed how fragile it already was."</p>
+    </div>
+
+    <h2>Why a Zoom Quiz Is Not Team Building</h2>
+
+    <p>Many South African companies believe they've addressed the hybrid connection problem with a monthly virtual quiz or a Friday afternoon online social. With respect: they haven't. These activities are the digital equivalent of free pizza &mdash; pleasant in the moment, forgotten by Monday, and structurally incapable of building the trust, safety, and shared identity that high-performing teams require. Real team building creates conditions for vulnerability, shared challenge, and genuine human connection. A trivia night does none of these things. It's not that virtual connection is impossible. It's that most companies are doing it wrong.</p>
+
+    <h2>Three Types of Disconnection Hybrid Creates</h2>
+
+    <p>Not all hybrid disconnection looks the same. The first type is informational &mdash; remote employees miss the context that in-person colleagues absorb passively. They're always slightly behind, always slightly uncertain. The second is relational &mdash; without regular face-to-face time, trust erodes slowly and invisibly. Colleagues become strangers again. The third is cultural &mdash; company values and team identity require shared experience to stay alive. A culture that only exists on a Values poster is not a culture. Each type requires a different intervention &mdash; and generic virtual socials address none of them.</p>
+
+    <div class="tip-box" aria-label="Practical tip">
+      <span class="tip-label">&#128161; Practical Tip This Week</span>
+      <p>Create a Connection Rhythm for your hybrid team &mdash; one recurring touchpoint each week that has nothing to do with tasks, projects, or KPIs. Ten minutes. Cameras on. No agenda. Just people being human with each other. The return on this small investment is disproportionate.</p>
+    </div>
+
+    <h2>What High-Performing Hybrid Teams Do Differently</h2>
+
+    <p>The hybrid teams that thrive share three practices. They invest in intentional in-person time &mdash; regular gatherings that are designed for connection, not just productivity. They create asynchronous rituals that build identity &mdash; shared team playlists, weekly wins threads, or rotating spotlights on team members. And they measure connection, not just output &mdash; regularly checking in on how the team feels, not just what the team delivers. The common thread: they treat connection as infrastructure, not a bonus.</p>
+
+    <h2>Building Connection Rituals for Distributed South African Teams</h2>
+
+    <p>Start with what you can control. You probably can't fix everyone's internet &mdash; but you can design your team interactions to be more inclusive of those with connectivity constraints. You can create structured moments for relationship-building. You can invest in one meaningful in-person experience per quarter that gives your distributed team a shared memory to carry back to their separate locations. The research is consistent: a single well-designed in-person team experience has more connection impact than six months of virtual check-ins.</p>
+
+    <div class="insight-box" aria-label="Team Connect insight">
+      <span class="insight-label">&#127966; At Team Connect</span>
+      <p>We've facilitated dozens of experiences for hybrid and distributed South African teams &mdash; and the ones that work aren't about the technology. They're about the intention. We design our hybrid experiences for real South African conditions: variable connectivity, geographic distance, and diverse team cultures. If your hybrid team is losing its thread, let's talk about what would actually help.</p>
+    </div>
+
+  </article>
+
+  <!-- AUTHOR BIO -->
+  <section class="author-bio" aria-label="Author information">
+    <div class="author-bio-inner">
+      <img src="images/Team connect logo.jpg" alt="Team Connect logo" height="50" />
+      <div class="author-bio-text">
+        <p><strong>Written by Team Connect Insights</strong> &mdash; practical team development advice from South Africa's leading corporate team building company. Based in Cape Town. Serving teams nationwide.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED POSTS -->
+  <section class="related-posts" aria-labelledby="related-heading">
+    <h2 id="related-heading">You might also enjoy</h2>
+    <div class="related-grid">
+
+      <article class="related-card" aria-label="Related post: Why SA Teams Underperform">
+        <img class="related-card-img" src="images/blog/blog-01-psychological-safety.webp" alt="Why Most South African Teams Underperform" width="380" height="180" loading="lazy">
+        <div class="related-card-body">
+          <span class="category-tag">The Science of Teams</span>
+          <h3>Why Most South African Teams Underperform &mdash; And the One Thing That Fixes It</h3>
+          <a href="/blog-post-1-psychological-safety" class="read-more">Read More &rarr;</a>
+        </div>
+      </article>
+
+      <article class="related-card" aria-label="Related post: The Coaching Leader">
+        <img class="related-card-img" src="images/blog/blog-03-coaching-leader.webp" alt="The Coaching Leader" width="380" height="180" loading="lazy">
+        <div class="related-card-body">
+          <span class="category-tag">Leader Spotlight</span>
+          <h3>The Coaching Leader: Why South Africa's Best Managers Are Asking Better Questions</h3>
+          <a href="/blog-post-3-coaching-leader" class="read-more">Read More &rarr;</a>
+        </div>
+      </article>
+
+      <article class="related-card" aria-label="Related post: Your Team Is Burning Out">
+        <img class="related-card-img" src="images/blog/blog-04-burnout-recovery.webp" alt="Your Team Is Burning Out" width="380" height="180" loading="lazy">
+        <div class="related-card-body">
+          <span class="category-tag">Team Fix</span>
+          <h3>Your Team Is Burning Out. Here's How to Actually Help Them.</h3>
+          <a href="/blog-post-4-burnout" class="read-more">Read More &rarr;</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip" aria-label="Call to action">
+    <h2>Is your hybrid team losing its connection?</h2>
+    <p>Team Connect's hybrid experiences are built for real South African teams. Let's design something that works for yours.</p>
+    <a href="/contact" class="btn btn-gold">Get In Touch</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner"><img src="images/Team_connect_logo_white.png" alt="Team Connect — Bringing Teams Together" class="footer-logo" width="85" height="100" style="height: 100px; width: auto; display: block; margin-bottom: 10px;" loading="lazy">
+        <div class="footer-details">
+        <span>&#128222; <a href="tel:0824522283">082 452 2283</a></span>
+        <span>&#9993; <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></span>
+        <span>&#127760; <a href="https://www.teamconnect.co.za">www.teamconnect.co.za</a></span>
+        <span><a href="https://www.facebook.com/theTeamConnect" target="_blank" rel="noopener noreferrer">&#128216; Facebook</a></span>
+        <span><a href="https://www.instagram.com/teamconnectsa" target="_blank" rel="noopener noreferrer">&#128247; Instagram</a></span>
+        <span><a href="https://www.tiktok.com/@teamconnectsa" target="_blank" rel="noopener noreferrer">&#127925; TikTok</a></span>
+        <span>&#128205; Cape Town, South Africa</span>
+      </div>
+      <div class="footer-clients">
+        <span class="footer-clients-label">Trusted by</span>
+        <div class="footer-clients-logos">
+          <img src="/images/clients/vodacom.webp" alt="Vodacom" width="70" height="32" loading="lazy">
+          <img src="/images/clients/mtn.webp" alt="MTN" width="70" height="32" loading="lazy">
+          <img src="/images/clients/standard-bank.webp" alt="Standard Bank" width="70" height="32" loading="lazy">
+          <img src="/images/clients/nedbank.webp" alt="Nedbank" width="70" height="32" loading="lazy">
+          <img src="/images/clients/ernst-young.webp" alt="Ernst &amp; Young" width="70" height="32" loading="lazy">
+        </div>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Team Connect. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', function () {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    links.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
