@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BSD853KBS2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BSD853KBS2');
+</script>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corporate Development — Leadership, Culture and Wellbeing | Team Connect</title>
+  <meta name="description" content="Team Connect's corporate development work — leadership development, culture change, team cohesion, and corporate wellbeing services delivered in partnership with ExecuMed Healthcare." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #1a4a2e;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --light-bg: #f7f5f0;
+      --text: #222222;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #ffffff;
+      padding: 0.625rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 170px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      display: block;
+      height: 150px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--green);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--gold);
+    }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 26px;
+      height: 3px;
+      background: var(--green);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        height: 115px;
+      }
+
+      .nav-logo img {
+        height: 100px;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 115px;
+        left: 0;
+        right: 0;
+        background: var(--green);
+        flex-direction: column;
+        padding: 1.5rem 5%;
+        gap: 1.2rem;
+        border-top: 2px solid var(--gold);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        color: var(--white);
+      }
+    }
+
+    /* ─── HERO (text-first, no image) ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      color: var(--white);
+      padding: 90px 5% 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .hero-inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .hero .hero-sub {
+      font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+      color: var(--gold);
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.2vw, 1.1rem);
+      opacity: 0.9;
+      line-height: 1.75;
+      margin-bottom: 2.2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 36px;
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: transform 0.18s, box-shadow 0.18s;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--green);
+    }
+
+    /* ─── SECTION SHARED ─── */
+    section {
+      padding: 80px 5%;
+    }
+
+    .content-section .section-inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .content-section:nth-of-type(even) {
+      background: var(--light-bg);
+    }
+
+    .section-label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-heading {
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      color: var(--green);
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-sub {
+      font-size: 1.1rem;
+      color: var(--gold);
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 1.8rem;
+    }
+
+    .content-section p {
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 1.4rem;
+    }
+
+    .credibility-block {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.7;
+      border-left: 3px solid var(--gold);
+      padding-left: 1.2rem;
+      margin: 1.8rem 0 1.4rem;
+    }
+
+    .credibility-block a {
+      color: var(--green);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .text-link {
+      display: inline-block;
+      color: var(--green);
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      margin-top: 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .text-link:hover {
+      color: var(--gold);
+    }
+
+    /* ─── FINAL CTA SECTION ─── */
+    #final-cta {
+      background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
+      text-align: center;
+      color: var(--white);
+    }
+
+    #final-cta .section-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    #final-cta .section-heading {
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    #final-cta p {
+      color: rgba(255,255,255,0.88);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 1.8rem;
+    }
+
+    .contact-block {
+      color: rgba(255,255,255,0.92);
+      font-size: 1.05rem;
+      line-height: 1.9;
+      margin-bottom: 2rem;
+    }
+
+    .contact-block a {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .contact-block a:hover {
+      text-decoration: underline;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer-clients {
+      margin: 24px auto;
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+      padding: 0 16px;
+    }
+    .footer-clients-label {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold, #c9a84c);
+      margin-bottom: 12px;
+    }
+    .footer-clients-logos {
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      gap: 12px;
+      flex-wrap: nowrap !important;
+      width: 100%;
+    }
+    .footer-clients-logos img {
+      flex: 0 1 auto !important;
+      flex-shrink: 0 !important;
+      width: auto !important;
+      height: 32px !important;
+      max-width: 80px !important;
+      max-height: 32px !important;
+      min-width: 40px !important;
+      object-fit: contain !important;
+      display: inline-block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      position: static !important;
+      transform: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    @media (max-width: 480px) {
+      .footer-clients-logos {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 16px;
+      }
+      .footer-clients-logos img {
+        max-width: 60px !important;
+        height: 28px !important;
+      }
+    }
+
+    footer {
+      background: #0f2b1a;
+      color: rgba(255,255,255,0.65);
+      text-align: center;
+      padding: 48px 5% 28px;
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+    }
+
+    .footer-logo img {
+      height: 80px;
+      width: auto;
+      display: block;
+    }
+
+    .footer-logo {
+      max-height: 100px;
+    }
+
+    .footer-details {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem 1.6rem;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .footer-details a {
+      color: #c9a84c;
+      text-decoration: none;
+    }
+
+    .footer-details a:hover {
+      text-decoration: underline;
+    }
+
+    .footer-details span {
+      color: rgba(255,255,255,0.65);
+    }
+
+    .footer-copy {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.4);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1rem;
+      width: 100%;
+      text-align: center;
+    }
+  </style>
+  <link rel="stylesheet" href="mobile.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="mobile.css"></noscript>
+  <!-- SEO: canonical, robots (noindex during review), geo, OG, Twitter -->
+  <link rel="canonical" href="https://www.teamconnect.co.za/corporate-development" />
+  <meta name="robots" content="noindex, follow" />
+  <meta name="geo.region" content="ZA-WC" />
+  <meta name="geo.placename" content="Cape Town" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Corporate Development — Leadership, Culture and Wellbeing | Team Connect" />
+  <meta property="og:description" content="Team Connect's corporate development work — leadership development, culture change, team cohesion, and corporate wellbeing services delivered in partnership with ExecuMed Healthcare." />
+  <meta property="og:url" content="https://www.teamconnect.co.za/corporate-development" />
+  <meta property="og:site_name" content="Team Connect" />
+  <meta property="og:locale" content="en_ZA" />
+  <meta property="og:image" content="https://www.teamconnect.co.za/images/og/og-default.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Team Connect — Corporate Development, Leadership and Wellbeing" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Corporate Development — Leadership, Culture and Wellbeing | Team Connect" />
+  <meta name="twitter:description" content="Team Connect's corporate development work — leadership development, culture change, team cohesion, and corporate wellbeing services delivered in partnership with ExecuMed Healthcare." />
+  <meta name="twitter:image" content="https://www.teamconnect.co.za/images/og/og-default.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.teamconnect.co.za/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Corporate Development",
+      "item": "https://www.teamconnect.co.za/corporate-development"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="/" aria-label="Team Connect home"><img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" width="127" height="150"></a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/experiences">Experiences</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/why-us">Why Us</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- SECTION 1 — HERO / POSITIONING -->
+  <section class="hero" aria-label="Corporate Development positioning">
+    <div class="hero-inner">
+      <span class="hero-tag">Corporate Development</span>
+      <h1>Corporate Development</h1>
+      <p class="hero-sub">Beyond the experience — the work that shapes how your team grows</p>
+      <p>Team Connect is best known for our team-building experiences — the Amazing Race, Escape Labs, Culture Throwdown. Over time, though, many of the clients who come to us for an experience end up staying for something bigger: the ongoing leadership development, culture change, and team cohesion work that shapes how a company grows. This is a significant part of what we do, and it's where the deeper return on team investment often sits. Alongside this development work, we've recently partnered with ExecuMed Healthcare to bring genuine wellbeing services into the conversation — because increasingly, team performance and team wellbeing are two sides of the same investment.</p>
+      <a href="/contact" class="btn btn-gold">Start a Conversation</a>
+    </div>
+  </section>
+
+  <!-- SECTION 2 — LEADERSHIP DEVELOPMENT -->
+  <section class="content-section" aria-labelledby="leadership-heading">
+    <div class="section-inner">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-heading" id="leadership-heading">Leadership Development</h2>
+      <p class="section-sub">Building capable leaders at every level of your organisation</p>
+      <p>The difference between a good team and a great one usually comes down to leadership — and leadership is a skill, not a title. We work with managers, executives, and emerging leaders across South African corporates to build the specific capabilities that today's workplace demands: leading through ambiguity, making decisions with incomplete information, developing others, and holding difficult conversations without avoidance.</p>
+      <p>Our leadership development work ranges from focused half-day workshops to structured multi-session programmes running across a quarter or full year. Every engagement is designed around your specific leadership context — the industry you're in, the pressures your team faces, and the culture you're building. There is no off-the-shelf package here. What we deliver depends on what you need.</p>
+      <a href="/contact" class="text-link">Enquire about our leadership development work →</a>
+    </div>
+  </section>
+
+  <!-- SECTION 3 — CULTURE CHANGE AND TRANSITION -->
+  <section class="content-section" aria-labelledby="culture-heading">
+    <div class="section-inner">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-heading" id="culture-heading">Culture Change and Transition</h2>
+      <p class="section-sub">When your organisation is shifting, and your culture needs to catch up</p>
+      <p>Restructures, mergers, leadership changes, new strategies, hybrid transitions — every meaningful organisational shift creates culture debt that builds up quietly if it isn't addressed. We work with organisations going through change to make the new culture real for the people inside it. That means honest diagnostic work with your leadership team, facilitated sessions with the teams that are actually affected, and follow-through that keeps momentum alive after the initial rollout.</p>
+      <p>Culture change isn't a poster on the wall or a values workshop that happens once. It's a series of deliberate interventions over months — done well, it's the difference between a restructure that lands and one that quietly costs you your best people. We've partnered with organisations on culture work for restructures, growth phases, generational transitions, and post-crisis rebuilds.</p>
+      <a href="/contact" class="text-link">Speak to us about your culture work →</a>
+    </div>
+  </section>
+
+  <!-- SECTION 4 — TEAM COHESION AND GROWTH -->
+  <section class="content-section" aria-labelledby="cohesion-heading">
+    <div class="section-inner">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-heading" id="cohesion-heading">Team Cohesion and Growth</h2>
+      <p class="section-sub">Turning individual talent into collective performance</p>
+      <p>A team of talented individuals doesn't automatically produce a talented team. Team cohesion is the work of making that transition — building the trust, communication, and shared clarity that lets a group of capable people actually work together well. This is where our team-building experiences meet the deeper development work: the experience gives a team a shared reference point; the ongoing cohesion work is what turns it into changed behaviour on Monday morning.</p>
+      <p>We support teams through cohesion diagnostics, facilitated team-development sessions, conflict resolution work, and quarterly team rhythms designed to keep momentum. This work is particularly valuable for newly formed teams, teams recovering from a difficult period, cross-functional teams that don't have a natural rhythm, and senior teams where the stakes of alignment are highest.</p>
+      <a href="/contact" class="text-link">Talk to us about your team →</a>
+    </div>
+  </section>
+
+  <!-- SECTION 5 — CORPORATE WELLBEING (WITH EXECUMED) -->
+  <section class="content-section" aria-labelledby="wellbeing-heading">
+    <div class="section-inner">
+      <span class="section-label">What We Do</span>
+      <h2 class="section-heading" id="wellbeing-heading">Corporate Wellbeing</h2>
+      <p class="section-sub">Clinical wellbeing services, alongside our development work</p>
+      <p>Team performance and team wellbeing are increasingly the same conversation. 2025 taught most South African corporates that a team running on empty doesn't develop, doesn't lead, and doesn't cohere — no matter how good the strategy is. That's why we've partnered with ExecuMed Healthcare, a doctor-led preventative healthcare provider, to bring genuine wellbeing services into our corporate development work.</p>
+      <p>Through ExecuMed, we offer workplace wellness days including health screenings and preventative checks, doctor-led wellbeing programmes, mental health and burnout support, and executive medicals for senior leaders. These services are delivered by ExecuMed's clinical team, integrated into a single point of contact with Team Connect — so you don't manage two suppliers to give your team a complete development and wellbeing experience.</p>
+      <p>This partnership is designed for organisations who understand that leadership development and physical-and-mental wellbeing are not separate initiatives. They're two sides of the same investment in your people.</p>
+      <p class="credibility-block">ExecuMed Healthcare is led by CEO Lee Hutchinson. Learn more about their clinical services at <a href="https://execumedsa.co.za" target="_blank" rel="noopener noreferrer">execumedsa.co.za</a>.</p>
+      <a href="/contact" class="text-link">Ask us how the partnership works for your team →</a>
+    </div>
+  </section>
+
+  <!-- SECTION 6 — HOW WE WORK WITH YOU -->
+  <section class="content-section" aria-labelledby="how-heading">
+    <div class="section-inner">
+      <span class="section-label">Our Approach</span>
+      <h2 class="section-heading" id="how-heading">How we work with you</h2>
+      <p class="section-sub">The way a Team Connect engagement actually runs</p>
+      <p>Every engagement starts with a conversation — a short discovery call where we understand what you're trying to achieve, the state of your team today, and any constraints (budget, timeline, sensitivities) we need to know about. From that we scope a proposal that is specifically shaped for your organisation, not adapted from a template. Once you approve the scope, we schedule and deliver — and we stay involved for the follow-through work that turns a single engagement into a durable change.</p>
+      <p>We work with organisations of all sizes, across most sectors — financial services, technology, retail, education, healthcare, professional services, and the public sector. Some engagements are single events; many are multi-month partnerships. We've been doing this work for over a decade, and we take on the number of clients we can genuinely serve well — which is deliberately fewer than the market could sustain.</p>
+      <a href="/contact" class="text-link">Start with a conversation →</a>
+    </div>
+  </section>
+
+  <!-- SECTION 7 — FINAL CTA BLOCK -->
+  <section id="final-cta" aria-labelledby="final-cta-heading">
+    <div class="section-inner">
+      <h2 class="section-heading" id="final-cta-heading">Ready to talk about your team?</h2>
+      <p>Whether you're planning leadership development for the year, navigating a culture change, building cohesion in a newly formed team, or exploring how wellbeing fits into your development strategy — we'd welcome the conversation.</p>
+      <div class="contact-block">
+        <span>&#9993; <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></span><br>
+        <span>&#128222; <a href="tel:+27824522283">+27 (0)82 452 2283</a></span>
+      </div>
+      <a href="/contact" class="btn btn-gold">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner"><img src="images/Team_connect_logo_white.png" alt="Team Connect — Bringing Teams Together" class="footer-logo" width="85" height="100" style="height: 100px; width: auto; display: block; margin-bottom: 10px;" loading="lazy">
+        <div class="footer-details">
+        <span>&#128222; <a href="tel:0824522283">082 452 2283</a></span>
+        <span>&#9993; <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></span>
+        <span>&#127760; <a href="https://www.teamconnect.co.za">www.teamconnect.co.za</a></span>
+        <span><a href="https://www.facebook.com/theTeamConnect" target="_blank" rel="noopener noreferrer">&#128216; Facebook</a></span>
+        <span><a href="https://www.instagram.com/teamconnectsa" target="_blank" rel="noopener noreferrer">&#128247; Instagram</a></span>
+        <span><a href="https://www.tiktok.com/@teamconnectsa" target="_blank" rel="noopener noreferrer">&#127925; TikTok</a></span>
+        <span>&#128205; Cape Town, South Africa</span>
+      </div>
+      <div class="footer-clients">
+        <span class="footer-clients-label">Trusted by</span>
+        <div class="footer-clients-logos">
+          <img src="/images/clients/vodacom.webp" alt="Vodacom" width="70" height="32" loading="lazy">
+          <img src="/images/clients/mtn.webp" alt="MTN" width="70" height="32" loading="lazy">
+          <img src="/images/clients/standard-bank.webp" alt="Standard Bank" width="70" height="32" loading="lazy">
+          <img src="/images/clients/nedbank.webp" alt="Nedbank" width="70" height="32" loading="lazy">
+          <img src="/images/clients/ernst-young.webp" alt="Ernst &amp; Young" width="70" height="32" loading="lazy">
+        </div>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Team Connect. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', function () {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    links.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (links.classList.contains('open') && !links.contains(e.target) && !toggle.contains(e.target)) {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+
+</body>
+</html>

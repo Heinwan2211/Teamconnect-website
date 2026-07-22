@@ -14,6 +14,7 @@ Disallow: /checklist-
 Disallow: /client-pack-
 Disallow: /facilitator-guide-
 Disallow: /blog-post-template.html
+Disallow: /corporate-development
 
 # AI search and training crawlers — explicitly welcomed
 User-agent: GPTBot
