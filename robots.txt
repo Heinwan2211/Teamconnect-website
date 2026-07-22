@@ -15,6 +15,7 @@ Disallow: /client-pack-
 Disallow: /facilitator-guide-
 Disallow: /blog-post-template.html
 Disallow: /corporate-development
+Disallow: /corporate-development/execumed-partnership
 
 # AI search and training crawlers — explicitly welcomed
 User-agent: GPTBot
