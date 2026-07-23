@@ -297,12 +297,39 @@
       border: 1px solid #e6e2d6;
       border-top: 4px solid var(--gold);
       border-radius: 6px;
-      padding: 1.8rem 1.6rem;
+      padding: 0 0 1.8rem;
+      overflow: hidden;
       box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
     }
 
     .content-section:nth-of-type(even) .service-card {
       background: var(--white);
+    }
+
+    /* Media block — image, or brand-green tint panel with icon where no imagery exists */
+    .service-card-media {
+      height: 180px;
+      margin-bottom: 1.6rem;
+      background: rgba(26,74,46,0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .service-card-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .service-card-icon {
+      width: 80px;
+      height: 80px;
+      color: var(--green);
+      opacity: 0.62;
     }
 
     .service-card h3 {
@@ -311,6 +338,7 @@
       color: var(--green);
       line-height: 1.3;
       margin-bottom: 0.7rem;
+      padding: 0 1.6rem;
     }
 
     .service-card p {
@@ -318,6 +346,7 @@
       color: #333;
       line-height: 1.7;
       margin-bottom: 0;
+      padding: 0 1.6rem;
     }
 
     .service-card.full-width {
@@ -358,6 +387,49 @@
 
     .text-link:hover {
       color: var(--gold);
+    }
+
+    /* ─── IMAGERY ─── */
+    .hero-image {
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 34px rgba(0,0,0,0.28);
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 7;
+      object-fit: cover;
+    }
+
+    /* ─── TEXT-ONLY SECTIONS (no imagery by design) ─── */
+    .content-section.text-only {
+      padding-top: 110px;
+      padding-bottom: 110px;
+    }
+
+    .content-section.text-only .section-inner {
+      max-width: 720px;
+    }
+
+    .content-section.text-only p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+
+    .content-section.text-only p.credibility-line {
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .content-section.text-only {
+        padding-top: 70px;
+        padding-bottom: 70px;
+      }
     }
 
     /* ─── FINAL CTA SECTION ─── */
@@ -583,6 +655,9 @@
   <!-- SECTION 1 — HERO / POSITIONING -->
   <section class="hero" aria-label="The ExecuMed Partnership positioning">
     <div class="hero-inner">
+      <div class="hero-image">
+        <img src="/images/pages/exm-hero.webp" alt="ExecuMed Healthcare — a doctor-led wellbeing consultation in a modern Cape Town setting" width="1600" height="700" loading="eager" fetchpriority="high">
+      </div>
       <span class="hero-tag">Corporate Development</span>
       <h1>The ExecuMed Partnership</h1>
       <p class="hero-sub">Doctor-led preventative healthcare, integrated with your team development</p>
@@ -599,22 +674,44 @@
       <p class="intro-line">The following services are available to Team Connect clients through the ExecuMed partnership. Every engagement can be shaped to your organisation's specific priorities.</p>
       <div class="service-grid">
         <div class="service-card">
+          <div class="service-card-media">
+            <img src="/images/pages/exm-programmes.webp" alt="ExecuMed employee wellbeing programme — a small group in an ongoing wellness education session" width="800" height="500" loading="lazy">
+          </div>
           <h3>Employee Wellbeing Programmes</h3>
           <p>Structured, medically-led programmes delivered over time rather than one-off events. Designed to improve day-to-day wellbeing, reduce absenteeism, and build a healthier working culture. Typically combines regular screening, health tracking, and follow-up support.</p>
         </div>
         <div class="service-card">
+          <div class="service-card-media">
+            <svg class="service-card-icon" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M40 70V34" />
+              <path d="M40 34C40 20 51 10 66 10c0 15-11 24-26 24Z" />
+              <path d="M40 52C40 40 30 32 16 32c0 12 10 20 24 20Z" />
+            </svg>
+          </div>
           <h3>Mental Health and Burnout Prevention</h3>
           <p>Clinical screening for burnout risk, mental health support pathways, and structured programmes designed to address workplace psychological health. Delivered by ExecuMed's clinical team.</p>
         </div>
         <div class="service-card">
+          <div class="service-card-media">
+            <img src="/images/pages/exm-executive.webp" alt="ExecuMed executive wellness consultation — a senior professional in a considered health assessment" width="800" height="500" loading="lazy">
+          </div>
           <h3>Executive Wellness</h3>
           <p>Comprehensive medical assessments for senior leaders — cardiovascular, metabolic, and mental health markers, plus lifestyle and stress diagnostics. Designed for executives whose sustained performance matters to the organisation.</p>
         </div>
         <div class="service-card">
+          <div class="service-card-media">
+            <img src="/images/pages/exm-screening.webp" alt="ExecuMed workplace wellness day — corporate health screening in a professional office setting" width="800" height="500" loading="lazy">
+          </div>
           <h3>Health Screening</h3>
           <p>Team-wide preventative health checks including vitals, glucose, cholesterol, and other core biomarkers. Can be delivered on-site as a wellness day, or as part of an ongoing programme.</p>
         </div>
         <div class="service-card full-width">
+          <div class="service-card-media">
+            <svg class="service-card-icon" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <circle cx="40" cy="40" r="30" />
+              <path d="M40 26v28M26 40h28" />
+            </svg>
+          </div>
           <h3>Additional capabilities</h3>
           <p>Also available through the partnership: telemedicine consultations for on-demand access to doctors, occupational medicals for roles that legally require them, and educational wellness sessions for teams.</p>
         </div>
@@ -622,8 +719,8 @@
     </div>
   </section>
 
-  <!-- SECTION 3 — HOW EXECUMED WORKS WITH TEAM CONNECT -->
-  <section class="content-section" aria-labelledby="how-heading">
+  <!-- SECTION 3 — HOW EXECUMED WORKS WITH TEAM CONNECT (text-only by design — no imagery) -->
+  <section class="content-section text-only" aria-labelledby="how-heading">
     <div class="section-inner">
       <span class="section-label">Our Approach</span>
       <h2 class="section-heading" id="how-heading">How ExecuMed works with Team Connect</h2>
@@ -632,11 +729,12 @@
     </div>
   </section>
 
-  <!-- SECTION 4 — ABOUT EXECUMED HEALTHCARE -->
-  <section class="content-section" aria-labelledby="about-heading">
+  <!-- SECTION 4 — ABOUT EXECUMED HEALTHCARE (text-only by design — no imagery) -->
+  <section class="content-section text-only" aria-labelledby="about-heading">
     <div class="section-inner">
       <span class="section-label">Our Clinical Partner</span>
       <h2 class="section-heading" id="about-heading">About our clinical partner</h2>
+      <!-- Placeholder for Lee Hutchinson headshot — awaiting from ExecuMed -->
       <p>ExecuMed Healthcare is a Cape Town-based, doctor-led preventative healthcare and wellness provider, focused on structured programmes that deliver measurable outcomes. Led by CEO Lee Hutchinson, ExecuMed's clinical team specialises in workplace wellbeing, preventative care, and executive medicine.</p>
       <p class="credibility-line">Learn more about ExecuMed's clinical services at <a href="https://execumedsa.co.za" target="_blank" rel="noopener noreferrer">execumedsa.co.za</a>.</p>
     </div>

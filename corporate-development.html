@@ -309,6 +309,59 @@
       color: var(--gold);
     }
 
+    /* ─── IMAGERY ─── */
+    .hero-image {
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 34px rgba(0,0,0,0.28);
+    }
+
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 7;
+      object-fit: cover;
+    }
+
+    .section-image {
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 0 0 1.8rem;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.09);
+    }
+
+    .section-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    /* ─── TEXT-ONLY SECTIONS (no imagery by design) ─── */
+    .content-section.text-only {
+      padding-top: 110px;
+      padding-bottom: 110px;
+    }
+
+    .content-section.text-only .section-inner {
+      max-width: 720px;
+    }
+
+    .content-section.text-only p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+
+    @media (max-width: 768px) {
+      .content-section.text-only {
+        padding-top: 70px;
+        padding-bottom: 70px;
+      }
+    }
+
     /* ─── FINAL CTA SECTION ─── */
     #final-cta {
       background: linear-gradient(135deg, var(--green) 0%, #2d6b47 100%);
@@ -526,6 +579,9 @@
   <!-- SECTION 1 — HERO / POSITIONING -->
   <section class="hero" aria-label="Corporate Development positioning">
     <div class="hero-inner">
+      <div class="hero-image">
+        <img src="/images/pages/cd-hero.webp" alt="Team Connect corporate development — a small group of South African professionals in focused, considered discussion around a whiteboard" width="1600" height="700" loading="eager" fetchpriority="high">
+      </div>
       <span class="hero-tag">Corporate Development</span>
       <h1>Corporate Development</h1>
       <p class="hero-sub">Beyond the experience — the work that shapes how your team grows</p>
@@ -540,6 +596,9 @@
       <span class="section-label">What We Do</span>
       <h2 class="section-heading" id="leadership-heading">Leadership Development</h2>
       <p class="section-sub">Building capable leaders at every level of your organisation</p>
+      <div class="section-image">
+        <img src="/images/pages/cd-leadership.webp" alt="Two South African professionals in a coaching-style leadership development conversation" width="1200" height="675" loading="lazy">
+      </div>
       <p>The difference between a good team and a great one usually comes down to leadership — and leadership is a skill, not a title. We work with managers, executives, and emerging leaders across South African corporates to build the specific capabilities that today's workplace demands: leading through ambiguity, making decisions with incomplete information, developing others, and holding difficult conversations without avoidance.</p>
       <p>Our leadership development work ranges from focused half-day workshops to structured multi-session programmes running across a quarter or full year. Every engagement is designed around your specific leadership context — the industry you're in, the pressures your team faces, and the culture you're building. There is no off-the-shelf package here. What we deliver depends on what you need.</p>
       <a href="/contact" class="text-link">Enquire about our leadership development work →</a>
@@ -552,6 +611,9 @@
       <span class="section-label">What We Do</span>
       <h2 class="section-heading" id="wellbeing-heading">Corporate Wellbeing</h2>
       <p class="section-sub">Clinical wellbeing services, alongside our development work</p>
+      <div class="section-image">
+        <img src="/images/pages/cd-wellbeing.webp" alt="Corporate professionals taking a walking meeting outdoors — team development and wellbeing in one moment" width="1200" height="675" loading="lazy">
+      </div>
       <p>Team performance and team wellbeing are increasingly the same conversation. 2025 taught most South African corporates that a team running on empty doesn't develop, doesn't lead, and doesn't cohere — no matter how good the strategy is. That's why we've partnered with ExecuMed Healthcare, a doctor-led preventative healthcare provider, to bring genuine wellbeing services into our corporate development work.</p>
       <p>Through ExecuMed, we offer workplace wellness days including health screenings and preventative checks, doctor-led wellbeing programmes, mental health and burnout support, and executive medicals for senior leaders. These services are delivered by ExecuMed's clinical team, integrated into a single point of contact with Team Connect — so you don't manage two suppliers to give your team a complete development and wellbeing experience.</p>
       <p>This partnership is designed for organisations who understand that leadership development and physical-and-mental wellbeing are not separate initiatives. They're two sides of the same investment in your people.</p>
@@ -566,6 +628,9 @@
       <span class="section-label">What We Do</span>
       <h2 class="section-heading" id="culture-heading">Culture Change and Transition</h2>
       <p class="section-sub">When your organisation is shifting, and your culture needs to catch up</p>
+      <div class="section-image">
+        <img src="/images/pages/cd-culture.webp" alt="A team in the middle of a culture change planning session — collaboration in transition" width="1200" height="675" loading="lazy">
+      </div>
       <p>Restructures, mergers, leadership changes, new strategies, hybrid transitions — every meaningful organisational shift creates culture debt that builds up quietly if it isn't addressed. We work with organisations going through change to make the new culture real for the people inside it. That means honest diagnostic work with your leadership team, facilitated sessions with the teams that are actually affected, and follow-through that keeps momentum alive after the initial rollout.</p>
       <p>Culture change isn't a poster on the wall or a values workshop that happens once. It's a series of deliberate interventions over months — done well, it's the difference between a restructure that lands and one that quietly costs you your best people. We've partnered with organisations on culture work for restructures, growth phases, generational transitions, and post-crisis rebuilds.</p>
       <a href="/contact" class="text-link">Speak to us about your culture work →</a>
@@ -578,14 +643,17 @@
       <span class="section-label">What We Do</span>
       <h2 class="section-heading" id="cohesion-heading">Team Cohesion and Growth</h2>
       <p class="section-sub">Turning individual talent into collective performance</p>
+      <div class="section-image">
+        <img src="/images/pages/cd-cohesion.webp" alt="A diverse team in genuine conversation around an informal table — team cohesion in practice" width="1200" height="675" loading="lazy">
+      </div>
       <p>A team of talented individuals doesn't automatically produce a talented team. Team cohesion is the work of making that transition — building the trust, communication, and shared clarity that lets a group of capable people actually work together well. This is where our team-building experiences meet the deeper development work: the experience gives a team a shared reference point; the ongoing cohesion work is what turns it into changed behaviour on Monday morning.</p>
       <p>We support teams through cohesion diagnostics, facilitated team-development sessions, conflict resolution work, and quarterly team rhythms designed to keep momentum. This work is particularly valuable for newly formed teams, teams recovering from a difficult period, cross-functional teams that don't have a natural rhythm, and senior teams where the stakes of alignment are highest.</p>
       <a href="/contact" class="text-link">Talk to us about your team →</a>
     </div>
   </section>
 
-  <!-- SECTION 6 — HOW WE WORK WITH YOU -->
-  <section class="content-section" aria-labelledby="how-heading">
+  <!-- SECTION 6 — HOW WE WORK WITH YOU (text-only by design — no imagery) -->
+  <section class="content-section text-only" aria-labelledby="how-heading">
     <div class="section-inner">
       <span class="section-label">Our Approach</span>
       <h2 class="section-heading" id="how-heading">How we work with you</h2>
