@@ -1,4 +1,4 @@
-# Facilitator Guide: Escape Labs (Rouge)
+# Facilitator Guide: Escape Labs (Rogue)
 ### Table-Top Escape Room Experience | Delivered with HintHunt | Up to 500 Participants | 3 Hours | Indoor
 
 ---
@@ -7,7 +7,7 @@
 
 ### Experience Overview and Objectives
 
-Escape Labs (Rouge) is a table-top escape room experience where teams race against the clock to crack codes, solve puzzles, and unravel a narrative mystery — all from their seats. Delivered in partnership with HintHunt, the experience is designed for large groups in indoor venues. Each table forms an independent team, and teams compete simultaneously for the fastest completion time.
+Escape Labs (Rogue) is a table-top escape room experience where teams race against the clock to crack codes, solve puzzles, and unravel a narrative mystery — all from their seats. Delivered in partnership with HintHunt, the experience is designed for large groups in indoor venues. Each table forms an independent team, and teams compete simultaneously for the fastest completion time.
 
 **Primary objectives:**
 - Develop problem-solving skills under time pressure
@@ -309,7 +309,7 @@ Escape Labs is high in fun and competitive energy — without a debrief, partici
 
 ---
 
-### Escape Labs (Rouge) — What You Need to Know
+### Escape Labs (Rogue) — What You Need to Know
 
 **Your team building experience is coming up — here's everything you need to know before the day.**
 
@@ -317,7 +317,7 @@ Escape Labs is high in fun and competitive energy — without a debrief, partici
 
 #### About the Experience
 
-Escape Labs (Rouge) is a table-top escape room experience delivered in partnership with HintHunt. You and your team will race against every other team in the room to crack codes, solve puzzles, and unravel a mystery — all from your table.
+Escape Labs (Rogue) is a table-top escape room experience delivered in partnership with HintHunt. You and your team will race against every other team in the room to crack codes, solve puzzles, and unravel a mystery — all from your table.
 
 This is a thinking person's competition. No running. No physical fitness required. Just sharp minds, good teamwork, and maybe a little creative arguing.
 

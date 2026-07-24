@@ -1,4 +1,4 @@
-# Escape Labs (Rouge)
+# Escape Labs (Rogue)
 
 ## Your Team Connect Experience Guide
 
@@ -8,13 +8,13 @@
 
 ### A MESSAGE FROM TEAM CONNECT
 
-Thank you for choosing Team Connect — we're genuinely thrilled to be partnering with your team. Escape Labs (Rouge) is one of our most beloved experiences, and we know your team is going to love every moment of it. From the moment the timer starts to the final code cracked, this is a day your people will be talking about for months. We can't wait to see what your team is made of.
+Thank you for choosing Team Connect — we're genuinely thrilled to be partnering with your team. Escape Labs (Rogue) is one of our most beloved experiences, and we know your team is going to love every moment of it. From the moment the timer starts to the final code cracked, this is a day your people will be talking about for months. We can't wait to see what your team is made of.
 
 ---
 
 ### YOUR EXPERIENCE AT A GLANCE
 
-* Experience: Escape Labs (Rouge)
+* Experience: Escape Labs (Rogue)
 * Date: [To be confirmed]
 * Time: [To be confirmed]
 * Venue: [To be confirmed]
