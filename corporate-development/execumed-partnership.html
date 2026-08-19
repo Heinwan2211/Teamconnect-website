@@ -584,6 +584,29 @@
       width: 100%;
       text-align: center;
     }
+
+    .execumed-logo-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      transition: opacity 0.2s ease;
+    }
+
+    .execumed-logo-link:hover {
+      opacity: 0.85;
+    }
+
+    .execumed-logo {
+      display: block;
+      width: 120px;
+      height: 120px;
+    }
+
+    @media (max-width: 768px) {
+      .execumed-logo {
+        width: 100px;
+        height: 100px;
+      }
+    }
   </style>
   <link rel="stylesheet" href="/mobile.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="/mobile.css"></noscript>
@@ -734,6 +757,9 @@
     <div class="section-inner">
       <span class="section-label">Our Clinical Partner</span>
       <h2 class="section-heading" id="about-heading">About our clinical partner</h2>
+      <a href="https://execumedsa.co.za" target="_blank" rel="noopener noreferrer" class="execumed-logo-link" aria-label="Visit ExecuMed Healthcare website (opens in new tab)">
+        <img src="/images/pages/execumed-logo.png" alt="ExecuMed Healthcare logo" class="execumed-logo" width="500" height="500" loading="lazy">
+      </a>
       <!-- Placeholder for Lee Hutchinson headshot — awaiting from ExecuMed -->
       <p>ExecuMed Healthcare is a Cape Town-based, doctor-led preventative healthcare and wellness provider, focused on structured programmes that deliver measurable outcomes. Led by CEO Lee Hutchinson, ExecuMed's clinical team specialises in workplace wellbeing, preventative care, and executive medicine.</p>
       <p class="credibility-line">Learn more about ExecuMed's clinical services at <a href="https://execumedsa.co.za" target="_blank" rel="noopener noreferrer">execumedsa.co.za</a>.</p>
