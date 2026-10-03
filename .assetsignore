@@ -1,9 +1,11 @@
 node_modules/
+src/
 *.js
 *.md
 *.py
 *.json
 *.jsonc
+*.sql
 .git/
 .wrangler/
 lighthouse-*.js

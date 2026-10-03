@@ -1,2 +1,6 @@
 CLOUDFLARE_API_TOKEN=
 CLOUDFLARE_ACCOUNT_ID=
+# DISC feature secrets (set in production with: npx wrangler secret put NAME)
+DASHBOARD_PASSWORD=
+SESSION_SECRET=
+CLAUDE_API_KEY=
