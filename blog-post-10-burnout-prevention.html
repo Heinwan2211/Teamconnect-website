@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BSD853KBS2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BSD853KBS2');
+</script>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Manager&rsquo;s Guide to Preventing Team Burnout | Team Connect</title>
+  <meta name="description" content="Burnout is rarely about overwork alone — it's about the shape of the work. A practical guide for South African managers on the four levers that actually prevent it." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" /></noscript>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --green: #1a4a2e;
+      --gold: #c9a84c;
+      --white: #ffffff;
+      --light-bg: #f7f5f0;
+      --text: #222222;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--text);
+      background: var(--white);
+    }
+
+    img { max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: #ffffff; padding: 0.625rem 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 170px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo img { display: block; height: 150px; width: auto; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--green); font-weight: 600; font-size: 0.95rem;
+      letter-spacing: 0.02em; transition: color 0.2s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-toggle {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .nav-toggle span {
+      display: block; width: 26px; height: 3px;
+      background: var(--green); border-radius: 2px; transition: all 0.3s;
+    }
+    @media (max-width: 768px) {
+      nav { height: 115px; }
+      .nav-logo img { height: 100px; }
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none; position: absolute; top: 115px; left: 0; right: 0;
+        background: var(--green); flex-direction: column;
+        padding: 1.5rem 5%; gap: 1.2rem; border-top: 2px solid var(--gold);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { color: #fff; }
+    }
+
+    /* ─── ARTICLE HEADER ─── */
+    .article-header {
+      padding: 60px 5% 40px; max-width: 740px; margin: 0 auto; text-align: center;
+    }
+    .category-tag {
+      display: inline-block; background: var(--gold); color: var(--green);
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 4px 14px; border-radius: 20px;
+      margin-bottom: 1.2rem;
+    }
+    .article-header h1 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800;
+      color: var(--green); line-height: 1.2; margin-bottom: 1.5rem;
+    }
+    .article-meta {
+      display: flex; align-items: center; justify-content: center;
+      gap: 1.5rem; flex-wrap: wrap; font-size: 0.82rem; color: #888; font-weight: 600;
+    }
+
+    /* ─── FEATURED IMAGE ─── */
+    .featured-image img {
+      width: 100%; height: 400px; object-fit: cover; display: block;
+    }
+    @media (max-width: 600px) {
+      .featured-image img { height: 220px; }
+    }
+
+    /* ─── RELATED POSTS ─── */
+    .related-posts {
+      padding: 70px 5%; max-width: 1200px; margin: 0 auto;
+    }
+    .related-posts h2 {
+      font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 800;
+      color: var(--green); margin-bottom: 2rem;
+    }
+    .related-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem;
+    }
+    @media (max-width: 900px) {
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .related-grid { grid-template-columns: 1fr; }
+    }
+    .related-card {
+      border-radius: 8px; overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      border: 2px solid transparent;
+      transition: border-color 0.2s, transform 0.2s;
+      background: var(--white);
+    }
+    .related-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .related-card-img {
+      width: 100%; height: 180px; object-fit: cover; display: block;
+    }
+    .related-card-body { padding: 1.2rem 1.4rem 1.4rem; }
+    .related-card-body .category-tag { margin-bottom: 0.6rem; }
+    .related-card-body h3 {
+      font-size: 0.95rem; font-weight: 800; color: var(--green);
+      line-height: 1.3; margin-bottom: 0.75rem;
+    }
+    .related-card-body a.read-more {
+      font-size: 0.82rem; font-weight: 700;
+      color: var(--gold); letter-spacing: 0.04em;
+    }
+    .related-card-body a.read-more:hover { text-decoration: underline; }
+
+    .btn {
+      display: inline-block; padding: 14px 28px; border-radius: 4px;
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+      font-size: 0.95rem; letter-spacing: 0.04em; cursor: pointer;
+      transition: transform 0.18s, box-shadow 0.18s; border: none;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+    .btn-gold { background: var(--gold); color: var(--green); }
+
+    /* ─── FOOTER CLIENTS ─── */
+    .footer-clients {
+      margin: 24px auto; width: 100%; max-width: 600px;
+      text-align: center; padding: 0 16px;
+    }
+    .footer-clients-label {
+      display: block; font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--gold, #c9a84c); margin-bottom: 12px;
+    }
+    .footer-clients-logos {
+      display: flex !important; flex-direction: row !important;
+      justify-content: space-between !important; align-items: center !important;
+      gap: 12px; flex-wrap: nowrap !important; width: 100%;
+    }
+    .footer-clients-logos img {
+      flex: 0 1 auto !important; flex-shrink: 0 !important;
+      width: auto !important; height: 32px !important;
+      max-width: 80px !important; max-height: 32px !important;
+      min-width: 40px !important; object-fit: contain !important;
+      display: inline-block !important; visibility: visible !important;
+      opacity: 1 !important; position: static !important;
+      transform: none !important; margin: 0 !important; padding: 0 !important;
+    }
+    @media (max-width: 480px) {
+      .footer-clients-logos {
+        flex-wrap: wrap !important; justify-content: center !important; gap: 16px;
+      }
+      .footer-clients-logos img { max-width: 60px !important; height: 28px !important; }
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0f2b1a; color: rgba(255,255,255,0.65);
+      text-align: center; padding: 48px 5% 28px; font-size: 0.9rem;
+    }
+    .footer-inner {
+      max-width: 680px; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center; gap: 1.2rem;
+    }
+    .footer-logo img { height: 80px; width: auto; display: block; }
+    .footer-logo { max-height: 100px; }
+    .footer-details {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 0.5rem 1.6rem; font-size: 0.9rem; line-height: 1.7;
+    }
+    .footer-details a { color: #c9a84c; text-decoration: none; }
+    .footer-details a:hover { text-decoration: underline; }
+    .footer-details span { color: rgba(255,255,255,0.65); }
+    .footer-copy {
+      font-size: 0.82rem; color: rgba(255,255,255,0.4);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1rem; width: 100%; text-align: center;
+    }
+
+    /* ─── ARTICLE BODY ─── */
+    .article-body {
+      max-width: 740px; margin: 0 auto; padding: 56px 5%;
+    }
+    .article-body p {
+      font-size: 1.05rem; line-height: 1.8; color: #333; margin-bottom: 1.6rem;
+    }
+    .article-body .blog-lede {
+      font-size: 1.2rem; font-weight: 600; color: var(--green);
+      line-height: 1.7; margin-bottom: 2rem;
+    }
+    .article-body h2 {
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem); font-weight: 800;
+      color: var(--green); margin: 2.5rem 0 1rem; line-height: 1.25;
+    }
+    .article-body a { color: var(--gold); font-weight: 700; text-decoration: underline; }
+
+    /* Pull quote */
+    .pull-quote {
+      border-left: 4px solid var(--gold); margin: 2.5rem 0;
+      padding: 1.2rem 2rem; background: var(--light-bg);
+    }
+    .pull-quote p {
+      font-size: 1.2rem; font-weight: 700; color: var(--green);
+      font-style: italic; line-height: 1.6; margin-bottom: 0;
+    }
+
+    /* Team Connect insight box */
+    .insight-box {
+      background: var(--green); border-radius: 6px;
+      padding: 1.6rem 1.8rem; margin: 2rem 0;
+    }
+    .insight-box .insight-label {
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.6rem; display: block;
+    }
+    .insight-box p {
+      font-size: 0.95rem; color: rgba(255,255,255,0.9);
+      line-height: 1.75; margin-bottom: 0;
+    }
+
+    /* ─── POST CTA ─── */
+    .post-cta {
+      background: var(--green); padding: 70px 5%; text-align: center;
+    }
+    .post-cta h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 800;
+      color: var(--white); margin-bottom: 0.75rem;
+    }
+    .post-cta p {
+      font-size: 1rem; color: rgba(255,255,255,0.8);
+      max-width: 540px; margin: 0 auto 2rem; line-height: 1.6;
+    }
+  </style>
+  <link rel="stylesheet" href="mobile.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="mobile.css"></noscript>
+  <!-- SEO: canonical, geo, OG, Twitter -->
+  <link rel="canonical" href="https://www.teamconnect.co.za/blog-post-10-burnout-prevention" />
+  <meta name="robots" content="index, follow" />
+  <meta name="geo.region" content="ZA-WC" />
+  <meta name="geo.placename" content="Cape Town" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="A Manager's Guide to Preventing Team Burnout" />
+  <meta property="og:description" content="Burnout is rarely about overwork alone — it's about the shape of the work. The four levers South African managers can actually pull to prevent it." />
+  <meta property="og:url" content="https://www.teamconnect.co.za/blog-post-10-burnout-prevention" />
+  <meta property="og:site_name" content="Team Connect" />
+  <meta property="og:locale" content="en_ZA" />
+  <meta property="og:image" content="https://www.teamconnect.co.za/images/blog/blog-10-burnout-prevention.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Team Connect — Corporate Team Building South Africa" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="A Manager's Guide to Preventing Team Burnout" />
+  <meta name="twitter:description" content="Four levers South African managers can actually pull to prevent burnout before it hits." />
+  <meta name="twitter:image" content="https://www.teamconnect.co.za/images/blog/blog-10-burnout-prevention.webp" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "A Manager's Guide to Preventing Team Burnout",
+    "description": "Burnout is rarely about overwork alone — it's about the shape of the work. The four levers South African managers can actually pull to prevent it.",
+    "image": "https://www.teamconnect.co.za/images/blog/blog-10-burnout-prevention.webp",
+    "author": { "@type": "Organization", "name": "Team Connect" },
+    "publisher": {
+      "@type": "Organization", "name": "Team Connect",
+      "logo": { "@type": "ImageObject", "url": "https://www.teamconnect.co.za/images/Team_connect_logo_white.png" }
+    },
+    "datePublished": "2026-11-09",
+    "dateModified": "2026-11-09"
+  }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.teamconnect.co.za/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.teamconnect.co.za/blog" },
+    { "@type": "ListItem", "position": 3, "name": "A Manager's Guide to Preventing Team Burnout", "item": "https://www.teamconnect.co.za/blog-post-10-burnout-prevention" }
+  ]
+}
+</script>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a class="nav-logo" href="/" aria-label="Team Connect home"><img src="images/Team connect logo.jpg" alt="Team Connect — Bringing Teams Together" width="127" height="150"></a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/">Home</a></li>
+      <li><a href="/experiences">Experiences</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/why-us">Why Us</a></li>
+      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/blog" class="active">Blog</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ARTICLE HEADER -->
+  <header class="article-header" aria-label="Article header">
+    <span class="category-tag">Leadership</span>
+    <h1>A Manager&rsquo;s Guide to Preventing Team Burnout</h1>
+    <div class="article-meta">
+      <span>&#9998; Team Connect Insights</span>
+      <span>&#128197; November 2026</span>
+      <span>&#9201; 7 min read</span>
+    </div>
+  </header>
+
+  <!-- FEATURED IMAGE -->
+  <div class="featured-image" aria-label="Featured post image">
+    <img src="images/blog/blog-10-burnout-prevention.webp" alt="A South African manager in conversation with a team member, preventing burnout through early action" width="1200" height="675" loading="lazy">
+  </div>
+
+  <!-- ARTICLE BODY -->
+  <article class="article-body" aria-label="Article content">
+
+    <p class="blog-lede">Most burnout prevention advice tells managers to encourage breaks and watch for warning signs. That&rsquo;s useful, but it treats burnout as something that happens <em>to</em> a team rather than something shaped by how the team runs. In our work with South African corporates, the managers who actually prevent it do something different — they pull four specific levers, consistently, before anyone needs a break.</p>
+
+    <p>By the time a team member is visibly burnt out, the damage is done. The sleep is already disrupted, the cynicism has already set in, the resum&eacute; is already updated. Spotting burnout late is not prevention; it&rsquo;s triage.</p>
+
+    <p>Real prevention happens months earlier, and it has very little to do with wellness perks. It has to do with the daily shape of the work &mdash; whether the work is predictable, whether people have real control over it, whether their effort is recognised, and whether there are actual gaps between demands. Managers control all four of those things, often without realising it.</p>
+
+    <h2>Lever 1: Predictability</h2>
+
+    <p>Burnout thrives on chronic uncertainty. Not the occasional surprise &mdash; teams handle those fine. It&rsquo;s the ongoing not-knowing: whether this week&rsquo;s priority will still be the priority on Friday, whether the restructure rumour is true, whether the deadline will shift again. That low-grade uncertainty is exhausting in a way that busy-but-stable never is.</p>
+
+    <p>The managers who prevent burnout communicate the shape of the week early and don&rsquo;t change it casually. They separate what&rsquo;s actually urgent from what feels urgent. They tell their teams what they <em>don&rsquo;t</em> know as clearly as what they do, so people aren&rsquo;t filling silences with their own worst guesses.</p>
+
+    <p>This costs nothing. It&rsquo;s a habit, not a budget line. And it does more for team resilience than most wellness interventions combined.</p>
+
+    <div class="pull-quote" aria-label="Pull quote">
+      <p>&ldquo;Spotting burnout late is not prevention &mdash; it&rsquo;s triage. Real prevention happens months earlier, in the daily shape of the work.&rdquo;</p>
+    </div>
+
+    <h2>Lever 2: Control</h2>
+
+    <p>People don&rsquo;t burn out from hard work. They burn out from hard work they have no say in. The research is consistent and so is what we see on the ground: autonomy over <em>how</em> work gets done is one of the strongest protections against burnout, even when the <em>what</em> is demanding.</p>
+
+    <p>The practical test is simple. Ask your team members: <em>&ldquo;Where in your week do you feel like you&rsquo;re just executing someone else&rsquo;s plan, with no real input into how it gets done?&rdquo;</em> Wherever that answer lands &mdash; a particular report, a specific meeting cadence, a tool that nobody chose &mdash; is a burnout contributor. Giving people genuine say over those pieces is usually cheaper than fixing the exhaustion they cause.</p>
+
+    <p>This doesn&rsquo;t mean handing over strategy. It means being deliberate about which decisions you actually need to make and which ones you&rsquo;re making out of habit.</p>
+
+    <h2>Lever 3: Recognition</h2>
+
+    <p>Unrecognised effort is one of the fastest routes to burnout, and it&rsquo;s almost always invisible to the manager who&rsquo;s causing it. When someone works hard on something and the work passes without acknowledgement, the brain draws a conclusion: <em>this doesn&rsquo;t matter here</em>. Enough of those conclusions and the person stops bringing their full effort &mdash; not out of spite, but out of self-preservation.</p>
+
+    <p>Recognition doesn&rsquo;t have to be formal. It rarely needs to be loud. What it does need to be is specific and timely. &ldquo;Nice work&rdquo; three weeks later is not recognition; it&rsquo;s politeness. &ldquo;The way you handled the Thursday client call &mdash; specifically how you reframed the scope question &mdash; that&rsquo;s exactly what I needed you to do&rdquo; is recognition. The second one costs no more than the first. It just requires paying attention.</p>
+
+    <p>Managers who do this well have usually built a small habit around it &mdash; a short note on a Friday, a deliberate moment in a one-on-one. Not a performance review. A rhythm.</p>
+
+    <h2>Lever 4: Recovery gaps</h2>
+
+    <p>The fourth lever is the one most organisations get wrong, because it costs the most to fix. People need genuine recovery time <em>during</em> their working year, not just at the end of it. That means spaces where the pressure genuinely lifts &mdash; not a long weekend where they catch up on email, not a Friday afternoon they fill with admin.</p>
+
+    <p>In practice, this looks like a quieter week after a major push. A properly protected block of focus time instead of back-to-back meetings. A short team session that is explicitly reflective rather than productive. These gaps feel like lost time to leaders who measure only output, but they&rsquo;re what allows the output to be sustainable in the first place.</p>
+
+    <p>Managers who take this seriously stop treating &ldquo;we&rsquo;re flat out&rdquo; as a badge of honour. They treat it as a planning failure that needs correcting before it becomes an attrition problem.</p>
+
+    <h2>What to do this month</h2>
+
+    <p>If you want a starting point before the year-end rush, pick the weakest of the four levers for your team and work on just that one for the next 30 days. Not all four at once &mdash; you&rsquo;ll change nothing.</p>
+
+    <p>If predictability is thin, start sending a short Monday message that names the week&rsquo;s actual priorities and what&rsquo;s uncertain. If control is thin, pick one recurring piece of work and genuinely hand ownership of its shape to the person doing it. If recognition is thin, start a Friday habit of naming one specific thing each person did well. If recovery is thin, protect one block of time this month that isn&rsquo;t meetings and isn&rsquo;t admin &mdash; and defend it.</p>
+
+    <p>Thirty days is enough to see whether it moves anything. If it does, keep going. If it doesn&rsquo;t, you&rsquo;ve learned something about which lever your team actually needs.</p>
+
+    <div class="insight-box" aria-label="Team Connect insight">
+      <span class="insight-label">&#127966; At Team Connect</span>
+      <p>Our Corporate Development programmes help South African managers build these four levers into how their teams run &mdash; not as a workshop they attend, but as a rhythm they maintain. Where burnout risk is already real, we partner with ExecuMed Healthcare to bring clinical wellbeing support alongside the team work. <a href="/contact" style="color: var(--gold); text-decoration: underline;">Get in touch</a> if you&rsquo;d like a conversation about what that could look like for your team before the year ends.</p>
+    </div>
+
+    <h2>Prevention is a leadership discipline</h2>
+
+    <p>The managers whose teams don&rsquo;t burn out aren&rsquo;t working with different people. They&rsquo;re running the same team differently &mdash; with more predictability, more genuine control given to the people doing the work, more specific recognition, and more protected recovery time. None of it is dramatic. All of it compounds.</p>
+
+    <p>Burnout prevention isn&rsquo;t a programme. It&rsquo;s a leadership discipline. The sooner you treat it as one, the fewer crisis conversations you&rsquo;ll have in January.</p>
+
+  </article>
+
+
+  <!-- RELATED POSTS -->
+  <section class="related-posts" aria-labelledby="related-heading">
+    <h2 id="related-heading">More from The Connected Team</h2>
+    <div class="related-grid">
+
+      <article class="related-card" aria-label="Related post: The 2025 Hangover">
+        <img class="related-card-img" src="images/blog/blog-09-2025-hangover.webp" alt="A team member showing signs of accumulated fatigue mid-year" width="380" height="180" loading="lazy">
+        <div class="related-card-body">
+          <span class="category-tag">The Connected Team</span>
+          <h3>The 2025 Hangover &mdash; Why Your Team Came Back Already Tired</h3>
+          <a href="/blog-post-9-2025-hangover" class="read-more">Read More &rarr;</a>
+        </div>
+      </article>
+
+      <article class="related-card" aria-label="Related post: Spotting the Signs of Team Burnout">
+        <img class="related-card-img" src="images/blog/blog-04-burnout-recovery.webp" alt="Team member showing signs of burnout at their desk" width="380" height="180" loading="lazy">
+        <div class="related-card-body">
+          <span class="category-tag">Team Fix</span>
+          <h3>Spotting the Signs of Team Burnout Before It&rsquo;s Too Late</h3>
+          <a href="/blog-post-4-burnout" class="read-more">Read More &rarr;</a>
+        </div>
+      </article>
+
+      <article class="related-card" aria-label="Related post: Why Great Leaders Invest in Team Building">
+        <img class="related-card-img" src="images/blog/blog-08-leaders-invest.webp" alt="Leaders investing in year-round team building" width="380" height="180" loading="lazy">
+        <div class="related-card-body">
+          <span class="category-tag">Leader Spotlight</span>
+          <h3>Why Great Leaders Invest in Team Building Year-Round</h3>
+          <a href="/blog-post-8-leaders-invest-teambuilding" class="read-more">Read More &rarr;</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="post-cta" aria-label="Call to action">
+    <h2>Build a team that doesn&rsquo;t burn out in the first place</h2>
+    <p>From practical manager coaching to full Corporate Development programmes delivered in partnership with ExecuMed Healthcare &mdash; we help South African leaders build the kind of team rhythm that holds through the hard quarters.</p>
+    <a href="/contact" class="btn btn-gold">Get in Touch</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner"><img src="images/Team_connect_logo_white.png" alt="Team Connect — Bringing Teams Together" class="footer-logo" width="85" height="100" style="height: 100px; width: auto; display: block; margin-bottom: 10px;" loading="lazy">
+        <div class="footer-details">
+        <span>&#128222; <a href="tel:0824522283">082 452 2283</a></span>
+        <span>&#9993; <a href="mailto:Info@teamconnect.co.za">Info@teamconnect.co.za</a></span>
+        <span>&#127760; <a href="https://www.teamconnect.co.za">www.teamconnect.co.za</a></span>
+        <span><a href="https://www.facebook.com/theTeamConnect" target="_blank" rel="noopener noreferrer">&#128216; Facebook</a></span>
+        <span><a href="https://www.instagram.com/teamconnectsa" target="_blank" rel="noopener noreferrer">&#128247; Instagram</a></span>
+        <span><a href="https://www.tiktok.com/@teamconnectsa" target="_blank" rel="noopener noreferrer">&#127925; TikTok</a></span>
+        <span>&#128205; Cape Town, South Africa</span>
+      </div>
+      <div class="footer-clients">
+        <span class="footer-clients-label">Trusted by</span>
+        <div class="footer-clients-logos">
+          <img src="/images/clients/vodacom.webp" alt="Vodacom" width="70" height="32" loading="lazy">
+          <img src="/images/clients/mtn.webp" alt="MTN" width="70" height="32" loading="lazy">
+          <img src="/images/clients/standard-bank.webp" alt="Standard Bank" width="70" height="32" loading="lazy">
+          <img src="/images/clients/nedbank.webp" alt="Nedbank" width="70" height="32" loading="lazy">
+          <img src="/images/clients/ernst-young.webp" alt="Ernst &amp; Young" width="70" height="32" loading="lazy">
+        </div>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 Team Connect. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('navToggle');
+    const links = document.getElementById('navLinks');
+    toggle.addEventListener('click', function () {
+      const isOpen = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+    links.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
