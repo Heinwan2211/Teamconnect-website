@@ -300,7 +300,7 @@ async function handleResults(request, env) {
   const companies = (await env.DB.prepare(`SELECT * FROM companies ORDER BY name`).all()).results || [];
   const assessments = (await env.DB.prepare(`SELECT * FROM assessments ORDER BY submitted_at`).all()).results || [];
   const coName = {}; companies.forEach(c => coName[c.id] = c.name);
-  return json({
+  const payload = {
     ok: true,
     generated_at: new Date().toISOString(),
     assessments: assessments.map(a => ({
@@ -311,5 +311,18 @@ async function handleResults(request, env) {
       graph1_most: { D: a.m_d, I: a.m_i, S: a.m_s, C: a.m_c },
       graph2_least: { D: a.l_d, I: a.l_i, S: a.l_s, C: a.l_c }
     }))
-  });
+  };
+  // format=html|text returns the same data inside a minimal HTML page, so
+  // automated readers that only parse HTML (not raw application/json) can
+  // ingest it. JSON remains the default.
+  const fmt = url.searchParams.get('format');
+  if (fmt === 'html' || fmt === 'text') {
+    const body = '<!doctype html><html><head><meta charset="utf-8">' +
+      '<title>DISC results</title></head><body><pre>' +
+      JSON.stringify(payload, null, 2)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;') +
+      '</pre></body></html>';
+    return new Response(body, { status: 200, headers: { 'content-type': 'text/html; charset=utf-8' } });
+  }
+  return json(payload);
 }
