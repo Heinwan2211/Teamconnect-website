@@ -293,7 +293,10 @@ async function handleResults(request, env) {
   const url = new URL(request.url);
   const auth = request.headers.get('Authorization') || '';
   const m = /^Bearer\s+(.+)$/.exec(auth);
-  const provided = (m && m[1]) || url.searchParams.get('key') || '';
+  // Prefer the ?key= query param over the Authorization header: some
+  // clients/proxies inject their own Authorization: Bearer header, which
+  // would otherwise shadow the real key supplied in the URL.
+  const provided = url.searchParams.get('key') || (m && m[1]) || '';
   if (!env.CLAUDE_API_KEY || provided !== env.CLAUDE_API_KEY) {
     return json({ ok: false, error: 'Unauthorized.' }, 401);
   }
