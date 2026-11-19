@@ -14,7 +14,7 @@
  *   POST /api/admin/person       create an individual or shared link (auth)
  *   GET  /api/admin/data         everything for the dashboard (auth)
  *   GET  /report?t=..&a=..       printable branded report   (auth)
- *   GET  /api/results            JSON for Claude            (Bearer key)
+ *   GET  /api/results            JSON for Claude   (Bearer header OR ?key=)
  *
  * Bindings (wrangler.jsonc / secrets):
  *   DB                 D1 database
@@ -287,9 +287,14 @@ async function handleReport(request, env) {
 /* ---------- Claude read endpoint ---------- */
 
 async function handleResults(request, env) {
+  // Read-only results endpoint. Accepts the key either as an
+  // `Authorization: Bearer <key>` header OR as a `?key=<key>` query
+  // parameter, so it can be fetched from a plain URL (no header needed).
+  const url = new URL(request.url);
   const auth = request.headers.get('Authorization') || '';
   const m = /^Bearer\s+(.+)$/.exec(auth);
-  if (!env.CLAUDE_API_KEY || !m || m[1] !== env.CLAUDE_API_KEY) {
+  const provided = (m && m[1]) || url.searchParams.get('key') || '';
+  if (!env.CLAUDE_API_KEY || provided !== env.CLAUDE_API_KEY) {
     return json({ ok: false, error: 'Unauthorized.' }, 401);
   }
   const companies = (await env.DB.prepare(`SELECT * FROM companies ORDER BY name`).all()).results || [];
