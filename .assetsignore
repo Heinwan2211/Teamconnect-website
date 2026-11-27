@@ -11,3 +11,5 @@ src/
 lighthouse-*.js
 compress-images.js
 fix-lighthouse.js
+test/
+*.mjs
