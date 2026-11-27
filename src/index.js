@@ -15,6 +15,7 @@
  *   GET  /api/admin/data         everything for the dashboard (auth)
  *   GET  /report?t=..&a=..       printable branded report   (auth)
  *   GET  /api/results            JSON for Claude   (Bearer header OR ?key=)
+ *   /puzzle, /puzzle/facilitator, /puzzle/projector, /api/puzzle/*   Puzzle Challenge (src/puzzle.js)
  *
  * Bindings (wrangler.jsonc / secrets):
  *   DB                 D1 database
@@ -25,6 +26,7 @@
 
 import { score } from './scoring.js';
 import { assessmentPage, noticePage, loginPage, dashboardPage, reportPage } from './pages.js';
+import { handlePuzzle, loginAllowed, loginFailed } from './puzzle.js';
 
 const html = (body, status = 200) =>
   new Response(body, { status, headers: { 'content-type': 'text/html; charset=utf-8' } });
@@ -91,6 +93,16 @@ export default {
       if (path.startsWith('/api/admin/')) return await handleAdmin(request, env, path);
       if (path === '/report') return await handleReport(request, env);
       if (path === '/api/results') return await handleResults(request, env);
+
+      // Puzzle Challenge (online team activity) — see src/puzzle.js
+      if (path === '/api/puzzle/fac/login' && request.method === 'POST') return await handlePuzzleLogin(request, env);
+      if (path === '/api/puzzle/fac/logout' && request.method === 'POST') {
+        return new Response('{"ok":true}', { headers: { 'content-type': 'application/json', 'Set-Cookie': cookieHeader('', 0) } });
+      }
+      if (path === '/puzzle' || path.startsWith('/puzzle/') || path.startsWith('/api/puzzle/')) {
+        const pr = await handlePuzzle(request, env, url, (req) => validSession(env, req.headers.get('Cookie')));
+        if (pr) return pr;
+      }
 
       // everything else → the existing static site
       return env.ASSETS.fetch(request);
@@ -177,6 +189,21 @@ async function handleLogin(request, env) {
     status: 302,
     headers: { 'Location': '/dashboard', 'Set-Cookie': cookieHeader(session, 30 * 24 * 3600) }
   });
+}
+// Puzzle facilitator sign-in: same password and same session cookie as the DISC dashboard.
+async function handlePuzzleLogin(request, env) {
+  const ip = request.headers.get('cf-connecting-ip') || 'unknown';
+  const out = (obj, status, extra = {}) => new Response(JSON.stringify(obj), {
+    status, headers: { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store', ...extra } });
+  if (!(await loginAllowed(env, ip))) return out({ error: 'Too many attempts. Wait a few minutes.' }, 429);
+  const b = await request.json().catch(() => ({}));
+  const given = await hmac('puzzle-compare', String(b.password || ''));
+  const real = await hmac('puzzle-compare', String(env.DASHBOARD_PASSWORD || ''));
+  if (!env.DASHBOARD_PASSWORD || given !== real) {
+    await loginFailed(env, ip);
+    return out({ error: 'Wrong password.' }, 401);
+  }
+  return out({ ok: true }, 200, { 'Set-Cookie': cookieHeader(await makeSession(env), 30 * 24 * 3600) });
 }
 function handleLogout() {
   return new Response(null, { status: 302, headers: { 'Location': '/dashboard', 'Set-Cookie': cookieHeader('', 0) } });

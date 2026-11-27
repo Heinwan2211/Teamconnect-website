@@ -4,3 +4,5 @@ CLOUDFLARE_ACCOUNT_ID=
 DASHBOARD_PASSWORD=
 SESSION_SECRET=
 CLAUDE_API_KEY=
+# Puzzle Challenge (optional): override the 40-minute clock, for testing only
+# PUZZLE_DURATION_MIN=2

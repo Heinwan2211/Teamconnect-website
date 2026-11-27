@@ -16,6 +16,8 @@ Disallow: /facilitator-guide-
 Disallow: /blog-post-template.html
 Disallow: /corporate-development
 Disallow: /corporate-development/execumed-partnership
+Disallow: /puzzle
+Disallow: /api/puzzle/
 
 # AI search and training crawlers — explicitly welcomed
 User-agent: GPTBot
