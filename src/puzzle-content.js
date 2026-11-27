@@ -84,9 +84,8 @@ const FILES = [
   { id: 'f39', label: 'Q 3 & 9', questions: ['Q3', 'Q9'], passwords: ['58228'] },
   {
     id: 'f46', label: 'Q 4 & 6', questions: ['Q4', 'Q6'],
-    // OPEN ITEM: Hein to confirm the current Waterval landline. Both numbers accepted until then.
-    // 021 001 3680  and  023 230 0807  (plus the +27 forms of each).
-    passwords: ['0210013680', '0232300807', '27210013680', '27232300807'],
+    // Waterval Country Lodge landline 021 001 3680 (also accepted with the +27 prefix).
+    passwords: ['0210013680', '27210013680'],
   },
   { id: 'f712', label: 'Q 7 & 12', questions: ['Q7', 'Q12'], passwords: ['29774'] },
   { id: 'f811', label: 'Q 8 & 11', questions: ['Q8', 'Q11'], passwords: ['51447'] }, // 81221 - 29774
@@ -170,7 +169,7 @@ function shownAnswer(qid, answer) {
 function answerKey() {
   return FILES.map((f) => ({
     file: f.label,
-    password: f.id === 'f46' ? '021 001 3680 (also accepts 023 230 0807)' : f.id === 'f15' ? 'NO PASSWORD' : f.passwords[0],
+    password: f.id === 'f46' ? '021 001 3680' : f.id === 'f15' ? 'NO PASSWORD' : f.passwords[0],
     questions: f.questions.map((qid) => {
       const q = QUESTIONS[qid];
       return {
