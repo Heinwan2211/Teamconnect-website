@@ -64,7 +64,7 @@ async function call(m, p, body, hdr = {}) {
     r = s[0] === 'unlock' ? await call('POST', '/api/unlock', { fileId: s[1], password: s[2] }, A) : await call('POST', '/api/answer', { qid: s[0], answer: s[1] }, A);
     ok(r.ok === true, 'step ' + s.join(' '));
   }
-  r = await call('POST', '/api/unlock', { fileId: 'f46', password: '023 230 0807' }, B); ok(r.ok === true, 'second Waterval number also accepted');
+  r = await call('POST', '/api/unlock', { fileId: 'f46', password: '023 230 0807' }, B); ok(r.ok === false, 'old Waterval number no longer accepted');
   r = await call('POST', '/api/unlock', { fileId: 'f811', password: '81221' }, A); ok(r.ok === false, 'Q8&11 not openable with wrong pw');
   r = await call('POST', '/api/unlock', { fileId: 'f811', password: '51447' }, A); ok(r.ok === true, 'Q8&11 opens with 51447');
   r = await call('POST', '/api/answer', { qid: 'Q8', answer: '1:1' }, A); ok(r.ok === true, 'Q8 1:1');

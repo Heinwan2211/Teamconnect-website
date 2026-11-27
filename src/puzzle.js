@@ -400,7 +400,7 @@ export async function handlePuzzle(request, env, url, isFac) {
       }
       return json({ error: 'Could not create a code. Try again.' }, 500);
     }
-    if (method === 'GET' && path === '/api/puzzle/fac/key') return json({ key: C.answerKey(), note: 'Chain: Q 8 & 11 password = 81221 - 29774 = 51447. Q 4 & 6 accepts both Waterval numbers until you confirm the current landline.' });
+    if (method === 'GET' && path === '/api/puzzle/fac/key') return json({ key: C.answerKey(), note: 'Chain: Q 8 & 11 password = 81221 - 29774 = 51447.' });
 
     if ((m = path.match(/^\/api\/puzzle\/fac\/clients\/([A-Za-z0-9]+)(?:\/(.*))?$/))) {
       const cl = await getClient(env, m[1], t);

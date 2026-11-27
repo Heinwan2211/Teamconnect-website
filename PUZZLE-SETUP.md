@@ -40,8 +40,8 @@ Dry run: use the built-in **Facilitator test** client (code `TEST`). Its clock s
 - Look and feel / page code: `src/puzzle-client/*` then run `node src/puzzle-client/build.mjs` and commit the regenerated `src/puzzle-pages.js`.
 - Tests: `test/puzzle-e2e.mjs` (needs `wrangler dev --local`; see the header of that file).
 
-## Open item
-Q 4 & 6 accepts **both** Waterval numbers (021 001 3680 and 023 230 0807) until the current landline is confirmed. Once confirmed, remove the wrong one in `src/puzzle-content.js` (file `f46`) and in `answerKey()`.
+## Q 4 & 6 password
+The Waterval Country Lodge landline, 021 001 3680 (confirmed). If it ever changes, update file `f46` and `answerKey()` in `src/puzzle-content.js`.
 
 ## Notes
 - The page code is public (it has to be); passwords and answers are only in `src/`, which the assets config excludes, and are checked on the server.
